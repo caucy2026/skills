@@ -1,0 +1,4 @@
+interface:
+  display_name: "KEMI HBBC Release"
+  short_description: "Build, package, deploy, and verify the KEMI hbbc service"
+  default_prompt: "Use $kemi-hbbc-release to build, package, deploy, and verify the KEMI hbbc service safely."
