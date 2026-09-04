@@ -1,5 +1,11 @@
 # 可独立安装的全局技能
 
+## kemi-market-integration
+
+KEMI 应用商城跨平台客户端接入技能。用于为 Android、Windows 和 macOS 实现当前平台商城浏览、详情、流式下载、安全校验、系统安装以及本 APP 自更新，并通过自动测试、生产只读联调和目标真机完成闭环验收。
+
+完整目录 `kemi-market-integration/` 是独立安装单元。它不包含管理员凭据，也不把管理员发布能力编译进客户端；需要真正上传和更新商城记录时使用 `$kemi-market-publish`。
+
 ## project-about-page
 
 跨项目“关于”页和产品说明设计技能。它要求先从源码、构建配置和测试证据建立真实产品档案，再完成与项目现有界面融合的身份区、产品介绍、能力清单、宣传图轮播、离线降级及安全资源缓存；同时提供完整的状态机、双指针原子缓存、安全边界和验收矩阵。
@@ -31,7 +37,7 @@ KEMI hbbc 的构建、测试、Linux 交叉编译、`BIN/server` 对齐、生产
 ## 安装
 
 1. 在 GitHub 选择 Code → Download ZIP 并解压，或 `git clone https://github.com/caucy2026/skills.git`。
-2. 将需要的完整技能文件夹（例如 `project-about-page`、`kemi-market-publish`、`kemi-hbbc-release` 或 `vibekits-remote-node`）复制到当前账户的 Codex 技能目录。若设置了 `CODEX_HOME`，使用其 `skills` 子目录；否则使用下表默认路径。
+2. 将需要的完整技能文件夹（例如 `kemi-market-integration`、`project-about-page`、`kemi-market-publish`、`kemi-hbbc-release` 或 `vibekits-remote-node`）复制到当前账户的 Codex 技能目录。若设置了 `CODEX_HOME`，使用其 `skills` 子目录；否则使用下表默认路径。
 3. 已存在同名目录时先备份并核对差异，不要直接覆盖个人配置。
 4. 重新打开 Codex 或新建任务，让技能目录重新加载。输入对应技能名（例如 `$kemi-market-publish`）即可使用。
 
@@ -43,6 +49,10 @@ KEMI hbbc 的构建、测试、Linux 交叉编译、`BIN/server` 对齐、生产
 正确结果是 `<技能目录>/<技能名>/SKILL.md`，不要多套一层 `skills-main`。
 
 示例请求：
+
+```text
+使用 $kemi-market-integration，将当前应用接入 KEMI 商城浏览、下载安装和安全自更新，并完成自动测试、生产只读联调与真机验收。
+```
 
 ```text
 使用 $project-about-page，根据当前项目源码和已验收能力设计“关于”页、真实产品说明、宣传图缓存与离线降级，并给出完整验收结果。

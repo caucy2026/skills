@@ -1,0 +1,4 @@
+interface:
+  display_name: "KEMI 商场接入"
+  short_description: "跨平台接入 KEMI 商城、安装与客户端自更新完整闭环"
+  default_prompt: "使用 $kemi-market-integration 将当前应用接入 KEMI 商城浏览、下载安装和安全自更新，并完成跨平台验收。"
