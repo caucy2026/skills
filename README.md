@@ -1,0 +1,41 @@
+# 可独立安装的全局技能
+
+## vibekits-remote-node
+
+跨平台远程仿真、构建、LAN MCP 协作和设备诊断技能。包含 Windows、macOS、Linux、Android 的操作规则，以及 LMCP/2、SSH、RustDesk/ADB、长任务、权限和验收文档。58 Windows 节点是一个已登记实例，不是所有使用者的默认目标。
+
+完整目录 `vibekits-remote-node/` 就是安装单元，包含 `SKILL.md`、`agents/openai.yaml` 和全部技能引用文档；不要只下载一个 SKILL.md。
+
+## 安装
+
+1. 在 GitHub 选择 Code → Download ZIP 并解压，或 `git clone https://github.com/caucy2026/skills.git`。
+2. 将整个 `vibekits-remote-node` 文件夹复制到当前账户的 Codex 技能目录。若设置了 `CODEX_HOME`，使用其 `skills` 子目录；否则使用下表默认路径。
+3. 已存在同名目录时先备份并核对差异，不要直接覆盖个人配置。
+4. 重新打开 Codex 或新建任务，让技能目录重新加载。输入 `$vibekits-remote-node` 即可使用。
+
+| 平台 | 默认目标目录 |
+|---|---|
+| Windows | `%USERPROFILE%\.codex\skills\vibekits-remote-node` |
+| macOS / Linux | `~/.codex/skills/vibekits-remote-node` |
+
+正确结果是 `<技能目录>/vibekits-remote-node/SKILL.md`，不要多套一层 `skills-main`。
+
+示例请求：
+
+```text
+使用 $vibekits-remote-node，先识别目标平台并只读检查局域网 MCP 能力。
+```
+
+```text
+使用 $vibekits-remote-node，检查指定 Windows 节点的 SSH 身份与 D 盘构建条件。
+```
+
+## 独立使用的边界
+
+技能加载、规则与协议查阅不依赖原作者电脑，也不需要 Python 或额外包。实际远程操作仍需要对应的 MCP/SSH/ADB 等工具、可达设备及合法授权；技能不是应用程序或远程控制服务，安装不会自动开放端口或授予权限。真正编译 APP 时才需要该 APP 的源码和工具链。
+
+Windows/macOS/Linux 可安装本技能；Android 在这里主要作为 ADB/MCP 被控目标，不代表 Android 上可直接运行 Codex。Linux 适配规则已提供，但尚未据此完成真实 Linux 节点验收。
+
+不包含密码、私钥、令牌。包含团队登记的公开身份数据和指纹；换用其他设备时必须建立自己的身份配置并核验，不能复用 58 节点配置。历史 SSH smoke 脚本仅以文本保存供审阅，不是自动运行的安装步骤。
+
+工程、缓存、编译产物继续遵守所在节点的数据盘约束；只有全局技能定义位于 Codex 配置目录。

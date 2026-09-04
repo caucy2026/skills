@@ -1,0 +1,4 @@
+interface:
+  display_name: "VibeKits Cross-Platform Remote Nodes"
+  short_description: "Operate Windows, macOS, Linux, and Android simulation nodes"
+  default_prompt: "Use $vibekits-remote-node to discover and operate the appropriate cross-platform remote node safely."
