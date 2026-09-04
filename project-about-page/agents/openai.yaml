@@ -1,0 +1,4 @@
+interface:
+  display_name: "产品关于页设计"
+  short_description: "设计真实可信、离线可用且资源安全缓存的产品关于页面"
+  default_prompt: "使用 $project-about-page 根据当前项目真实能力设计并实现关于页、产品说明与宣传资源缓存，并完成验收。"
