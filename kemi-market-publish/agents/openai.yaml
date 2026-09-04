@@ -1,0 +1,4 @@
+interface:
+  display_name: "KEMI 商店发布"
+  short_description: "签名、上传、更新并闭环验收 KEMI 应用商城发布"
+  default_prompt: "使用 $kemi-market-publish 将当前项目的正式安装包发布或更新到 KEMI 应用商城并完成自更新验收。"
