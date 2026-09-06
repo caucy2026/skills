@@ -64,6 +64,18 @@ Next-hour primary task and acceptance:
 Fallback task and acceptance:
 ```
 
+For changes with shared or global impact, append:
+
+```text
+Blast radius:
+Pre-change baseline:
+Compatibility matrix (passed/total):
+New historical regression failures:
+A/B oscillation count:
+Final-artifact real-path status:
+Rollback point:
+```
+
 ## 30-minute manager report
 
 ```text

@@ -25,6 +25,7 @@ Do not silently invent a material requirement. When the project contract is inco
 
 - For every management cycle, read [references/operating-cycle.md](references/operating-cycle.md) and [references/evidence-and-acceptance.md](references/evidence-and-acceptance.md).
 - When visual parity, screenshots, rendering, UI, media, simulation, or “general algorithm rather than patches” matters, also read [references/visual-and-generalization.md](references/visual-and-generalization.md).
+- When a change touches shared algorithms, renderers, protocols, state machines, persistence, lifecycle ownership, or any previously accepted behavior, also read [references/compatibility-regression.md](references/compatibility-regression.md).
 - When handling authorization, release readiness, backups, unattended work, or chat-history capacity, also read [references/safety-and-maintenance.md](references/safety-and-maintenance.md).
 - When configuring a new project, producing a checkpoint, scoring members, or creating a recurring monitor, read [references/templates.md](references/templates.md).
 
@@ -40,6 +41,7 @@ Do not silently invent a material requirement. When the project contract is inco
 8. Never accept a sample-specific patch as a general solution when the requirement is a reusable algorithm.
 9. Distinguish facts, member claims, manager judgments, and unknowns in every evaluation.
 10. Score the manager too. A missed event, unsupported low score, unnecessary interruption, or false acceptance is a management defect and requires a corrective action.
+11. Every accepted fix becomes a permanent regression obligation. A new change that revives an old failure is not progress and cannot pass acceptance or publication gates.
 
 ## Tool and automation behavior
 
