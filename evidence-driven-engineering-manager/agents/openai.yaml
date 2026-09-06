@@ -1,0 +1,7 @@
+interface:
+  display_name: "Evidence-Driven Engineering Manager"
+  short_description: "Supervise engineering with quantified evidence and acceptance"
+  default_prompt: "Use $evidence-driven-engineering-manager to supervise this multi-agent project with measurable checkpoints and independent acceptance."
+
+policy:
+  allow_implicit_invocation: true
