@@ -1,0 +1,4 @@
+interface:
+  display_name: "KEMI S1 硬件调试"
+  short_description: "让 Harness 自动发现 S1 串口并与 ADB 双链路核验"
+  default_prompt: "使用 $kemi-s1-hardware-debug，按我提供的 ADB 地址自动发现 KEMI S1 串口并开始双链路硬件调试。"
