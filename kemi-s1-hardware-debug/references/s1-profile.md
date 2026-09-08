@@ -52,6 +52,14 @@ The serial transaction sent 174 bytes and received 810 bytes with markers and `c
 
 Never manufacture serial success from ADB-only data. Preserve bounded raw evidence and a normalized comparison.
 
+## Continuous serial and ADB operation
+
+For a reproduced failure, start the serial monitoring session first and record its start time and session ID. Consume incremental chunks through the live MCP schema; do not repeatedly open the COM port because that can lose boot output or collide with another owner. Start an ADB Logcat/task session when Android is reachable, retain its task ID, and correlate both streams using host timestamps plus recognizable boot/crash markers. ADB disappearing while serial continues is itself evidence.
+
+ADB is the Android control plane. After the exact serial is verified, use its advertised Harness tools for the task's requested actions, including shell commands, package install/uninstall, launch/force-stop, push/pull, screenshots, Logcat, reboot, and bounded repetition. Inspect the live schema before every new tool family. Record command, target serial, start/end time, exit/result, and artifact path. Never silently switch to another attached device.
+
+Serial is the independent system/boot evidence plane. Prefer read-only console commands and continuous capture. Do not send reboot, bootloader, flash, destructive shell, or configuration commands unless the task explicitly authorizes that mutation.
+
 ## HiV730 source routing
 
 Recovered historical project coordinates:
@@ -63,8 +71,23 @@ Recovered historical project coordinates:
 
 These private-network coordinates do not prove current reachability or authorization. Refresh refs first. Preserve SSH host-key verification; the historical SSH attempt failed closed on an unknown host key. The HTTP endpoint previously supported read-only refs and manifest retrieval.
 
-After collecting a real failure signature, use bounded VibeKits Git tools: `git.list_remote_refs`, then `git.read_remote_file`, map the failure to the smallest repository, and only then `git.clone_minimal` for that explicit repo/ref/depth. Never run an unbounded `repo sync` or clone the whole HiV730 tree by default.
+For every linkage task, use bounded VibeKits Git tools: `git.list_remote_refs`, then `git.read_remote_file` to read the live manifest (`default.xml`) and verify its default revision and exact project `name`/`path`. This baseline manifest inspection is required even when the device is healthy. Map the serial/ADB evidence to the smallest candidate paths using [hiv730-project-routing.md](hiv730-project-routing.md). Only after collecting a real failure signature may `git.clone_minimal` fetch an explicit candidate repository/ref/depth for file/line analysis. Never run an unbounded `repo sync` or clone the whole HiV730 tree by default.
+
+Source analysis must connect evidence to code. Search for exact exception text, service/process name, kernel tag, property, package, HAL/interface, or device-tree node. Record repository, ref/SHA, file and line range, and explain why the code can produce the observed serial/ADB sequence. Label the result `confirmed`, `probable`, or `unresolved`; source proximity alone is not proof. Suggest the smallest code/configuration change and a device-side regression test. Do not edit source unless the assigned task asks for a fix.
 
 ## Evidence result
 
-Return timestamp; controller/provider identity; input and verified ADB serial; discovered serial candidates and accepted USB identity; frame configuration and byte counts; four per-field comparisons; requested stages as pass/fail/blocked/skipped; task/session IDs; sanitized errors; evidence paths; and cleanup state.
+Create `docs/diagnostics/KEMI_S1_<YYYYMMDD_HHMMSS>_<short-topic>.md` inside the approved workspace, or the nearest approved documentation directory. Use this contract:
+
+1. task, scope, timestamp/timezone and target;
+2. MCP provider/tool catalog version and exact live tool names used;
+3. ADB identity and requested operations with results;
+4. serial discovery, USB identity, frame parameters and monitored interval;
+5. time-correlated ADB/serial event table;
+6. sanitized raw artifacts and their absolute paths/hashes when useful;
+7. Git manifest remote/ref/SHA, evidence-to-repository routing, and—when a fault justifies source retrieval—file/line findings;
+8. conclusion with confidence and evidence for/against;
+9. proposed minimal fix and concrete verification steps;
+10. blocked/unresolved items and session cleanup state.
+
+Return the absolute Markdown path in the final response. If Git/source access is unavailable, still write the report and mark source analysis blocked with the exact sanitized reason; never fabricate it.

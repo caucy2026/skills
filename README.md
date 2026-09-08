@@ -50,7 +50,7 @@ KEMI hbbc 的构建、测试、Linux 交叉编译、`BIN/server` 对齐、生产
 
 ## kemi-s1-hardware-debug
 
-面向 KEMI S1/huanglong 的即装即用硬件调试技能。新同事只需提供当前 ADB 地址；Harness 会核验 ADB 身份，按 CH340/CH341 USB 特征自动发现可能变化的串口名，使用已验证的 115200/8-N-1/无流控配置完成串口 marker 与四项 `getprop` 回环，再与 ADB 结果逐项比较。技能还记录了 HiV730 manifest 的历史 Git 坐标和按故障证据最小取码的规则。
+面向 KEMI S1/huanglong 的即装即用硬件调试技能。新同事只需提供当前 ADB 地址；Harness 会核验 ADB 身份，按 CH340/CH341 USB 特征自动发现可能变化的串口名，使用已验证的 115200/8-N-1/无流控配置持续监控串口，通过 ADB 操作 Android，并按时间关联两路证据。发现软件问题后，技能会用 Git 将故障签名定位到最小 HiV730 源码范围，给出置信度、修复及复测方案，最终生成持久化 Markdown 分析报告。
 
 复制整个 `kemi-s1-hardware-debug/` 到用户全局技能目录后，VibeKits Harness 会通过共享的 `.codex/skills` 自动发现它；新任务直接使用 `$kemi-s1-hardware-debug`，不需要另配 Harness 路径。技能不包含密码、令牌或固定 COM/IP。
 
