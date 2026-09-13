@@ -1,0 +1,59 @@
+---
+name: app-release-stability-gate
+description: Autonomously discover behavior, generate and implement executable tests, run release gates, diagnose and repair failures, and iterate to a proven result for mobile, desktop, web/PWA, device, and service-backed applications. Use when application source and artifacts must be stabilized, historical bugs must become permanent regressions, or a release needs an evidence-based PASS/BLOCK decision.
+---
+
+# Application release stability gate
+
+Turn each candidate application into a reproducible, machine-executable test program. Inspect the source, product contract, change history, prior failures and distributable artifact; discover behavior; generate detailed cases; implement missing automation; prove that the tests detect controlled failures; execute on supported systems; diagnose and fix failures; rebuild; and repeat until the exact release bytes receive `PASS` or a concrete external blocker makes progress impossible.
+
+Do not claim “all functions passed” from package inspection or random UI traversal. Complete product coverage requires source, expected behavior, controlled accounts/data, historical records, a prior production build and required hardware/services. When any are unavailable, generate everything that can be derived and mark the exact unproved functions as release blockers.
+
+## Required workflow
+
+1. Create an isolated run directory outside source control. When `/Volumes/ORICO` is mounted and writable, place all reproducible build/test outputs, caches, logs and reports under `/Volumes/ORICO/kemi-build-cache/app-release-gate/<product>/<platform>/<version>-<run-id>/`. Use separate subdirectories per platform and concurrent run. Do not silently fall back to the system disk.
+2. Freeze the candidate identity before testing: artifact paths, bytes, SHA-256, signature/notarization identity, product/package/bundle ID, version/build number, source commit, dependency lock state, build configuration and supported platform/architecture. Stop on any mismatch later.
+3. Build a product behavior model from explicit requirements, existing tests, source routes/actions/state, release diff and dependency diff, historical task/chat records, issues, fix commits, prior test reports, support failures, package metadata and bounded UI discovery. Read [references/history-and-change-mining.md](references/history-and-change-mining.md).
+4. Give every user-visible function a stable feature ID. Give every previous defect a permanent regression ID with the original trigger, preconditions, precise actions, positive assertions, forbidden outcomes, required logs and affected platform matrix. Similar repeated defects belong to one regression family with variants; do not lose old variants when a new one appears.
+5. Write a profile and run `scripts/generate_test_plan.py`. It generates deterministic cases from functions, state transitions, change impact and historical regressions. Read [references/profile-and-results-schema.md](references/profile-and-results-schema.md).
+6. Convert every required case into executable project-native automation. Reuse existing unit, integration, contract, protocol, UI and end-to-end frameworks. Add the smallest platform adapter needed; generated prose alone is incomplete. Each executable case must use an argument array rather than an interpolated shell string. Read [references/platform-adapters.md](references/platform-adapters.md). For Android keyboards, multi-touch controls, remote-input clients or multi-display devices, also follow [references/android-real-input.md](references/android-real-input.md).
+7. Run `scripts/validate_test_plan.py --require-executable` before testing. Prove new tests with a positive control and a safe negative control, fault injection, mutation, fake response or known-bad build. A test that also passes when its asserted behavior is deliberately broken is invalid and blocks release.
+8. Execute the machine manifest with `scripts/run_test_manifest.py`, then run the gates defined by [references/test-strategy.md](references/test-strategy.md): artifact integrity; clean install; upgrade over the current production version; startup; deterministic product functions; historical regressions; change-impact regressions; lifecycle/error recovery; compatibility; CPU/memory/performance; soak; bounded exploration.
+9. Use real devices or machines for release-significant behavior. Simulators/emulators can widen OS and layout coverage but cannot replace real tests for permissions, hardware, graphics, signing, installers, services, drivers, sleep/wake, performance or update behavior.
+10. Collect machine-verifiable evidence for each case: candidate hash, source revision, automation revision, environment identity, start/end times, exact assertions, screenshots/video only where visual state matters, platform logs, crash/ANR/hang/tombstone deltas, resource samples and output hashes. Baseline logs before each suite so historical events are not counted as new. Preserve the original log buffer: use timestamps, process IDs, cursors or before/after counts instead of clearing logs that may contain failure evidence.
+11. Follow [references/autonomous-repair-loop.md](references/autonomous-repair-loop.md). On failure, continue automatically: reproduce, localize, add or strengthen the regression, make the smallest fix within the authorized source scope, rebuild on isolated storage, rerun the failing family and full gate, then freeze the new candidate hash. Do not stop merely to report a fix attempt.
+12. Run `scripts/evaluate_release_gate.py` against the collected results and apply [references/release-gates.md](references/release-gates.md). Publication is allowed only for the exact candidate hash receiving `PASS`; rebuilding, resigning, repackaging or editing creates a new candidate that must repeat affected gates.
+
+## Operating modes
+
+- **Generate:** when the user asks only for test cases, produce the product model, regression ledger, detailed plan, executable automation/manifest, test-of-test evidence and instructions another agent can run without guessing. Do not modify product code.
+- **Autonomous gate:** when the user asks to stabilize, test, fix, validate or prepare a release, perform generation, execution, diagnosis, repair and iteration without pausing between ordinary steps. Existing authorization for the requested source, devices, builds and tests remains valid throughout the loop.
+- **Release gate plus publish:** when publication is explicitly requested, obtain `PASS` first and then use the platform release skill. Do not transfer a result to different bytes.
+
+## Automation quality contract
+
+Every P0/P1 case and historical regression must specify setup, data, actions, observable assertions, cleanup, timeout, retry policy, platforms/devices and evidence. Assertions must test behavior or state, not merely that a screen opened. Use stable accessibility/resource identifiers, APIs, protocols or stored state; use coordinates only as a resolution-locked last resort.
+
+Automation must be deterministic enough for another agent or `run_test_manifest.py` to execute without guessing. Record seeds for randomized work and freeze fixtures, clocks, locales and service responses where they affect assertions. A retry can diagnose a flake but cannot erase a first-run failure. Any discovered production-like failure becomes a permanent regression before the release can pass.
+
+UI automation must prove its own preconditions before asserting product behavior. Verify the active display, focused target, installed package hash, layout/mode and control bounds; automatically restore the required state or stop that case with an infrastructure failure. Calibrate tap duration against gesture thresholds. For controls with both press and long-press behavior, run a short-press positive control and a long-press negative control so the harness cannot mistake one gesture for the other. Wait for the asserted event or state with a bounded condition; do not read asynchronous logs immediately and treat a late edge as a product failure.
+
+Do not ask the user to perform routine installation, clicking, log collection, test-data setup, process control or reruns when the agent has an authorized tool path. Continue autonomously across these steps. Stop only for a new destructive scope or a hard external boundary such as unavailable hardware, an offline required device/service, MFA, CAPTCHA, hardware-token PIN, missing legal entitlement, or a secret the agent is not allowed to retrieve. Complete and report all independent work before surfacing that blocker.
+
+## Coverage and decision contract
+
+Classify each function, historical bug, change-risk item, supported platform and required environment as `covered`, `blocked`, `not_automatable`, or `unknown`. Required `blocked`, `not_automatable` and `unknown` entries block release unless the user explicitly accepts that named gap for this release. Human-only evidence remains a named case; it cannot be silently omitted.
+
+Report only `PASS` or `BLOCK`. `PASS` means all required automation and evidence passed for the frozen artifact on the required matrix, with zero unexplained crash, hang, data-loss or resource-limit failures. It does not mean software can never fail; state the measured scope and duration precisely.
+
+## Boundaries
+
+- Test only authorized machines, devices, accounts and services. Keep destructive/reset/stress actions inside isolated test environments.
+- Do not publish merely because the gate passes. Publication is a separate requested action using the relevant release skill.
+- Never weaken thresholds, omit a device, delete failure evidence or mark a case optional to obtain a pass.
+- Keep passwords, tokens, private keys and personal data out of profiles, logs and generated cases; refer to secret-store or environment keys.
+- Do not modify product source unless diagnosis/fixing is part of the user's request.
+
+## Completion
+
+Return the frozen candidate identity, source/change scope, required platform matrix, generated automation paths and revisions, functional and historical-regression coverage, clean-install and upgrade results, resource baselines/deltas, crash/hang counts, soak/fuzz duration and seed, fixed defects with rerun evidence, remaining blockers, and absolute plan/evidence/report paths.
