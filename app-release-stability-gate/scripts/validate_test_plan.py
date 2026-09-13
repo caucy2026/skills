@@ -12,6 +12,7 @@ REQUIRED_FIELDS = (
     "id", "title", "group", "priority", "required", "platforms",
     "preconditions", "test_data", "steps", "assertions", "forbidden",
     "cleanup", "evidence_requirements", "timeout_seconds", "retry_policy", "automation",
+    "precondition_stabilization", "outcome_contract",
 )
 
 
@@ -24,6 +25,11 @@ def main() -> int:
     errors = []
     seen = set()
     cases = data.get("cases", [])
+    delivery = data.get("delivery", {})
+    if not isinstance(delivery, dict) or not isinstance(delivery.get("destinations", []), list):
+        errors.append("delivery must be an object with a destinations array")
+    if delivery.get("enabled") and not delivery.get("destinations"):
+        errors.append("delivery is enabled but has no destinations")
     if not cases:
         errors.append("plan has no cases")
     for index, case in enumerate(cases):
@@ -39,6 +45,9 @@ def main() -> int:
                 if not case.get(field):
                     errors.append(f"{ident}: required {field} is empty")
         automation = case.get("automation", {})
+        contract = case.get("outcome_contract", {})
+        if not all(contract.get(key) for key in ("product_status", "evidence_status", "environment_status")):
+            errors.append(f"{ident}: outcome_contract is incomplete")
         if args.require_executable and case.get("required", True):
             if automation.get("status") != "implemented":
                 errors.append(f"{ident}: automation is not implemented")

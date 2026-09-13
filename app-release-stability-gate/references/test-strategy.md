@@ -14,7 +14,9 @@ Before G0, validate the finalized executable plan and prove every new/changed te
 
 - Clean install and first launch on each required platform class.
 - In-place upgrade from the currently published compatible version without clearing data.
+- Before installing, compare package/bundle ID, signer lineage, platform UID/shared-user declarations, entitlements, installer identity, data migrations and permission-impacting manifest changes.
 - Assert retained accounts, settings, permissions and user data.
+- Treat any new request to re-authorize a permission that the platform should preserve as an upgrade failure unless the product contract explicitly requires the new capability.
 - Verify launch, relaunch, cold/warm start and platform security checks.
 
 ### G2 — deterministic product functions
@@ -51,6 +53,8 @@ Measure a stabilized idle baseline, fixed core scenario, repeated-loop state and
 - crash, ANR/hang, OOM, watchdog, restart and dump deltas.
 
 Run the same scenario on the prior published build when available. Resource comparison must use the same machine/device, environment, data and sampling schedule.
+
+Use repeated samples rather than one snapshot. Record warm-up, stabilized idle, active workload, post-loop recovery and the slope over the final half. Add file-descriptor/handle, thread, child-process, wakeup, thermal, battery, GPU and network measures when the platform exposes them and the product can materially affect them.
 
 ### G6 — soak, concurrency and bounded exploration
 

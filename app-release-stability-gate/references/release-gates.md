@@ -5,6 +5,7 @@ The evaluator produces `PASS` only when all required evidence is present. Any ha
 ## Hard blockers
 
 - Candidate artifact hash, package/bundle/product ID, version/build, source revision or signing identity differs from the frozen input.
+- Source was not synchronized with the intended remote branch before the candidate was built, or a required submodule/dirty production path was omitted from the recorded identity.
 - Any required case is `fail`, `blocked`, `not_run` or missing.
 - Any P0/P1 feature, change-risk item or historical regression lacks a mapped passing automated case.
 - Any required new/changed test lacks passing positive control, failing negative control and passing restored control.
@@ -13,6 +14,7 @@ The evaluator produces `PASS` only when all required evidence is present. Any ha
 - A required supported platform/device/architecture class is absent.
 - Resource evidence is missing, belongs to another candidate/environment or violates a configured limit.
 - Evidence was overwritten or cannot be tied to the candidate hash and automation revision.
+- Any required result has `product_status != pass`, `evidence_status != pass` or `environment_status != ready`.
 - A discovered failure was fixed without a permanent regression, root-cause evidence and a full-gate rerun on the rebuilt bytes.
 
 ## Default resource guards
@@ -34,3 +36,7 @@ A failing first run remains a failure even if a retry passes. Quarantine require
 ## Candidate immutability
 
 Signing or repackaging usually changes bytes. Freeze and report both the tested pre-sign artifact and final distributed artifact when the platform requires staged checks. Run signature/install/smoke/update checks again on the final distributed bytes; never transfer a PASS from a different hash.
+
+## Delivery gate
+
+When delivery was requested, test `PASS` alone is not completion. The uploaded record, destination byte count/hash, visible version/build, previous-version comparison, customer-path install/upgrade/open smoke and rollback identity must be present in the delivery receipt. A store review queue is reported as its exact submitted/review state, not as published.

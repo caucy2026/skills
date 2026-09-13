@@ -40,6 +40,12 @@ def main() -> int:
         blockers.append("no test case results")
     for item in cases:
         ident = item.get("id", "<missing-id>")
+        if item.get("required", True) and item.get("product_status") != "pass":
+            blockers.append(f"required case {ident} product_status is {item.get('product_status', 'missing')}")
+        if item.get("required", True) and item.get("evidence_status") != "pass":
+            blockers.append(f"required case {ident} evidence_status is {item.get('evidence_status', 'missing')}")
+        if item.get("required", True) and item.get("environment_status") != "ready":
+            blockers.append(f"required case {ident} environment_status is {item.get('environment_status', 'missing')}")
         if item.get("required", True) and item.get("status") != "pass":
             blockers.append(f"required case {ident} is {item.get('status', 'missing')}")
         if item.get("required", True) and item.get("status") == "pass":

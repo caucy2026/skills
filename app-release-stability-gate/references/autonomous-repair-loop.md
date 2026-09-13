@@ -4,14 +4,14 @@
 
 Persist `run-state.json` after every transition so another agent can resume without repeating successful work:
 
-`DISCOVER → MODEL → GENERATE → IMPLEMENT → PROVE_TESTS → BUILD → FREEZE → DEPLOY → EXECUTE → EVALUATE`
+`SYNC → DISCOVER → MODEL → GENERATE → IMPLEMENT → PROVE_TESTS → BUILD → FREEZE → DEPLOY → EXECUTE → EVALUATE`
 
-- On `PASS`, preserve the evidence bundle and hand the exact artifact hashes to the requested release workflow.
+- On `PASS`, preserve the evidence bundle and, when delivery was requested, continue into the autonomous delivery state machine without waiting for another prompt.
 - On a product failure, transition through `REPRODUCE → TRIAGE → ADD_REGRESSION → FIX → BUILD → FREEZE`, then run the failing case, its family, change-impact set and the entire required gate.
 - On an automation failure, repair the adapter/test first and repeat `PROVE_TESTS`; never change product code to satisfy a broken test.
 - On an environment failure, repair or reprovision the test environment automatically when authorized, then repeat the interrupted state.
 
-The agent continues the state machine without asking between routine, reversible and already authorized steps. Persist current artifact hashes, completed case IDs, commands, evidence paths, failure signatures, source changes and next state.
+The agent continues the state machine without asking between routine, reversible and already authorized steps. Persist current and remote source revisions, submodule revisions, dirty paths, artifact hashes, completed case IDs, commands, evidence paths, failure signatures, source changes and next state. Resume completed passing cases only if the plan digest, candidate identity, environment identity and evidence files still match.
 
 ## Automatic behavior discovery
 
@@ -47,6 +47,8 @@ Classify before editing:
 - `requirement`: expected behavior conflicts or is unknown;
 - `flake`: outcome changes with identical candidate, fixture, environment and seed.
 
+Record three independent dimensions for every attempt: `product_status`, `evidence_status` and `environment_status`. Incomplete evidence cannot prove a product failure or pass. An invalid/offline environment cannot prove product behavior. A complete balanced trace that violates a confirmed assertion is a product failure even if a later retry passes.
+
 Correlate timestamps across UI, client, service, OS and device logs. Reduce the failure to the shortest deterministic trigger. Inspect the smallest dependency surface before changing code. Record the root-cause claim and evidence separately; do not infer a cause merely from a nearby log line.
 
 ## Repair discipline
@@ -57,6 +59,7 @@ Correlate timestamps across UI, client, service, OS and device logs. Reduce the 
 - Review the diff and map every changed production path back to direct, negative and historical tests.
 - Rebuild with locked dependencies and isolated caches; any new bytes create a new frozen candidate.
 - Test the final signed/notarized/packaged bytes for identity, installation, launch, upgrade and smoke behavior.
+- Before installation, compare package/bundle identity, signer lineage, platform UID/shared-user declarations, entitlements, data schema migrations and required permission changes with the prior production build. An unexpected identity or permission reset is a product compatibility failure, not an installation inconvenience.
 
 ## Stopping conditions
 

@@ -42,6 +42,12 @@ def make_case(case_id: str, title: str, group: str, priority: str = "P1", **extr
         "evidence_requirements": ["timestamped command output", "candidate identity"],
         "timeout_seconds": 300,
         "retry_policy": "diagnostic-only; first failure remains a failure",
+        "precondition_stabilization": [],
+        "outcome_contract": {
+            "product_status": ["pass", "fail", "blocked"],
+            "evidence_status": ["pass", "fail"],
+            "environment_status": ["ready", "blocked"],
+        },
         "automation": {"status": "needs_implementation"},
     }
     result.update(extra)
@@ -133,7 +139,7 @@ def main() -> int:
                 cases.append(make_case(cid, item.get("title", item.get("name", item_id)), group_name, item.get("priority", "P0" if kind == "historical_bug" else "P1"), platforms=[target], family=item.get("family"), preconditions=item.get("preconditions", []), test_data=item.get("test_data", []), steps=item.get("steps", []), assertions=item.get("assertions", []), forbidden=item.get("forbidden", []), cleanup=item.get("cleanup", []), evidence_requirements=item.get("evidence_requirements", ["timestamped command output", "candidate identity"])))
                 generated_ids.append(cid)
             coverage.append({"id": item_id, "kind": kind, "priority": item.get("priority", "P0" if kind == "historical_bug" else "P1"), "platforms": targets, "case_ids": generated_ids})
-    plan = {"schema_version": 1, "product": profile["product"], "source_root": profile.get("source_root"), "source_revision": profile.get("source_revision"), "platforms": platform_records, "thresholds": thresholds, "cases": cases, "coverage_contract": coverage}
+    plan = {"schema_version": 2, "product": profile["product"], "source_root": profile.get("source_root"), "source_revision": profile.get("source_revision"), "platforms": platform_records, "thresholds": thresholds, "delivery": profile.get("delivery", {"enabled": False, "destinations": []}), "cases": cases, "coverage_contract": coverage}
     canonical = json.dumps(plan, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")
     plan["automation_revision"] = profile.get("automation_revision") or f"generated-plan:{hashlib.sha256(canonical).hexdigest()}"
     args.output_dir.mkdir(parents=True, exist_ok=True)
