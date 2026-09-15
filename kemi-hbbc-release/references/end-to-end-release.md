@@ -53,6 +53,7 @@ Never run a full three-service installer for a normal hbbc upgrade.
 - Confirm public HTTP and HTTPS endpoints with certificate validation enabled.
 - Inspect the new hbbc journal for startup loops, config, SQLite, TLS, SMS, or payment errors.
 - For admin/UI work, log in normally and verify the actual page, click path, API result, empty/error state, and responsive layout.
+- For large admin datasets, require independent server-side pagination for accounts, donations, devices, and usage records. Verify query, previous/next page, direct page jump, and a fixed visible success/failure notice after every save; do not accept a UI that embeds an unbounded or unrelated record list inside another page.
 - For compatibility-sensitive work, exercise at least one unchanged old-client or old-route path. New optional configuration must have safe defaults.
 
 ## 8. Report and retain rollback data
