@@ -19,6 +19,17 @@ Defaults for this KEMI installation:
 
 The SSH password is never documented. Let the administrator type it interactively, or use an already-authorized, separately protected SSH identity. Never print secret-file contents.
 
+When password authentication is required, establish a reusable SSH master session in a visible terminal and let the administrator type the password there:
+
+```bash
+ssh -M -S /tmp/kemi-hbbc-release-ssh.sock -o ControlPersist=2h \
+  -o PreferredAuthentications=password -o PubkeyAuthentication=no \
+  -p 39281 root@119.96.24.110
+```
+
+Pass that socket to the deployment helper with `--control-path /tmp/kemi-hbbc-release-ssh.sock`.
+The socket is local, temporary, and must never be committed or copied into a release package.
+
 ## Read-only preflight
 
 Before upload, confirm:
@@ -39,6 +50,7 @@ After the user has authorized the exact production deployment, run:
   --binary /path/to/hbbc \
   --host root@119.96.24.110 \
   --port 39281 \
+  --control-path /tmp/kemi-hbbc-release-ssh.sock \
   --confirm-hbbc-only
 ```
 
@@ -51,7 +63,7 @@ The script performs:
 5. atomic binary install;
 6. restart of only `kemi-rustdesk-hbbc.service`;
 7. local HTTP health and version checks;
-8. confirmation that hbbs and hbbr remain in their prior states;
+8. confirmation that hbbs and hbbr retain their prior states, PIDs, and systemd activation timestamps;
 9. automatic binary rollback if the new hbbc fails its health check.
 
 The script intentionally does not upload `hbbc.json`, service files, keys, or databases.
@@ -86,6 +98,8 @@ recent hbbc journal                     no startup loop/config/database/TLS erro
 ```
 
 For account/admin changes, log in through the normal administrator page and verify the changed UI/API. Do not put an admin token in a URL. For download-site changes, verify discovery, page rendering, and representative redirects without downloading every large client unless requested.
+
+Do not call a management UI change verified merely because the HTML compiled or an HTTP status was 200. A real UI change requires authenticated browser validation of visibility, layout, click behavior, API result, and failure presentation.
 
 ## Rollback
 

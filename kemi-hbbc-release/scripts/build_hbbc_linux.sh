@@ -39,6 +39,11 @@ if [ -z "$target_dir" ]; then
   target_dir="${TMPDIR:-/tmp}/kemi-hbbc-linux-$version"
 fi
 mkdir -p "$target_dir"
+# Zig 的共享缓存出现过“索引仍在、对象文件已丢失”的并发损坏。正式构建必须
+# 将全局/本地 Zig 缓存都固定到本次 hbbc 独立目标目录，不能复用 ~/.cache/zig。
+export ZIG_GLOBAL_CACHE_DIR="$target_dir/.zig-global-cache"
+export ZIG_LOCAL_CACHE_DIR="$target_dir/.zig-local-cache"
+mkdir -p "$ZIG_GLOBAL_CACHE_DIR" "$ZIG_LOCAL_CACHE_DIR"
 
 cd "$server_root"
 echo "[1/6] format"

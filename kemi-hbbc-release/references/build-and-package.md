@@ -57,6 +57,8 @@ Default target directory:
 
 Override with `--target-dir`. Use `--allow-network` only after an offline run proves a locked dependency is missing and network access is authorized.
 
+The build helper also pins `ZIG_GLOBAL_CACHE_DIR` and `ZIG_LOCAL_CACHE_DIR` under that isolated target directory. Do not remove this isolation or point concurrent hbbc builds at `~/.cache/zig`; a stale shared Zig index can reference missing object files and fail otherwise valid SQLite/ring linking.
+
 The sequence is:
 
 ```bash

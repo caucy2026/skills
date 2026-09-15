@@ -2,19 +2,21 @@
 set -euo pipefail
 
 usage() {
-  echo "Usage: $0 --binary PATH [--host USER@HOST] [--port PORT] --confirm-hbbc-only" >&2
+  echo "Usage: $0 --binary PATH [--host USER@HOST] [--port PORT] [--control-path PATH] --confirm-hbbc-only" >&2
   exit 2
 }
 
 binary=""
 host="root@119.96.24.110"
 port="39281"
+control_path=""
 confirmed="false"
 while [ "$#" -gt 0 ]; do
   case "$1" in
     --binary) [ "$#" -ge 2 ] || usage; binary="$2"; shift 2 ;;
     --host) [ "$#" -ge 2 ] || usage; host="$2"; shift 2 ;;
     --port) [ "$#" -ge 2 ] || usage; port="$2"; shift 2 ;;
+    --control-path) [ "$#" -ge 2 ] || usage; control_path="$2"; shift 2 ;;
     --confirm-hbbc-only) confirmed="true"; shift ;;
     *) usage ;;
   esac
@@ -22,6 +24,13 @@ done
 
 [ -n "$binary" ] || usage
 [ "$confirmed" = "true" ] || { echo "Explicit --confirm-hbbc-only is required" >&2; exit 2; }
+ssh_args=(-p "$port")
+scp_args=(-P "$port")
+if [ -n "$control_path" ]; then
+  [ -S "$control_path" ] || { echo "SSH control socket does not exist: $control_path" >&2; exit 1; }
+  ssh_args=(-S "$control_path" "${ssh_args[@]}")
+  scp_args=(-o "ControlPath=$control_path" "${scp_args[@]}")
+fi
 binary="$(CDPATH= cd -- "$(dirname -- "$binary")" && pwd)/$(basename -- "$binary")"
 [ -x "$binary" ] || { echo "Binary is missing or not executable: $binary" >&2; exit 1; }
 case "$(file "$binary")" in
@@ -39,7 +48,7 @@ remote_tmp="/tmp/hbbc.$stamp.new"
 local_sha="$(shasum -a 256 "$binary" | awk '{print $1}')"
 echo "local_sha256=$local_sha"
 
-preflight="$(ssh -p "$port" "$host" '
+preflight="$(ssh "${ssh_args[@]}" "$host" '
   printf "version="; /opt/kemi-rustdesk-server/bin/hbbc --version
   printf "hbbc="; systemctl is-active kemi-rustdesk-hbbc.service
   printf "hbbs="; systemctl is-active kemi-rustdesk-hbbs.service
@@ -49,9 +58,9 @@ printf '%s\n' "$preflight"
 before_hbbs="$(printf '%s\n' "$preflight" | awk -F= '$1=="hbbs"{print $2;exit}')"
 before_hbbr="$(printf '%s\n' "$preflight" | awk -F= '$1=="hbbr"{print $2;exit}')"
 [ -n "$before_hbbs" ] && [ -n "$before_hbbr" ] || { echo "Cannot read hbbs/hbbr preflight state" >&2; exit 1; }
-scp -P "$port" "$binary" "$host:$remote_tmp"
+scp "${scp_args[@]}" "$binary" "$host:$remote_tmp"
 
-ssh -p "$port" "$host" bash -s -- "$remote_tmp" "$stamp" "$local_sha" "$before_hbbs" "$before_hbbr" <<'REMOTE'
+ssh "${ssh_args[@]}" "$host" bash -s -- "$remote_tmp" "$stamp" "$local_sha" "$before_hbbs" "$before_hbbr" <<'REMOTE'
 set -euo pipefail
 incoming="$1"
 stamp="$2"
@@ -66,6 +75,10 @@ backup="$binary.before-$stamp"
 db_backup="$database.before-$stamp"
 
 [ -f "$binary" ] && [ -f "$config" ] && [ -f "$database" ]
+before_hbbs_pid="$(systemctl show -p MainPID --value kemi-rustdesk-hbbs.service)"
+before_hbbr_pid="$(systemctl show -p MainPID --value kemi-rustdesk-hbbr.service)"
+before_hbbs_started="$(systemctl show -p ActiveEnterTimestamp --value kemi-rustdesk-hbbs.service)"
+before_hbbr_started="$(systemctl show -p ActiveEnterTimestamp --value kemi-rustdesk-hbbr.service)"
 actual_sha="$(sha256sum "$incoming" | awk '{print $1}')"
 [ "$actual_sha" = "$expected_sha" ] || { echo "Uploaded SHA-256 mismatch" >&2; exit 1; }
 chmod 0755 "$incoming"
@@ -110,6 +123,14 @@ after_hbbs="$(systemctl is-active kemi-rustdesk-hbbs.service)"
 after_hbbr="$(systemctl is-active kemi-rustdesk-hbbr.service)"
 [ "$after_hbbs" = "$before_hbbs" ] || { echo "hbbs state changed unexpectedly: $before_hbbs -> $after_hbbs" >&2; exit 1; }
 [ "$after_hbbr" = "$before_hbbr" ] || { echo "hbbr state changed unexpectedly: $before_hbbr -> $after_hbbr" >&2; exit 1; }
+after_hbbs_pid="$(systemctl show -p MainPID --value kemi-rustdesk-hbbs.service)"
+after_hbbr_pid="$(systemctl show -p MainPID --value kemi-rustdesk-hbbr.service)"
+after_hbbs_started="$(systemctl show -p ActiveEnterTimestamp --value kemi-rustdesk-hbbs.service)"
+after_hbbr_started="$(systemctl show -p ActiveEnterTimestamp --value kemi-rustdesk-hbbr.service)"
+[ "$after_hbbs_pid" = "$before_hbbs_pid" ] || { echo "hbbs PID changed unexpectedly: $before_hbbs_pid -> $after_hbbs_pid" >&2; exit 1; }
+[ "$after_hbbr_pid" = "$before_hbbr_pid" ] || { echo "hbbr PID changed unexpectedly: $before_hbbr_pid -> $after_hbbr_pid" >&2; exit 1; }
+[ "$after_hbbs_started" = "$before_hbbs_started" ] || { echo "hbbs activation time changed unexpectedly" >&2; exit 1; }
+[ "$after_hbbr_started" = "$before_hbbr_started" ] || { echo "hbbr activation time changed unexpectedly" >&2; exit 1; }
 rm -f "$incoming"
 echo "binary_backup=$backup"
 echo "database_backup=$db_backup"

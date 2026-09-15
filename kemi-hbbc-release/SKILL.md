@@ -10,10 +10,12 @@ Use this skill for the complete hbbc release path from source verification to pr
 ## Route the task
 
 1. Locate the repository by finding `hbbc/Cargo.toml`, `hbbc/src/main.rs`, and `deployment/kemi-rustdesk-hbbc.service`. Do not assume the author’s absolute local path on another machine.
-2. Read [references/build-and-package.md](references/build-and-package.md) before compiling, versioning, or synchronizing a release directory.
-3. Read [references/production-deployment.md](references/production-deployment.md) before any remote inspection, upload, deployment, restart, rollback, or production validation.
-4. Use `scripts/build_hbbc_linux.sh` for a repeatable release build and `scripts/sync_bin_server.sh` when aligning the repository’s `BIN/server` package.
-5. Use `scripts/deploy_hbbc.sh` only after the exact production target and hbbc-only deployment are authorized. Never place a password, private key, administrator token, SMS key, payment key, database, or user record in arguments, logs, release files, or Git.
+2. For a complete source-to-production release, read [references/end-to-end-release.md](references/end-to-end-release.md).
+3. Read [references/build-and-package.md](references/build-and-package.md) before compiling, versioning, or synchronizing a release directory.
+4. Read [references/production-deployment.md](references/production-deployment.md) before any remote inspection, upload, deployment, restart, rollback, or production validation.
+5. Read [references/source-backup.md](references/source-backup.md) when the user asks to back up, archive, commit, or push an hbbc release or this skill.
+6. Use `scripts/build_hbbc_linux.sh` for a repeatable release build and `scripts/sync_bin_server.sh` when aligning the repository’s `BIN/server` package.
+7. Use `scripts/deploy_hbbc.sh` only after the exact production target and hbbc-only deployment are authorized. Never place a password, private key, administrator token, SMS key, payment key, database, or user record in arguments, logs, release files, or Git.
 
 ## Preserve these invariants
 
