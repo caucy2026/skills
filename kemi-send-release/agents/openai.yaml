@@ -1,0 +1,4 @@
+interface:
+  display_name: "KEMI传书发布"
+  short_description: "构建、签名、公证、验证并发布 KEMI传书多端正式包"
+  default_prompt: "Use $kemi-send-release to build, validate, and publish a KEMI传书 release."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "KEMI Microsoft Store Release"
+  short_description: "构建、签名、提交并验证 KEMI Windows 商城专版"
+  default_prompt: "将 KEMI Windows 应用按商城专版流程构建、签名、提交 Microsoft Store，并核验审核或发布状态。"

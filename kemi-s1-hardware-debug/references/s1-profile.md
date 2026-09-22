@@ -91,3 +91,4 @@ Create `docs/diagnostics/KEMI_S1_<YYYYMMDD_HHMMSS>_<short-topic>.md` inside the 
 10. blocked/unresolved items and session cleanup state.
 
 Return the absolute Markdown path in the final response. If Git/source access is unavailable, still write the report and mark source analysis blocked with the exact sanitized reason; never fabricate it.
+

@@ -1,0 +1,4 @@
+interface:
+  display_name: "双屏动态壁纸制作"
+  short_description: "将视频增强并制作成无声、全屏、连续循环的双屏动态壁纸"
+  default_prompt: "把这个视频制作成 KEMI S1 点对点双屏动态壁纸，并完成构建与真机验证。"

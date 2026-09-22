@@ -1,0 +1,4 @@
+interface:
+  display_name: "KEMI Windows 真机实验室"
+  short_description: "连接 Windows 真机，在 D 盘编译、安装、调试并闭环验收"
+  default_prompt: "使用 $kemi-windows-device-lab 在局域网 Windows 真机上编译当前项目的 Release 版本并完成安装、兼容性、性能和日志验收。"

@@ -96,6 +96,8 @@ Desktop upload completion may not parse package identity or versions. Do not cop
 
 Create omits `app_id`; update includes the existing `app_id`. Submit the complete current record so metadata is not accidentally cleared.
 
+Before creating or updating, read the authenticated category list and resolve the exact enabled category. Category names and slugs that look similar can have different storefront visibility. KEMI传书 (`org.kemi.send`) must use the enabled public category `探索` for every published platform; do not use the restricted `开发工具` category or its `工具` slug. After publishing, verify the app is present in the platform's default public list with `category` omitted.
+
 ```json
 {
   "app_id": 51,
@@ -182,6 +184,14 @@ data.app.version_code == released code
 ```
 
 This endpoint is the storefront download-button contract. Do not substitute the developer list or update-check response.
+
+Also query the unfiltered platform list:
+
+```http
+GET /api/store/apps?page=1&pageSize=100&os={os}
+```
+
+Do not send `category` for this “全部” check. Require the released app to be present in `data.list`. For KEMI传书, verify the returned category is `探索`; a record categorized as the restricted `开发工具` fails storefront visibility acceptance even when its detail endpoint remains readable.
 
 ### 3. CDN
 

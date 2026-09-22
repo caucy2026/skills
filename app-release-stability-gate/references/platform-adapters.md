@@ -19,9 +19,10 @@ Choose only adapters needed by the product. Prefer the repository's existing fra
 ## macOS
 
 - Inspect: `codesign`, `spctl`, `stapler`, bundle identifiers/versions, architectures and notarization ticket.
+- Before any upgrade test or delivery, compare the currently installed production app and the exact candidate with `codesign -dv --verbose=4`, `codesign -dr -`, and extracted entitlements. Require the same bundle identifier, `TeamIdentifier`, Apple signing class, full designated requirement and permission-relevant entitlements. An ad-hoc signature has no stable team identity and is forbidden for an upgrade candidate even when it is a Release build. Quarantine the artifact and return `BLOCK` before installation if any identity field differs.
 - Drive: XCTest/XCUITest, accessibility automation, CLI/API/protocol tests and clean user accounts or disposable machines.
 - Observe: unified logs, crash/spin reports, process CPU/memory, energy diagnostics and application logs.
-- Test first launch/Gatekeeper, upgrade preserving container/keychain/permissions, Dock reopen, window lifecycle, sleep/wake and helper/service identity where applicable.
+- Test first launch/Gatekeeper, upgrade preserving container/keychain/permissions, Dock reopen, window lifecycle, sleep/wake and helper/service identity where applicable. The upgrade case must install over the current production version without clearing or resetting TCC, then assert required permissions remain authorized and functional. A renewed Screen Recording, Accessibility, Input Monitoring or Automation prompt is a product failure, not a manual setup step. Record the installed and candidate designated requirements as evidence.
 
 ## iOS/iPadOS
 

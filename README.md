@@ -1,5 +1,18 @@
 # 可独立安装的全局技能
 
+## 2026-09-22 全局技能同步
+
+本次同步 29 个自定义技能的完整目录（定义、引用文档、脚本及素材），不包含系统内置技能、缓存或凭据。仓库原有的 `evidence-driven-engineering-manager` 与 `vibekits-remote-node` 保留，因此仓库共 31 个技能。
+
+| 类别 | 本次同步的技能 |
+|---|---|
+| 发布与上架 | `app-release-stability-gate`、`kemi-apple-app-store-release`、`kemi-hbbc-release`、`kemi-market-integration`、`kemi-market-publish`、`kemi-microsoft-store-release`、`kemi-send-common-release`、`kemi-send-release`、`newlink-common-release`、`public-app-distribution` |
+| 设备调试与维护 | `kemi-mac-remote-debug`、`kemi-s1-hardware-debug`、`kemi-storage-cleanup`、`kemi-windows-device-lab`、`kemi-windows-remote-signing`、`vibekits-remote-simulator` |
+| 视频与产品展示 | `capcut`、`dual-screen-video-wallpaper`、`product-launch-motion`、`project-about-page`、`remotion-promo-video-factory` |
+| 游戏与 3D | `game-playtest`、`game-studio`、`three-webgl-game`、`threejs-animation`、`threejs-geometry`、`threejs-lighting`、`threejs-performance`、`web-3d-asset-pipeline` |
+
+每个技能均直接位于仓库根目录。安装时复制完整目录，并按对应 `SKILL.md` 核对依赖、设备授权及环境配置；不要把某台机器的路径或已登记设备当作所有使用者的默认配置。
+
 ## app-release-stability-gate
 
 跨平台应用自动稳定性与交付技能。它从源码、发布差异和历史缺陷生成可执行测试，验证测试自身能发现故障，在真实设备或机器上执行功能、升级兼容、资源和耐久门禁，并在授权范围内自动诊断、修复、重编译和回归。发布已获授权时，它会继续签名、上传、发布端回读、客户端升级及打开验证，最终对精确候选字节给出 `PASS` 或带证据的 `BLOCK`，并生成交付回执。

@@ -1,0 +1,8 @@
+{
+  "KEMI-PAD": {"id": "6a6d81c09cb89f166dac208c", "filename": "KEMI-PAD.apk"},
+  "KEMI-macOS": {"id": "6a6d81709cb89f166dac208a", "filename": "KEMI-macOS.zip"},
+  "KEMI-Windows": {"id": "6a6d81f89cb89f166dac208e", "filename": "KEMI-Windows.exe"},
+  "KEMI-Linux": {"id": "6a6d7358c557f530ffec567f", "filename": "KEMI-Linux.AppImage"},
+  "SHA256SUMS": {"id": "6a6d74e5c557f530ffec5685", "filename": "SHA256SUMS.txt"},
+  "release-manifest": {"id": "6a6d82359cb89f166dac2093", "filename": "release-manifest.json"}
+}

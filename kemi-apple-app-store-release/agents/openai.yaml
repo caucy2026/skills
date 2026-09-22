@@ -1,0 +1,5 @@
+interface:
+  display_name: "KEMI Apple App Store Release"
+  short_description: "Build and submit KEMI macOS App Store releases"
+  default_prompt: "Use $kemi-apple-app-store-release to build, submit, remediate, monitor, or verify this KEMI macOS App Store release."
+

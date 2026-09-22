@@ -6,7 +6,7 @@
 >
 > 适用对象：需要接入 KEMI 应用中心、自更新或发布到 KEMI 市场的所有 APP 研发、测试与发布人员
 >
-> 最后核对：2026-09-04（已对照线上 Windows/macOS 自升级文档，并复核生产接口故障）
+> 最后核对：2026-09-10（已对照线上 Windows/macOS 自升级文档，并补充桌面端已安装应用重新打开约定）
 > 线上规范优先级：若本文与线上文档冲突，立即停止发布，以线上规范为准更新本文后再继续。
 
 ## 1. 目标和完成定义
@@ -141,7 +141,86 @@ Windows 和 macOS 请求必须传 `os=windows` 或 `os=macos`。省略 `os` 可�
 - 校验元数据不完整的应用可以查看，但“安装”必须禁用并解释缺少的字段。
 - 下载和安装必须由用户明确触发；不得在浏览列表时后台下载大文件。
 - 官方插件市场和 KEMI 应用中心是两个独立功能，不能互相替换数据源或入口。
+
+### 4.4 同版本禁止重复下载安装（2026-09-08 补充）
+
+适用于所有接入产品，不限于 KEMI 远程办公。Mac、Windows、Android 使用同一判定规则：
+
+1. 对市场中每个 APP，以稳定包名和当前 OS 查询本机真实安装状态及版本码；不能用可翻译名称、另一平台记录或本客户端自身的版本码代替。确定未安装的 APP 可进入正常安装流程。
+2. 从实际安装包或安装器维护的可信版本码登记读取 `version_code`；云端版本码等于或小于本机时，详情下载/安装按钮不可点击，不发下载请求、不启动安装器。同码显示“已是最新版本”，本机更高也不得降级。
+3. 本机查询失败、已安装但版本码未知/零值/解析失败、云端码未知，或版本读取未完成时，禁用对应 APP 下载，显示可重试的版本读取提示；不得把未知当成未安装或版本 0，也不得误称最新版。
+4. 有效且严格较高的云端整数版本码才允许正常更新。`version_name` 只是展示文本，不能覆盖整数比较；同展示名不同 build 需要清楚展示 build 以免误判为同版本。
+5. 卡片、详情页和下载入口复用同一判定。下载入口重新读取本机实际版本，避免旧弹窗或异步刷新绕过禁用；失败时不创建下载文件。
+6. 启动自更新仍只在确认更高版本时提示；同码及本机更高均不提示。普通市场所有应用与自更新执行相同的版本顺序判定，但各自读取自己的安装包。
+
+平台读取约定：Android 由 PackageManager 用 `package_name` 读取 `longVersionCode`；macOS 用 `CFBundleIdentifier` 定位已安装 App 并读 `CFBundleVersion` 的正整数；Windows 由安装器在 `Software\\KEMI\\AppMarket\\<package_name>` 与 `Executable` 同键登记正整数 `VersionCode`，卸载时一并删除。Windows 发现应用已安装但没有可信 `VersionCode` 时必须禁用下载并提示补齐登记，不可由 `version_name` 或 EXE 文件版本猜测市场码。下载前必须重新读取，版本不高于本机时零 HTTP 请求、零临时文件。
+
+必测：本 APP 与至少一个其他已安装 APP（例如 KEMI远程办公）分别覆盖同码、云端较旧、云端较新、版本名不同但同码、同名但不同 build、缺失/非法码、包名/平台不匹配、确定未安装、版本异步读取失败、旧弹窗再次触发下载。至少证明“其他 APP 同版本按钮禁用 + 下载入口零请求”，不能只测比较函数。多国语言下禁用原因使用既有本地化机制。
 - 应用中心只负责浏览和安装市场内其他应用，不承载“本 APP 检查更新”卡片，也不得显示本 APP 后台更新检查错误。
+
+### 4.5 桌面端“打开”已安装应用（2026-09-10 补充）
+
+Windows 与 macOS 的应用详情操作区按“打开、关闭、下载/安装”排序。“打开”只负责重新启动或激活本机已经安装的对应 APP：
+
+1. 页面打开后异步查询本机安装状态；查询未完成、查询失败或未安装时，“打开”按钮保持禁用。
+2. 点击“打开”前再次由原生系统能力解析安装目标。解析失败时返回未安装并禁用按钮，不能回退为重新下载安装。
+3. 禁止使用可翻译的 `app_name` 猜可执行文件，禁止把下载历史当成已安装证据，禁止扫描目录后启动同名文件。
+4. 启动必须使用结构化系统 API 和绝对路径，不能拼接 shell 命令。
+5. 下载或安装正在进行时禁用“打开”，避免同时启动旧版和安装器。
+
+macOS 使用商城稳定 `package_name` 作为 App 的 `CFBundleIdentifier`，先通过 `NSWorkspace.urlForApplication(withBundleIdentifier:)` 定位；系统尚未建立 LaunchServices 索引时，可仅枚举 `/Applications` 和当前用户 `~/Applications` 顶层 `.app`，逐个核对真实 `CFBundleIdentifier`。不得按展示名、模糊路径或下载历史猜测。匹配后读取 `CFBundleVersion` 正整数用于第 4.4 节版本门禁，打开时再解析一次并通过 `NSWorkspace.openApplication` 激活。
+
+Windows 安装器必须维护以下注册表约定；按安装范围写入当前用户或本机，并在卸载时删除自己的键：
+
+```text
+HKCU\\Software\\KEMI\\AppMarket\\<package_name>
+  Executable = C:\\绝对路径\\App.exe
+  VersionCode = 与该 EXE 实际安装版本对应的正整数（REG_DWORD / REG_QWORD / 十进制 REG_SZ）
+
+或
+
+HKLM\\Software\\KEMI\\AppMarket\\<package_name>
+  Executable = C:\\绝对路径\\App.exe
+  VersionCode = 与该 EXE 实际安装版本对应的正整数（REG_DWORD / REG_QWORD / 十进制 REG_SZ）
+```
+
+Windows 客户端只接受由字母、数字、点、下划线、连字符组成的 `package_name`，且 `Executable` 必须是存在的绝对 `.exe` 文件。64 位客户端同时读取 HKLM 的 64 位和 32 位注册表视图。当前应用可以用自身稳定包名映射当前可执行文件；其他应用缺少上述注册项时必须视为未安装并禁用“打开”。
+
+#### 4.5.1 可复用实现契约
+
+Flutter 与桌面 Runner 固定复用 MethodChannel `org.rustdesk.rustdesk/host`，避免每个应用自行发明协议：
+
+| 方法 | 参数 | 返回值 | 失败行为 |
+|---|---|---|---|
+| `isStoreApplicationInstalled` | `{ "packageName": package_name }` | `bool` | 返回 `false` |
+| `openStoreApplication` | `{ "packageName": package_name }` | `bool` | 返回 `false`，并把当前按钮改为禁用 |
+
+Flutter 详情弹窗维护独立的 `installed` 状态，初始值必须为 `false`。`initState` 异步调用安装检测；只在返回 `true` 且没有下载任务时给按钮设置 `onPressed`。调用异常、空返回和原生返回 `false` 都按未安装处理。按钮组件只接收 `installed`、`inProgress`、本地化 `label` 和 `onOpen`，不能自行扫描文件或发网络请求。
+
+macOS Runner 收到稳定包名后调用：
+
+```swift
+let url = NSWorkspace.shared.urlForApplication(withBundleIdentifier: packageName)
+let configuration = NSWorkspace.OpenConfiguration()
+configuration.activates = true
+NSWorkspace.shared.openApplication(at: url, configuration: configuration) { _, error in
+    result(error == nil)
+}
+```
+
+macOS 10.15 以前可用 `launchApplication(url.path)` 兼容。没有 Bundle URL 时立即返回 `false`，不能把商场显示名传给 `open` 命令。
+
+Windows Runner 按 `HKCU`、`HKLM` 64 位视图、`HKLM` 32 位视图的顺序读取 `Executable`。仅接受 `REG_SZ` 或展开后的 `REG_EXPAND_SZ`；路径必须含盘符、为绝对路径、以 `.exe` 结尾且 `GetFileAttributesW` 证明文件存在。启动使用 `ShellExecuteExW`，`lpVerb=L"open"`、`lpFile=已验证绝对路径`、`nShow=SW_SHOWNORMAL`，禁止经过 `cmd.exe` 或 PowerShell。当前应用可将自己的稳定包名映射到 `GetModuleFileNameW(nullptr, ...)` 返回的当前 EXE。
+
+本仓库参考实现位置：
+
+- Flutter 通道与弹窗状态：`flutter/lib/desktop/pages/kemi_app_center_page.dart`
+- 独立按钮：`flutter/lib/desktop/widgets/kemi_store_open_button.dart`
+- Windows Runner：`flutter/windows/runner/flutter_window.cpp`
+- macOS Runner：`flutter/macos/Runner/MainFlutterWindow.swift`
+- 按钮回归测试：`flutter/test/kemi_store_open_button_test.dart`
+
+必测：Windows/macOS 已安装时按钮可用并激活正确应用；未安装、注册项缺失、相对路径、非 EXE、文件不存在、非法包名时按钮禁用；下载过程中按钮禁用；启动后原商场页面保持可用。
 
 ## 5. 本 APP 自更新
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Newlink Common 发布"
+  short_description: "后台发布、校验并回读 Newlink Common 固定客户端资源"
+  default_prompt: "发布或更新 Newlink Common 云端客户端资源，并验证版本号、MD5和固定下载接口。"

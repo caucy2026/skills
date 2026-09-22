@@ -1,0 +1,4 @@
+interface:
+  display_name: "应用对外分发"
+  short_description: "构建、审核、提交并验证桌面与移动应用的公开商店发布流程"
+  default_prompt: "Use $public-app-distribution to autonomously prepare, submit, monitor, remediate, and independently verify this app across the requested public distribution channels. Minimize human intervention to unavoidable CAPTCHA, MFA, legal attestations, or action-time platform gates; never claim progress without fresh persistent portal or public-listing evidence."

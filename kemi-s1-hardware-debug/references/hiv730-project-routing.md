@@ -48,3 +48,4 @@ Important known paths include `vendor/huanglong/modules`, `vendor/huanglong/aosp
 - Product/preinstall/SELinux: `vendor/configs`, `vendor/device/mp`, `vendor/device/feature`, `vendor/device/sepolicy`.
 
 The Markdown report must show this routing decision even if Git stops at the manifest. A statement such as “no anomaly, Git not used” is incomplete for a requested serial/ADB/Git linkage task; instead show that the manifest was verified and why deeper source retrieval was unnecessary.
+

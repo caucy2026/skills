@@ -29,8 +29,10 @@ Keep `version_code` as the strictly increasing comparison value and `version_nam
 - Use only public store endpoints and show only the current platform's records.
 - Normalize forward-compatible responses, but reject missing or conflicting platform identity.
 - Permit viewing incomplete metadata while disabling installation with a clear reason.
+- For every store listing, resolve the installed application by stable package name on the current OS and read its real integer version code. Disable download/install when the cloud code is equal to or below the installed code. Unknown local/remote codes or failed installed-state queries must block installation with a retryable reason, not claim “up to date.” An actually uninstalled application remains installable when its market metadata is complete. Apply one predicate in every download-capable UI and immediately before starting a download; UI-only disabling is insufficient. Do not compare another app with this client's own version or infer installation from download history. See section 4.4 of the reference.
 - Download only after explicit user action. Stream to a partial file and validate final HTTPS URL, platform, extension, exact size, SHA-256, and platform signature before installation.
 - Launch installers with structured argument APIs, never shell-string concatenation. Preserve a usable current version on cancellation or failure.
+- Put an `Open` action immediately before `Close` in the desktop app-detail dialog. Enable it only after the current OS proves that the matching app is installed. macOS resolves the stable package name as `CFBundleIdentifier`; Windows resolves the explicit `Software\\KEMI\\AppMarket\\<package_name>\\Executable` registration. Never guess an executable from a translated display name, download history, or arbitrary file scan. Implement the exact channel, method, registry, state, and test contract in reference section 4.5 so independently developed clients remain compatible.
 
 ### This application's self-update
 

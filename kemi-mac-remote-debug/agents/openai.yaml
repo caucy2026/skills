@@ -1,0 +1,4 @@
+interface:
+  display_name: "KEMI Mac 远程调试"
+  short_description: "通过可信隧道在两台电脑间安全调试 KEMI Mac 客户端"
+  default_prompt: "Use $kemi-mac-remote-debug to establish a verified remote Mac debugging session and collect evidence."

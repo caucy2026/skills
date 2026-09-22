@@ -1,0 +1,4 @@
+interface:
+  display_name: "KEMI Windows 远程签名"
+  short_description: "通过 VibeKits 完成 Windows Authenticode 签名"
+  default_prompt: "使用 $kemi-windows-remote-signing 通过 VibeKits 远程仿真完成 Windows Authenticode 签名，并展示 PIN 对话框截图后持续跟踪到最终验签结果。"

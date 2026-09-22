@@ -39,3 +39,4 @@ Read [references/s1-profile.md](references/s1-profile.md) before executing a liv
 ## Completion
 
 Completion requires a Markdown report, not only chat text. Report separately: live catalog, ADB connection/identity and operations, serial discovery and continuous-monitor interval, marker round trip, four-field comparison, timestamp correlation, requested diagnostics, Git source mapping, confidence-labelled conclusion, proposed fix and verification, session cleanup, and absolute report/evidence paths. One working channel cannot compensate for the other failing.
+

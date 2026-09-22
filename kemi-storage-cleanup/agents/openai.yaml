@@ -1,0 +1,4 @@
+interface:
+  display_name: "KEMI 存储清理"
+  short_description: "安全盘点并清理缓存、调试产物、旧构建备份与重复安装包"
+  default_prompt: "使用 $kemi-storage-cleanup 盘点磁盘，保护源码与正式产物后清理已确认的缓存、临时调试文件和过期构建备份。"
