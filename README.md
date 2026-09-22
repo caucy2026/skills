@@ -1,110 +1,131 @@
-# 可独立安装的全局技能
+# Codex 全局技能库
 
-## 2026-09-22 全局技能同步
+面向 KEMI 应用开发、发布、远程调试、磁盘维护、视频制作和浏览器 3D 游戏的可复用技能集合。
 
-本次同步 29 个自定义技能的完整目录（定义、引用文档、脚本及素材），不包含系统内置技能、缓存或凭据。仓库原有的 `evidence-driven-engineering-manager` 与 `vibekits-remote-node` 保留，因此仓库共 31 个技能。
+本仓库目前包含 **31 个独立技能**：2026-09-22 同步的 29 个本机自定义技能，以及保留的 2 个仓库原有技能。每个技能目录包含 `SKILL.md`，并按需提供引用文档、脚本、素材和代理配置；不包含 Codex 系统内置技能。
 
-| 类别 | 本次同步的技能 |
+## 快速选择
+
+| 你要做的事 | 首选技能 |
 |---|---|
-| 发布与上架 | `app-release-stability-gate`、`kemi-apple-app-store-release`、`kemi-hbbc-release`、`kemi-market-integration`、`kemi-market-publish`、`kemi-microsoft-store-release`、`kemi-send-common-release`、`kemi-send-release`、`newlink-common-release`、`public-app-distribution` |
-| 设备调试与维护 | `kemi-mac-remote-debug`、`kemi-s1-hardware-debug`、`kemi-storage-cleanup`、`kemi-windows-device-lab`、`kemi-windows-remote-signing`、`vibekits-remote-simulator` |
-| 视频与产品展示 | `capcut`、`dual-screen-video-wallpaper`、`product-launch-motion`、`project-about-page`、`remotion-promo-video-factory` |
-| 游戏与 3D | `game-playtest`、`game-studio`、`three-webgl-game`、`threejs-animation`、`threejs-geometry`、`threejs-lighting`、`threejs-performance`、`web-3d-asset-pipeline` |
+| 管理多个开发任务、跟进证据和验收 | [evidence-driven-engineering-manager](evidence-driven-engineering-manager/SKILL.md) |
+| 发布前测试、修复、回归并证明交付结果 | [app-release-stability-gate](app-release-stability-gate/SKILL.md) |
+| 上传已有安装包到 KEMI 商场 | [kemi-market-publish](kemi-market-publish/SKILL.md) |
+| 在应用里实现商场和自动更新 | [kemi-market-integration](kemi-market-integration/SKILL.md) |
+| 发布 KEMI 传书客户端 | [kemi-send-release](kemi-send-release/SKILL.md) |
+| 根据 VibeKits 设备 ID 远程调试 | [vibekits-remote-simulator](vibekits-remote-simulator/SKILL.md) |
+| 检查磁盘、清理可重建的历史产物 | [kemi-storage-cleanup](kemi-storage-cleanup/SKILL.md) |
+| 制作产品宣传视频 | [product-launch-motion](product-launch-motion/SKILL.md) / [remotion-promo-video-factory](remotion-promo-video-factory/SKILL.md) |
+| 开始浏览器游戏项目 | [game-studio](game-studio/SKILL.md) |
 
-每个技能均直接位于仓库根目录。安装时复制完整目录，并按对应 `SKILL.md` 核对依赖、设备授权及环境配置；不要把某台机器的路径或已登记设备当作所有使用者的默认配置。
+## 技能目录
 
-## app-release-stability-gate
+### 工程管理与质量验收 · 2 个
 
-跨平台应用自动稳定性与交付技能。它从源码、发布差异和历史缺陷生成可执行测试，验证测试自身能发现故障，在真实设备或机器上执行功能、升级兼容、资源和耐久门禁，并在授权范围内自动诊断、修复、重编译和回归。发布已获授权时，它会继续签名、上传、发布端回读、客户端升级及打开验证，最终对精确候选字节给出 `PASS` 或带证据的 `BLOCK`，并生成交付回执。
+| 技能 | 用途与边界 |
+|---|---|
+| [evidence-driven-engineering-manager](evidence-driven-engineering-manager/SKILL.md) | 管理多智能体开发：明确职责、检查进度证据、量化验收、控制重复失败和无人值守边界；不用于普通单人实现任务。 |
+| [app-release-stability-gate](app-release-stability-gate/SKILL.md) | 从源码、需求与历史故障生成可执行测试，进行真机验证、修复和回归，以证据判定 PASS 或阻塞；发布阶段调用相应发布技能。 |
 
-完整目录 `app-release-stability-gate/` 是独立安装单元。它适用于移动端、桌面端、Web/PWA、设备端及带服务端的应用；实际发布阶段会调用对应平台或项目发布技能。
+### 发布、上架与商场接入 · 9 个
 
-## kemi-market-integration
+| 技能 | 用途与边界 |
+|---|---|
+| [kemi-send-release](kemi-send-release/SKILL.md) | KEMI 传书完整发布：构建、签名/公证、打包、真实启动测试，发布到 Common 和 KEMI 商场；不处理远程办公资源。 |
+| [kemi-send-common-release](kemi-send-common-release/SKILL.md) | 仅发布或更新 Common 中固定的四个传书客户端资源。 |
+| [newlink-common-release](newlink-common-release/SKILL.md) | 发布 Common 中固定的六个 KEMI 客户端资源，支持单平台更新、清单最后写入及公开版本/MD5 校验；不负责 KEMI 商场。 |
+| [kemi-market-publish](kemi-market-publish/SKILL.md) | 在 KEMI 商场发布签名包、更新元数据，验证 CDN 文件、商场展示与客户端升级。 |
+| [kemi-market-integration](kemi-market-integration/SKILL.md) | 为 Android、Windows、macOS 应用实现商场浏览、按平台下载、安装和安全自更新；区别于上传发布。 |
+| [kemi-apple-app-store-release](kemi-apple-app-store-release/SKILL.md) | KEMI macOS 应用的 Mac App Store 专用构建、签名、上传、提交、审核整改及状态验证；不负责 Developer ID 直装分发。 |
+| [kemi-microsoft-store-release](kemi-microsoft-store-release/SKILL.md) | KEMI Windows 应用的 Microsoft Store 专用构建、签名、提交、整改与审核状态验证。 |
+| [public-app-distribution](public-app-distribution/SKILL.md) | 公共应用商店、下载站及 GitHub Releases 等渠道的分发准备、提交和验证；适用时使用具体平台技能，不替代内部商场流程。 |
+| [kemi-hbbc-release](kemi-hbbc-release/SKILL.md) | HBBC HTTP/HTTPS、账号、在线状态、用量和支付服务的构建、部署、验证与回滚；禁止借此替换或重启 RustDesk hbbs/hbbr。 |
 
-KEMI 应用商城跨平台客户端接入技能。用于为 Android、Windows 和 macOS 实现当前平台商城浏览、详情、流式下载、安全校验、系统安装以及本 APP 自更新，并通过自动测试、生产只读联调和目标真机完成闭环验收。
+### 远程设备与硬件调试 · 6 个
 
-完整目录 `kemi-market-integration/` 是独立安装单元。它不包含管理员凭据，也不把管理员发布能力编译进客户端；需要真正上传和更新商城记录时使用 `$kemi-market-publish`。
+| 技能 | 用途与边界 |
+|---|---|
+| [vibekits-remote-simulator](vibekits-remote-simulator/SKILL.md) | 通过 6–16 位设备 ID 与已授权接口进行远程诊断、传输、安装和测试，使用 VibeKits P2P/中继及设备工具。 |
+| [vibekits-remote-node](vibekits-remote-node/SKILL.md) | 跨 Windows、macOS、Linux、Android 的节点发现、身份核验、LAN MCP 协作、远程构建及节点恢复；仓库保留的跨平台节点契约。 |
+| [kemi-mac-remote-debug](kemi-mac-remote-debug/SKILL.md) | 通过 KEMI/RustDesk TCP 隧道承载 SSH，完成 Mac 日志采集、复现、候选部署及回滚；需要设备所有者授权。 |
+| [kemi-windows-device-lab](kemi-windows-device-lab/SKILL.md) | 在可信 Windows 测试机 D 盘进行源码同步、原生 Release 编译、签名、安装、兼容性和性能测试。 |
+| [kemi-windows-remote-signing](kemi-windows-remote-signing/SKILL.md) | 通过 VibeKits 远程执行 Authenticode 签名，处理硬件令牌窗口并验证签名结果；不记录 PIN 或私钥。 |
+| [kemi-s1-hardware-debug](kemi-s1-hardware-debug/SKILL.md) | S1/huanglong 串口与 ADB 联合诊断，关联 HiV730 源码和 Git 历史，形成可追溯分析报告。 |
 
-## project-about-page
+### 磁盘维护 · 1 个
 
-跨项目“关于”页和产品说明设计技能。它要求先从源码、构建配置和测试证据建立真实产品档案，再完成与项目现有界面融合的身份区、产品介绍、能力清单、宣传图轮播、离线降级及安全资源缓存；同时提供完整的状态机、双指针原子缓存、安全边界和验收矩阵。
+| 技能 | 用途与边界 |
+|---|---|
+| [kemi-storage-cleanup](kemi-storage-cleanup/SKILL.md) | 检查和回收缓存、临时调试文件及过期可重建产物；保护源码、Git、文档、证书密钥、当前发布包、活动构建和聊天历史。不能用文件年龄单独判断是否可删。 |
 
-完整目录 `project-about-page/` 是独立安装单元。引用手册中的 KEMI OFFICE 名称、口号、格式数量、接口、路径和颜色仅为已标注实例，其他项目必须替换为自己的真实资料，不能直接复制宣传承诺。
+### 视频与产品展示 · 5 个
 
-## kemi-market-publish
+| 技能 | 用途与边界 |
+|---|---|
+| [project-about-page](project-about-page/SKILL.md) | 根据真实产品能力设计关于页、介绍、宣传轮播、离线降级和安全缓存；不负责商店上架文案流程或应用自更新。 |
+| [dual-screen-video-wallpaper](dual-screen-video-wallpaper/SKILL.md) | 制作高清、静音、全屏、无缝循环的双屏视频壁纸，覆盖 S1 双屏对齐、HEVC 编码、APK 集成和设备验证。 |
+| [product-launch-motion](product-launch-motion/SKILL.md) | 产品发布片、宣传片和演示视频的创意、分镜、动态排版、配音同步与音画质量控制。 |
+| [remotion-promo-video-factory](remotion-promo-video-factory/SKILL.md) | 用 Remotion 按产品类型蓝图实现宣传片，管理时间线、动效及逐帧视觉验收。 |
+| [capcut](capcut/SKILL.md) | CapCut/剪映短视频剪辑计划、节奏、字幕、音乐授权和导出指导；智能体提供方案，人工在 CapCut 中执行和确认，所引用外部技能/服务需另行具备。 |
 
-KEMI 应用商城多客户端发布技能。支持按平台校验正式安装包、查询并更新既有应用、上传 CDN、补全商城元数据，并闭环检查公开详情、文件完整性、版本更新与实际安装。适用于 Windows、macOS、Android、Linux 和 iOS；它不负责 Newlink Common 固定资源发布。
+### 浏览器游戏与 3D · 8 个
 
-完整目录 `kemi-market-publish/` 是一个独立安装单元，包含 `SKILL.md`、`agents/openai.yaml` 和发布契约。技能不包含账号、密码、Token 或具体项目的私密发布信息，认证资料必须在每次任务运行时安全提供。
-
-## kemi-hbbc-release
-
-KEMI hbbc 的构建、测试、Linux 交叉编译、`BIN/server` 对齐、生产部署、线上验收和回滚技能。它只维护 hbbc，并明确禁止替换或重启 RustDesk 的 hbbs/hbbr。
-
-技能目录是 `kemi-hbbc-release/`，安装时必须复制整个目录。示例：
-
-```text
-使用 $kemi-hbbc-release 构建 hbbc Linux 正式包，对齐 BIN/server，并在确认后只部署 hbbc。
-```
-
-## vibekits-remote-node
-
-跨平台远程仿真、构建、LAN MCP 协作和设备诊断技能。包含 Windows、macOS、Linux、Android 的操作规则，以及 LMCP/2、SSH、RustDesk/ADB、长任务、权限和验收文档。58 Windows 节点是一个已登记实例，不是所有使用者的默认目标。
-
-完整目录 `vibekits-remote-node/` 就是安装单元，包含 `SKILL.md`、`agents/openai.yaml` 和全部技能引用文档；不要只下载一个 SKILL.md。
+| 技能 | 用途与边界 |
+|---|---|
+| [game-studio](game-studio/SKILL.md) | 游戏早期技术选型与设计、实现、素材、试玩流程规划，再转交专门技能。 |
+| [game-playtest](game-playtest/SKILL.md) | 浏览器游戏冒烟测试、自动化试玩、截图检查、HUD/覆盖层评审及问题记录。 |
+| [three-webgl-game](three-webgl-game/SKILL.md) | 用 Three.js、TypeScript/Vite 实现游戏运行时，处理场景、GLB、物理和 WebGL 调试。 |
+| [web-3d-asset-pipeline](web-3d-asset-pipeline/SKILL.md) | Blender 清理与导出、GLB/glTF 优化、碰撞体、LOD、压缩、纹理打包及运行时验证。 |
+| [threejs-animation](threejs-animation/SKILL.md) | 关键帧、骨骼、形变、AnimationMixer 和 GSAP 动画控制。 |
+| [threejs-geometry](threejs-geometry/SKILL.md) | 内置几何体、BufferGeometry、自定义顶点、法线、UV 和索引网格。 |
+| [threejs-lighting](threejs-lighting/SKILL.md) | Three.js 灯光、阴影、HDR 环境和光照配置。 |
+| [threejs-performance](threejs-performance/SKILL.md) | 实例化、绘制调用、LOD、裁剪、纹理和 GPU 性能诊断与优化。 |
 
 ## 安装
 
-1. 在 GitHub 选择 Code → Download ZIP 并解压，或 `git clone https://github.com/caucy2026/skills.git`。
-2. 将需要的完整技能文件夹（例如 `kemi-market-integration`、`project-about-page`、`kemi-market-publish`、`kemi-hbbc-release` 或 `vibekits-remote-node`）复制到当前账户的 Codex 技能目录。若设置了 `CODEX_HOME`，使用其 `skills` 子目录；否则使用下表默认路径。
-3. 已存在同名目录时先备份并核对差异，不要直接覆盖个人配置。
-4. 重新打开 Codex 或新建任务，让技能目录重新加载。输入对应技能名（例如 `$kemi-market-publish`）即可使用。
+1. 下载本仓库 ZIP 并解压，或执行：
 
-| 平台 | 默认目标目录 |
+   ```sh
+   git clone https://github.com/caucy2026/skills.git
+   ```
+
+2. 选择需要的技能，将其**整个文件夹**复制到 Codex 全局技能目录；不要只复制 `SKILL.md`。
+3. 如已有同名技能，先备份并核对差异，避免覆盖个人配置。
+4. 重新打开 Codex 或新建任务，再调用对应技能。
+
+| 环境 | 默认安装路径 |
 |---|---|
-| Windows | `%USERPROFILE%\.codex\skills\<技能名>` |
-| macOS / Linux | `~/.codex/skills/<技能名>` |
+| macOS / Linux | `~/.codex/skills/<技能名>/SKILL.md` |
+| Windows | `%USERPROFILE%\.codex\skills\<技能名>\SKILL.md` |
+| 已设置 CODEX_HOME | `<CODEX_HOME>/skills/<技能名>/SKILL.md` |
 
-正确结果是 `<技能目录>/<技能名>/SKILL.md`，不要多套一层 `skills-main`。
+正确示例：`~/.codex/skills/kemi-market-publish/SKILL.md`。不要多套一层仓库目录。
 
-## kemi-s1-hardware-debug
+## 使用示例
 
-面向 KEMI S1/huanglong 的即装即用硬件调试技能。新同事只需提供当前 ADB 地址；Harness 会核验 ADB 身份，按 CH340/CH341 USB 特征自动发现可能变化的串口名，使用已验证的 115200/8-N-1/无流控配置持续监控串口，通过 ADB 操作 Android，并按时间关联两路证据。发现软件问题后，技能会用 Git 将故障签名定位到最小 HiV730 源码范围，给出置信度、修复及复测方案，最终生成持久化 Markdown 分析报告。
-
-复制整个 `kemi-s1-hardware-debug/` 到用户全局技能目录后，VibeKits Harness 会通过共享的 `.codex/skills` 自动发现它；新任务直接使用 `$kemi-s1-hardware-debug`，不需要另配 Harness 路径。技能不包含密码、令牌或固定 COM/IP。
-
-示例请求：
+在请求中写明技能名称、目标和验收要求：
 
 ```text
-使用 $kemi-market-integration，将当前应用接入 KEMI 商城浏览、下载安装和安全自更新，并完成自动测试、生产只读联调与真机验收。
+使用 $kemi-market-integration，为当前应用接入 KEMI 商场和安全自更新，完成测试与验收。
 ```
 
 ```text
-使用 $project-about-page，根据当前项目源码和已验收能力设计“关于”页、真实产品说明、宣传图缓存与离线降级，并给出完整验收结果。
+使用 $app-release-stability-gate，检查当前候选版本，将历史故障纳入回归测试并给出发布结论。
 ```
 
 ```text
-使用 $kemi-market-publish，将当前项目的 Windows、macOS 和 Android 正式安装包更新到 KEMI 应用商城，并完成逐平台闭环验收。
+使用 $vibekits-remote-simulator，检查我提供的设备 ID，先只读诊断，再按授权执行修复。
 ```
 
 ```text
-使用 $kemi-hbbc-release 构建 hbbc Linux 正式包，对齐 BIN/server，并在确认后只部署 hbbc。
+使用 $kemi-storage-cleanup，只读检查系统盘和外盘，列出可重建的历史缓存、大小、占用情况和清理风险。
 ```
 
-```text
-使用 $vibekits-remote-node，先识别目标平台并只读检查局域网 MCP 能力。
-```
+## 依赖与安全边界
 
-```text
-使用 $vibekits-remote-node，检查指定 Windows 节点的 SSH 身份与 D 盘构建条件。
-```
-
-## 独立使用的边界
-
-技能加载、规则与协议查阅不依赖原作者电脑，也不需要 Python 或额外包。实际远程操作仍需要对应的 MCP/SSH/ADB 等工具、可达设备及合法授权；技能不是应用程序或远程控制服务，安装不会自动开放端口或授予权限。真正编译 APP 时才需要该 APP 的源码和工具链。
-
-Windows/macOS/Linux 可安装本技能；Android 在这里主要作为 ADB/MCP 被控目标，不代表 Android 上可直接运行 Codex。Linux 适配规则已提供，但尚未据此完成真实 Linux 节点验收。
-
-不包含密码、私钥、令牌。包含团队登记的公开身份数据和指纹；换用其他设备时必须建立自己的身份配置并核验，不能复用 58 节点配置。历史 SSH smoke 脚本仅以文本保存供审阅，不是自动运行的安装步骤。
-
-工程、缓存、编译产物继续遵守所在节点的数据盘约束；只有全局技能定义位于 Codex 配置目录。
+- 技能是操作规范和辅助资源，不是独立应用程序；安装不会自动配置工具链、开通远程访问或授予发布权限。
+- 使用前完整阅读所选 `SKILL.md` 及其要求的引用文档。脚本、运行时、外部技能、浏览器、MCP/SSH/ADB、设备和账号按任务准备，不保证安装目录后即可在任意机器执行。
+- 示例路径、账号标识、已登记节点和历史案例不能直接作为另一台机器的配置；需要现场核验目标、身份与权限。跨平台说明不代表所有平台均已完成真机验收。
+- 不在仓库或日志中存放密码、令牌、私钥、证书私密材料、验证码或会话凭据。生产发布、设备控制和删除操作必须在对应授权范围内。
+- 源码、Git、文档、签名材料、正式交付包和活动项目必须保护。仅当确认产物可再生、不被运行中任务使用且清理已获授权时，才按清理技能处理。
+- 上传成功不等于发布完成，编译成功不等于功能验收通过；结果以对应技能要求的可核验证据为准。
