@@ -27,6 +27,12 @@ Complete the release as a production loop, not as an upload-only task.
 - If the live documentation conflicts with this skill, stop before mutation and follow the live contract. Update this skill only when the user asks or the task includes maintaining it.
 - Read [references/release-contract.md](references/release-contract.md) before constructing upload or app payloads.
 
+## VibeKits macOS prepublication device gate
+
+Before publishing a new VibeKits macOS binary, use the **same final signed and stapled candidate** on every reachable device in the release's named regression fleet. For the 2026-09-25 fleet, check `1321656264` (Intel macOS 12), `4456560334`, `5298938227`, and `9509249133`; also test the local publisher Mac. Connect through VibeKits remote simulation, record each device's OS/architecture, candidate version and actual process path, fresh P2P/relay connection, Harness launch, interactive UI/ready state, and relevant logs. On macOS 12, verify ordinary launch without an injected compatibility environment variable and confirm the legacy WebKit frontend is selected. Preserve the previous app as a rollback until acceptance. An unreachable device must be recorded as untested with the exact transport evidence; do not count an ID, green presence indicator, package install, or process start as a functional pass. Fix any reachable-device failure and repeat the affected gate before storefront mutation. If a named device is unreachable, explicitly state the coverage gap and obtain the user's release decision only if the requested scope requires that device's pass.
+
+The prepublication test must precede package upload and storefront version mutation. A new binary changes the artifact identity and requires the device gate again. After publication, verify the downloaded CDN artifact and the installed version separately; record per-device pass/fail/untested outcomes in the project release report.
+
 ## Required outcome
 
 For every requested platform:
@@ -41,7 +47,7 @@ For every requested platform:
 7. Verify the developer record, public storefront detail, unfiltered public platform list, CDN headers, old-version positive update check, current-version negative update check, and the visible download/install path. The platform list check must omit `category`; a published KEMI传书 record must appear in this default “全部” result.
 8. Confirm the client contains the platform-specific self-update path before claiming completion.
 9. Write or update the project release report and changelog without secrets.
-10. Delete temporary authentication and upload credentials.
+10. Delete temporary authentication and upload credentials. After publication and real installation are verified, remove only the exact disposable upload/download ZIPs and extraction directories created for this release on the publisher and updated clients. Check path, ownership, expected artifact identity and active use first; retain signed final deliverables, rollback copies, logs and release evidence. Record what was removed and what was intentionally retained. Do not delete user downloads or general app caches by directory name alone.
 11. After every requested platform has completed its post-release verification, close the publication workspace: dismiss any open file chooser or transient dialog, close only the publish/form/detail tabs created or claimed for this release, and release browser automation control. Do not close the user's pre-existing browser windows or unrelated tabs. If the workflow must pause for user input, mark only the necessary tab for handoff and close it after the release resumes and completes.
 
 For macOS, validation of the pre-staple app does not validate the distributed ZIP. The release identity is always the final archive recreated after stapling. Extract and validate that exact archive before upload, then download the CDN object and validate it again before completion. Require exactly one top-level `.app`; signed helper applications nested inside that bundle are valid when `codesign --verify --deep --strict` validates the complete top-level bundle.
@@ -49,6 +55,9 @@ For macOS, validation of the pre-staple app does not validate the distributed ZI
 ## Stable publication and recovery
 
 For an already signed, notarized, stapled, and verified Vibekits macOS ZIP, read and follow the deterministic [Vibekits macOS one-minute publish path](references/vibekits-macos-one-minute-publish.md). It records the exact app identity, Chrome choice, file-picker behavior, field values, recovery decisions, post-release checks, and GitHub transport fallback. Do not rediscover these details or open another browser.
+
+For a signed VibeKits Windows installer update, read and follow the deterministic [VibeKits Windows one-minute operator path](references/vibekits-windows-one-minute-publish.md). It fixes the Chrome profile, existing app identity, upload chooser sequence, exact metadata, public verification, and cleanup steps. Do not use the Codex in-app browser for this flow.
+For Windows, also follow that reference’s “缺少完整信息” recovery: compare exact decimal bytes in both public detail and unfiltered list after saving. A correct update-check size alone does not prove the in-app storefront can install. If only the size is wrong, repair app 54 metadata in place and verify again without reuploading the unchanged signed package.
 
 ## Regression lessons from the 2026-09-21 Windows release
 
@@ -92,6 +101,7 @@ For an already signed, notarized, stapled, and verified Vibekits macOS ZIP, read
 - Do not confuse a test-environment failure with an artifact failure. A signature conclusion is valid only when the checking environment can access normal macOS trust services.
 - Do not repeat completed gates when the artifact identity is unchanged. Recheck only the failed or unverified release stage.
 - Publication cleanup is part of completion. Do not leave an upload form, file picker, temporary release tab, or browser-control session open after verification has finished. Cleanup must never discard an unsubmitted form or interrupt an upload; perform it only after the authoritative server state has been re-read and the release is either verified complete or recorded as blocked.
+- After the package-upload completion response is received and the server URL, byte count, and SHA-256 have been recorded, immediately dismiss any file chooser/transient dialog, close the temporary upload form or release tab when it is no longer needed, and release browser control so the user's foreground is available again. Preserve the recorded upload evidence and resume later from server state for app-record mutation and post-release verification; never leave the upload page in front while waiting on later checks.
 
 ## Completion report
 

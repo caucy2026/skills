@@ -2,7 +2,22 @@
 
 面向 KEMI 应用开发、发布、远程调试、磁盘维护、视频制作和浏览器 3D 游戏的可复用技能集合。
 
-本仓库目前包含 **31 个独立技能**：2026-09-22 同步的 29 个本机自定义技能，以及保留的 2 个仓库原有技能。每个技能目录包含 `SKILL.md`，并按需提供引用文档、脚本、素材和代理配置；不包含 Codex 系统内置技能。
+本仓库目前包含 **41 个独立技能**：2026-10-02 同步的 39 个本机自定义技能，以及保留的 2 个仓库原有技能。每个技能目录包含 `SKILL.md`，并按需提供引用文档、脚本、素材和代理配置；不包含 Codex 系统内置技能、运行缓存或凭据。公开示例中的签名密码通过安全环境变量提供，本机凭据不上传。
+
+## 2026-10-02 新增同步 · 10 个
+
+| 技能 | 用途 |
+|---|---|
+| [kemi-harmony-phone-development](kemi-harmony-phone-development/SKILL.md) | 鸿蒙手机控制端适配、构建、真机调试、企业认证和发布。 |
+| [kemi-remote-office-release](kemi-remote-office-release/SKILL.md) | 远程办公四平台构建、签名、公证、发布及升级核验。 |
+| [kemi-remote-office-acceptance](kemi-remote-office-acceptance/SKILL.md) | 真实设备全功能、历史回归、兼容性和100轮验收。 |
+| [kemi-remote-office-hour-acceptance](kemi-remote-office-hour-acceptance/SKILL.md) | 一小时合并验收流程与真实接收证据。 |
+| [kemi-server-ports](kemi-server-ports/SKILL.md) | 服务器端口查询、归属登记、预留及冲突核验。 |
+| [kemi-windows-two-node-release](kemi-windows-two-node-release/SKILL.md) | 双Windows节点分工编译、硬件令牌签名和发布。 |
+| [vibekits-cluster-agent](vibekits-cluster-agent/SKILL.md) | 集群竞标、有效分配下的执行及结果回报。 |
+| [vibekits-cluster-capabilities](vibekits-cluster-capabilities/SKILL.md) | 设备能力声明、修改、停用及同步核验。 |
+| [vibekits-cluster-deployment](vibekits-cluster-deployment/SKILL.md) | 集群设备远程部署、入房、身份和心跳诊断。 |
+| [vibekits-fleet-compatibility](vibekits-fleet-compatibility/SKILL.md) | 桌面升级兼容性门禁与既有身份、授权、工作区保护。 |
 
 ## 快速选择
 

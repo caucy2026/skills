@@ -25,3 +25,9 @@ Keep the whole workflow silent in the background and independent of Harness chat
 For an external macOS controller that lacks registered Harness MCP tools, read [references/tool-contract.md](references/tool-contract.md) and use the bundled `scripts/invoke.rb` against the local loopback VibeKits bridge. This fallback is not the Harness path and does not require the remote-desktop UI. For an Android PAD controlled from that Mac, follow the tested end-to-end [Mac → PAD remote ADB guide](references/mac-pad-remote-adb.md), including the dynamic local ADB serial, dual-screen targeting, reconnect after a host APK upgrade, and disconnect.
 
 For a brand-new Mac and Android PAD, begin with the [first-install and remote ADB checklist](references/new-mac-pad-first-run.md). It identifies the public KEMI Market download pages, the cloud skill directory, the PAD release gate, and the exact handoff to the remote ADB guide. Do not treat an older market APK as having features that were added only in later device-tested candidates.
+
+For a KEMI Market app upgrade on a remote device, follow [the simulator-based market update workflow](references/market-app-update.md). Check the installed integer build against the current same-platform market build before any download; if already current, report that no installation occurred.
+
+When a device ID returns `Remote desktop is offline`, follow [the channel recovery guide](references/channel-recovery.md) before calling the physical computer offline. Record the failure and the verified recovery in that guide so subsequent colleagues can reproduce the diagnosis.
+
+When online IDs cannot be called after a network or local App change, read [the network-switch incident recovery](references/network-switch-incident-20260930.md). Verify the current controller bridge before judging the remote device offline; a cluster heartbeat and a simulator connection are separate observations.

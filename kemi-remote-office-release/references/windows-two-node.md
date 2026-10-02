@@ -1,0 +1,159 @@
+> 2026-09-30 核对的操作参考。原始来源：`/Users/newlink/.codex/skills/kemi-windows-two-node-release/references/rustdesk-2026-09-24.md`。历史版本、设备 ID 和结果只用于复现依据；执行以当前源码脚本、设备目录及本手册的冲突处理说明为准。本文不含签名私钥或口令。
+
+# RustDesk / KEMI Remote Office two-Windows release: verified case and reusable procedure
+
+This is an operational record from 2026-09-24, **not** a blanket assertion that every gate passed. The two-node build, reverse mount, 18 inner PE signatures, outer Authenticode signature, cross-machine hashes, and extraction on both machines were observed. A top-level GUI window was subsequently verified in B's interactive Session 1, but the Windows Defender first-run network prompt covered its content; full UI/network acceptance and KEMI market publication were not yet proven. Recheck live status before resuming; never treat historical device identity, token certificate, or package hash as permanent.
+
+## Topology and identity
+
+| Role | Case ID / host | Working path | Function |
+| --- | --- | --- | --- |
+| Controller | Mac running VibeKits Harness/Codex | `/Users/newlink/kemi/RustDesk/client` | Source freeze, simulated device control, final market upload |
+| Build node A | `6192992780` / `xzl` / user `zjc` | `C:\kemi\build` | Full Windows x64 build, signed-tree packaging, formal output |
+| Signing node B | `4567540178` / `LAPTOP-LUOPP1CH` / user `caucy` | `D:\KEMI-Test` | Logged-in Session 1 hardware token, Authenticode, independent verification |
+
+The user specifically requested the C: build path on A. The device-lab skill normally prefers D:, so do not generalize this exception to future nodes. This case used `transport: p2p_or_relay` for both connections. At the time, A's trusted SSH fingerprint was `SHA256:rwYyN4kBR2RGcZ3uDjIudStAMV4F/ss7UYVPmU7IC+0`, B's was `SHA256:ikZ6NXAH3VFBGooSCeKW0JY9+h0cIcQOzib4fxmvz6M`; check the current trusted inventory before relying on them.
+
+From a Mac without registered Harness MCP tools, the existing simulator script is:
+
+```bash
+ruby ~/.codex/skills/vibekits-remote-simulator/scripts/invoke.rb \
+  vibekits.simulator.connect '{"routingId":"6192992780"}'
+```
+
+Call `simulator.catalog` for current schemas. Use `simulator.call` for `vibekits.device.app_control`, screenshots, UI inspection, logs and crash reports. Use `simulator.ssh_exec` only for narrow commands; encode PowerShell as UTF-16LE Base64 and pass `powershell.exe -NoLogo -NoProfile -NonInteractive -EncodedCommand <base64>`. Check the nested `data.exitCode`, not just transport `ok`.
+
+## Source and full Windows build on A
+
+1. Freeze repository SHA, recursive submodules, `flutter/pubspec.yaml` version, Cargo version, relevant Windows patch files, and dirty work. This case built version `1.4.127+310` from the existing Mac repository `/Users/newlink/kemi/RustDesk/client`, commit `0070a7a1444b886674331a8b61d9b400aaaa7dd3`. The commit tracked the required FFmpeg patch `res/vcpkg/ffmpeg/patch/0013-hevc-realtime-callback-wait.patch`; an ignored missing patch broke an earlier clean build. The source went to A as a Git bundle through a temporary pinned-TLS transfer, then was checked out at `C:\kemi\build\src\rust-desk-1.4.127-310-c26d476`; the directory suffix is historical, so verify `git rev-parse HEAD` and required file hashes instead of inferring the commit from its name. Keep this transfer separate from the A-to-B signed-artifact mount. Do not alter the Mac Flutter/Xcode toolchain, generated `.dart_tool`, Pods, or build directories to prepare the Windows source.
+2. Put a versioned source worktree and tools under `C:\kemi\build\src` and `C:\kemi\build\tools`. Do not overwrite another task's source/output. The build used pinned Rust 1.75, Flutter 3.24.5 with the project's engine/dropdown patch, LLVM 15.0.6, MinGit, Python 3.11, and the repository's fixed vcpkg baseline. Check the repository CI workflow and `build.py` rather than inventing flags.
+3. Build Rust core Release with `cargo build --locked --features hwcodec,vram,flutter --lib --release`; copy its `librustdesk.dll` into the complete Flutter Windows runner output. Build the virtual-display DLL and include the version-pinned printer/USB resources required by the project. Build Flutter with `flutter build windows --release --no-pub` after a successful locked pub get. Confirm `flutter_windows.dll`, `data\app.so`, `rustdesk.exe`, plugins, and `librustdesk.dll` are from the same build tree.
+4. For Windows plugin symlinks when Developer Mode is unavailable, create directory **junctions** only inside `flutter\windows\flutter\ephemeral\.plugin_symlinks` (and the equivalent generated Linux path if pub requires it). Dart recognizes junctions as links. This case succeeded without changing Developer Mode; an earlier persistent registry change had failed approval and must not be bypassed.
+5. Stage a complete inner tree at `C:\kemi\build\output\kemi-remote-office-1.4.127-310-unsigned`. Record all PE paths, bytes and SHA-256 in a frozen pre-sign manifest. This case had 104 staged files and 18 PE files. The directory name `unsigned` remained after remote in-place signing; trust the final signature/hash report, not the folder name.
+
+Before compiler commands using `vcvars64.bat`, restore `VCPKG_ROOT` *after* vcvars; its default otherwise points to Visual Studio's separate vcpkg. In CMD write `set "VCPKG_ROOT=C:\kemi\build\tools\vcpkg"`; `set VCPKG_ROOT=... &&` can accidentally include a trailing space. Long builds may use a versioned scheduled task/log, but inspect existing process groups before restarting.
+
+## Zero-copy A → B signing mount
+
+B could not connect to A's ports 445/22 and the A account could not create a normal SMB share. The working path was:
+
+```text
+B: D:\KEMI-Test\app\...-mounted (directory link)
+  → B: \\127.0.0.1@38889\DavWWWRoot\... (Windows WebDAV redirector)
+  → B: 127.0.0.1:38889 (reverse SSH listener)
+  → encrypted SSH session initiated by A toward B:22
+  → A: 127.0.0.1:38889 (WsgiDAV serving A output directory)
+  → A: C:\kemi\build\output\...
+```
+
+Use a temporary public-key identity and pinned B SSH host key. Bind WsgiDAV on A to `127.0.0.1` only; bind the reverse listener on B to loopback only. Limit the WebDAV root to the versioned output path, not C: or the user profile. The case ran versioned Windows scheduled tasks `KEMI-RustDesk-310-WebDAV` and `KEMI-RustDesk-310-ReverseMount` on A. B used a D: directory link created with `mklink /D` to the WebDAV UNC path. Verify `Test-Path` and compare a file's SHA-256 through B's D: link against A's physical file **before** signing. Never copy the candidate to B; signing B's D: path must modify A's physical file, proven by post-sign hash equality.
+
+If a tunnel/task stops after a reboot, restart the same tasks and recheck the host key, listener, link, and hash. Do not create an unrestricted SMB share or disable SSH host-key checking as a shortcut. Keep a record of the temporary key so it can be removed from B's `authorized_keys` after release.
+
+## Inner, outer, and hardware-token signing on B
+
+Use the exact `kemi-windows-remote-signing` workflow and `Invoke-KemiAuthenticode.ps1` helper. Discover the currently valid code-signing certificate in the **logged-in** user's `Cert:\CurrentUser\My`; do not assume this case's thumbprint remains valid. The case thumbprint was `B82824C01226426C2D2BD423F883DCBC999C7E82`, and SignTool was `C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\x64\signtool.exe`.
+
+For each signing run create fixed, versioned files in `D:\KEMI-Test\work` and a fresh report directory in `D:\KEMI-Test\results\signing`:
+
+```text
+vibekits.device.app_control(action=launch, target=Launch-Sign-<run>.exe)
+  → UseShellExecute=true → Run-Sign-<run>.cmd
+  → PowerShell fixed script → Invoke-KemiAuthenticode.ps1
+  → SignTool + SafeNet PIN dialog in Session 1
+```
+
+The human enters the PIN directly on B. Show a visually checked screenshot of the empty PIN dialog; never read or automate the PIN. The first inner CMD used `powershell -File` and was blocked by B's execution policy. The successful CMD used a fixed UTF-16LE `-EncodedCommand` that loaded the exact `.ps1` as a scriptblock. Do not weaken execution policy. The inner run was `RustDesk127310-inner-20260924-01`: final `summary.json` reported `PASS`, 18/18 valid embedded signatures, timestamps and SignTool checks, Session 1, independent main EXE verification. The main signed SHA-256 was `78721DC69595B76EBD90C047D6A929852E5ADE7866E505F812AF29093039980D`, and A's physical file matched.
+
+After inner signing, on **A** copy the generated Flutter `Runner.res` into `libs\portable\Runner.res`, install the project's portable Python dependencies, then follow `.github/workflows/flutter-build.yml`: run `libs\portable\generate.py` against the signed full stage, which writes `data.bin` and invokes `cargo build --locked --release`. In this case the workspace output was `target\release\rustdesk-portable-packer.exe`; the first-level `libs\portable\target` guess was wrong. Put this on A under a separate single-file signing folder. The versioned outer run `RustDesk127310-outer-20260924-01` signed that file through another B D: link. Its `summary.json` reported `PASS`, 1/1 valid, timestamp and independent SignTool verification. A and B agreed on final `23,397,888` bytes and SHA-256 `F8B4E6738DECA1F2013840125AF7C526DE290BD91C72116ADD9EE743E7AF9373`. These hashes identify this one candidate only; recompute on every new release.
+
+## Run gate, release gate, and restoration
+
+Test the **signed outer file**, not the earlier unsigned packer. This case's signed outer self-extracted 106 files on both A and B. The extracted `rustdesk.exe` on each had version `1.4.127+310`, SHA-256 `78721DC69595B76EBD90C047D6A929852E5ADE7866E505F812AF29093039980D`, and valid Authenticode. A new process from that path remained alive. B already had a `C:\Program Files\RustDesk` service/user instance, which stole or conflicted with the new client; the new log repeatedly said `ipc connection closed: reset by the peer` until the old service was temporarily stopped. Even with old service stopped, SSH `Get-Process.MainWindowHandle` showed zero for the new process—but the same SSH query also returned zero for a known-good old GUI launched through the same simulator route. Therefore **that zero is not evidence of a new GUI regression or proof of GUI success**. A small `EnumWindows` helper launched via `vibekits.device.app_control` inside Session 1 found the new `RustDesk` top-level window. The first launch left it hidden, matching the old version; the second launch displayed it. The simulator screenshot then showed a Windows Defender first-run network prompt over the otherwise blank/loading window. Record the prompt separately; do not mistake it for a compile or signature failure, and do not claim full UI/network behavior until the prompt is resolved and content is visible.
+
+For reversible isolation, the old `%LOCALAPPDATA%\rustdesk` folder on each machine was renamed to `rustdesk.before-310-test`, the final packer extracted into a fresh folder, and the old folder was restored afterward. B's old RustDesk service was restarted; A's original user process was relaunched. Never delete the backup until original hashes, services and processes are restored. A screenshot of a terminal, an `app_control` PID, and a running background process do not replace visual UI acceptance.
+
+After the GUI and required product behavior pass, publish through `kemi-market-publish` to the **existing** KEMI Remote Office Windows record (case record ID 62; verify live identity and version code). Validate current store docs, version increase, package-token/complete response, HTTPS CDN URL, exact decimal `file_size` plus integer `file_size_bytes`, SHA-256, public detail, unfiltered Windows listing, positive/negative update checks, full CDN download, Authenticode of the downloaded file, and actual install/launch. The 2026-09-24 candidate had **not** been proven publicly released when this reference was written. Never infer publication from its signed `PASS` reports.
+
+Finally stop the reverse-forward and WsgiDAV tasks, remove temporary A key and B authorized-key entry, remove B's D: links, and release the Mac browser/frontmost app after publishing. Keep signed artifact and versioned reports; do not delete source or another worker's build tree.
+
+
+## 2026-09-25 addendum: +310 vs +315 build recovery
+
+This is an observed Windows A (`6192992780`, `xzl`) case, not permission to bypass an enterprise policy or a promise that every blocked binary will later run. The +315 source was kept in its own `C:\kemi\build\src\rust-desk-1.4.127-315-a6a473a` tree. Its product-file hashes were checked against the frozen cloud source; it was not a literal Git checkout of cloud commit `a6a473a28` (the tree began at `0070a7a14` plus verified +315 changes and the tracked hbb_common patch).
+
+### Why +310 succeeded when +315 first failed
+
+- The +310 scheduled Cargo task (`KEMI-RustDesk-310-CargoBuild`, user `zjc`, `Interactive`, `Limited`) and +315 task used the same Rust 1.75, LLVM 15, vcpkg, `vcvars64.bat`, post-vcvars `VCPKG_ROOT`, and `cargo build --locked --features hwcodec,vram,flutter --lib --release`. Only the versioned source and log paths differed. Thus a different compiler command or elevated account does **not** explain the result.
+- +310 was **not** a one-pass success. At 2026-09-24 16:13:45, CodeIntegrity event IDs 3033/3077 and `cargo-build-retry2.log` recorded OS error 4551 while Cargo attempted its unsigned `softbuffer-...\build-script-build.exe` under policy `{0283ac0f-fff1-49ae-ada1-8a933130cad6}`; `EXIT=101`. At 16:24:33 a narrow execution check of that exact helper yielded normal output (`softbuffer-policy-test.log`). The unchanged +310 Cargo task then completed at 16:28:47 (`cargo-build-retry3.log`, `Finished release [optimized] target(s) in 3m 56s`, `EXIT=0`). No same-window 3033/3077 remained after the initial block.
+- +315 similarly hit error 4551 for unsigned `syn-...\build-script-build.exe` at 2026-09-25 07:14:51 (same policy ID). About ten minutes later, a narrow normal execution check of **that exact file** exited 0 without changing policy, privileges, or path. Rerunning the same +315 scheduled Cargo task then compiled the Release library successfully (`C:\kemi\build\work\cargo-build-315.log`, `Finished release [optimized] target(s) in 6m 37s`, `EXIT=0`; `librustdesk.dll` SHA-256 `C236600DF25DF6504CD64A951892ECF474414C1B7E43508173977575CCD9591E`). The available logs do not prove *why* Smart App Control later allowed either helper. Do not attribute it to user approval, elapsed time, an administrator policy change, or antivirus reputation without separate evidence.
+
+For a future 4551, capture the precise blocked path, event time, IDs and policy ID, and keep the first failed log. Check whether the *same* file later executes normally under the intended account and directory; a failed check remains a block requiring administrator-approved policy remediation or an approved build host. If the normal check succeeds, make one bounded retry of the unchanged versioned Cargo task and require `EXIT=0` plus a fresh expected library hash. Stop on repeated policy failures; do not disable security controls, change directory/identity to evade policy, substitute an older `target`, or present a scheduled task's `LastTaskResult=0` as compiler success (the wrapper writes `EXIT=...` inside its log).
+
+### Flutter generated-file trap in the +315 tree
+
+The first +315 Flutter build failed on `EventToUI_Rgba` / `EventToUI_Texture` because the new source tree lacked ignored `flutter/lib/generated_bridge.freezed.dart`, even though `generated_bridge.dart` was present. `src/flutter_ffi.rs` and `generated_bridge.dart` had not changed from +310; the known-good Freezed file had the same SHA-256 on the Mac and in the +310 tree: `06AB02A3CB491C965860A5364D3230E4969134EC0294FEF5ABDE7C3B13575613`. Restoring **that verified, source-matched generated file** in +315 resolved the type failure. Do not blindly copy a generated bridge from another version when bridge source or generator versions differ; regenerate with the project's pinned generator instead. Keep the established local plugin junctions and generated Windows registrant under the new versioned tree; `dart pub get --enforce-lockfile` passed and +310/+315 lockfile hashes matched. The unchanged +315 Flutter task then reported `Building Windows application... 104.1s`, `Built ...\Release\rustdesk.exe`, `EXIT=0`.
+
+The +315 runner Release directory contained the newly built `rustdesk.exe` SHA-256 `D94403F2B991B066C1192DD9474FABD7F532603326F3EA52357B7C900B30B695`, `data\app.so` SHA-256 `57DDB10C2C6F266FC381D2E92C1B6F8E3B6A067BD1E8774CB007EA61B57A641F`, and matching `librustdesk.dll` SHA-256 `C236600DF25DF6504CD64A951892ECF474414C1B7E43508173977575CCD9591E`. All three differ from +310 counterparts. This proves +315 **build** success on A, not package signing, interactive UI, extension functionality on A/B, or release approval. Continue the normal two-node gates; never attach the +310 signing report to these bytes.
+
+## 2026-09-27：编译期辅助文件被拦截与签名处理
+
+### 已验证事实
+
+- +369 Rust主库、Flutter Release已成功；单独虚拟屏组件失败。不能把局部失败报告成“Windows不允许编译”。
+- `rustc.exe`加载`thiserror_impl-7333b05bede38997.dll`触发CodeIntegrity 3077；XML策略名称为`VerifiedAndReputableDesktop`，GUID为`{0283ac0f-fff1-49ae-ada1-8a933130cad6}`，要求签名级别2、实际1，状态`0xc0e90002`。`libsodium-sys`构建辅助EXE执行前报4551。
+- 成功+353与本次使用相同`cargo build --locked -p dylib_virtual_display --release`；相关Cargo配置归一化换行后相同。旧新辅助文件均NotSigned，但SHA256不同。尚无证据解释旧文件为何被允许，不能编造“旧包签过名”或“等几分钟必然恢复”。
+- 运行最终APP时插件DLL被拦截是另一阶段；源码同步漏`office_identity.rs`引起E0583又是另一问题，分别处理。
+
+### 用户已授权签署编译辅助文件时的处理路线（本案例已验证：2026-09-27 16:31）
+
+1. 保存首个Cargo失败日志及同时间3077事件XML。列出精确的被拦DLL/EXE、来源依赖、大小、SHA256、签名状态及原目录。不得扩大为签整个未知target目录。
+2. 确认原构建已终止，冻结这批文件并保留原件。使用独立版本化签名副本和显式清单；不能签正在被编译器重写的文件。
+3. 复用本技能A→B受限挂载与`kemi-windows-remote-signing`交互流程：仿真app_control→固定GUI启动器→固定CMD→固定PowerShell→既有Invoke-KemiAuthenticode。重新核验当前证书、活动用户会话，PIN只由用户在令牌窗口输入。不要从SSH直接启动签名。
+4. 签后逐文件验证指定证书、时间戳、SignTool结果并记录新SHA256；A端回读一致。回填原构建路径前确认原文件仍为冻结哈希，保留备份。只改变签名，不调整系统保护策略、工具链或业务源码。
+5. 沿原命令执行一次有界重试，保存Cargo退出码、新事件与新产物哈希。签名成功不保证系统策略允许；仍被拒绝则按精确新证据处理，不无限重复签名/重试。Cargo若重生成该文件，旧签名结果不再适用。
+6. 只有“签名验签通过→原路径原命令构建成功→新虚拟屏DLL身份核验”完整证据齐全，才能把此路线升级为已验证解决方法。编译辅助文件签名报告不能冒充最终APP内层/外层签名报告。
+
+### 打包差异与防误判
+
++353驱动DLL62464字节、企业签名；原厂下载71616字节、微软签名。两者`signtool verify /kp /v /c usbmmidd.cat x64/usbmmIdd.dll`均通过且目录成员内容哈希一致。不能只凭文件大小或文件SHA256判断驱动升级或目录签名失效。保留原厂已验证签名与匹配CAT/INF，不把第三方驱动当成自研PE盲目重签。
+
+本案例详细记录位于RustDesk项目`kemi-docs/WINDOWS-BUILD-FAILURE-ROOT-CAUSE-20260927.md`及其`evidence/`。本次构建辅助签名与原命令复编译已完成下述证据闭环；最终产品签名、运行验收与发布仍未完成。
+
+### +369 实测闭环与固定入口环境修复
+
+- B58 的 `RustDesk127369-helpers-20260927-02` 在活动用户 caucy、Session1 签署固定两文件。最终报告 `PASS`，2/2嵌入证书匹配、可信时间戳及 `signtool verify /pa /all /v /tw` 全部通过，辅助EXE独立验签通过。PIN由用户输入，未记录或自动化认证。 本轮仿真截图先返回黑屏；会话内窗口探测确认PIN窗口可见，但补拍前用户已输入完成，未取得空PIN截图。该截图门禁不能标为已完成；签后验证证据与截图取证缺口分别记录，不降低后续签名的截图要求。
+- A回读签后物理文件与B报告SHA256一致；确认原构建终止及原文件仍匹配冻结哈希后，先备份再回填原target路径。沿用 `cargo build --locked -p dylib_virtual_display --release`，原任务一次复验 `Finished release [optimized] target(s) in 1m 41s`、`EXIT=0`。没有改变系统防护策略、权限、工具链或源码。
+- 新 `dylib_virtual_display.dll` 309248字节，SHA256 `6564920CF864BA84E26926B111F9BC680E6882FFF2AC4EA4FEFE5E977F5C3CE9`，生成时间晚于本轮构建开始，加入+369完整候选后复核一致。该哈希仅为历史证据，下次必须重新核验。
+- 01入口在进入SignTool前因交互进程 `PSModulePath` 缺失标准WindowsPowerShell模块，报 `Get-FileHash` 不存在。复用+353 outer04成功CMD的进程级设置后，02成功。签名CMD在启动PowerShell前设置：
+
+```bat
+set "PSModulePath=%USERPROFILE%\Documents\WindowsPowerShell\Modules;%ProgramFiles%\WindowsPowerShell\Modules;%SystemRoot%\System32\WindowsPowerShell\v1.0\Modules"
+```
+
+这是固定启动器的子进程环境修复；先核验当前登录用户及实际模块路径，不修改全局注册表或执行策略。保留失败运行日志，使用新的版本化入口。此类签名前错误不能计为PIN取消或证书失败，也不能靠重复启动相同入口解决。
+
+签名回填→原命令构建成功仅证明本次构建阻塞解决，不保证所有应用控制策略都会接受同一证书。若Cargo重生成辅助文件，必须重新核验，不能沿用旧哈希结论。最终应用候选97文件/16PE已补齐并在B本地逐文件复制核验；随后B仿真离线，运行结果未证实。尚未签署最终产品内层/外层，不可宣称运行验收或发布通过。项目证据目录：`kemi-docs/evidence/windows369-helper-signing-20260927/`。
+
+
+## 58 / xzl 仿真安装交接与当前核验（2026-10-01）
+
+本节补充安装路线，不能把两节点构建签名或文件复制算成应用内商场更新。当前设备目录核对：58 仿真 ID `4240650696` / `LAPTOP-LUOPP1CH`，指纹 `SHA256:ikZ6NXAH3VFBGooSCeKW0JY9+h0cIcQOzib4fxmvz6M`；xzl `6192992780` / `xzl`，指纹 `SHA256:rwYyN4kBR2RGcZ3uDjIudStAMV4F/ss7UYVPmU7IC+0`。本文件前文签名机旧 ID 是历史记录，操作时读取当前设备对照表。
+
+### 已验证 xzl 交互安装路线
+
+1. 经指定仿真 ID 连接、核对历史指纹，重新读取当前正式 EXE、服务及安装目录。该机原位目录为 `C:\Program Files\KemiRemote`；58 为 `C:\Program Files\RustDesk`，不能互相套用。保存完整原安装树、用户配置和原设备 ID，候选内外签名、大小、SHA-256必须已通过。
+2. 使用受控暂存的完整单文件安装器，文件名以 `install.exe` 结尾，通过仿真 `vibekits.device.app_control` 启动到已登录 Session 1。读取实际 `RustDesk - Install` 顶层窗口及 `FLUTTERVIEW` 子窗口的句柄、几何、DPI，必要截图仅用于定位本次普通安装器。不要复用历史常量坐标。
+3. 历史 xzl 核验中，Windows 原生 `ui_action` 不支持，使用已授权 `ssh_exec` 的 Win32 `SetForegroundWindow` / `PostMessage(WM_MOUSEMOVE, WM_LBUTTONDOWN, WM_LBUTTONUP)` 向已确认的普通安装器子窗口点击“同意并安装”，实际出现 `consent.exe`。这不是提权确认。当前工具能力先查 catalog；不把不支持接口或 Session 0 黑图判为产品故障。
+4. 安装源码通过 `runas` 启动 Windows 命令处理程序，因此 UAC 中出现 Microsoft Windows / 命令处理程序与该安装链一致。普通仿真会话向 UAC 发 `PostMessage` 返回 false，须设备管理员在真实系统提示中确认。`PromptOnSecureDesktop=0`不等于具备提权点击能力；本案例保持 `EnableLUA=1`，不关闭 UAC、不以计划任务或直接覆盖 Program Files 绕过安装门禁。
+5. 管理员确认后，独立回读完整正式目录和真实运行文件。xzl 历史升级353→384后 EXE `1.4.127+384`、SHA-256 `520ADC73B99FDB93AC338502BC83B774AE62586559414F35D0B2F1503ED7ACF6`、Authenticode Valid，服务Running/Auto、GUI非零窗口且Responding=true。该案例证明安装/启动；原身份、权限延续和完整功能要另外验。58 本轮只读384核验不能冒称我们执行了同一安装事务。
+
+### 版本比较与结果边界
+
+2026-10-01两机真实远程办公EXE均384、上述同一哈希、签名Valid、服务Running/Auto；商场同平台当前384，因此没有下载或安装。KEMI Send在58实际157、xzl实际154，签名均Valid；商场`org.kemi.send`为154，所以不降级58、不对xzl同版重装。目录名与注册表短版本不替代EXE `FileVersion/ProductVersion`。
+
+公开列表按稳定包名、OS匹配。英文关键词“KEMI Send”返回零项，但不带关键词Windows列表有5项且含`org.kemi.send`，不能将检索差异写成空应用列表故障。`MainWindowHandle=0`在SSH上下文只是不充分GUI证据；进程或Responding不代替显示和交互。严禁将读取版本、仿真直接下载安装、人工UAC安装、应用内商场下载更新混为一种通过结论。
+
+未来新包按当前安装桥schema核对 MSI/Inno/便携合同；本次384便携包不能按Inno静默安装。截图传输曾被自动审批拒绝时，保留拒绝并遵守具体数据/目的地授权边界，不能换接口规避。同版记录current，安装失败保留旧正式目录/服务/配置，只清理本次确认所属的候选进程。
+
+项目证据：`client/kemi-docs/WINDOWS-XZL-SIMULATOR-UPDATE.md`、`WINDOWS58-INAPP-MARKET-20260930.md`、`evidence/pad411-windows-live-audit/`、`evidence/windows-send-live-audit/`。实际商场更新合同见可用技能 `vibekits-remote-simulator/references/market-app-update.md`；历史案例不能替代新包验签、原位升级授权延续与当前工具能力验证。

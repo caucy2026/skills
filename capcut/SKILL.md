@@ -13,7 +13,8 @@ description: >-
   script),
   captions-and-clipping/opus-clip (clipping long video), descript (long-form), canva (graphics),
   and ai-video/veo-3/kling/runway (generation).
-version: 1.0.0
+metadata:
+  version: 1.0.0
 ---
 
 # capcut

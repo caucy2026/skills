@@ -68,9 +68,17 @@ Follow this order:
 
 On the established publisher Mac, use Google Chrome profile `niu` for App Store Connect. Reuse its authenticated Apple session or normal password-manager autofill; do not inspect browser databases, cookies, Keychain records, or stored secrets. Do not switch to Safari merely because a session expired.
 
-Apple passwords, app-specific passwords, OTPs, trusted-device codes, recovery codes, API private keys, certificates, private keys, and provisioning files never belong in this skill, chat output, screenshots, shell history, repositories, or release ledgers. CAPTCHA, MFA, account recovery, agreements, tax/banking, legal attestations, and other platform-required human gates remain human actions. Prepare everything else first, foreground only the exact gate, then resume automatically from a fresh portal state.
+Apple passwords, app-specific passwords, OTPs, trusted-device codes, recovery codes, API private keys, certificates, private keys, and provisioning files never belong in this skill, chat output, screenshots, shell history, repositories, or release ledgers. After the user authorizes a specific App Store release, autonomously complete its ordinary build, upload, metadata, screenshot, submission, retry, and verification steps without asking them to click or reapprove each stage. For CAPTCHA, MFA, account recovery, agreements, tax/banking, legal attestations, and other platform-required gates, follow the active tool's confirmation or handoff rule at the exact action. A requirement for action-time confirmation does not by itself mean the user must physically click: after they confirm the specific visible declaration, the agent may execute it when the tool permits. Never infer that a broad release authorization certifies an unreviewed legal or factual declaration. Prepare everything else first, foreground only an indispensable gate, then resume automatically from a fresh portal state.
 
 Developer ID plus notarization is the direct-distribution path, not the Mac App Store path. Do not substitute the known `Developer ID Application` identity or `KEMI_NOTARY` profile for Apple Distribution signing and App Store provisioning.
+
+## Autonomous continuation and anti-stall check
+
+Before asking the owner to act, compare the proposed action with the exact release authorization and the current portal state. A changed stage, an expired session, an upload failure, or an earlier assistant pause is not a new approval requirement. Reuse the last verified source, build/export/upload commands, Chrome profile, App Store Connect record, and successful portal sequence; repair only the observed difference. Continue independent gates while a specific gate awaits input.
+
+For this channel, record the transition separately: package exported → upload accepted → build processed/verified → exact build attached to version → required metadata saved → **Add for Review/Submit actually completed** → persistent submission ID and review status → anonymous public install. Never end work or report “in review” at a processed build, a selected build, a saved draft, or `准备提交`. After any submit click, leave the page and reopen the exact submission to prove persistence. If Apple returns validation errors, read the complete errors, fix each in scope, and retry without asking for the same release authorization.
+
+When a visible portal control asserts specific legal/factual facts (for example, third-party-content rights, export classification, or a changed binding agreement), present its exact choices and the relevant product evidence at the action point. Ask only for the missing factual declaration or platform-required confirmation, not for permission to continue the release. Once the user answers that specific point, enter and submit it yourself when the active tool permits; do not send the owner to repeat a click merely because it is consequential. Never invent facts, bypass a hand-off requirement, or reuse an answer for materially different terms.
 
 ## Truthful states
 
@@ -86,4 +94,3 @@ Use only `not-started`, `blocked`, `uploaded`, `processing`, `submitted`, `in-re
 ## Completion
 
 Return the exact App, version/build, package hash, processed build, submission ID, persistent state, checked-at timestamp/timezone, current blocker, next action, and evidence path. Never claim success from a dashboard summary, old screenshot, email alone, or memory. Keep the release active until the user's requested terminal state is proved.
-

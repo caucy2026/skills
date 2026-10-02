@@ -1,0 +1,6 @@
+interface:
+  display_name: "服务器端口统一管理"
+  short_description: "查询服务器端口归属、核验占用并维护跨项目统一预留与变更台账"
+  default_prompt: "使用 $kemi-server-ports 查询目标服务器端口归属，核对证据并按本次请求更新本地统一端口文档。"
+policy:
+  allow_implicit_invocation: true

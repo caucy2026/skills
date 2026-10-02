@@ -24,12 +24,11 @@ connection_path = File.join(
   'tool-bridge.json'
 )
 
+require_relative 'simulator_bridge_locator'
 begin
-  connection = JSON.parse(File.read(connection_path))
-rescue Errno::ENOENT
-  abort('VibeKits tool bridge is not running or its connection file is missing')
-rescue JSON::ParserError => e
-  abort("VibeKits tool bridge connection file is invalid: #{e.message}")
+  connection_path, connection = SimulatorBridgeLocator.locate(connection_path)
+rescue StandardError => e
+  abort(e.message)
 end
 
 endpoint = connection.fetch('endpoint')

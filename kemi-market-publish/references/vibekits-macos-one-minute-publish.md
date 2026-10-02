@@ -42,7 +42,7 @@ Use the installed system **Google Chrome**, not the Codex in-app browser, Safari
 4. Confirm the selected row URL points to the exact ZIP, its kind is ZIP archive, and the `打开` button is enabled. Then click `打开` once.
 5. Wait through both phases: CDN upload and local/server SHA-256 calculation. At 99% the page can remain on `正在计算 SHA-256` for several minutes. Preserve the tab; do not refresh, choose the file again, or start a second upload.
 6. Continue only after the form replaces the old SHA-256 with the exact local SHA-256.
-7. Set version name, integer VersionCode, exact decimal byte size, and release notes. Preserve other metadata.
+7. **Only after upload and SHA-256 completion**, set version name, integer VersionCode, exact decimal byte size, and release notes. Preserve other metadata. The upload completion callback has reset VersionCode to the old value and package size to a human-readable `401.2MB` even when both were filled earlier; pre-upload values are not evidence.
 8. macOS accessibility may expose VersionCode as a stepper. If direct value assignment does not change it, focus the stepper, press `super+a`, type the complete code, press Tab, and reread the displayed value. Never use the increment button after a failed assignment; it can reset the value to `1`.
 9. Reread version, VersionCode, byte size, SHA-256, storefront visibility, and force-update choice immediately before `保存并发布`.
 10. Click `保存并发布` once. Success requires navigation to app detail, status `已上架`, the new version/code, and the message `已直接更新线上版本（免审）`.

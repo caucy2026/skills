@@ -39,3 +39,10 @@ Success still requires the exact frozen manifest count, expected certificate thu
 - `references/workflow.md` contains the VibeKits Session 1 execution procedure.
 - `references/authenticode-signing.md` contains the shared Authenticode verification contract.
 - This file records the current behavior change for reviewers and future maintainers.
+
+
+## 2026-10-01 Inno 内部运行程序签名缺漏
+
+只有外壳 Authenticode Valid 的包在 xzl 被 CodeIntegrity 拦截：实际未签临时 setup.tmp，错误 4551、事件 3033/3077。Inno 包装需明确纳入 SignedUninstaller/内部临时程序签名门禁，随后仍单独签最终外壳。详见 [现场、修复和验收](../../vibekits-remote-simulator/references/windows-update-incidents-20261001.md)，内部签名通过不等于设备升级验收通过。
+
+本次最终签名PASS及执行者遗漏、等待PIN识别延迟、缓存长度误判、批次减少重复签名与防复发检查，已补入上述事故文档的“本次效率事故”段；设备安装仍须独立验收。

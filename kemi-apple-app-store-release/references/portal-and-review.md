@@ -20,6 +20,8 @@ Before upload selection, build attachment, Save, Submit for Review, reply, or wi
 
 Do not withdraw, replace, or create a newer submission when the current exact version is healthy and waiting/in review unless Apple rejects it or a blocking defect makes it unsafe.
 
+After a corrected build is resubmitted, Apple may continue displaying the **old rejection message** on the same submission ID. Bind each message to its reviewed version/build and date. If the freshly reopened submission shows the new build and `Waiting for Review`, report the old message as historical, not as a new rejection; still inspect any newly added message or required-action banner before concluding the resubmission is healthy.
+
 ## Status interpretation
 
 | Visible evidence | Record as | Meaning |
@@ -44,7 +46,7 @@ If the normal window is exceeded and status inquiry is authorized, use Apple's o
 
 - Unnecessary inbound-server entitlement: remove it when the App Store feature only initiates outbound connections; retain client networking and retest. This was the minimal correction used for a KEMI OFFICE App Store candidate.
 - Missing/placeholder icon: validate AppIcon contents, target selection, 1024 icon, archive contents, and processed build before resubmitting.
-- Invalid support or privacy URL: use public, product-specific pages that work without authentication.
+- Invalid support or privacy URL: use public, product-specific pages that work without authentication for viewing and clearly show how users can ask questions or request help. Reopen the saved version page to verify the replacement URL persisted; do not confuse the old URL quoted in a historical rejection message with the current field. Whether a third-party issue tracker is sufficient remains Apple's review decision, not something the operator can mark as approved.
 - Reviewer cannot reach a feature: provide deterministic steps and test credentials only when required; do not rely on internal network state.
 - Locale mismatch: every localized screenshot and text block must match its declared locale.
 - Uploaded but never submitted: attach the processed build, complete all required fields, explicitly submit, and verify a persistent review state.
@@ -65,4 +67,3 @@ Test account only if required
 ```
 
 Do not promise behavior that is absent, argue from another channel, or call a fix complete before the corrected build is attached and resubmitted.
-

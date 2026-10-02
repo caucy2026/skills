@@ -7,6 +7,7 @@ Read this file for every KEMI macOS App Store release. Apple documentation and t
 - Read the project release scripts and prior App Store handoff. Reuse the existing build path; do not create a parallel ad-hoc pipeline just because the portal is urgent.
 - Fetch/sync only through the project's documented Git route. Preserve user changes and record the exact source commit.
 - Use a separate App Store worktree and separate build/cache directories. On this workstation put regenerable Xcode/Flutter/Rust/temporary outputs under `/Volumes/ORICO/kemi-build-cache/<project>-app-store/` when ORICO is mounted and writable. Do not silently fall back to filling the system disk.
+- Before invoking Flutter, inspect its **effective** `build-dir` and generated macOS configuration, not just the current worktree path. This workstation once had a global Flutter `build-dir` pointing at a different, running direct-distribution VibeKits app; a Store build wrote there despite using an isolated worktree. Use a task-local Flutter configuration/cache, assert the resolved product path is inside that task's Store cache before deleting or building, and stop on a mismatch. Never clean or overwrite another task's product.
 - Keep marketing version and build number distinct. Every changed binary needs a new monotonically increasing build number even when the marketing version is unchanged.
 - Confirm Apple App ID, bundle ID, team, roles, agreements, certificates, provisioning profiles, listing record, and next build number before compiling.
 - Freeze supported languages. Screenshot language must match its locale. Chinese UI screenshots do not belong in an English (United States) metadata block.
@@ -48,7 +49,8 @@ Before archive/export:
 - include the required 1024×1024 marketing icon and valid lower sizes without alpha when Apple requires it;
 - ensure the App Store build target actually selects that asset catalog and `AppIcon` set;
 - inspect the archive/exported product, not only source files;
-- treat an App Store Connect placeholder/grid icon as a build or asset-processing defect until the processed build proves otherwise.
+- reject generic template/framework logos or provisional artwork even if the icon set is technically complete. For a Store-only replacement, keep the normal channel's icon untouched, verify every Store icon size is recognizably the same finished design, and check the selected icon name and resources inside the archive/exported package;
+- inspect the **processed build's** icon in App Store Connect. A source file, successful asset compilation, or upload success alone does not prove Apple received the intended icon; treat a placeholder/grid icon there as a build or asset-processing defect.
 
 For screenshots, use truthful current UI, the exact locale, Apple-supported dimensions, and no invented controls or misleading device frames.
 
@@ -68,6 +70,8 @@ Run project automation plus native smoke checks proportional to functionality:
 
 Record a limitation when the exported App Store package cannot be locally installed exactly as delivered; do not replace package inspection with an unrelated development build and call it equivalent.
 
+If a Cloud Managed Apple Distribution export fails to open directly outside the App Store, distinguish local distribution trust from an app startup crash. Capture the exact `open`/`codesign`/system error, inspect Xcode's export-signing result and App Store Connect binary validation, and test a **copy of the same archived app** with temporary local signing in an isolated directory when appropriate. That copy can prove reachable app logic and UI, but never upload it or count it as an install/launch pass for the Apple-signed bytes. Keep public-install verification open until the Store version is available.
+
 ## 6. Export and upload
 
 - Export with the project's established App Store export options.
@@ -86,6 +90,7 @@ On the exact version page:
 - answer privacy/nutrition labels from actual code/data flows, including third-party SDKs;
 - answer encryption/export compliance truthfully;
 - provide product-specific public Support URL and Privacy Policy URL;
+- open the Support URL signed out before submission: it must identify the product and provide a real way to ask a question or request help. A documentation index or marketing home page alone is insufficient. An issue tracker is only a candidate until its public content, support instructions/contact path and usability are verified; don't assume a changed URL resolves Guideline 1.5 before Apple accepts the resubmission;
 - provide reviewer contact, deterministic review steps, notes for unusual capabilities, and demo credentials only when required;
 - complete age rating, availability, pricing, category, copyright, and agreements.
 
@@ -104,4 +109,3 @@ When Apple rejects:
 7. Reopen the exact submission and capture the new persistent state.
 
 Never rename and re-upload rejected bytes, mask a prohibited feature, or unlock it after review.
-
