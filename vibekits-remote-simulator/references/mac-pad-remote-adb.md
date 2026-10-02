@@ -83,12 +83,14 @@ KEMI 双屏 PAD 上，VibeKits 主界面曾位于 `display 0`，另一屏曾为 
 
 只有用户授权安装时执行。先在 Mac 核对候选 APK 的包名、版本、SHA-256 和 Android 签名；若是 VibeKits 自身，使用已批准的签名产物，避免覆盖成另一证书/版本。普通覆盖用 `install -r` 保留用户数据，不加 `-d`、不清除数据、不卸载。
 
+**PAD 宿主自更新硬门槛：**若本次远程 ADB/MCP/仿真通道由待覆盖的 VibeKits 主 APK 承载，安装它之前必须先实测一条与主 APK 进程独立的、已授权的设备端救援通道：停止主 APK 后仍能联系同一台 PAD、读取原 ID 和公钥指纹、启动或恢复仿真，并可用设备本地已暂存且同签名的旧 APK 回退。仅安装系统 UID ADB 辅助组件、保留旧动态 ADB 串口、缓存旧 APK 或看到集群心跳都不算独立救援通道。还需记录原 ID/指纹/版本、候选签名和回退包哈希，并在受控测试中验证主 APK 停止后的救援与回退。任一条件未通过，**停止远程覆盖主 APK**；不要把安装后的重连当作救援方案。普通第三方 APK 更新不受这条宿主自更新门槛限制。
+
 ```sh
 shasum -a 256 /absolute/path/to/candidate.apk
 "$ADB_BIN" -P "$ADB_SERVER_PORT" -s "$ADB_SERIAL" install -r /absolute/path/to/candidate.apk
 ```
 
-**重要：升级承载隧道的 VibeKits 主 APK 会杀掉旧进程/旧 ADB 流。** `adb install -r` 可能显示空的安装失败或超时，但设备已装成功。不要凭命令退出码立刻重复安装。先调用：
+**重要：升级承载隧道的 VibeKits 主 APK 会杀掉旧进程/旧 ADB 流。** 以下重连步骤只适用于上述独立救援通道已验证的宿主升级，或不承载该通道的普通 APK。`adb install -r` 可能显示空的安装失败或超时，但设备已装成功。不要凭命令退出码立刻重复安装。先调用：
 
 ```sh
 ruby "$INVOKE" vibekits.simulator.connection_status "{\"routingId\":\"$PAD_ID\"}"
@@ -96,6 +98,18 @@ ruby "$INVOKE" vibekits.simulator.connect "{\"routingId\":\"$PAD_ID\"}"
 ```
 
 从新响应重新取 `adbSerial`；动态端口可能改变。以新串口重新 `adb connect`，然后在 PAD 上读取 `dumpsys package <包名>` 的 `versionCode`/`versionName`、`pm path <包名>` 和已安装 `base.apk` 的 SHA-256，与本机候选比对，再真实打开应用并观察目标功能。只有包管理器、文件哈希和运行行为吻合才算装机验证通过。主应用更新后如果 Mac 本机工具桥连接文件残留但 loopback 拒绝连接，只检查/重启 **Mac 上对应的 VibeKits 控制端 App**；先确认没有运行中的控制任务，不要杀掉其他 app 或 `adb` server。
+
+宿主升级还必须以**原 ID 和原公钥指纹**完成重连验收；若返回 `identity_mismatch`，立即停止重试和后续发布，走已验证的独立救援通道读取设备端实际安装版本与身份状态，并按预先演练的方法回退。不得猜测新 ID、重置数据、重新授权来掩盖身份回归。若救援通道未建成，此时无法承诺远程自动恢复；记录事实并等待设备端恢复，不再次覆盖安装。
+
+### PAD dev445 及之后的仿真 ADB 核对（PAD75 实测：2026-10-02）
+
+PAD 宿主 `com.vibekits.vibekits` dev445 / versionCode 2445 与同发布者签名的 `com.vibekits.vibekits.component.adb` 1.7 / versionCode 9 已在 PAD75 实装；辅助组件的实际 Android UID 为 1000，宿主 UID 仍独立。宿主新增从辅助组件身份库恢复和保存仿真身份、同意记录的原生桥，并通过 JNI 校验仿真控制来源。升级前 dev442 曾返回 `ssh_bootstrap_failed: HTTP 500`；覆盖 dev445 后，原 ID `9464730211` 实测返回 `connected=true`、`transport=p2p_or_relay`、`mcpReady=true`、`adbReady=true`、`sshReady=false`，且原公钥指纹不变。`sshReady=false` 在此 PAD 架构下正常，不能据此判远程 ADB 失败。此单机结果不保证任意全新 PAD 首次开启仿真时已具备系统 UID 辅助组件或授权。
+
+控制端通过 `vibekits.simulator.call` 调用目标 Harness 时，参数名必须是 **`toolId`**，不是 `toolName`；错误字段会返回 `unknown_remote_tool`，即使 `catalog` 已列出该工具。使用当前目录返回的 schema，例如 `vibekits.harness.session_prompt` 发起任务，再以回执中的 `sessionId` 调 `session_status` 和 `session_history`；核对 `reasoning_delta`、回复增量和完成事件。外层 `ok=true` 只代表桥调用成功，结果还可能包在 `data.structuredContent`，必须再检查内层状态。
+
+ADB 串口属于每次连接的动态本机端口，不是设备固定地址。PAD75 同一轮重连时从 `127.0.0.1:58173` 变为 `127.0.0.1:52014`；出现 `offline` 或 `device not found` 时先查 `connection_status`，必要时重新 `connect` 并用**新返回**的 `adbSerial`，不要继续连旧端口或反复安装 APK。仅在用户明确授权的救援演练中才使用设备局域网 ADB；它不是按 ID 远程 ADB 的常规前提，也不能推断每台 PAD 都有相同 IP。
+
+本轮 PAD75 宿主覆盖前，先经获准的独立局域网 ADB 保存设备现装同签名 dev442 APK、核对哈希并暂存设备本地；停止宿主进程后，确认该通道仍能访问 PAD 且设备本地同版本恢复安装成功，随后才覆盖候选。安装后从原 ID 重新建立 P2P/中继和远程 ADB，核对版本、原公钥指纹与实际 Harness 任务，最后断开临时局域网连接。此演练说明该台设备在当时具备救援通道，不可把同版本恢复等同于所有设备均已验证跨版本降级；遇到 `identity_mismatch` 仍按第 4 节停止发布和回退。
 
 ## 5. 失败时按真实状态分流
 
