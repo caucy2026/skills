@@ -31,3 +31,5 @@ For a KEMI Market app upgrade on a remote device, follow [the simulator-based ma
 When a device ID returns `Remote desktop is offline`, follow [the channel recovery guide](references/channel-recovery.md) before calling the physical computer offline. Record the failure and the verified recovery in that guide so subsequent colleagues can reproduce the diagnosis.
 
 When online IDs cannot be called after a network or local App change, read [the network-switch incident recovery](references/network-switch-incident-20260930.md). Verify the current controller bridge before judging the remote device offline; a cluster heartbeat and a simulator connection are separate observations.
+
+When `adbReady=true` but the returned ADB serial refuses connections or is offline, follow [the dynamic ADB port incident checklist](references/dynamic-adb-port-incident-20261003.md). Require actual `get-state` and target identity/version reads before reporting ADB usable; reconnect with the newly returned serial instead of reusing an old port.
