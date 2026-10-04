@@ -14,6 +14,10 @@ Flutter：为 Filled/Elevated/Outlined/Text/Icon/SegmentedButton 配置 pressed 
 
 2026-10-03 同进程多轮全页面导航出现 Native Heap 持续增长；健康的标准 heapprofd 采样定位主要新增分配到 Flutter FreeType CFF 字体加载栈。PAD 原来指定 Windows 字体，改用系统 sans-serif 的对照仍待实机验证，不能作为已解决根因写入其他 App。此例说明按压测试成功不等于资源门禁通过，字体/图片/Markdown 也需要单独测量。
 
+2026-10-05 后续实证：主字体改为打包TrueType、再补TextTheme fallback，仍未消除长导航增长。有效heapprofd与匹配Build ID/.text的引擎、Dart符号将主要存活分配定位到按钮RenderParagraph→_RenderInputPadding→FreeType CFF。实际渲染FilledButton文字的fontFamily测试为null：ButtonStyle独立textStyle只设字重，替换了完整主题字体。只为Android按钮文字样式补主字体/fallback，保留桌面字段，负例变正例；dev513的43项帧/字体/取消测试、10000事件、独立CPU与内存窗口通过。该设备证据不是所有App的通用结果。
+
+复用时：当字体改动或原生堆增长与文字布局相关，检查实际RenderParagraph/控件独立textStyle，不只检查ThemeData声明；保持原字体首选、字重、颜色、禁用和手势语义。符号必须与目标机器码一致，采样缓冲溢出/客户端错误不能拿来完整归因。不要重启清缓存掩盖增长，也不要把单次缓存预热、ADB观察断流、零差异动画采样误判为产品根因。等待动画像素应与同一任务的运行状态互证，停止应验证真实取消终态。
+
 ## 可执行验收方法
 
 1. 建立按钮矩阵：主导航、设置、对话/模型菜单、确认/取消、删除、下载、仿真开关、自绘控件；覆盖 light/dark、禁用、长按、滑动取消、重复点击。
