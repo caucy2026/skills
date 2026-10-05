@@ -236,3 +236,11 @@ Do not claim completion if any of these remains:
 ## Report fields
 
 Record per OS: time, actor, Git commit, build environment, artifact path, package/OS/app ID, create vs update, versions, bytes, SHA-256, signature evidence, notarization ID/status where relevant, upload completion, developer record, public detail, CDN, positive and negative update checks, visible storefront result, clean install result, self-update result, and remaining limitations.
+
+## Android CDN上传确认超时恢复（2026-10-05实证）
+
+网页到99%后出现存储stat查询超时，旧SHA/下载链接仍在，不代表新APK未传到CDN，也不允许保存旧元数据。先以本次实际上传回执/错误中可核实的对象key查询HTTPS CDN，完整字节与SHA对照冻结包；不能猜key、把另一包当本包或因确认失败重新构建。
+
+对象完整时，复用已授权管理员会话，对同一key按当前API合同重试apk-complete，不再重复上传。要求完成响应的包名、版本、URL、size与SHA全部匹配，再更新原app_id，保留原元数据并发送精确file_size字符串和file_size_bytes整数。若仍失败，记录具体阶段，不无限重试。SDK内部stat地址为HTTP不改变用户下载安装必须HTTPS的约束。
+
+可使用当前Chrome发布页的合法会话调用同一官方API；只在内存引用令牌，不输出令牌、鉴权头或把它写入源码/日志，完成后清除临时引用并关闭自己的调试和发布标签。发布后仍验证开发者记录、公共列表/详情、CDN及正负更新检查。此路线不能用于绕过权限拒绝。

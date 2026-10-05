@@ -67,3 +67,5 @@ Provide a compact completion summary containing:
 - system and external-volume free space before and after;
 - actual physical space reclaimed;
 - remaining large candidates that need separate authorization.
+
+For shared build trees and native asset staging, read [references/shared-build-cleanup-lessons.md](references/shared-build-cleanup-lessons.md) before selecting current build outputs.
