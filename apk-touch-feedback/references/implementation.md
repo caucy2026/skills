@@ -28,3 +28,7 @@ Flutter：为 Filled/Elevated/Outlined/Text/Icon/SegmentedButton 配置 pressed 
 6. 覆盖安装核对包名、签名、版本、聊天、原 ID 和授权连续性。远程仿真要实际连接返回的动态 ADB 地址并读取设备身份；在线/connected/adbReady 标志不代替端口可达和 ADB 命令成功。
 
 交付矩阵字段：控件/状态、预期反馈、帧测试、实机动作、耗时/动画、CPU/内存、结果与证据。发布沿用项目原技能，此技能不授予额外设备操作或发布权限。
+
+## Native screenshot feedback sample occlusion gate (2026-10-05)
+
+A focused target app is insufficient on PAD: KBoardPhysicalKeyboard can be a non-focusable full-screen touch overlay. Before and after every native press sample, inspect the actual D0 input window. Reject samples while the overlay covers the target; use only its observed normal hide control, never stop or modify another app. Guarded PAD522 checks cover180 down/cancel observations. A32ms or180ms sleep before screenshot is not measured display latency; pair native visibility checks with16ms widget-frame tests. Duplicate semantic nodes with identical bounds are not distinct buttons.

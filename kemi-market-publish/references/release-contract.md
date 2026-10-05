@@ -244,3 +244,9 @@ Record per OS: time, actor, Git commit, build environment, artifact path, packag
 对象完整时，复用已授权管理员会话，对同一key按当前API合同重试apk-complete，不再重复上传。要求完成响应的包名、版本、URL、size与SHA全部匹配，再更新原app_id，保留原元数据并发送精确file_size字符串和file_size_bytes整数。若仍失败，记录具体阶段，不无限重试。SDK内部stat地址为HTTP不改变用户下载安装必须HTTPS的约束。
 
 可使用当前Chrome发布页的合法会话调用同一官方API；只在内存引用令牌，不输出令牌、鉴权头或把它写入源码/日志，完成后清除临时引用并关闭自己的调试和发布标签。发布后仍验证开发者记录、公共列表/详情、CDN及正负更新检查。此路线不能用于绕过权限拒绝。
+
+## PAD source-version gate before device install (2026-10-05)
+
+Check pubspec and AppVersion constants before building. After signing, execute the existing check_pad_embedded_helper.py against the FINAL APK and frozen source before any test-device install or upload. CLI build-name/build-number do not synchronize AppVersion. A signature/ABI-only check is insufficient. The PAD522 pre-constants candidate was blocked before publication; preserve its failure record, rebuild the whole APK, and bind new bytes/hash to the final filename. Do not update desktop version files for isolated PAD staging.
+
+Native Chrome accessibility may retain an old link value after a successful upload. Do not reupload based on that value alone. Re-read the current form model or actual completion response with public metadata only; require the exact new HTTPS object, decimal size string, integer bytes and SHA. Verify the complete CDN object before saving. Never print the session token or auth header.
