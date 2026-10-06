@@ -77,3 +77,5 @@ Verify the app and previously working services remain available after closeout. 
 For an app that crashes before its simulator starts, read [the remote-desktop startup-crash case](references/windows-startup-crash-388-20261003.md). It contains the actual reproduction, rollback, local dump analysis, controlled runtime recovery, lifecycle evidence and mandatory packaging prevention; do not treat it as a verified repair until its final evidence is added.
 
 远程命令、日志读取或资源耗尽排查前，读[58提交内存事故与命令预算](references/windows-resource-exhaustion-58-20261006.md)，避免PowerShell5.1对象深度序列化和只在返回后截断。资源保护的部署及验收范围须以实际版本证明。
+
+远程桌面确认和输入无响应时，读[目标核验与焦点恢复](references/remote-confirmation-focus-20261006.md)，在已有授权内完成普通确认，并保留平台拒绝、PIN及身份变化边界。
