@@ -64,3 +64,16 @@ Report separately:
 - remaining limitations.
 
 Do not say “真机测试通过” when only SSH, compilation, headless conversion, or one document passed. If a desktop agent is offline, label UI checks `interactive_required` rather than passing or silently skipping them.
+
+
+## Required debugging closeout
+
+After debugging, clean up this task's own local and remote scene. First preserve the required evidence and record its location; inspect exact paths, process ownership and current use before removing anything. Clean only confirmed disposable temporary scripts, transfer duplicates, unused diagnostic copies and reproducible build/cache outputs created by this task. Close only its own debug processes and connections. Do not stop shared interfaces, coworkers' sessions or active builds.
+
+Preserve source changes, credentials, authorization state, user data, the installed app, required crash evidence and rollback packages until their retention purpose is satisfied. Never upload a dump or user data merely to permit cleanup. Existing deletion authorization does not waive target checks or mandatory tool confirmations.
+
+Verify the app and previously working services remain available after closeout. Report what was removed, reclaimed space when measured, and what remains with its reason and retention condition. If debugging is ongoing, identify the artifacts still needed rather than claiming cleanup complete.
+
+For an app that crashes before its simulator starts, read [the remote-desktop startup-crash case](references/windows-startup-crash-388-20261003.md). It contains the actual reproduction, rollback, local dump analysis, controlled runtime recovery, lifecycle evidence and mandatory packaging prevention; do not treat it as a verified repair until its final evidence is added.
+
+远程命令、日志读取或资源耗尽排查前，读[58提交内存事故与命令预算](references/windows-resource-exhaustion-58-20261006.md)，避免PowerShell5.1对象深度序列化和只在返回后截断。资源保护的部署及验收范围须以实际版本证明。

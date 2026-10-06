@@ -5,6 +5,8 @@ description: "Use when the user gives a 6–16 digit VibeKits device ID and asks
 
 # VibeKits remote simulator
 
+仿真失败或用户提到已登记同机远程桌面时，先读[通道恢复操作清单](references/channel-recovery-playbook-20261006.md)，按已授权在线备用通道实际恢复，不停在错误解释。
+
 A device ID and an authorized remote-simulation endpoint are enough to start. The user need not name this skill or say “远程仿真”: “帮我调试远程设备 ID …” and equivalent requests should trigger it. Do not ask for its IP, SSH user, password, private key, relay address, or RustDesk password. The remote device must have enabled simulation and granted the required first-time consent; never bypass that or OS privacy controls.
 
 ## Inside VibeKits Harness
@@ -31,5 +33,7 @@ For a KEMI Market app upgrade on a remote device, follow [the simulator-based ma
 When a device ID returns `Remote desktop is offline`, follow [the channel recovery guide](references/channel-recovery.md) before calling the physical computer offline. Record the failure and the verified recovery in that guide so subsequent colleagues can reproduce the diagnosis.
 
 When online IDs cannot be called after a network or local App change, read [the network-switch incident recovery](references/network-switch-incident-20260930.md). Verify the current controller bridge before judging the remote device offline; a cluster heartbeat and a simulator connection are separate observations.
+
+远程命令、日志读取或资源耗尽排查前，读[58提交内存事故与命令预算](references/windows-resource-exhaustion-58-20261006.md)，避免PowerShell5.1对象深度序列化和只在返回后截断。资源保护的部署及验收范围须以实际版本证明。
 
 When `adbReady=true` but the returned ADB serial refuses connections or is offline, follow [the dynamic ADB port incident checklist](references/dynamic-adb-port-incident-20261003.md). Require actual `get-state` and target identity/version reads before reporting ADB usable; reconnect with the newly returned serial instead of reusing an old port.
