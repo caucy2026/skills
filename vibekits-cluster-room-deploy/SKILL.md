@@ -64,3 +64,5 @@ Windows签名示例声明需说明EXE/DLL/安装包输入、签名与验证报�
 本次现场事实：云端部署目录/opt/vibekits-group、独立21122服务、域名kemi-chat.newlinksz.com，原UUID延续；Linux27项邀请/管理测试通过。155/529/424/617已在新服务真实批准入房且云端心跳新鲜，原身份保持；仅证明四台基础接入，持续稳定及业务执行仍待验。双向邀请真机、完整任务执行/ACK/独立验收评分和100台长期协作仍待验。本文将来更新现场证据，路径与ID不作其他环境默认值。
 
 仿真不可调用时按[实际远程桌面恢复清单](references/remote-recovery.md)处理；617办公通道已实测可达；用户报告PIN已输入后原仿真恢复并完成云端迁移，过程及尚未证实的500根因见恢复清单。锁屏不能未经日志定位称HTTP500根因。
+
+房间设备用途及可执行方法通过[GitHub能力交接规范](../vibekits-cluster-capabilities/references/github-capability-handoff.md)传递；完整交付范围按[全目标验收映射](../vibekits-cluster-capabilities/references/full-goal-acceptance-map.md)逐项保留，不把基础在线当作最终协作通过。
