@@ -149,3 +149,20 @@ Mac同身份覆盖更新、SSH255结果回查及无Xcode票据处理，见[2026-
 最短诊断：通过原ID读取目标UTC，并记录控制端请求起止UTC；对照当前客户端cluster_direct_join.dart的挑战时间条件。本案签名挑战仅容忍issuedAt领先设备时钟5秒、过去60秒，58实读比控制端慢约4–6秒。继续查w32tm /query /status、Get-Service W32Time及既有时间源；本案服务停止0x80070426。授权维护范围内启动原W32Time服务，沿用time.windows.com既有配置，没有换时间源或手工写时钟。首次w32tm /resync仍报无可用时间数据，不能用SSH exit0冒充同步成功；后续stripchart两次偏差约±2毫秒，本机sntp只读偏差约0.196秒，58原申请自动恢复connected/roomsAreLive=true、能力版本accepted。
 
 14:24:30Z服务端独立快照五台真实在线，58心跳1.907秒、原仿真ID和办公238638760保持。此连续证据支持时钟同步方向，但不把首次失败resync写成成功，也不声称经过隔离实验唯一证明因果。若校时仍失败，按实际时间源/网络继续诊断；不能放宽签名有效期、关闭TLS或人工制造在线。最终分别核对客户端实时状态和服务端新心跳。证据：VibeKits docs/acceptance/CLUSTER_DEV443_DELIVERY_2026-10-02.md 22:22/22:24。
+
+
+## JSON存储启动FD压力与控制端通道复用（2026-10-07经验）
+
+参数从当前目标证据取得，不照搬个人账号、磁盘路径、设备ID或程序版本。先分层记录当前App/SDK PID及创建时间、实际程序路径/版本/签名、原可信指纹、房间实时心跳与原请求。保存第一错误和原历史，平台审批、PIN、新身份/信任及已离线桌面禁止恢复的原边界继续有效。
+
+**启动存储读取。** 真实案例有约8716 JSON历史记录、同次约8717在途readFile，SDK全表/全文件Promise.all的loadAll链引起FD压力，首open锁失败可留下0B文件；空锁是该失败的副产物线索，不能只清锁或用App事后内存判断根因。准确计数差8192不是实际CRT上限证明，也不能据积累数量归责谁创建全部会话。只统计元数据，不读取/输出用户会话内容或凭据。
+
+修复应定位精确父SHA和唯一函数锚点的读取producer：共享已验证的16槽FIFO（其他场景按资源证据选择）、读取全部合法记录/保留顺序与schema、每load局部error/cancel/drain；A失败不能永久poison进程或拖住健康B，grant-before-error不得再开始IO，失败应抛原EMFILE/ENFILE而非成功返回部分表。保留原ENOENT/foreign/unsafe-key语义，不删除旧缓存/历史、切新home或全局丢弃shim来凑通过。未来固定分析会话减少随机扩散，但旧合法记录仍需安全读取。source/合成9000负控与真实目标启动分别验收。
+
+**启动与模型分开。** startupReady/webAnnounced只证明初始化，不证明模型回答。真实402/QUOTA/insufficient_balance需要用户原账户额度或明确可用模型的动作；不复制Key、自动充值、不重发同一失败请求或降低合同requiresModel/Agent。记录真实消息/turn终态及原因；临时SDK补丁或恢复MCP不等于正式签名整包合格。
+
+**先恢复控制端。** cached ready不代表实际MCP/SSH健康。App与SDK仍为同PID/寿命、cloud新鲜且既有同机办公通道正常时，先查控制端bridge和原会话；确认无在途写/安装/签名/Job后，对原ID/原FP做一次控制端断开重连并实际只读复验。不要为一次60秒SSH255或MCP timeout远端停SDK、重复安装或判物理离线。未取到样本只能记失败；优先<=15秒短批，超时对账原句柄，不能把采样说成采样间连续在线或一分钟稳定。
+
+CIM创建时间微秒与GetProcess的100ns末位精度可不同；寿命fence按同API、同精度、同UTC表达比较，同时核PID/路径/签名，不以格式末位差判换进程。已无活跃的旧PID不继续等待；观察超时不是事务已终止。资源报告区分private/working set/commit、handles、累计CPU秒与CPU百分比；加载后增长需分段及释放证据，既不立即判leak也不立即判stable。
+
+本经验未证明正式561发布、七台/100台协作、真实模型与长期资源门禁完成；按当前目标继续补未验项，不能缩成基础在线PASS。
