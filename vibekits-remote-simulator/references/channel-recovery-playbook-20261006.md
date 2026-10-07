@@ -54,3 +54,19 @@
 CIM创建时间微秒与GetProcess的100ns末位精度可不同；寿命fence按同API、同精度、同UTC表达比较，同时核PID/路径/签名，不以格式末位差判换进程。已无活跃的旧PID不继续等待；观察超时不是事务已终止。资源报告区分private/working set/commit、handles、累计CPU秒与CPU百分比；加载后增长需分段及释放证据，既不立即判leak也不立即判stable。
 
 本经验未证明正式561发布、七台/100台协作、真实模型与长期资源门禁完成；按当前目标继续补未验项，不能缩成基础在线PASS。
+
+## 561原身份升级、直接D传输与自动验收（2026-10-07实证）
+
+以下是已授权目标的成熟方法，不扩大设备、路径、账户或权限范围。参数从当前可信登记与实际进程取得，不照搬某台机器的ID/PID/盘符。58与617正式561分别取得实际版本/主SHA、原ID/指纹、只读MCP、94B往返、实时approved入房与升级guard verified_committed；这只证明对应覆盖升级的基础通信，不证明模型生成、业务消息ACK、评分或长期稳定。
+
+**传输接口缺口。** 公开simulator.upload_file只有localPath、没有remotePath时，不编造参数，也不在用户禁止的C盘先暂存。已验证的同Vibe fallback沿当前授权loopback SSH/SFTP carrier和已登记known_hosts，以StrictHostKeyChecking=yes/原FP/原用户验证，直接写允许D目标。私钥仅作为原identityFile路径引用供原认证引擎使用，不读取、复制或上传key内容，不新建信任或服务。先94B同目标往返，再单次完整传输，核目标bytes/SHA/签名/时间戳；传输失败保留部分字节和原句柄，对账后再判断可续传，不盲重复。实际617包259791104B/SHA2D25CE8B20CBE24BB51A55D8F77021F060AC9F91D3A6EF17436B43776CB2943C。可参考私有项目tool/windows/dev561-original617-20261007/transfer_qualified561_existing_vibe_sftp.py；脚本固定设备参数须按原目标证据投影，不能直接执行到其他机器。
+
+**长路径完整回退。** WindowsPS5在copy后的Get-Item/hash遇260字符路径失败，不能丢弃已有副本、跳过长路径文件或称全部备份完成。617保留失败和copy后，验证实际bundled Node版本/来源SHA/签名，以Node串行1MiB流校验原source与backup完整pathset、每文件bytes/SHA及总数，拒reparse；31921项真实PASS后才进入安装。读取只有程序包内容/metadata，不用户聊天或凭据。使用现有Verify-Original617-Backup561-v2.mjs路线，不以更改ExecutionPolicy、递归清理、换home或无限并发解决。观察timeout不等于copy事务终态。
+
+**角色与外部owner。** 查实际App、原外部终端和worker的token elevation/integrity、当前用户/SID与Active Session，普通Limited/High不猜。617实际Medium/非elevated，应继承Limited；58当前原管理角色按实际High身份执行。独立Interactive任务的祖先必须脱离App/relay Job，绑定唯一任务名、脚本SHA、原PID+同API创建时刻；禁止namekill、擅自升权或执行策略覆盖。新完整backup必须真实独立：守护回退Move-Item会消费旧backup，不能拿旧manifest冒充仍存在的副本。失败守护终态不得重启或延长；新必要重试须独立attempt/回执，保留旧失败证据。
+
+**自动观察先于升级。** 安装前先启动控制器，确认observer进程存活且trusted_cloud_observer_ready已落盘。早期armed记录不足：ready须原保存profile/pin、serverUUID、时钟与approved成员首读成功。独立云只读等新版本且heartbeat新鲜、last_seen严格晚于本次安装请求时点，才一次原IDconnect，观察预算60秒。超时但操作可能完成时只读同connection_status，不重放connect；身份变化停止、不接受新信任。实际WindowsISO7位fraction在Python3.9先保守截至6位并处理明确时区，同PID寿命比较使用同API精度。
+
+验证器逐项实时持久化原身份、实际version/mainSHA/签名、只读MCP、94B往返、原批准room/installationKey与云新鲜心跳。按实际guard waiting更新时间+600秒裁剪所有阶段预算，保留ACK及确认余量；剩余不足严格拒ACK，不续守护。58前两次因验证器残留560、30秒观察迟于35秒完成、7位时间解析与人工延迟失败，守护恢复原560；这些不能当561房间回归。第三次自动观察路线实际basic committed。升级commit ACK不是业务任务消息ACK。
+
+公共服务签名key/TLS补齐需沿同serverUUID/原公共keyId与可信证书材料，不能读服务私钥或改身份。58/617已同原服务补齐且原安装key保持；SIGNED_TASK_CONTEXT_REQUIRED仍需真实冻结合同/分配/租约/permit，不人为改flag授业务权限。资源样本与能力声明也不等于当前可签名任务许可。模型provider402/QUOTA需原账户必要动作，不能自动换key、充值或重复模型请求。Mac561仅本地签名、未获公证/部署证明；七台全模型/协作/100台长期目标仍未通过。
