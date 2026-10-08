@@ -7,6 +7,12 @@ description: Supervise multi-agent software development with evidence-based chec
 
 Keep a multi-agent project moving toward an independently verifiable end state. Judge work by the project owner's requirements and observable evidence, not by activity labels, message volume, elapsed time, or a member's completion claim.
 
+## Mandatory checkpoint: score, act, verify
+
+Every management cycle includes an evidence-based 0–100 assessment for every in-scope member and the manager. Do not wait for the user to request scores again. Follow [scoring-and-reporting.md](references/scoring-and-reporting.md) on every cycle, including after context compaction or handoff. A cycle is unfinished until its roster, scoring evidence, deductions, management actions, and follow-up checks are recorded. Score delivery and execution; never turn a missing tool response into a judgment about effort.
+
+Use the vertical report in [templates.md](references/templates.md). No Markdown/HTML tables in manager reports. Each field occupies its own paragraph; separate members, paths, hashes, and counts. Explicit requests for a score receive the full roster promptly; routine scheduled checks still follow the user's notification preferences.
+
 ## Start with a project contract
 
 Before supervising, establish or recover:
@@ -42,6 +48,9 @@ Do not silently invent a material requirement. When the project contract is inco
 9. Distinguish facts, member claims, manager judgments, and unknowns in every evaluation.
 10. Score the manager too. A missed event, unsupported low score, unnecessary interruption, or false acceptance is a management defect and requires a corrective action.
 11. Every accepted fix becomes a permanent regression obligation. A new change that revives an old failure is not progress and cannot pass acceptance or publication gates.
+12. Never omit a blocked member or the manager from scoring. Record evidence uncertainty and blocker ownership; do not invent points to satisfy the template.
+13. A continuation message or approval message is not recovery. Confirm a new execution event, command, file change, or other real progress. Unresolved recovery remains the manager's open responsibility.
+14. When the owner delegates approvals, handle covered approvals as a standing manager duty, including at night. Read [safety-and-maintenance.md](references/safety-and-maintenance.md), inspect the exact pending action, use an available permitted approval mechanism promptly, then verify execution. Do not ask the owner again for an already covered action. Delegation does not override a tool restriction or a required human-only confirmation.
 
 ## Tool and automation behavior
 
@@ -51,4 +60,4 @@ Keep routine observation read-only. Contact a member only for a concrete task, m
 
 ## Output expectations
 
-Use aligned tables for recurring reviews. Provide exact counts with denominators, named tests, evidence paths and hashes, explicit PASS/FAIL/component-only/not-comparable/blocked states, and the next measurable action. Never use an unsupported percentage such as “about 60% complete.”
+Use concise vertical sections for recurring reviews. Provide exact counts with denominators, named tests, evidence paths and hashes, explicit PASS/FAIL/component-only/not-comparable/blocked states, and the next measurable action. Score is not percentage complete or release authorization. Never use an unsupported percentage such as “about 60% complete.”

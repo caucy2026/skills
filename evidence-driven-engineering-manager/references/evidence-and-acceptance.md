@@ -39,7 +39,7 @@ Required fields:
 - planned deliverables, actual completions, acceptance candidates, passes, failures, not-comparable cases, component-only cases, and blockers—each with counts and denominators;
 - changed files and commits;
 - commands/tests with passed/total and named failures;
-- one row per acceptance candidate: ID, scenario, scope, criterion, expected, actual, verdict, evidence path, SHA-256;
+- one vertical record per acceptance candidate: ID, scenario, scope, criterion, expected, actual, verdict, evidence path, SHA-256;
 - relevant end-to-end data flow and state transitions;
 - reference media and final-artifact evidence when visual work is involved;
 - generalization evidence and special-case scan when a reusable algorithm is required;
@@ -57,17 +57,7 @@ When a status summary conflicts with raw logs, files, builds, or running command
 
 ## 100-point scoring
 
-| Dimension | Points | What to judge |
-|---|---:|---|
-| User requirement execution | 35 | Correct goal, route, boundaries, and acceptance target |
-| Effective output | 25 | Code, data, tests, artifacts, or new falsifiable conclusions |
-| Acceptance closure | 20 | Build/run/real-use/regression/evidence completeness |
-| Efficiency | 10 | Avoids idle time, blind repeats, and unnecessary reinvention |
-| Risk and collaboration | 10 | Protects shared state, stays in scope, reports failures honestly |
-
-100 means the relevant end state is fully and independently verified, not merely good progress. A reasonable failure with new evidence can score well. High activity that misses the user's target must lose requirement and closure points.
-
-Scores below 60 require at least two independent negative evidence types. Scores below 20 require confirmation of at least three of: no raw event growth, no file change, no build/test, and no reasonable long task. Remind a low-scoring member only when the user has not intervened recently, the work is genuinely off-track, the reminder will not interrupt valid work, and the same reminder was not already sent.
+Use [scoring-and-reporting.md](scoring-and-reporting.md) as the single scoring authority. It defines weights, uncertainty handling, responsibility, reminder thresholds, and the mandatory report gate. Do not maintain a second scoring system in a project checkpoint or award historical work as current-window output.
 
 ## Facts and judgments
 
@@ -79,4 +69,3 @@ Every report distinguishes:
 - unknowns that cannot support a negative inference.
 
 If the manager made a wrong call, retract it promptly, show the corrected evidence and score, explain the cause and impact, and add a concrete prevention rule.
-

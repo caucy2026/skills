@@ -1,0 +1,4 @@
+interface:
+  display_name: "SWDOL 客户端完整兼容研发"
+  short_description: "以原版完整状态机移植、自动差分和同制品验收推进客户端兼容"
+  default_prompt: "使用 $swdol-client-compatibility 推进怀旧OL客户端完整兼容，先核原版合同与依赖，再移植共用状态机并验证真实交互和同包回归。"

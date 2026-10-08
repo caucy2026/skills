@@ -25,8 +25,9 @@ Cadence is configurable, but a project-specific change must preserve the distinc
 5. Check same-route failure count and apply the three-attempt fuse.
 6. Check whether the hourly acceptance ledger is due and valid.
 7. Assign work only when intervention is justified.
-8. Record decisions, evidence, open risks, daytime experiments, and the next-cycle focus.
-9. Deliver the user-requested report. Routine notifications should remain quiet unless the user explicitly requested periodic reports.
+8. Score every in-scope member and the manager using scoring-and-reporting.md. Reconcile the roster, component totals, evidence window, deductions, and responsibility for each blocker.
+9. Verify that any member contacted actually resumed execution. If an application approval remains pending, record it as unresolved; a chat message saying “approved” is not proof the application granted approval.
+10. Save the vertical report and check its format before sending. A missing score or missing follow-up makes the checkpoint incomplete. Routine notifications remain quiet unless requested or actionable; scoring is mandatory even on a quiet cycle.
 
 ## State classification
 
@@ -56,6 +57,8 @@ When a member stops, resolve these questions from evidence or ask them once in a
 
 If incomplete work remains, issue one concrete assignment containing goal, scope, inputs, acceptance, evidence location, stop condition, and help route. Do not send generic “continue” or “status?” messages.
 
+The manager owns detection, coordination, and recovery verification. Preserve time of detection, task sent, response, actual restart evidence, and next check. Never claim uninterrupted supervision when the scheduler was paused or no check ran. Do not guarantee zero stoppages between scheduled checks. If recovery needs unavailable authority, report that exact blocker and pursue safe independent work when possible; do not repeatedly send the same instruction into a blocked tool call.
+
 ## Three-attempt fuse
 
 An attempt has a hypothesis, an action, and an observable result. Repeating a command, changing wording, or producing no new evidence remains the same route.
@@ -73,4 +76,3 @@ After the third no-result attempt:
 ## Unattended operation
 
 When the user is absent, continue safe and reversible implementation, local builds, tests, static checks, offline evidence analysis, documentation, fixtures, diagnostics, and isolated experiments. Do not expand permissions or wait idly on a blocked item while independent work exists.
-

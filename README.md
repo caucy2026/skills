@@ -2,9 +2,9 @@
 
 面向 KEMI 应用开发、发布、远程调试、磁盘维护、视频制作和浏览器 3D 游戏的可复用技能集合。
 
-本仓库目前包含 **41 个独立技能**：2026-10-02 同步的 39 个本机自定义技能，以及保留的 2 个仓库原有技能。每个技能目录包含 `SKILL.md`，并按需提供引用文档、脚本、素材和代理配置；不包含 Codex 系统内置技能、运行缓存或凭据。公开示例中的签名密码通过安全环境变量提供，本机凭据不上传。
+本仓库目前包含 **59 个独立技能**：保留远端已有的 44 个技能，并于 2026-10-08 从本机 Codex 全局技能目录新增 15 个、更新 4 个，另有 1 个内容一致。每个技能目录包含 `SKILL.md`，并按需提供引用文档、脚本、素材和代理配置；不包含 Codex 系统内置技能、运行缓存或凭据。公开示例中的签名密码通过安全环境变量提供，本机凭据不上传。
 
-## 2026-10-02 新增同步 · 10 个
+## 2026-10-02 至 2026-10-05 新增同步 · 13 个
 
 | 技能 | 用途 |
 |---|---|
@@ -18,29 +18,38 @@
 | [vibekits-cluster-capabilities](vibekits-cluster-capabilities/SKILL.md) | 设备能力声明、修改、停用及同步核验。 |
 | [vibekits-cluster-deployment](vibekits-cluster-deployment/SKILL.md) | 集群设备远程部署、入房、身份和心跳诊断。 |
 | [vibekits-fleet-compatibility](vibekits-fleet-compatibility/SKILL.md) | 桌面升级兼容性门禁与既有身份、授权、工作区保护。 |
+| [vibekits-cluster-room-deploy](vibekits-cluster-room-deploy/SKILL.md) | 部署和恢复 VibeKits 集群房间，并验证远程连接。 |
+| [apk-touch-feedback](apk-touch-feedback/SKILL.md) | 实现和验证 Android APK 的触摸反馈及交互一致性。 |
+| [hbbv-server-build-deploy](hbbv-server-build-deploy/SKILL.md) | 构建、部署并验证 HBBV 服务端。 |
 
 ## 快速选择
 
 | 你要做的事 | 首选技能 |
 |---|---|
 | 管理多个开发任务、跟进证据和验收 | [evidence-driven-engineering-manager](evidence-driven-engineering-manager/SKILL.md) |
+| 接手项目并传递目标、进度、证据与下一步 | [project-handoff](project-handoff/SKILL.md) |
+| 对客户端和服务端进行授权动态追踪 | [client-server-dynamic-trace](client-server-dynamic-trace/SKILL.md) |
 | 发布前测试、修复、回归并证明交付结果 | [app-release-stability-gate](app-release-stability-gate/SKILL.md) |
 | 上传已有安装包到 KEMI 商场 | [kemi-market-publish](kemi-market-publish/SKILL.md) |
 | 在应用里实现商场和自动更新 | [kemi-market-integration](kemi-market-integration/SKILL.md) |
 | 发布 KEMI 传书客户端 | [kemi-send-release](kemi-send-release/SKILL.md) |
 | 根据 VibeKits 设备 ID 远程调试 | [vibekits-remote-simulator](vibekits-remote-simulator/SKILL.md) |
 | 检查磁盘、清理可重建的历史产物 | [kemi-storage-cleanup](kemi-storage-cleanup/SKILL.md) |
+| 严格保护源码和资料地清理编译缓存 | [safe-build-cache-cleanup](safe-build-cache-cleanup/SKILL.md) |
+| 开展 SWDOL 原版兼容研发与验收 | [swdol-server-compatibility](swdol-server-compatibility/SKILL.md) / [swdol-client-compatibility](swdol-client-compatibility/SKILL.md) |
 | 制作产品宣传视频 | [product-launch-motion](product-launch-motion/SKILL.md) / [remotion-promo-video-factory](remotion-promo-video-factory/SKILL.md) |
 | 开始浏览器游戏项目 | [game-studio](game-studio/SKILL.md) |
 
 ## 技能目录
 
-### 工程管理与质量验收 · 2 个
+### 工程管理、追踪与质量验收 · 4 个
 
 | 技能 | 用途与边界 |
 |---|---|
 | [evidence-driven-engineering-manager](evidence-driven-engineering-manager/SKILL.md) | 管理多智能体开发：明确职责、检查进度证据、量化验收、控制重复失败和无人值守边界；不用于普通单人实现任务。 |
 | [app-release-stability-gate](app-release-stability-gate/SKILL.md) | 从源码、需求与历史故障生成可执行测试，进行真机验证、修复和回归，以证据判定 PASS 或阻塞；发布阶段调用相应发布技能。 |
+| [project-handoff](project-handoff/SKILL.md) | 整理项目目标、实际进度、环境、成熟操作路线、验收证据、风险与首个续做动作，形成可执行交接。 |
+| [client-server-dynamic-trace](client-server-dynamic-trace/SKILL.md) | 对授权系统执行低侵入客户端/服务端动态追踪、事件关联和回放验证，用于重建协议及状态机行为。 |
 
 ### 发布、上架与商场接入 · 9 个
 
@@ -56,7 +65,7 @@
 | [public-app-distribution](public-app-distribution/SKILL.md) | 公共应用商店、下载站及 GitHub Releases 等渠道的分发准备、提交和验证；适用时使用具体平台技能，不替代内部商场流程。 |
 | [kemi-hbbc-release](kemi-hbbc-release/SKILL.md) | HBBC HTTP/HTTPS、账号、在线状态、用量和支付服务的构建、部署、验证与回滚；禁止借此替换或重启 RustDesk hbbs/hbbr。 |
 
-### 远程设备与硬件调试 · 6 个
+### 远程设备、集群与硬件调试 · 9 个
 
 | 技能 | 用途与边界 |
 |---|---|
@@ -66,12 +75,16 @@
 | [kemi-windows-device-lab](kemi-windows-device-lab/SKILL.md) | 在可信 Windows 测试机 D 盘进行源码同步、原生 Release 编译、签名、安装、兼容性和性能测试。 |
 | [kemi-windows-remote-signing](kemi-windows-remote-signing/SKILL.md) | 通过 VibeKits 远程执行 Authenticode 签名，处理硬件令牌窗口并验证签名结果；不记录 PIN 或私钥。 |
 | [kemi-s1-hardware-debug](kemi-s1-hardware-debug/SKILL.md) | S1/huanglong 串口与 ADB 联合诊断，关联 HiV730 源码和 Git 历史，形成可追溯分析报告。 |
+| [vibekits-cluster-agent](vibekits-cluster-agent/SKILL.md) | 在 VibeKits Harness 集群中竞标和执行已分配任务，并向对方仿真 ID 回报可验证结果。 |
+| [vibekits-cluster-capabilities](vibekits-cluster-capabilities/SKILL.md) | 按固定 Schema 管理本机集群能力声明、同步状态和验证范围。 |
+| [vm-smb-file-delivery](vm-smb-file-delivery/SKILL.md) | 通过 SMB 向授权 Windows 虚拟机安全交付文件、恢复映射盘并进行回读验证。 |
 
-### 磁盘维护 · 1 个
+### 磁盘维护 · 2 个
 
 | 技能 | 用途与边界 |
 |---|---|
 | [kemi-storage-cleanup](kemi-storage-cleanup/SKILL.md) | 检查和回收缓存、临时调试文件及过期可重建产物；保护源码、Git、文档、证书密钥、当前发布包、活动构建和聊天历史。不能用文件年龄单独判断是否可删。 |
+| [safe-build-cache-cleanup](safe-build-cache-cleanup/SKILL.md) | 仅清理可重建的过期编译产物、编译器缓存、临时二进制和可重新下载缓存；禁止删除源码、文档、用户资料、Git 历史、发布归档和虚拟机磁盘。 |
 
 ### 视频与产品展示 · 5 个
 
@@ -83,18 +96,34 @@
 | [remotion-promo-video-factory](remotion-promo-video-factory/SKILL.md) | 用 Remotion 按产品类型蓝图实现宣传片，管理时间线、动效及逐帧视觉验收。 |
 | [capcut](capcut/SKILL.md) | CapCut/剪映短视频剪辑计划、节奏、字幕、音乐授权和导出指导；智能体提供方案，人工在 CapCut 中执行和确认，所引用外部技能/服务需另行具备。 |
 
-### 浏览器游戏与 3D · 8 个
+### 前端设计、浏览器游戏与 3D · 10 个
 
 | 技能 | 用途与边界 |
 |---|---|
 | [game-studio](game-studio/SKILL.md) | 游戏早期技术选型与设计、实现、素材、试玩流程规划，再转交专门技能。 |
 | [game-playtest](game-playtest/SKILL.md) | 浏览器游戏冒烟测试、自动化试玩、截图检查、HUD/覆盖层评审及问题记录。 |
+| [frontend-app-builder](frontend-app-builder/SKILL.md) | 从视觉概念、实现到浏览器测试，构建或现代化前端应用、仪表盘、游戏和创意网站。 |
+| [ideate](ideate/SKILL.md) | 根据产品设计简报生成图像化设计方向、替代方案和视觉探索。 |
 | [three-webgl-game](three-webgl-game/SKILL.md) | 用 Three.js、TypeScript/Vite 实现游戏运行时，处理场景、GLB、物理和 WebGL 调试。 |
 | [web-3d-asset-pipeline](web-3d-asset-pipeline/SKILL.md) | Blender 清理与导出、GLB/glTF 优化、碰撞体、LOD、压缩、纹理打包及运行时验证。 |
 | [threejs-animation](threejs-animation/SKILL.md) | 关键帧、骨骼、形变、AnimationMixer 和 GSAP 动画控制。 |
 | [threejs-geometry](threejs-geometry/SKILL.md) | 内置几何体、BufferGeometry、自定义顶点、法线、UV 和索引网格。 |
 | [threejs-lighting](threejs-lighting/SKILL.md) | Three.js 灯光、阴影、HDR 环境和光照配置。 |
 | [threejs-performance](threejs-performance/SKILL.md) | 实例化、绘制调用、LOD、裁剪、纹理和 GPU 性能诊断与优化。 |
+
+### SWDOL 原版兼容研发 · 9 个
+
+| 技能 | 用途与边界 |
+|---|---|
+| [swdol-acceptance-handoff](swdol-acceptance-handoff/SKILL.md) | 对 SWDOL 服务端、客户端和联调执行原版同条件验收、证据归档与交接。 |
+| [swdol-client-compatibility](swdol-client-compatibility/SKILL.md) | 研发自研客户端的完整原版兼容状态机、输入、交互、渲染与防回归。 |
+| [swdol-database-operations](swdol-database-operations/SKILL.md) | 对齐原版认证计费库、游戏库和我方 SQLite 持久化及状态差分。 |
+| [swdol-document-governance](swdol-document-governance/SKILL.md) | 对研发文档分类、去重纠错、维护唯一主文档并检查可编码可追溯性。 |
+| [swdol-gm-debugging](swdol-gm-debugging/SKILL.md) | 通过原版 GM 和后台观察建立可比实验环境并验证交互。 |
+| [swdol-quest-task-delivery](swdol-quest-task-delivery/SKILL.md) | 依据真实 Flag、角色条件和怪物等级整理剧情任务并交付三 Tab 任务界面。 |
+| [swdol-server-compatibility](swdol-server-compatibility/SKILL.md) | 组织服务端原版兼容研发、静态动态核查、持久化、差分和防回归。 |
+| [swdol-static-dynamic-analysis](swdol-static-dynamic-analysis/SKILL.md) | 结合版本锁定静态分析和授权动态追踪，重建客户端/服务端真实行为。 |
+| [swdol-xp-control](swdol-xp-control/SKILL.md) | 在 86Box XP 中操作授权原版客户端并进行登录、动作和有界证据采集。 |
 
 ## 安装
 

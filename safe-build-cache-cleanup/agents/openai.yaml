@@ -1,0 +1,4 @@
+interface:
+  display_name: "安全构建缓存清理"
+  short_description: "只清理过期可重建缓存，严格保留源码文档资料"
+  default_prompt: "使用 $safe-build-cache-cleanup 盘点磁盘并安全清理超过指定天数的可重建缓存与编译产物。"

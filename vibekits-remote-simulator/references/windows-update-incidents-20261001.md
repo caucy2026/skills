@@ -63,7 +63,6 @@
 升级结束：按原ID实际调用、读回精确进程路径/版本/哈希，验证原授权和用户数据及回滚点、Harness实际回复、房间新心跳。观察连接丢失先查同一次独立任务，不重跑安装；仿真不可用时用已授权办公ID现场核验。只完成签名、启动请求或已有房间记录均不能宣称升级完成。
 
 Windows 管理员已确认但启动失败，先按[SSHD兼容性调查与验收](windows-sshd-compatibility-20261001.md)核对微软和Win32-OpenSSH官方资料及现场；不得继续把服务失败笼统写成未授权。
-
 ## 2026-10-02：升级健康与入房时钟故障分开处理
 
 58 dev445已通过原ID重连、命令、文件传输和独立升级守护commit；之后JOIN_CHALLENGE_EXPIRED属于房间恢复失败，不能据此再次安装或撤销既有仿真授权。实测W32Time停止、时钟慢约4–6秒，恢复既有时间服务后NTP偏差毫秒级、原approved成员恢复实时心跳。完整现象、命令结果及证据边界见[集群时钟排障记录](../../vibekits-cluster-deployment/references/fleet-lessons.md#2026-10-02仿真可用但-join_challenge_expired)。
