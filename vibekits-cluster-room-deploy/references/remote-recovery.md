@@ -48,3 +48,16 @@
 CIM创建时间微秒与GetProcess的100ns末位精度可不同；寿命fence按同API、同精度、同UTC表达比较，同时核PID/路径/签名，不以格式末位差判换进程。已无活跃的旧PID不继续等待；观察超时不是事务已终止。资源报告区分private/working set/commit、handles、累计CPU秒与CPU百分比；加载后增长需分段及释放证据，既不立即判leak也不立即判stable。
 
 本经验未证明正式561发布、七台/100台协作、真实模型与长期资源门禁完成；按当前目标继续补未验项，不能缩成基础在线PASS。
+
+
+## 资源节约、同任务恢复与升级经验（2026-10-08）
+
+先复用仍有效的源/包hash与实际目标证据，不重复全量catalog、创建分析会话、编译或签名。诊断使用有界小批/流式原始文本DTO及owned进程预算；PS5 Get-Content装饰对象深JSON可能扩张，不完整捕获后才截断。编译/签名/备份需其任务预算与独立外部owner，不能套短诊断期限；内层工具成功而supervisor壁限失败时分别报告，不虚称整个任务成功。
+
+维护观察timeout先查同一attempt/进程创建时间/阶段回执，不重发升级、connect或签名。已验证连接可能35秒才完成，单次connect以实际成熟60秒观察及status对账；在安装前observer必须原profile/UUID/FP/approved房间trustedready且live，按真实guardian期限保留ACK余量，不续守护。Python3.9读取PS七位fraction先保守到微秒并处理UTC；寿命以同API精度，不按路径名/CPU快照判进程身份。
+
+保持原Bundle/Team/完整DR/entitlements、设备ID/FP、登录/凭据/TCC、房间身份与用户历史，正常覆盖/失败完整回退。公证/签名仅是包门禁，scheduled不是安装成功。Mac旧更新器可能拒__MACOSX，已签公证App仅做唯一App根兼容封包，独立票据/签名/GK/hash后走原校验，不热改App或绕校验。多实例端口占用查实际加载EXE（lsof txt）与父子关系；正常退出已证属于本次的旧实例，不namekill、不据时间猜谁启动。
+
+无目标模型/欠费不使原仿真和房间资源失效：管理agent可在原授权内用确定性CPU/编译/签名工具；目标agent推理与资源任务从合同创建时明确两mode，不静默降低requiresModel、签名租约/permit。模型402不自动充值/复制Key/每poll重发。已过期任务在server discovery与client模型前拒绝；固定分析会话仍可能同会话无限错误重试，应核自动调用数，不只会话数/UI单次failed。typed provider QUOTA/401/402/403需停止该上下文自动请求，临时错误用已验证scope/上限/冷却；普通capability变动不能绕过。恢复按明确模型/key/runtime或正常配置动作，对结果按contract/step/generation对账，不复用过期租约。此项是已审源码修复；新正式包实机回归未证不称普遍部署。
+
+普通确认只在原授权、精确目标/程序/同请求核对且工具允许时完成；PIN/密码/新信任/身份变化与平台强制审批保留。拒绝后不换路做同一拒绝动作；不批量批准不明或重复请求。在线原同机备用办公路径可恢复原开关，已离线桌面仍按用户要求不尝试。恢复后真实原ID MCP/SSH/实时房间逐层验证，cachedready不等可用；短资源采样不证明连续在线或长期稳定。源码/当前包/每机P0与100台业务验收各自记范围。

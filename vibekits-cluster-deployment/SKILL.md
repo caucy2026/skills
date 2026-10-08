@@ -16,7 +16,7 @@ description: 用 VibeKits 仿真 ID 远程诊断、更新和加入集群房间�
 3. 若版本合格且仿真已开：读取目标房间目录 → 发起加入申请 → 用既有管理 API 检查申请的设备 ID、公钥指纹和房间并完成已授权审批 → 等客户端激活与心跳 → 双向核对客户端房间列表、服务端成员及在线状态。申请已在服务端创建但客户端报错时，不重复申请，先查请求 ID 与服务端修订。
 4. 记录开始/结束时间、ID、主机、运行版本、办公 ID（存在时）、目标房间、申请/审批/激活/心跳状态。只有**原 ID、客户端实时状态和服务端实时心跳同时成立**才报“入房完成”。超时则按下述故障分流继续处理，而非让用户重做可远程完成的事。
 
-不同客户端的接口参数、API 认证和当前目标房间以项目文档为准。远程工具用法见 [vibekits-remote-simulator](../vibekits-remote-simulator/SKILL.md)；能力格式与同步见 [vibekits-cluster-capabilities](../vibekits-cluster-capabilities/SKILL.md)；任务抢单与执行见 [vibekits-cluster-agent](../vibekits-cluster-agent/SKILL.md)。
+不同客户端的接口参数、API 认证和当前目标房间以项目文档为准。远程工具用法见 [vibekits-remote-simulator](https://github.com/caucy2026/skills-game/blob/main/vibekits-remote-simulator/SKILL.md)；能力格式与同步见 [vibekits-cluster-capabilities](../vibekits-cluster-capabilities/SKILL.md)；任务抢单与执行见 [vibekits-cluster-agent](https://github.com/caucy2026/skills-game/blob/main/vibekits-cluster-agent/SKILL.md)。
 
 ## 故障分流与升级
 
@@ -29,3 +29,5 @@ description: 用 VibeKits 仿真 ID 远程诊断、更新和加入集群房间�
 For the six-device room, real-time room counts and online-first pagination, read [the dashboard and fleet acceptance cases](references/dashboard-fleet-lessons-20260930.md).
 
 For network changes, stale controller bridges or conflicting online indicators, read [the verified incident and recovery procedure](references/network-switch-incident-20260930.md). Do not label a local bridge error or a transport timeout as proven remote-device offline.
+
+迁移归属：仿真/集群代理/能力技能自2026-10-08在[caucy2026/skills-game](https://github.com/caucy2026/skills-game)维护；部署技能仍在本仓库。资源/维护恢复时阅读本技能既有恢复引用中的2026-10-08经验，不按旧相对目录猜位置。

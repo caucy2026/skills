@@ -5,7 +5,7 @@ description: 通过VibeKits工具部署hbbv服务器，按获授权仿真ID配�
 
 # 集群房间部署全链路
 
-用户给出服务器、设备仿真ID、服务地址和目标房间并授权接入后，沿现有工具完成部署和逐台验收。先读项目AGENTS、本机环境规则及最新交接；部署细节读[hbbv服务器技能](../hbbv-server-build-deploy/SKILL.md)，能力编辑读[能力技能](../vibekits-cluster-capabilities/SKILL.md)，房间协作读[任务技能](../vibekits-cluster-agent/SKILL.md)。技能可供同事复用，不携带账号、令牌、密码或私钥，也不授权给其他会话派任务。
+用户给出服务器、设备仿真ID、服务地址和目标房间并授权接入后，沿现有工具完成部署和逐台验收。先读项目AGENTS、本机环境规则及最新交接；部署细节读[hbbv服务器技能](../hbbv-server-build-deploy/SKILL.md)，能力编辑读[能力技能](../vibekits-cluster-capabilities/SKILL.md)，房间协作读[任务技能](https://github.com/caucy2026/skills-game/blob/main/vibekits-cluster-agent/SKILL.md)。技能可供同事复用，不携带账号、令牌、密码或私钥，也不授权给其他会话派任务。
 
 ## 一、连接与部署服务器
 
@@ -65,4 +65,6 @@ Windows签名示例声明需说明EXE/DLL/安装包输入、签名与验证报�
 
 仿真不可调用时按[实际远程桌面恢复清单](references/remote-recovery.md)处理；617办公通道已实测可达；用户报告PIN已输入后原仿真恢复并完成云端迁移，过程及尚未证实的500根因见恢复清单。锁屏不能未经日志定位称HTTP500根因。
 
-房间设备用途及可执行方法通过[GitHub能力交接规范](../vibekits-cluster-capabilities/references/github-capability-handoff.md)传递；完整交付范围按[全目标验收映射](../vibekits-cluster-capabilities/references/full-goal-acceptance-map.md)逐项保留，不把基础在线当作最终协作通过。
+房间设备用途及可执行方法通过[GitHub能力交接规范](https://github.com/caucy2026/skills-game/blob/main/vibekits-cluster-capabilities/references/github-capability-handoff.md)传递；完整交付范围按[全目标验收映射](https://github.com/caucy2026/skills-game/blob/main/vibekits-cluster-capabilities/references/full-goal-acceptance-map.md)逐项保留，不把基础在线当作最终协作通过。
+
+迁移归属：仿真/集群代理/能力技能自2026-10-08在[caucy2026/skills-game](https://github.com/caucy2026/skills-game)维护；部署技能仍在本仓库。资源/维护恢复时阅读本技能既有恢复引用中的2026-10-08经验，不按旧相对目录猜位置。
