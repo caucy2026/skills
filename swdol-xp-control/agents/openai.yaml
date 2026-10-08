@@ -1,4 +1,0 @@
-interface:
-  display_name: "SWDOL XP 注入与快速操作"
-  short_description: "复用已验证注入、限时登录、魔法切换与传送流程，避免重复摸索"
-  default_prompt: "使用 $swdol-xp-control 按已验证流程完成原版 XP 客户端注入、登录和限时游戏操作。"

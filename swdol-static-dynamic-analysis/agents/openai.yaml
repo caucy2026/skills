@@ -1,4 +1,0 @@
-interface:
-  display_name: "SWDOL 静动联合分析"
-  short_description: "轩辕剑 OL 静态逆向、双端注入、证据关联与回放验收流程"
-  default_prompt: "Use $swdol-static-dynamic-analysis to reconstruct this SWDOL behavior with version-locked static evidence and the smallest authorized paired runtime trace."

@@ -1,4 +1,0 @@
-interface:
-  display_name: "SWDOL剧情任务交付"
-  short_description: "把原剧情整理成玩家任务，按真实Flag与等级推荐，验收800×600三Tab界面"
-  default_prompt: "使用 $swdol-quest-task-delivery，按用户规则继续整理原剧情与每个角色的三个任务Tab。"

@@ -1,6 +1,0 @@
-interface:
-  display_name: "SWDOL验收与两小时交接"
-  short_description: "按服务端、客户端和联调职责核对原版证据、持久化、回归及两小时云端交接"
-  default_prompt: "使用 $swdol-acceptance-handoff 按我的职责完成本轮验收和两小时交接，列明证据、缺口及远端备份SHA。"
-policy:
-  allow_implicit_invocation: true
