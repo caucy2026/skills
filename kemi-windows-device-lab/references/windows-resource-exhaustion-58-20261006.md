@@ -40,3 +40,8 @@ Windows 5.1的`Get-Content -Raw`结果带有PSDrive/PSProvider等ETS属性。把
 ## 测试资源监控硬门禁（2026-10-10）
 
 后续每项真实测试必须按[资源实时跟踪硬门禁](https://github.com/caucy2026/vibekits/blob/main/docs/acceptance/RESOURCE_SAFETY_LIVE_GATE_20261010.md)记录系统及App两层CPU/RAM/提交/句柄/FD/网络BOUND与动态端口。每5秒目标端有界落盘并实时报异常，异常即暂停新增自有测试、保事务并沿原通道修复；不能盲目杀签名/升级/用户任务。未知指标不能写0，缺完整覆盖不得通过。观察器结束必须报告，不把有限样本冒称持续守护。
+
+
+## 619观察器与覆盖升级补证（2026-10-11）
+
+详见[实际控制器错误及修复](https://github.com/caucy2026/vibekits/blob/main/docs/acceptance/WINDOWS619_UPGRADE_CONTROLLER_LESSONS_20261011.md)。公共函数必须在调用方作用域可见，Parser PASS仅是语法证据。活跃日志默认ReadAllLines可能共享冲突，显式FileShare.ReadWrite并检查stderr/内层退出；不能把读取失败计为零采样。Task Ready需核LastTaskResult与实际进程。4551/0x800711c7为本机应用控制拒绝诊断EXE，不改策略、不借包装器运行被拒文件；用允许的系统计数接口独立观察。61帧首末296秒且一次网络缺项不算完整300秒通过；按实际时间补缺，只读busy84才有界重读，不重复安装或延长守护。
