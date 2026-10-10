@@ -35,3 +35,8 @@ Windows 5.1的`Get-Content -Raw`结果带有PSDrive/PSProvider等ETS属性。把
 证据：[Windows58动态端口耗尽](https://github.com/caucy2026/vibekits/blob/main/docs/acceptance/WINDOWS58_EPHEMERAL_PORT_EXHAUSTION_20261010.json)。
 
 2026-10-10 Windows隔离回归补证：在实际58、Dart运行时、15秒/512MiB原生guard下，60次close后BOUND增加60，destroy后增加0，两种模式最后显式清理均0。永久工具已在VibeKits主线`tool/socket_probe_windows_bound_regression.dart`保存；netstat中文OEM标题不能按UTF8解码，应流式读取并只解析ASCII的TCP/BOUND/PID字段。测试保持相同引用用于两种模式，不宣称追踪了产品全部端点。
+
+
+## 测试资源监控硬门禁（2026-10-10）
+
+后续每项真实测试必须按[资源实时跟踪硬门禁](https://github.com/caucy2026/vibekits/blob/main/docs/acceptance/RESOURCE_SAFETY_LIVE_GATE_20261010.md)记录系统及App两层CPU/RAM/提交/句柄/FD/网络BOUND与动态端口。每5秒目标端有界落盘并实时报异常，异常即暂停新增自有测试、保事务并沿原通道修复；不能盲目杀签名/升级/用户任务。未知指标不能写0，缺完整覆盖不得通过。观察器结束必须报告，不把有限样本冒称持续守护。
