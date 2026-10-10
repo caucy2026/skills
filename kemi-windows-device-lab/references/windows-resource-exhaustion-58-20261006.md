@@ -33,3 +33,5 @@ Windows 5.1的`Get-Content -Raw`结果带有PSDrive/PSProvider等ETS属性。把
 - 资源验收加入BOUND端点、动态端口、句柄增长及普通自动绑定连接，复验原ID MCP、真实桌面和云心跳。短采样、源码修正不等于正式包或长期稳定通过。
 
 证据：[Windows58动态端口耗尽](https://github.com/caucy2026/vibekits/blob/main/docs/acceptance/WINDOWS58_EPHEMERAL_PORT_EXHAUSTION_20261010.json)。
+
+2026-10-10 Windows隔离回归补证：在实际58、Dart运行时、15秒/512MiB原生guard下，60次close后BOUND增加60，destroy后增加0，两种模式最后显式清理均0。永久工具已在VibeKits主线`tool/socket_probe_windows_bound_regression.dart`保存；netstat中文OEM标题不能按UTF8解码，应流式读取并只解析ASCII的TCP/BOUND/PID字段。测试保持相同引用用于两种模式，不宣称追踪了产品全部端点。
