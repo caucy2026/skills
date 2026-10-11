@@ -46,3 +46,5 @@ Harness `docs/HARNESS_UPGRADE_STANDARD.md`、`docs/RELEASE_GATES_ALL_CLIENTS.md`
 hbbv `docs/ROOM_DELEGATION_NATIVE_INTEGRATION_HANDOFF_20261011.md`、`docs/MULTI_CUSTOMER_REALTIME_AND_RECONNECT_20261011.md`，以及项目 CUSTOMER_ID_DEVICE_ENROLLMENT、CLUSTER_MODEL_READINESS_EXPLICIT_VERIFY、ROOM_DELEGATED_MCP_GATE、ROOM_DELEGATION_ONE_USE_CLAIM、ROOM_MESSAGES_AND_COLLAPSIBLE_ROOMS 记录。按当前动作搜索，不全量重读所有历史。
 
 当前追加（2026-10-11）：同次619 Runner/独立AOT在Session0返回1312且0键写入；交互测试投影仅main互斥名/窗口标题变化，独立build86.154s exit0，固定GUI入口已由真实MCP运行：原用户/Session1、native PASS、8键删除并读回缺失、exit0、原App未变。详见项目Windows619台账；不覆盖首轮失败。
+
+22:43追加：Windows619已另存READY_FOR_SIGNATURE_ONLY收据（SHA778324E6…38B9245）；活动Session1签名Inspect exit0、原B828…7E82证书有效至2027-09-12、x64 SignTool可用。未签名/安装/发布。第一619固定GUI签名脚本在同名控制端产物目录准备，启动前对账intent/原进程及文件哈希，PIN只在实际窗口由人输入。
