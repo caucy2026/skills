@@ -64,3 +64,5 @@ Mac445620覆盖终态：主PID52126创建02:55:00，原路径实际2620/mainSHA3
 2026-10-12 621准备追加：在cluster-runtime-621-20261012-v1以完整620输入隔离冻结621/2621，源模块及实际Node runtime同步，版本G0及平台合同正负控通过，尚未构建。只清本任务终态旧编译/检查输出2772生成二进制，保来源/工具链/证据/618final-v2/619final/620final/完整620解压副本；旧编译及619解压目录标不完整，不直接复用其验签路径。实际可用1.56GB→8.60GB，仍不满足Xcode10GiB持续保留，后续继续精确容量恢复及全Goal；入口Harness docs/acceptance/CLUSTER621_FROZEN_SOURCE_AND_CAPACITY_20261012.md。
 
 621构建追加：容量恢复15.04GB后，四Node门禁、版本G0、2163输入SHA通过；完整Universal Xcode150.201秒exit0、实际2621，实际runtime SHA5bf22d8d…a39ccc58匹配修复源。49Mach-O签名、原DR/entitlements、签后兼容及JIT/DSH/flock通过。单次公证73878ff9-a3e4-4726-b7b0-d65c2900978a在途，尚未final/覆盖/真实模型重验；Windows6218文件已独立D盘暂存，不替代真实构建。
+
+621final追加：公证73878ff9-a3e4-4726-b7b0-d65c2900978a Accepted，票据、严格ZIP单App根、独立解压验签/票据/Gatekeeper和实际runtime模块SHA均通过；final ZIP423709865B/SHAae2c49a3afdf93270c32ece70a044ea5b6344c5885f54020f8fa911c45783837，mainSHA54be36b2…f79c879b，2621。同一ZIP正在向445/132暂存，尚未新覆盖；先对账原upload意图及句柄，不重传未知结果。Mac445620的原固定会话即时idle，后续仍须覆盖/原Key/真实模型/任务实测。
