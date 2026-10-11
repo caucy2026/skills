@@ -41,3 +41,11 @@ hbbv 部署保留 serverId、私钥、授权/设备、customer/member 和持久�
 使用项目既定独立 GIT_INDEX_FILE backup helper：精确白名单、秘密筛查、最新 remote main 为 parent、三方合并冲突人工核验、正常 push、远端 tree/blob 读回、共享索引前后哈希不变。不要直接执行历史脚本顶层旧任务。源码/文档/skills 仓库分别记录 commit 与实际范围。
 
 商城以目标正确、发布成功和公开下载哈希验证为准；只有上传成功不算完成。云端构建后依 cloud-build-cleanup 清自己的不用缓存和旧中间产物并读回，不能删除别人的任务、最新包、源码或签名材料。
+
+## Windows 原生凭据测试宿主
+
+普通 flutter test 没有 Windows Runner 的自有 MethodChannel，MissingPluginException 不能直接归为产品失败。先确认方法注册源码，再用真实原生宿主补验，不用 mock 或静默 skip 代替。Session0 实机曾返回1312（无登录会话），与缺插件、整机离线分开；须在原登录交互用户测试。
+
+共享原应用不能停止时，可建立只供测试的 native project/AOT 投影：保留凭据读写和其他生产源、合格Flutter/plugin库，main仅隔离实例互斥名/测试窗口标题；独立obj/output，记录差异和源码哈希，绝不把投影宿主作为发布包。测试仅写随机前缀自己的键，finally逐键删除并经真实native读回缺失；失败与未清理项保留。使用固定GUI入口绑定活动session/user/PID与结果，再独立核原应用创建时间和真实存储结果。源码/构建通过仍不能算覆盖授权延续。
+
+已上传长PowerShell脚本沿项目既定PowerShell7 -File入口执行，先核实际策略/GPO；2026-10-11目标7为RemoteSigned、5.1为默认Restricted，未修改策略。不要加ExecutionPolicy Bypass或更改全机策略掩盖问题。读取在途日志应有界且FileShare.ReadWrite；读锁错误不代表原事务失败，不重启未知作业。

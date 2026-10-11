@@ -31,8 +31,8 @@ Mac155 `1554650784`，Mac445 `4456560334`，Mac529 `5298938227`，Mac132 `132165
 
 ## 下一阶段可执行入口
 
-1. 保留 Windows binding-r2 的122通过/1 MissingPluginException回执；沿真实原生宿主补凭据用例，普通 flutter test 或 mock 不能替代。
-2. 在 Windows D 盘复核空间、原native proof及当前619 core，再沿已验证615 fresh stage/CRT/PE/GUI签名路线建立新的619 candidate；不得重签旧615或用其版本名冒充619。
+1. 保留 Windows binding-r2 的122通过/1 MissingPluginException回执；沿真实原生宿主补凭据用例，该缺项已用独立Session1 native宿主补验PASS；保留单元失败与补验范围，不能改写为123单元通过。
+2. 在 Windows D 盘复核空间、原native proof及当前619 core，619 fresh candidate 已暂存到 D:\KEMI-Test\results\v619-sign\candidate：244 PE，32待签/212厂商签名，CRT和源证明已通过；交互native凭据探针已PASS，8个测试键已真实清理、原App未变；下一步独立签名预检和固定GUI内外签名。不得重签旧615或用其版本名冒充619。
 3. 保留共享桥，不安装本机Mac619直至能证明不干扰其他任务；独立补其他设备/业务目标的现有可执行缺项。
 
 Windows辅助入口：Harness `tool/windows/dev561-original617-20261007/transfer_qualified561_existing_vibe_sftp.py` 只复用 carrier/scp 函数和当前核验参数，不运行硬编码旧 main。构建/观测脚本在产物根 `windows/cluster-unified-619-20261011-v1`，先读意图/回执再用。
@@ -44,3 +44,5 @@ Windows辅助入口：Harness `tool/windows/dev561-original617-20261007/transfer
 Harness `docs/HARNESS_UPGRADE_STANDARD.md`、`docs/RELEASE_GATES_ALL_CLIENTS.md`、`docs/VIBEKITS_FLEET_COMPATIBILITY.md`、`docs/acceptance/MAC_HARNESS_RECURRING_REGRESSIONS.md`、`docs/acceptance/BUILD_RELEASE_INCIDENTS_2026-10-03.md`。
 
 hbbv `docs/ROOM_DELEGATION_NATIVE_INTEGRATION_HANDOFF_20261011.md`、`docs/MULTI_CUSTOMER_REALTIME_AND_RECONNECT_20261011.md`，以及项目 CUSTOMER_ID_DEVICE_ENROLLMENT、CLUSTER_MODEL_READINESS_EXPLICIT_VERIFY、ROOM_DELEGATED_MCP_GATE、ROOM_DELEGATION_ONE_USE_CLAIM、ROOM_MESSAGES_AND_COLLAPSIBLE_ROOMS 记录。按当前动作搜索，不全量重读所有历史。
+
+当前追加（2026-10-11）：同次619 Runner/独立AOT在Session0返回1312且0键写入；交互测试投影仅main互斥名/窗口标题变化，独立build86.154s exit0，固定GUI入口已由真实MCP运行：原用户/Session1、native PASS、8键删除并读回缺失、exit0、原App未变。详见项目Windows619台账；不覆盖首轮失败。
