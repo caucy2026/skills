@@ -91,3 +91,5 @@ Mac132第二次直接启动621曾短暂真实连通，但诊断LaunchAgent包装
 共同房间入口接续：peer_rooms服务端发现和agent.simulationPeerRooms已实现，双方身份/同客户/实时批准/目标签名范围与到期校验；12项服务端、18项agent回归过。证据room-members-info-20261012-v1/peer-discovery-verification.json，peer-backup-result-r2.log及peer-server-backup.log。主界面普通仿真按钮仍走旧连接，下一步必须接共同房间发现和真实原生票据，不把专用API可用当用户入口完成。Mac132原固定会话status已真实读回idle/busy false；旧model.verify回执是EOF before full header，仍未知，不据重启后in-flight false推断其完成，不盲重放。
 
 622冻结推进：cluster-room-members-622-20261012-v1以621完整输入冻结622/2622，精确叠加房间入口及room-members协议，G0/Node4/冻结Dart97通过；未Xcode/签名/覆盖。已精确回收旧620和room-delegation615的2492编译输出约3.96GB，原包/源码/工具链/文档保持并读回SHA，旧build明确不完整。当前ORICO约8.6GiB，尚低于10GiB构建保护线；入口Harness docs/acceptance/CLUSTER622_ROOM_MEMBER_FROZEN_20261012.md。不得把冻结完成当新包已交付。
+
+622新状态：Universal Xcode150.197s/实际2622完成，Developer ID与签前后兼容及旧主/helper DR/Team/权限一致通过。只因本轮原生输入不变、既有Xcode实际产物约2.8GB将本任务保护余量设为6GiB，原10GiB并非用户强制最低容量，不据此全停。公证作业 28a23020-aa1f-477d-83d7-bdfbe38464dc 已一次提交，尚未最终包/覆盖。Mac132上真实launchd对照验证AbandonProcessGroup保护有效，两自有测试任务清理、旧主21666保持；Mac132下一次守护须设true并在守护退出后再核持续存活，不能只看健康ACK。证据冻结622/evidence/mac132-lifetime-proof-tool.json。
