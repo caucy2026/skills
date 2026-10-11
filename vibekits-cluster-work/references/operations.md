@@ -49,3 +49,11 @@ hbbv 部署保留 serverId、私钥、授权/设备、customer/member 和持久�
 共享原应用不能停止时，可建立只供测试的 native project/AOT 投影：保留凭据读写和其他生产源、合格Flutter/plugin库，main仅隔离实例互斥名/测试窗口标题；独立obj/output，记录差异和源码哈希，绝不把投影宿主作为发布包。测试仅写随机前缀自己的键，finally逐键删除并经真实native读回缺失；失败与未清理项保留。使用固定GUI入口绑定活动session/user/PID与结果，再独立核原应用创建时间和真实存储结果。源码/构建通过仍不能算覆盖授权延续。
 
 已上传长PowerShell脚本沿项目既定PowerShell7 -File入口执行，先核实际策略/GPO；2026-10-11目标7为RemoteSigned、5.1为默认Restricted，未修改策略。不要加ExecutionPolicy Bypass或更改全机策略掩盖问题。读取在途日志应有界且FileShare.ReadWrite；读锁错误不代表原事务失败，不重启未知作业。
+
+## 硬件签名窗口的实际可见性
+
+先完成冻结/入口编译/会话证书预检，再启动一次固定GUI签名链。提前准备本阶段的Session1截图辅助入口，避免PIN窗口出现后临时搭工具拖延。普通SSH截图可能全黑，不能据此判整机离线或重复签名。
+
+同一SignTool PID+创建时间+Session1核验后，枚举它自己的窗口标题、HWND、可见性与矩形，不读输入控件。窗口可能被防火墙等弹窗遮挡；对已核实PIN HWND恢复/置前，必要时临时TOPMOST，而不是盲点未知确认。Windows150%DPI下GetWindowRect逻辑坐标与CopyFromScreen物理像素不一致；截图进程须先DPI-aware，不能改系统缩放。保存失败图及原因，取到完整PIN窗口、空输入框，下载SHA核验并视觉检查后才展示和提示人输入。
+
+一旦展示并请求输入，禁止再次截图认证输入状态；用同一run的state/report/process跟踪2–3秒轮询，直到PASS/FAIL，未知结果不启动第二轮事务。第一轮内层结束后，外壳签名可能再次要求PIN，按新实际窗口的输入前证据处理，不能假设缓存仍有效。PIN只在目标硬件窗口由人输入，不能在聊天收取或自动化代填。
