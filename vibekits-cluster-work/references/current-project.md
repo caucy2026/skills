@@ -1,4 +1,4 @@
-# 本项目接续快照：2026-10-11
+# 本项目接续快照：2026-10-12
 
 这是定位资料，易变状态须现场复核，不是可以直接执行的旧事务参数。技能可以复制给同事；本地原始证据和专项技能访问权限仍须具备。
 
@@ -22,8 +22,8 @@ Mac155 `1554650784`，Mac445 `4456560334`，Mac529 `5298938227`，Mac132 `132165
 
 - 重连有界退避源代码/24 项测试及负向故障注入通过，见 Harness `docs/acceptance/CLUSTER_RECONNECT_BACKOFF_20261011.md`；尚不能因此宣称规模真机全部通过。
 - Mac619 已完整 frozen 源码、双架构原生、857 测试通过（1 Windows-only skip）、Developer ID、notary Accepted、staple 和独立解压验证。见 `docs/acceptance/UNIFIED619_SOURCE_NATIVE_PREFLIGHT_20261011.md`。
-- Mac 最终 ZIP 在 `macos/cluster-unified-619-20261011-v1/Vibekits-619-final.zip`，423710323 字节，SHA256 `168d504c6b06c8ea019aa0bb91ee405edffac2a47acbbc5a3b56ccbafe887f1c`。未覆盖安装/商城发布。本机 App618 是共享桥，其他任务正在用，不能为了619随意重启。
-- Windows58 上新源码619真实 Release 已成功，核心版本2619；原合格615native复用须保持限定证据。619尚未签名/安装/发布。见 `docs/acceptance/WINDOWS619_RELEASE_BUILD_20261011.md`。
+- Mac 最终 ZIP 在 `macos/cluster-unified-619-20261011-v1/Vibekits-619-final.zip`，423710323 字节，SHA256 `168d504c6b06c8ea019aa0bb91ee405edffac2a47acbbc5a3b56ccbafe887f1c`。Mac445已覆盖升级通过，其他机及商城发布仍未完成。本机 App618 是共享桥，其他任务正在用，不能为了619随意重启。
+- Windows58 上新源码619真实 Release 已成功，核心版本2619；原合格615native复用须保持限定证据。619签名事务在途，尚无签名终态、未安装/发布。见 `docs/acceptance/WINDOWS619_RELEASE_BUILD_20261011.md`。
 - Windows11文件123用例第一轮122通过、1因测试缺 Flutter binding 失败；仅补 ensureInitialized 后第二轮独立测试任务已启动，第二轮已终态：122通过、1因普通 flutter test 无原生 windows_credential_read 插件失败；不能当产品凭据失败，也不能算真机凭据通过。须使用真实原生宿主补验。作业名 `VibeKits-Cluster619-Test-20261011-binding-r2`；D盘 `D:\KEMI-Test\work\cluster619-20261011-v1` 中 `regression-terminal619-binding-r2.json` 与 driver/resources；输出在同名 results 目录。不得重启未知结果。
 - 服务 customer modal/SQLite关闭恢复后后台297Mac+297Linux+5SSE通过，见 hbbv `docs/acceptance/CUSTOMER_DIALOG_CLOSE_RECOVERY_PRODUCTION_20261011.json`。真实生产浏览器UI仍缺；此前 Chrome 自动审核拒绝不可换自动化规避。
 - 300合成会话、60min真实loopback HTTP长跑已通过，见 hbbv `docs/acceptance/scale.md`。100+真设备、24/72hr、WAN/Harness范围仍缺。
