@@ -89,3 +89,5 @@ Mac132第二次直接启动621曾短暂真实连通，但诊断LaunchAgent包装
 2026-10-12 房间互通接线追加：用户要求的房间名/角色已源修；新服务能力roomMemberSimulationEnabled与自身consent GET状态已实现。客户端实时批准房间自动发布10分钟room-members范围，当前四项有界诊断工具，配置切换/停止清缓存。服务端角色/委托24项、客户端合并源码32项通过；源备份在room-members-info-20261012-v1/backup-result-r4.log，完整服务器回归在server-full-tests.log。尚未部署或打新包，完整仿真操作/真实双向成员调用仍待实现和验收，不能把四项诊断互通当全部目标完成。降为组员仅撤销管理员专属访问，普通成员房间通信保留。
 
 共同房间入口接续：peer_rooms服务端发现和agent.simulationPeerRooms已实现，双方身份/同客户/实时批准/目标签名范围与到期校验；12项服务端、18项agent回归过。证据room-members-info-20261012-v1/peer-discovery-verification.json，peer-backup-result-r2.log及peer-server-backup.log。主界面普通仿真按钮仍走旧连接，下一步必须接共同房间发现和真实原生票据，不把专用API可用当用户入口完成。Mac132原固定会话status已真实读回idle/busy false；旧model.verify回执是EOF before full header，仍未知，不据重启后in-flight false推断其完成，不盲重放。
+
+622冻结推进：cluster-room-members-622-20261012-v1以621完整输入冻结622/2622，精确叠加房间入口及room-members协议，G0/Node4/冻结Dart97通过；未Xcode/签名/覆盖。已精确回收旧620和room-delegation615的2492编译输出约3.96GB，原包/源码/工具链/文档保持并读回SHA，旧build明确不完整。当前ORICO约8.6GiB，尚低于10GiB构建保护线；入口Harness docs/acceptance/CLUSTER622_ROOM_MEMBER_FROZEN_20261012.md。不得把冻结完成当新包已交付。
