@@ -50,3 +50,5 @@ hbbv `docs/ROOM_DELEGATION_NATIVE_INTEGRATION_HANDOFF_20261011.md`、`docs/MULTI
 22:43追加：Windows619已另存READY_FOR_SIGNATURE_ONLY收据（SHA778324E6…38B9245）；活动Session1签名Inspect exit0、原B828…7E82证书有效至2027-09-12、x64 SignTool可用。未签名/安装/发布。第一619固定GUI签名脚本在同名控制端产物目录准备，启动前对账intent/原进程及文件哈希，PIN只在实际窗口由人输入。
 
 在途签名追加：619第一签名runId dev619-signed-runtime-20261011-v1，D results\v619-sign\installer-signed-runtime-20261011-attempt1；原Session1 pwsh26600、首轮signtool31088生命周期见项目Windows619台账。已按实际HWND460074解决遮挡与150%DPI截图，已向用户展示空PIN窗并请其仅在Windows输入；只跟踪同一run报告，不重启未知事务、不在输入后截图。尚无最终PASS。
+
+2026-10-12追加：Mac445已原路径615/2615→619/2619覆盖，原指纹SYx46…ETVs、安装Key d32e…6fda和原general房间保持；真实SSH/MCP/rooms live、新鲜619云心跳核验后才ACK，独立守护exit0。当前主PID70551创建00:05:15，615回退包保留。证据入口Harness docs/acceptance/MAC445_619_ORIGINAL_ID_UPGRADE_20261012.md。Windows619首轮签名仍在Session1等待实际PIN，原run不重启。
