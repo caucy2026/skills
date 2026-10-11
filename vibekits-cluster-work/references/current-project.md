@@ -1,5 +1,15 @@
 # 本项目接续快照：2026-10-12
 
+## 最新接续状态：2026-10-12 05:40（以项目台账/实时读回为准）
+
+- 生产hbbv：/opt/vibekits-group/releases/20261012-room-member-simulation-v1，MainPID2004561/active，原UUID da3553a32048bfe691d99ad1a27a914b和签名密钥不变。Mac/Linux各300测试、Linux SSE5轮通过；私有同机SQLite一致备份1151741952B，设备/成员/客户与备份相同，六机心跳0.23–2.44s。证据hbbv/docs/acceptance/ROOM_MEMBER_SIMULATION_PRODUCTION_20261012.json。后台浏览器UI仍未验，原工具拒绝不绕过。
+- 实际客户端：132/445为621；本机155为618且共享桥不能停；529为617且共享任务须先对账；Windows4240650696和6192992780仍604；6175875975仍离线不连接。原通用任务仍failed/revision3/拒绝评分，不改为PASS。
+- 新客户端源码：信息框房间名/角色、room-members自动5项诊断范围、共同房间发现、普通ID入口原生票据及真实Schema读取、逐调用复验均已接线；保留旧身份缓存的完整普通通道，并实际核授权，不把缓存当授权。拒绝不走另一授权链。95项组合+2项容量用例通过，尚未编译签名覆盖或真实双向验收。范围不是全工具，不縮减原G01–G10。入口Harness docs/acceptance/ROOM_MEMBER_SIMULATION_INFORMATION_20261012.md；冻结测试/待包目录room-members-info-20261012-v1。
+- Windows原签名作业最后记录仍为pwsh26600/14:53:19Z、signtool31088/14:54:19Z，接手先核出生和终态；PIN只在原硬件窗口由人输入，不截图已请求后的凭据区，不重复启动。100+真设备清单仍待提供，不用合成设备替代。Mac132旧模型请求EOF结果未知，旧会话已核idle，不能仅凭重启后无in-flight重放。
+
+以下为历史分阶段记录；与本节冲突的旧“当前状态”不再适用。
+
+
 这是定位资料，易变状态须现场复核，不是可以直接执行的旧事务参数。技能可以复制给同事；本地原始证据和专项技能访问权限仍须具备。
 
 ## 本机资源入口
@@ -77,3 +87,5 @@ Mac132第二次直接启动621曾短暂真实连通，但诊断LaunchAgent包装
 用户新增明确要求：主界面仿真信息弹窗显示已加入房间名称及组员/管理员；同房间批准成员可相互仿真，不额外依赖手动白名单。源码现新增实时房间区域及room-members签名范围；服务端10项委托回归通过，新用例验证组员访问、角色变更不影响成员权限、退出和重入旧票据拒绝。原room-administrators范围保留原授权，不静默扩展旧签名同意。尚未部署/打新包，客户端测试进行中，自动入房范围同步和真实双向通信仍需补齐；不得称已实机交付。
 
 2026-10-12 房间互通接线追加：用户要求的房间名/角色已源修；新服务能力roomMemberSimulationEnabled与自身consent GET状态已实现。客户端实时批准房间自动发布10分钟room-members范围，当前四项有界诊断工具，配置切换/停止清缓存。服务端角色/委托24项、客户端合并源码32项通过；源备份在room-members-info-20261012-v1/backup-result-r4.log，完整服务器回归在server-full-tests.log。尚未部署或打新包，完整仿真操作/真实双向成员调用仍待实现和验收，不能把四项诊断互通当全部目标完成。降为组员仅撤销管理员专属访问，普通成员房间通信保留。
+
+共同房间入口接续：peer_rooms服务端发现和agent.simulationPeerRooms已实现，双方身份/同客户/实时批准/目标签名范围与到期校验；12项服务端、18项agent回归过。证据room-members-info-20261012-v1/peer-discovery-verification.json，peer-backup-result-r2.log及peer-server-backup.log。主界面普通仿真按钮仍走旧连接，下一步必须接共同房间发现和真实原生票据，不把专用API可用当用户入口完成。Mac132原固定会话status已真实读回idle/busy false；旧model.verify回执是EOF before full header，仍未知，不据重启后in-flight false推断其完成，不盲重放。
