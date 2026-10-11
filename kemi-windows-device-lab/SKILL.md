@@ -79,3 +79,5 @@ For an app that crashes before its simulator starts, read [the remote-desktop st
 远程命令、日志读取或资源耗尽排查前，读[58提交内存事故与命令预算](references/windows-resource-exhaustion-58-20261006.md)，避免PowerShell5.1对象深度序列化和只在返回后截断。资源保护的部署及验收范围须以实际版本证明。
 
 远程桌面确认和输入无响应时，读[目标核验与焦点恢复](references/remote-confirmation-focus-20261006.md)，在已有授权内完成普通确认，并保留平台拒绝、PIN及身份变化边界。
+
+构建、依赖锁门禁或版本/暂存异常时，读取[615发布输入经验](references/windows-release-inputs-615-20261011.md)，复用镜像一致、真实EXE版本检查与独立测试投影方法，保留原失败和生产输入。
