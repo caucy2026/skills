@@ -52,3 +52,5 @@ hbbv `docs/ROOM_DELEGATION_NATIVE_INTEGRATION_HANDOFF_20261011.md`、`docs/MULTI
 在途签名追加：619第一签名runId dev619-signed-runtime-20261011-v1，D results\v619-sign\installer-signed-runtime-20261011-attempt1；原Session1 pwsh26600、首轮signtool31088生命周期见项目Windows619台账。已按实际HWND460074解决遮挡与150%DPI截图，已向用户展示空PIN窗并请其仅在Windows输入；只跟踪同一run报告，不重启未知事务、不在输入后截图。尚无最终PASS。
 
 2026-10-12追加：Mac445已原路径615/2615→619/2619覆盖，原指纹SYx46…ETVs、安装Key d32e…6fda和原general房间保持；真实SSH/MCP/rooms live、新鲜619云心跳核验后才ACK，独立守护exit0。当前主PID70551创建00:05:15，615回退包保留。证据入口Harness docs/acceptance/MAC445_619_ORIGINAL_ID_UPGRADE_20261012.md。Windows619首轮签名仍在Session1等待实际PIN，原run不重启。
+
+2026-10-12业务追加：Mac445619单次显式模型复验真实完成，管理MCP候选eligibleNow=true；原任务唯一offer、自动claim/fence1、context_issued真实发生，随后TASK_TICKET_BINDING，sessionId=null，进入reconciling。原事务不重发。已定位客户端漏合并当前platformTools，修后30项通过（含签名错误集合拒绝），尚未重建/实机复验。619暂不扩散覆盖/发布；Mac132同SHA已传输、独立解压codesign/build2619通过，仍保持原615运行。入口Harness docs/acceptance/CLUSTER619_PLATFORM_CONTEXT_BINDING_20261012.md。

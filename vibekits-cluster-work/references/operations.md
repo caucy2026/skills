@@ -57,3 +57,7 @@ hbbv 部署保留 serverId、私钥、授权/设备、customer/member 和持久�
 同一SignTool PID+创建时间+Session1核验后，枚举它自己的窗口标题、HWND、可见性与矩形，不读输入控件。窗口可能被防火墙等弹窗遮挡；对已核实PIN HWND恢复/置前，必要时临时TOPMOST，而不是盲点未知确认。Windows150%DPI下GetWindowRect逻辑坐标与CopyFromScreen物理像素不一致；截图进程须先DPI-aware，不能改系统缩放。保存失败图及原因，取到完整PIN窗口、空输入框，下载SHA核验并视觉检查后才展示和提示人输入。
 
 一旦展示并请求输入，禁止再次截图认证输入状态；用同一run的state/report/process跟踪2–3秒轮询，直到PASS/FAIL，未知结果不启动第二轮事务。第一轮内层结束后，外壳签名可能再次要求PIN，按新实际窗口的输入前证据处理，不能假设缓存仍有效。PIN只在目标硬件窗口由人输入，不能在聊天收取或自动化代填。
+
+## 签名任务的当前平台工具集合
+
+context的allowedTools必须与服务端required_tools一致：基础tools后接当前真实平台的platformTools，按原顺序去重。平台来自本地runtime，不从收到的context决定权限。遗漏平台专用app_signature会使真实claim后context绑定失败；保持完整签名/身份/epoch/fence/TTL和严格集合比较，不删平台条件或放宽验签。回归覆盖基础/macOS/Windows及签名有效但错误工具集合拒绝；单元通过后还需新包真实任务。已领取后失败先对账原instance/lease_uncertain，不再次分配未知事务。管理工具经最新mcp.catalog_list得到instanceId后使用mcp.tool_call，hbbv工具不是直接的VibeKits内建工具。
