@@ -95,3 +95,9 @@ Mac132第二次直接启动621曾短暂真实连通，但诊断LaunchAgent包装
 622新状态：Universal Xcode150.197s/实际2622完成，Developer ID与签前后兼容及旧主/helper DR/Team/权限一致通过。只因本轮原生输入不变、既有Xcode实际产物约2.8GB将本任务保护余量设为6GiB，原10GiB并非用户强制最低容量，不据此全停。公证作业 28a23020-aa1f-477d-83d7-bdfbe38464dc 已一次提交，尚未最终包/覆盖。Mac132上真实launchd对照验证AbandonProcessGroup保护有效，两自有测试任务清理、旧主21666保持；Mac132下一次守护须设true并在守护退出后再核持续存活，不能只看健康ACK。证据冻结622/evidence/mac132-lifetime-proof-tool.json。
 
 622final/首台更新：公证Accepted，严格ZIP/独立解包全部门禁过；final423752327B/SHA20fd436f…a8fbb22d，main565868a1…940d36。Mac132实际2622/19049出生15:48:44，原ID/FP/Key/server保持、实时rooms及scope同步无错误；健康ACK后guard0且同PID存活，后续真实system.info成功。已授权诊断覆盖仍非全队发布；155共享桥不动，445只暂存，Windows旧签名未终态。下一步持续存活与新框视觉、445同包覆盖、两个原设备间无白名单双向原生票据；不得宣称新group诊断5工具即全部仿真能力。证据622/evidence/mac132-overlay622-*。
+
+2026-10-12 最新房间设备列表：源码已补当前客户批准房间可展开设备列表、角色/管理员图标、在线状态和仿真连接，展开时2秒刷新、后台暂停、关闭释放；新增代理roster API核owner/current approved，仅给公开摘要。服务器42、客户端10相关回归通过，证据入口 docs/acceptance/ROOM_DEVICE_ROSTER_SYNC_20261012.md；未部署接口/未打新包，622不含新列表。Mac445622实际71729健康ACK、guard0、bootout后持续存活及原ID实际system.info通过。完整房间仿真仍仅5诊断范围，真实双向验证正在做，不能虚报完成。
+
+实机445→132普通入口最新失败invalid_room_limits，原因真实签名成员票据administratorPolicyRevision=0与Rust/Dart必须正修订号校验冲突；两端源码已最小修正为管理员策略允许0，其余仍正，Dart9过，Rust隔离实际模块回归运行中。622已装包尚未包含修复，不能重试当成功；下一包必须重新编译原生运行时，不能沿用622原生SHA。新增公钥签名向量不含私钥。
+
+Rust实际源模块隔离回归已结束：10项通过（含真实P256签名的管理员策略0成员票据）；仍需重新编译Universal原生运行时和新包、部署roster接口后做实机双向回验。
