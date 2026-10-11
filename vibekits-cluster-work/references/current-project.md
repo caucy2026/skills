@@ -93,3 +93,5 @@ Mac132第二次直接启动621曾短暂真实连通，但诊断LaunchAgent包装
 622冻结推进：cluster-room-members-622-20261012-v1以621完整输入冻结622/2622，精确叠加房间入口及room-members协议，G0/Node4/冻结Dart97通过；未Xcode/签名/覆盖。已精确回收旧620和room-delegation615的2492编译输出约3.96GB，原包/源码/工具链/文档保持并读回SHA，旧build明确不完整。当前ORICO约8.6GiB，尚低于10GiB构建保护线；入口Harness docs/acceptance/CLUSTER622_ROOM_MEMBER_FROZEN_20261012.md。不得把冻结完成当新包已交付。
 
 622新状态：Universal Xcode150.197s/实际2622完成，Developer ID与签前后兼容及旧主/helper DR/Team/权限一致通过。只因本轮原生输入不变、既有Xcode实际产物约2.8GB将本任务保护余量设为6GiB，原10GiB并非用户强制最低容量，不据此全停。公证作业 28a23020-aa1f-477d-83d7-bdfbe38464dc 已一次提交，尚未最终包/覆盖。Mac132上真实launchd对照验证AbandonProcessGroup保护有效，两自有测试任务清理、旧主21666保持；Mac132下一次守护须设true并在守护退出后再核持续存活，不能只看健康ACK。证据冻结622/evidence/mac132-lifetime-proof-tool.json。
+
+622final/首台更新：公证Accepted，严格ZIP/独立解包全部门禁过；final423752327B/SHA20fd436f…a8fbb22d，main565868a1…940d36。Mac132实际2622/19049出生15:48:44，原ID/FP/Key/server保持、实时rooms及scope同步无错误；健康ACK后guard0且同PID存活，后续真实system.info成功。已授权诊断覆盖仍非全队发布；155共享桥不动，445只暂存，Windows旧签名未终态。下一步持续存活与新框视觉、445同包覆盖、两个原设备间无白名单双向原生票据；不得宣称新group诊断5工具即全部仿真能力。证据622/evidence/mac132-overlay622-*。
