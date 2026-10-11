@@ -66,3 +66,5 @@ Mac445620覆盖终态：主PID52126创建02:55:00，原路径实际2620/mainSHA3
 621构建追加：容量恢复15.04GB后，四Node门禁、版本G0、2163输入SHA通过；完整Universal Xcode150.201秒exit0、实际2621，实际runtime SHA5bf22d8d…a39ccc58匹配修复源。49Mach-O签名、原DR/entitlements、签后兼容及JIT/DSH/flock通过。单次公证73878ff9-a3e4-4726-b7b0-d65c2900978a在途，尚未final/覆盖/真实模型重验；Windows6218文件已独立D盘暂存，不替代真实构建。
 
 621final追加：公证73878ff9-a3e4-4726-b7b0-d65c2900978a Accepted，票据、严格ZIP单App根、独立解压验签/票据/Gatekeeper和实际runtime模块SHA均通过；final ZIP423709865B/SHAae2c49a3afdf93270c32ece70a044ea5b6344c5885f54020f8fa911c45783837，mainSHA54be36b2…f79c879b，2621。同一ZIP正在向445/132暂存，尚未新覆盖；先对账原upload意图及句柄，不重传未知结果。Mac445620的原固定会话即时idle，后续仍须覆盖/原Key/真实模型/任务实测。
+
+621实机状态追加：Mac445620→621原身份健康提交，PID52231/03:54:35、实际2621+mainSHA54be…c879b、MCP及新鲜房间心跳通过后ACK/guard0，620回退保留；首次预算修后真实模型描述19:56:47Z成功reported。Mac132同包覆盖未通过：新621两PID94064/94082、无新心跳，独立守护exit26回退615；原ID/G73及615新鲜心跳恢复，当前主94554/13:11:55。旧图Office备用372799163虽匹配标题但无可验证输入/原生连接，未据此称恢复；仿真恢复后白盒查原失败，无621 Harness启动事件，native CLI可运行/无确定CrashReport，不定根因。失败包/日志保留，后续须修Intel/macOS12早期启动，不重复旧安装。100+设备资源清单问题已异步发出、等待资料，不替换既有七台目标。
