@@ -1,0 +1,4 @@
+interface:
+  display_name: "VibeKits 集群工作"
+  short_description: "继承完整集群目标，复用真实设备开发、恢复、验收和发布经验"
+  default_prompt: "使用 $vibekits-cluster-work 核对当前交接与在途事务，继承完整目标并继续执行。"
