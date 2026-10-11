@@ -1,0 +1,4 @@
+interface:
+  display_name: "KEMI HBBC 持续开发"
+  short_description: "继续开发、测试、部署与交接KEMI HBBC多应用后台"
+  default_prompt: "使用 $kemi-hbbc-development 读取现有HBBC上下文，核对真实状态后继续完成开发与验收。"

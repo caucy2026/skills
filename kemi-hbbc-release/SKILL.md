@@ -7,6 +7,8 @@ description: Build, package, deploy, verify, or roll back the KEMI hbbc HTTP/HTT
 
 Use this skill for the complete hbbc release path from source verification to production evidence. Treat “dhhc” as the historical/prototype spelling only after confirming the target source is the current `hbbc` crate.
 
+For ongoing feature development, account/device/presence/usage/payment semantics, administrator UI work, or project handoff, read and use the sibling `$kemi-hbbc-development` skill first. Return here for the formal build/package/deploy/rollback gate; do not maintain a second ad-hoc release path in the development skill.
+
 ## Route the task
 
 1. Locate the repository by finding `hbbc/Cargo.toml`, `hbbc/src/main.rs`, and `deployment/kemi-rustdesk-hbbc.service`. Do not assume the author’s absolute local path on another machine.
