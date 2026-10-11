@@ -24,14 +24,14 @@ Mac155 `1554650784`，Mac445 `4456560334`，Mac529 `5298938227`，Mac132 `132165
 - Mac619 已完整 frozen 源码、双架构原生、857 测试通过（1 Windows-only skip）、Developer ID、notary Accepted、staple 和独立解压验证。见 `docs/acceptance/UNIFIED619_SOURCE_NATIVE_PREFLIGHT_20261011.md`。
 - Mac 最终 ZIP 在 `macos/cluster-unified-619-20261011-v1/Vibekits-619-final.zip`，423710323 字节，SHA256 `168d504c6b06c8ea019aa0bb91ee405edffac2a47acbbc5a3b56ccbafe887f1c`。未覆盖安装/商城发布。本机 App618 是共享桥，其他任务正在用，不能为了619随意重启。
 - Windows58 上新源码619真实 Release 已成功，核心版本2619；原合格615native复用须保持限定证据。619尚未签名/安装/发布。见 `docs/acceptance/WINDOWS619_RELEASE_BUILD_20261011.md`。
-- Windows11文件123用例第一轮122通过、1因测试缺 Flutter binding 失败；仅补 ensureInitialized 后第二轮独立测试任务已启动，终态需要读回。作业名 `VibeKits-Cluster619-Test-20261011-binding-r2`；D盘 `D:\KEMI-Test\work\cluster619-20261011-v1` 中 `regression-terminal619-binding-r2.json` 与 driver/resources；输出在同名 results 目录。不得重启未知结果。
+- Windows11文件123用例第一轮122通过、1因测试缺 Flutter binding 失败；仅补 ensureInitialized 后第二轮独立测试任务已启动，第二轮已终态：122通过、1因普通 flutter test 无原生 windows_credential_read 插件失败；不能当产品凭据失败，也不能算真机凭据通过。须使用真实原生宿主补验。作业名 `VibeKits-Cluster619-Test-20261011-binding-r2`；D盘 `D:\KEMI-Test\work\cluster619-20261011-v1` 中 `regression-terminal619-binding-r2.json` 与 driver/resources；输出在同名 results 目录。不得重启未知结果。
 - 服务 customer modal/SQLite关闭恢复后后台297Mac+297Linux+5SSE通过，见 hbbv `docs/acceptance/CUSTOMER_DIALOG_CLOSE_RECOVERY_PRODUCTION_20261011.json`。真实生产浏览器UI仍缺；此前 Chrome 自动审核拒绝不可换自动化规避。
 - 300合成会话、60min真实loopback HTTP长跑已通过，见 hbbv `docs/acceptance/scale.md`。100+真设备、24/72hr、WAN/Harness范围仍缺。
 - 六机覆盖升级、原任务业务闭环、多客户真实UI、角色/折叠连续性、实时委托原生门禁仍按G01–G10补证据，不能把当前包装阶段当全部完成。
 
 ## 下一阶段可执行入口
 
-1. 对账 Windows binding-r2 终态与实际日志；失败按首个真实原因修复，成功保留回执并备份精确测试修复。
+1. 保留 Windows binding-r2 的122通过/1 MissingPluginException回执；沿真实原生宿主补凭据用例，普通 flutter test 或 mock 不能替代。
 2. 在 Windows D 盘复核空间、原native proof及当前619 core，再沿已验证615 fresh stage/CRT/PE/GUI签名路线建立新的619 candidate；不得重签旧615或用其版本名冒充619。
 3. 保留共享桥，不安装本机Mac619直至能证明不干扰其他任务；独立补其他设备/业务目标的现有可执行缺项。
 
