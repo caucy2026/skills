@@ -61,3 +61,9 @@ hbbv 部署保留 serverId、私钥、授权/设备、customer/member 和持久�
 ## 签名任务的当前平台工具集合
 
 context的allowedTools必须与服务端required_tools一致：基础tools后接当前真实平台的platformTools，按原顺序去重。平台来自本地runtime，不从收到的context决定权限。遗漏平台专用app_signature会使真实claim后context绑定失败；保持完整签名/身份/epoch/fence/TTL和严格集合比较，不删平台条件或放宽验签。回归覆盖基础/macOS/Windows及签名有效但错误工具集合拒绝；单元通过后还需新包真实任务。已领取后失败先对账原instance/lease_uncertain，不再次分配未知事务。管理工具经最新mcp.catalog_list得到instanceId后使用mcp.tool_call，hbbv工具不是直接的VibeKits内建工具。
+
+UI动作返回AX -25204后先对账目标：2026-10-12取消本任务误触发的Mac445命令行工具提示时，按原2497/PID创建时间和精确Bundle ID读树，点击明确取消按钮后API报错，但独立进程查询已确认目标消失、原VibeKits进程不变。窗口/应用随动作退出可使AX回执失败；先查同一目标进程与窗口，禁止直接重复点击或改按安装。
+
+平台工具合同要核所有执行层：Dart ticket验证修好后，Node validateStart仍可能只查基础tools，提前用当前真实宿主OS的正控、外国平台工具负控及官方SDK/真实loopback endpoint补验，不把Dart绿当完整执行通过。Node平台来自process.platform，不由任务输入选。
+
+保留推理选择时，描述的总输出token预算也可能包含推理消耗。620高推理/512出现真实max-tokens，不是充值证据；须保留失败与不可用状态、不盲重试，源码修复可用有界预算和更短描述（当前固定2048/300字），Provider/Model/Reasoning及零工具、输入输出界限、截止不改。仍以新整包一次真实复验为准。zsh中的path会绑定PATH，临时变量用bundle_part等专用名；命令尽量用已知绝对可执行路径。
