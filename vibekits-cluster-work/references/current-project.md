@@ -1,103 +1,71 @@
 # 本项目接续快照：2026-10-12
 
-## 最新接续状态：2026-10-12 05:40（以项目台账/实时读回为准）
+这是当前导航与已验证状态；执行前读实际台账、PID/创建时间和回执。历史完整记录在项目验收文档，不把旧参数直接当执行指令。同事在自己的机器映射路径、继承完整G01–G10与用户最新要求。
 
-- 生产hbbv：/opt/vibekits-group/releases/20261012-room-member-simulation-v1，MainPID2004561/active，原UUID da3553a32048bfe691d99ad1a27a914b和签名密钥不变。Mac/Linux各300测试、Linux SSE5轮通过；私有同机SQLite一致备份1151741952B，设备/成员/客户与备份相同，六机心跳0.23–2.44s。证据hbbv/docs/acceptance/ROOM_MEMBER_SIMULATION_PRODUCTION_20261012.json。后台浏览器UI仍未验，原工具拒绝不绕过。
-- 实际客户端：132/445为621；本机155为618且共享桥不能停；529为617且共享任务须先对账；Windows4240650696和6192992780仍604；6175875975仍离线不连接。原通用任务仍failed/revision3/拒绝评分，不改为PASS。
-- 新客户端源码：信息框房间名/角色、room-members自动5项诊断范围、共同房间发现、普通ID入口原生票据及真实Schema读取、逐调用复验均已接线；保留旧身份缓存的完整普通通道，并实际核授权，不把缓存当授权。拒绝不走另一授权链。95项组合+2项容量用例通过，尚未编译签名覆盖或真实双向验收。范围不是全工具，不縮减原G01–G10。入口Harness docs/acceptance/ROOM_MEMBER_SIMULATION_INFORMATION_20261012.md；冻结测试/待包目录room-members-info-20261012-v1。
-- Windows原签名作业最后记录仍为pwsh26600/14:53:19Z、signtool31088/14:54:19Z，接手先核出生和终态；PIN只在原硬件窗口由人输入，不截图已请求后的凭据区，不重复启动。100+真设备清单仍待提供，不用合成设备替代。Mac132旧模型请求EOF结果未知，旧会话已核idle，不能仅凭重启后无in-flight重放。
+## 项目与授权入口
 
-以下为历史分阶段记录；与本节冲突的旧“当前状态”不再适用。
+- Harness：`/Volumes/ORICO/newlink-new/vibekits`；hbbv：`/Volumes/ORICO/newlink-new/hbbv`；原生Rust：`/Users/newlink/kemi/RustDesk/client`。
+- 可再生输出根：`/Volumes/ORICO/kemi-build-cache/app-release-gate/vibekits`；服务器维护输出在同级hbbv。本机必须读`/Users/newlink/.codex/LOCAL-ENVIRONMENT-RULES.md`，不将外盘约束照搬到其他设备。
+- 原目标：hbbv `docs/PROJECT_HANDOFF_VIBEKITS_CLUSTER_UPGRADE_ACCEPTANCE_20261011.md`；执行归属：`docs/acceptance/CURRENT_CHAT_TAKEOVER_20261011.md`、`CONTINUATION_RECONCILIATION_20261011.md`。
+- 当前聊天`01a12aa0-1fd3-7862-8fbd-686ddc8732f2`已获接续授权；用户要求原聊天停止，本环境没有跨聊天停止工具，不声称技术停止。
+- 仿真断联主动使用已登记同机远程桌面恢复，普通同范围确认可完成，秘密PIN/身份变化/平台拒绝保持边界。
 
+## 服务当前状态
 
-这是定位资料，易变状态须现场复核，不是可以直接执行的旧事务参数。技能可以复制给同事；本地原始证据和专项技能访问权限仍须具备。
+hbbv21122/TCP，保存SSH profile `remote_1791254767548854`；UUID `da3553a32048bfe691d99ad1a27a914b`。
+当前目录`/opt/vibekits-group/releases/20261012-room-device-roster-v1`，MainPID2187336/active。99冻结文件校验，Mac303、Linux303及5轮SSE/关闭通过；私有SQLite一致性备份1161404416B/quick_check过。原UUID/签名Key/设备/成员/客户和hbbs/hbbr/hbbc保持；不导出数据库或私钥到Git。
 
-## 本机资源入口
+新增代理房间devices接口核当前客户owner与approved成员，公开分页设备摘要、角色和心跳，不用管理令牌越客户。目标complete回执只由已领取票据的目标在真实quiescent后提交，释放并发占用；旧票完成后不可重用，未知工作不提前释放。
 
-- Harness：`/Volumes/ORICO/newlink-new/vibekits`
-- 服务：`/Volumes/ORICO/newlink-new/hbbv`
-- 产物根：`/Volumes/ORICO/kemi-build-cache/app-release-gate/vibekits`
-- 全局技能：`/Users/newlink/.codex/skills`
-- 环境规则：`/Users/newlink/.codex/LOCAL-ENVIRONMENT-RULES.md`，以及任务路径适用 AGENTS。
-- 主交接：hbbv `docs/PROJECT_HANDOFF_VIBEKITS_CLUSTER_UPGRADE_ACCEPTANCE_20261011.md`
-- 执行归属及完整目标：hbbv `docs/acceptance/CURRENT_CHAT_TAKEOVER_20261011.md`、`CONTINUATION_RECONCILIATION_20261011.md`。当前聊天 `01a12aa0-1fd3-7862-8fbd-686ddc8732f2` 承接；用户要求原接续聊天停止，但本环境没有跨聊天停止工具，不能声称已技术停止。
+生产证据：hbbv `docs/acceptance/ROOM_DEVICE_ROSTER_PRODUCTION_20261012.json`；维护入口`hbbv/room-device-roster-20261012-v1`。上次生产room-member-simulation-v1保留为回退。生产Chrome UI此前工具拒绝，未验；HTTPS200不代替UI，不用另一自动化绕过。
 
-## 原设备与服务定位
+原general房间`f450c684b868292f67c534b793e26314`，旧任务`5deb64cad5f92da2a80aaaab03b1eaf4`当前failed/revision3，reject/scoreDelta0保留。后续新业务复验不得改旧失败为PASS，不重放未知事务。
 
-Mac155 `1554650784`，Mac445 `4456560334`，Mac529 `5298938227`，Mac132 `1321656264`；Windows58 `4240650696`（历史旧号4567540178），Windows619 `6192992780`；补充 Windows617 `6175875975`。先按登记身份核验，不因显示名相近换对象。
+## 真实设备
 
-服务器沿已保存 SSH profile `remote_1791254767548854`，hbbv21122；原 serverId `da3553a32048bfe691d99ad1a27a914b`。不保存密码或导出私钥。原 general room `f450c684b868292f67c534b793e26314`，task `5deb64cad5f92da2a80aaaab03b1eaf4`；查原状态再续，不重发未知事务。
+| 设备 | 原仿真ID | 最后验证版本与边界 |
+|---|---|---|
+| Mac155 | 1554650784 | 618，本机共享桥；另有Mac529/PAD任务使用，不能重启/升级 |
+| Mac445 | 4456560334 | 622/2622，主71729出生Mon Oct12 07:07:04；guard0、bootout后同PID存活、原ID真实system.info过；原Key/房间和621回退保留 |
+| Mac529 | 5298938227 | 617，在线、共享工作先对账 |
+| Intel/macOS12 Mac132 | 1321656264 | 622/2622，主19049出生Sun Oct11 15:48:44；原ID/FP/Key/房间、guard0与bootout后持续存活及实际MCP过 |
+| Windows58 | 4240650696 | 604；历史旧ID4567540178不可当当前连接目标 |
+| Windows619 | 6192992780 | 604在线 |
+| 补充Windows617 | 6175875975 | 564且已确认离线；不连接 |
 
-## 当前已验证与待续
+生产postflight六机心跳0.17–3.97秒，617长期离线；每次仍回读，不据历史表宣称当前在线。
+Mac132本机路径`/Users/mac/Library/Caches/Vibekits 2.app`，登记Office ID372799163；先前控制端旧画面冻结/输入无效，但用户远程能操作，不把旧图或仿真失败当整机离线。已有launchd实机对照证明AbandonProcessGroup:true使包装器退出后主进程存活；诊断守护退出和卸载后必须再验证实际MCP/房间，不只看ACK。
 
-- 重连有界退避源代码/24 项测试及负向故障注入通过，见 Harness `docs/acceptance/CLUSTER_RECONNECT_BACKOFF_20261011.md`；尚不能因此宣称规模真机全部通过。
-- Mac619 已完整 frozen 源码、双架构原生、857 测试通过（1 Windows-only skip）、Developer ID、notary Accepted、staple 和独立解压验证。见 `docs/acceptance/UNIFIED619_SOURCE_NATIVE_PREFLIGHT_20261011.md`。
-- Mac 最终 ZIP 在 `macos/cluster-unified-619-20261011-v1/Vibekits-619-final.zip`，423710323 字节，SHA256 `168d504c6b06c8ea019aa0bb91ee405edffac2a47acbbc5a3b56ccbafe887f1c`。Mac445已覆盖升级通过，其他机及商城发布仍未完成。本机 App618 是共享桥，其他任务正在用，不能为了619随意重启。
-- Windows58 上新源码619真实 Release 已成功，核心版本2619；原合格615native复用须保持限定证据。619签名事务在途，尚无签名终态、未安装/发布。见 `docs/acceptance/WINDOWS619_RELEASE_BUILD_20261011.md`。
-- Windows11文件123用例第一轮122通过、1因测试缺 Flutter binding 失败；仅补 ensureInitialized 后第二轮独立测试任务已启动，第二轮已终态：122通过、1因普通 flutter test 无原生 windows_credential_read 插件失败；不能当产品凭据失败，也不能算真机凭据通过。须使用真实原生宿主补验。作业名 `VibeKits-Cluster619-Test-20261011-binding-r2`；D盘 `D:\KEMI-Test\work\cluster619-20261011-v1` 中 `regression-terminal619-binding-r2.json` 与 driver/resources；输出在同名 results 目录。不得重启未知结果。
-- 服务 customer modal/SQLite关闭恢复后后台297Mac+297Linux+5SSE通过，见 hbbv `docs/acceptance/CUSTOMER_DIALOG_CLOSE_RECOVERY_PRODUCTION_20261011.json`。真实生产浏览器UI仍缺；此前 Chrome 自动审核拒绝不可换自动化规避。
-- 300合成会话、60min真实loopback HTTP长跑已通过，见 hbbv `docs/acceptance/scale.md`。100+真设备、24/72hr、WAN/Harness范围仍缺。
-- 六机覆盖升级、原任务业务闭环、多客户真实UI、角色/折叠连续性、实时委托原生门禁仍按G01–G10补证据，不能把当前包装阶段当全部完成。
+## 正在构建的623：不要重复事务
 
-## 下一阶段可执行入口
+完整冻结输入`macos/cluster-room-roster-623-20261012-v1`，623/2623，G0/Node4/客户端118通过。原生从Frozen619只叠加策略0修复及公开签名向量，无依赖升级；源hash在`evidence/source-freeze623.json`。
+原生Universal已built：ARM498.55s、Intel321.873s，unsigned SHA80f8ec733a55695f8c30c732928922aec87d74f1b49ccd91689631100702a556；两架构真实protocol_v3及check-only过。Xcode150.156s/实际2623、主及助手身份/权限匹配、签前后兼容及Developer ID签名均通过。原生监督和Xcode已终态，不重启；3077已完成native生成库/对象已核无占用回收，保留Universal及两架构二进制SHA，target需全重建。
+单次公证已提交10f329b7-fa69-496b-9037-d3d6b6c0ad5d（上传成功）；尚未最终公证状态、staple/strict final ZIP/覆盖。读取原作业，不重新submit。新包仍是诊断候选，不当完整仿真或全队发布PASS。
 
-1. 保留 Windows binding-r2 的122通过/1 MissingPluginException回执；沿真实原生宿主补凭据用例，该缺项已用独立Session1 native宿主补验PASS；保留单元失败与补验范围，不能改写为123单元通过。
-2. 在 Windows D 盘复核空间、原native proof及当前619 core，619 fresh candidate 已暂存到 D:\KEMI-Test\results\v619-sign\candidate：244 PE，32待签/212厂商签名，CRT和源证明已通过；交互native凭据探针已PASS，8个测试键已真实清理、原App未变；下一步独立签名预检和固定GUI内外签名。不得重签旧615或用其版本名冒充619。
-3. 保留共享桥，不安装本机Mac619直至能证明不干扰其他任务；独立补其他设备/业务目标的现有可执行缺项。
+本轮实机445→132普通入口真实失败invalid_room_limits：签名成员票据administratorPolicyRevision=0被旧Rust/Dart拒绝。仅管理员策略修订号允许0，其他revision仍正数；P256/身份/期限/introspect不变，Rust实际模块10及Dart9过。623须新Universal原生，不能复用622运行时SHA。完成回执另有服务13、客户端22及第三次有序终态回归，完整客户端118通过。
 
-Windows辅助入口：Harness `tool/windows/dev561-original617-20261007/transfer_qualified561_existing_vibe_sftp.py` 只复用 carrier/scp 函数和当前核验参数，不运行硬编码旧 main。构建/观测脚本在产物根 `windows/cluster-unified-619-20261011-v1`，先读意图/回执再用。
+最新622正式包仍保留：`macos/cluster-room-members-622-20261012-v1/Vibekits-622-final.zip`，423752327B，SHA256 `20fd436f25c07182a2c15b1935ffeb7f6bb41e5a79bef2fb0c8faaf6a8fbb22d`。Accepted notary28a23020-aa1f-477d-83d7-bdfbe38464dc，strict ZIP/独立解包验签/Gatekeeper过。该包不含此次设备列表/策略0/complete，不能当最新功能交付。
 
-备份成熟 helper：hbbv `quality/backup_cluster_event_lock_heartbeat_docs_20261006.py`；只提取通用函数，不运行历史顶层。授权目标分别 vibekits.git、priv.git 的 hbbv/、skills.git，核精确 remote 与 main，不推 RustDesk upstream。最新备份提交和范围见各验收文档；本快照不会保证后来远端仍同一HEAD。
+空间清理仅本任务终态621/622中间编译文件2489个/3.894GB逻辑；原正式包SHA不变，源码/工具链/证据/独立解包回退保留，两个旧build明确不完整须重建。Accepted622原公证ZIP重复容器已核无占用并回收，final保留。623原生已终态后仅生成库/对象精确清理，Universal和两架构二进制保留；下一原生编译须重建。
 
-## 进入对应阶段才读的项目记录
+## Windows在途签名
 
-Harness `docs/HARNESS_UPGRADE_STANDARD.md`、`docs/RELEASE_GATES_ALL_CLIENTS.md`、`docs/VIBEKITS_FLEET_COMPATIBILITY.md`、`docs/acceptance/MAC_HARNESS_RECURRING_REGRESSIONS.md`、`docs/acceptance/BUILD_RELEASE_INCIDENTS_2026-10-03.md`。
+D盘work`D:\KEMI-Test\work\cluster619-20261011-v1`，results`D:\KEMI-Test\results\v619-sign`。
+固定run `dev619-signed-runtime-20261011-v1`；pwsh26600出生2026-10-11T14:53:19.0164420Z，已推进SIGNING_ROUND_2_FINAL_INSTALLER，当前SignTool33536出生23:02:56.2371188Z。内层32/32 Valid；最终终态未知，接手先对账，不重签/并发重建。
+观察入口`windows/cluster-unified-619-20261011-v1/invoke_ps619.py ObserveSign619.ps1`，解析回执仅输出phase/PID/出生/终态，避免整段文件列表。PIN只由人在真实Windows窗口输入，不读/录/代填，已请求后不截图凭据区。
+619真实native Release已完成，厂商212签名保留。普通单元122过/1MissingPlugin保留；独立Session1 native宿主的凭据验证及8个合成测试键删除/读回过，不能写成123单元都过。6218文件仅D盘暂存，未代替新版本真实编译/签名。原App604和身份保持。
 
-hbbv `docs/ROOM_DELEGATION_NATIVE_INTEGRATION_HANDOFF_20261011.md`、`docs/MULTI_CUSTOMER_REALTIME_AND_RECONNECT_20261011.md`，以及项目 CUSTOMER_ID_DEVICE_ENROLLMENT、CLUSTER_MODEL_READINESS_EXPLICIT_VERIFY、ROOM_DELEGATED_MCP_GATE、ROOM_DELEGATION_ONE_USE_CLAIM、ROOM_MESSAGES_AND_COLLAPSIBLE_ROOMS 记录。按当前动作搜索，不全量重读所有历史。
+## 必须继续的完整目标
 
-当前追加（2026-10-11）：同次619 Runner/独立AOT在Session0返回1312且0键写入；交互测试投影仅main互斥名/窗口标题变化，独立build86.154s exit0，固定GUI入口已由真实MCP运行：原用户/Session1、native PASS、8键删除并读回缺失、exit0、原App未变。详见项目Windows619台账；不覆盖首轮失败。
+弹窗列当前客户已加入房间，点击设备列表、管理员独立标识、成员/管理员变化/掉线及时同步；623新源已实现展开前台2秒刷新、分页、失败清旧列表和仿真连接按钮，但尚未新包实机UI验收。
+当前自动房间范围仅5项诊断，不是完整仿真。仍须完整操作范围、真实双向无白名单原生票据/撤销；旧管理员专属授权和普通成员权限分开验证，手动完整通道不回退。
+其余G01–G10不缩减：统一全队合格版本、旧授权延续、真实业务双ACK/审计评分、客户真实UI/隔离、角色/折叠连续性、100+真设备和24/72h均缺部分证据。300合成/60min loopback通过仅是合成证据。
+Mac445621真实高推理描述曾成功；Mac132旧model.verify EOF结果仍未知，旧会话status idle不等于旧请求完成，不盲重放。100+真实设备资源问题仍待资料，不虚造设备替代。
 
-22:43追加：Windows619已另存READY_FOR_SIGNATURE_ONLY收据（SHA778324E6…38B9245）；活动Session1签名Inspect exit0、原B828…7E82证书有效至2027-09-12、x64 SignTool可用。未签名/安装/发布。第一619固定GUI签名脚本在同名控制端产物目录准备，启动前对账intent/原进程及文件哈希，PIN只在实际窗口由人输入。
+## main备份与专项入口
 
-在途签名追加：619第一签名runId dev619-signed-runtime-20261011-v1，D results\v619-sign\installer-signed-runtime-20261011-attempt1；原Session1 pwsh26600、首轮signtool31088生命周期见项目Windows619台账。已按实际HWND460074解决遮挡与150%DPI截图，已向用户展示空PIN窗并请其仅在Windows输入；只跟踪同一run报告，不重启未知事务、不在输入后截图。尚无最终PASS。
+本轮源码main已读回：V `852486822929195925e391a49183b6916320bb66`（8文件），priv `f2c3b908ccb0bd7206292655b95d4e7d557ab002`（hbbv5文件），Rust `36e1311724c6c61b498ecd577a6dfdb2a5053e40`（2文件）。冲突只叠加本轮19/12行，远端其他同事字节保留；不是全脏树同步。
+成熟helper：hbbv `quality/backup_cluster_event_lock_heartbeat_docs_20261006.py`，仅导入函数，独立索引、正常push、远端读回。Rust origin是rustdesk/rustdesk upstream，**不得推它**；当前已核backup remote为caucy2026/rust-desk，原生备份使用backup、不改origin或共享index。其他授权目标vibekits、priv的hbbv/、skills main；不提交数据库/秘密/产物/聊天。
 
-2026-10-12追加：Mac445已原路径615/2615→619/2619覆盖，原指纹SYx46…ETVs、安装Key d32e…6fda和原general房间保持；真实SSH/MCP/rooms live、新鲜619云心跳核验后才ACK，独立守护exit0。当前主PID70551创建00:05:15，615回退包保留。证据入口Harness docs/acceptance/MAC445_619_ORIGINAL_ID_UPGRADE_20261012.md。Windows619首轮签名仍在Session1等待实际PIN，原run不重启。
-
-2026-10-12业务追加：Mac445619单次显式模型复验真实完成，管理MCP候选eligibleNow=true；原任务唯一offer、自动claim/fence1、context_issued真实发生，随后TASK_TICKET_BINDING，sessionId=null，进入reconciling。原事务不重发。已定位客户端漏合并当前platformTools，修后30项通过（含签名错误集合拒绝），尚未重建/实机复验。619暂不扩散覆盖/发布；Mac132同SHA已传输、独立解压codesign/build2619通过，仍保持原615运行。入口Harness docs/acceptance/CLUSTER619_PLATFORM_CONTEXT_BINDING_20261012.md。
-
-2026-10-12候选追加：620/2620仅将619合格冻结目录的当前平台工具集合修复及测试叠加，再改隔离版本；2173文件测试后SHA未变。Mac完整Release145.16秒exit0、实际Universal/build2620、49Mach-O签名、签后兼容/NodeJIT/DSH/flock及原DR/entitlements匹配通过。原完整857非跳过用例覆盖（首轮5目录缺失，25项复测保留失败），另30协议通过。公证47db456e-ed55-401d-8e77-2aaf50af9d1e在途，尚未final ZIP/覆盖/发布；入口Harness docs/acceptance/CLUSTER620_PLATFORM_CONTEXT_CANDIDATE_20261012.md。Windows620四文件payload已独立D盘暂存，尚未展开/构建；619硬件签名事务不重启。已精确清理619终态native-target的3909生成库/对象，保源码/工具链/证据/正式ZIP/实际runtime，target需重建。
-
-620最终包追加：公证Accepted、staple/validate、Gatekeeper、严格单App根及独立解压验签均通过，final ZIP423709844B/SHAa44515fd6eab711b7eccfc2d170295e1363a20940d285d9a1077dc3ce48274e1。主程序SHA3d0e5bfd…cc278f9c，2620。当前正向Mac445传输，尚未覆盖。原5deb已逾期，停止结果已按证据失败审核reject/scoreDelta0，保留原历史；新的业务复验不能冒称原失败通过，也不能重发未知事务。Mac445本任务CLI工具安装提示已按取消控件操作后核进程消失；没有安装工具链。
-
-Mac445620覆盖终态：主PID52126创建02:55:00，原路径实际2620/mainSHA3d0e…78f9c、原指纹/安装Key/批准general房间/真实MCP与新鲜620服务心跳核验后ACK，守护exit0；AX授权仍true，619回退保留。一次模型复验实际MODEL_OUTPUT_BUDGET_EXHAUSTED，model-ready未置真且不重复请求。另发现Node start也漏平台工具，旧负控红/修后绿、完整runtime/官方SDK工具层/真实loopback endpoint门禁均过；描述预算已源修为固定2048并限300字，保留原provider/model/high及零工具/截止/失败门禁。尚未重建新包/实机复验，620仍有该Node缺项，勿扩散为业务PASS。入口Harness docs/acceptance/CLUSTER_RUNTIME_PLATFORM_AND_DESCRIPTION_BUDGET_20261012.md；ORICO约4.4GiB，下一轮先核本任务已终态可再生输出恢复构建空间。
-
-2026-10-12 621准备追加：在cluster-runtime-621-20261012-v1以完整620输入隔离冻结621/2621，源模块及实际Node runtime同步，版本G0及平台合同正负控通过，尚未构建。只清本任务终态旧编译/检查输出2772生成二进制，保来源/工具链/证据/618final-v2/619final/620final/完整620解压副本；旧编译及619解压目录标不完整，不直接复用其验签路径。实际可用1.56GB→8.60GB，仍不满足Xcode10GiB持续保留，后续继续精确容量恢复及全Goal；入口Harness docs/acceptance/CLUSTER621_FROZEN_SOURCE_AND_CAPACITY_20261012.md。
-
-621构建追加：容量恢复15.04GB后，四Node门禁、版本G0、2163输入SHA通过；完整Universal Xcode150.201秒exit0、实际2621，实际runtime SHA5bf22d8d…a39ccc58匹配修复源。49Mach-O签名、原DR/entitlements、签后兼容及JIT/DSH/flock通过。单次公证73878ff9-a3e4-4726-b7b0-d65c2900978a在途，尚未final/覆盖/真实模型重验；Windows6218文件已独立D盘暂存，不替代真实构建。
-
-621final追加：公证73878ff9-a3e4-4726-b7b0-d65c2900978a Accepted，票据、严格ZIP单App根、独立解压验签/票据/Gatekeeper和实际runtime模块SHA均通过；final ZIP423709865B/SHAae2c49a3afdf93270c32ece70a044ea5b6344c5885f54020f8fa911c45783837，mainSHA54be36b2…f79c879b，2621。同一ZIP正在向445/132暂存，尚未新覆盖；先对账原upload意图及句柄，不重传未知结果。Mac445620的原固定会话即时idle，后续仍须覆盖/原Key/真实模型/任务实测。
-
-621实机状态追加：Mac445620→621原身份健康提交，PID52231/03:54:35、实际2621+mainSHA54be…c879b、MCP及新鲜房间心跳通过后ACK/guard0，620回退保留；首次预算修后真实模型描述19:56:47Z成功reported。Mac132同包覆盖未通过：新621两PID94064/94082、无新心跳，独立守护exit26回退615；原ID/G73及615新鲜心跳恢复，当前主94554/13:11:55。旧图Office备用372799163虽匹配标题但无可验证输入/原生连接，未据此称恢复；仿真恢复后白盒查原失败，无621 Harness启动事件，native CLI可运行/无确定CrashReport，不定根因。失败包/日志保留，后续须修Intel/macOS12早期启动，不重复旧安装。100+设备资源清单问题已异步发出、等待资料，不替换既有七台目标。
-
-
-## 2026-10-12 原ID恢复与新增房间互通（替代此前Mac132当前状态）
-
-Mac132第二次直接启动621曾短暂真实连通，但诊断LaunchAgent包装器exit0后主进程消失；怀疑包装器子进程寿命，未证实信号原因，不记持续升级PASS。用户通过登记远程桌面372799163打开原应用位置后，20:44:32Z原仿真ID1321656264恢复，265工具/SSH/MCP就绪，G73指纹一致。实际主PID21666出生Sun Oct11 13:43:09，原路径Vibekits 2.app实际2621/main SHA54be36b221b60fcc914c9d9e0f590a11bb6cc057cf0304aad5a83a28f79c879b；真实cluster.rooms保持原Key0c6551…d4bbc1。当前不是615回退状态；615回退副本仍保护在stage/rollback615-direct-probe.app。尚需持续存活及未知模型调用对账。当前控制端Office旧画面仍未刷新，点击关闭与AX关闭没有有效状态变化；不能把旧图当目标当前版本或整机离线，更不能再把普通恢复直接交用户。
-
-用户新增明确要求：主界面仿真信息弹窗显示已加入房间名称及组员/管理员；同房间批准成员可相互仿真，不额外依赖手动白名单。源码现新增实时房间区域及room-members签名范围；服务端10项委托回归通过，新用例验证组员访问、角色变更不影响成员权限、退出和重入旧票据拒绝。原room-administrators范围保留原授权，不静默扩展旧签名同意。尚未部署/打新包，客户端测试进行中，自动入房范围同步和真实双向通信仍需补齐；不得称已实机交付。
-
-2026-10-12 房间互通接线追加：用户要求的房间名/角色已源修；新服务能力roomMemberSimulationEnabled与自身consent GET状态已实现。客户端实时批准房间自动发布10分钟room-members范围，当前四项有界诊断工具，配置切换/停止清缓存。服务端角色/委托24项、客户端合并源码32项通过；源备份在room-members-info-20261012-v1/backup-result-r4.log，完整服务器回归在server-full-tests.log。尚未部署或打新包，完整仿真操作/真实双向成员调用仍待实现和验收，不能把四项诊断互通当全部目标完成。降为组员仅撤销管理员专属访问，普通成员房间通信保留。
-
-共同房间入口接续：peer_rooms服务端发现和agent.simulationPeerRooms已实现，双方身份/同客户/实时批准/目标签名范围与到期校验；12项服务端、18项agent回归过。证据room-members-info-20261012-v1/peer-discovery-verification.json，peer-backup-result-r2.log及peer-server-backup.log。主界面普通仿真按钮仍走旧连接，下一步必须接共同房间发现和真实原生票据，不把专用API可用当用户入口完成。Mac132原固定会话status已真实读回idle/busy false；旧model.verify回执是EOF before full header，仍未知，不据重启后in-flight false推断其完成，不盲重放。
-
-622冻结推进：cluster-room-members-622-20261012-v1以621完整输入冻结622/2622，精确叠加房间入口及room-members协议，G0/Node4/冻结Dart97通过；未Xcode/签名/覆盖。已精确回收旧620和room-delegation615的2492编译输出约3.96GB，原包/源码/工具链/文档保持并读回SHA，旧build明确不完整。当前ORICO约8.6GiB，尚低于10GiB构建保护线；入口Harness docs/acceptance/CLUSTER622_ROOM_MEMBER_FROZEN_20261012.md。不得把冻结完成当新包已交付。
-
-622新状态：Universal Xcode150.197s/实际2622完成，Developer ID与签前后兼容及旧主/helper DR/Team/权限一致通过。只因本轮原生输入不变、既有Xcode实际产物约2.8GB将本任务保护余量设为6GiB，原10GiB并非用户强制最低容量，不据此全停。公证作业 28a23020-aa1f-477d-83d7-bdfbe38464dc 已一次提交，尚未最终包/覆盖。Mac132上真实launchd对照验证AbandonProcessGroup保护有效，两自有测试任务清理、旧主21666保持；Mac132下一次守护须设true并在守护退出后再核持续存活，不能只看健康ACK。证据冻结622/evidence/mac132-lifetime-proof-tool.json。
-
-622final/首台更新：公证Accepted，严格ZIP/独立解包全部门禁过；final423752327B/SHA20fd436f…a8fbb22d，main565868a1…940d36。Mac132实际2622/19049出生15:48:44，原ID/FP/Key/server保持、实时rooms及scope同步无错误；健康ACK后guard0且同PID存活，后续真实system.info成功。已授权诊断覆盖仍非全队发布；155共享桥不动，445只暂存，Windows旧签名未终态。下一步持续存活与新框视觉、445同包覆盖、两个原设备间无白名单双向原生票据；不得宣称新group诊断5工具即全部仿真能力。证据622/evidence/mac132-overlay622-*。
-
-2026-10-12 最新房间设备列表：源码已补当前客户批准房间可展开设备列表、角色/管理员图标、在线状态和仿真连接，展开时2秒刷新、后台暂停、关闭释放；新增代理roster API核owner/current approved，仅给公开摘要。服务器42、客户端10相关回归通过，证据入口 docs/acceptance/ROOM_DEVICE_ROSTER_SYNC_20261012.md；未部署接口/未打新包，622不含新列表。Mac445622实际71729健康ACK、guard0、bootout后持续存活及原ID实际system.info通过。完整房间仿真仍仅5诊断范围，真实双向验证正在做，不能虚报完成。
-
-实机445→132普通入口最新失败invalid_room_limits，原因真实签名成员票据administratorPolicyRevision=0与Rust/Dart必须正修订号校验冲突；两端源码已最小修正为管理员策略允许0，其余仍正，Dart9过，Rust隔离实际模块回归运行中。622已装包尚未包含修复，不能重试当成功；下一包必须重新编译原生运行时，不能沿用622原生SHA。新增公钥签名向量不含私钥。
-
-Rust实际源模块隔离回归已结束：10项通过（含真实P256签名的管理员策略0成员票据）；仍需重新编译Universal原生运行时和新包、部署roster接口后做实机双向回验。
+按阶段读取Harness `docs/HARNESS_UPGRADE_STANDARD.md`、`RELEASE_GATES_ALL_CLIENTS.md`、`VIBEKITS_FLEET_COMPATIBILITY.md`、`acceptance/MAC_HARNESS_RECURRING_REGRESSIONS.md`、`BUILD_RELEASE_INCIDENTS_2026-10-03.md`。当前具体入口`acceptance/ROOM_DEVICE_ROSTER_SYNC_20261012.md`；旧619–622证据仍在对应验收文档。
+服务器参考`docs/ROOM_DELEGATION_NATIVE_INTEGRATION_HANDOFF_20261011.md`、`MULTI_CUSTOMER_REALTIME_AND_RECONNECT_20261011.md`及当前production JSON。只读当前阶段相关记录，不全量重读历史。
