@@ -62,3 +62,5 @@ hbbv `docs/ROOM_DELEGATION_NATIVE_INTEGRATION_HANDOFF_20261011.md`、`docs/MULTI
 Mac445620覆盖终态：主PID52126创建02:55:00，原路径实际2620/mainSHA3d0e…78f9c、原指纹/安装Key/批准general房间/真实MCP与新鲜620服务心跳核验后ACK，守护exit0；AX授权仍true，619回退保留。一次模型复验实际MODEL_OUTPUT_BUDGET_EXHAUSTED，model-ready未置真且不重复请求。另发现Node start也漏平台工具，旧负控红/修后绿、完整runtime/官方SDK工具层/真实loopback endpoint门禁均过；描述预算已源修为固定2048并限300字，保留原provider/model/high及零工具/截止/失败门禁。尚未重建新包/实机复验，620仍有该Node缺项，勿扩散为业务PASS。入口Harness docs/acceptance/CLUSTER_RUNTIME_PLATFORM_AND_DESCRIPTION_BUDGET_20261012.md；ORICO约4.4GiB，下一轮先核本任务已终态可再生输出恢复构建空间。
 
 2026-10-12 621准备追加：在cluster-runtime-621-20261012-v1以完整620输入隔离冻结621/2621，源模块及实际Node runtime同步，版本G0及平台合同正负控通过，尚未构建。只清本任务终态旧编译/检查输出2772生成二进制，保来源/工具链/证据/618final-v2/619final/620final/完整620解压副本；旧编译及619解压目录标不完整，不直接复用其验签路径。实际可用1.56GB→8.60GB，仍不满足Xcode10GiB持续保留，后续继续精确容量恢复及全Goal；入口Harness docs/acceptance/CLUSTER621_FROZEN_SOURCE_AND_CAPACITY_20261012.md。
+
+621构建追加：容量恢复15.04GB后，四Node门禁、版本G0、2163输入SHA通过；完整Universal Xcode150.201秒exit0、实际2621，实际runtime SHA5bf22d8d…a39ccc58匹配修复源。49Mach-O签名、原DR/entitlements、签后兼容及JIT/DSH/flock通过。单次公证73878ff9-a3e4-4726-b7b0-d65c2900978a在途，尚未final/覆盖/真实模型重验；Windows6218文件已独立D盘暂存，不替代真实构建。
