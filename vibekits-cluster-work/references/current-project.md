@@ -236,3 +236,34 @@ Mac132以原ID/G73指纹重连，ui_inspect原83320返回authorized=true/nodeCou
 
 
 629安装前实时基线已核：445原SYx/ID、实际628PID19219 bornMonOct12 14:36:53，132原G73/ID、实际628PID83320 bornMonOct12 00:03:59；两mainSHA4a6fa8c6相同。445可用312370624KiB、132可用15292132KiB，证据629/evidence/preupgrade629-ID.json。未安装、未停App。Apple仍In Progress，唯一completionworker81265等待同一ID，不能按旧627PID生成628→629脚本或重复提交。
+
+
+629AppleID6afc8c36-e865-4a2e-a816-8e526562ba59已Accepted，staple/validate/strict签名/Gatekeeper及生成final ZIP成功。final ZIP423819366B/SHA2bac6c4b751ec3bbbaf5ea7c7bd1184caf5ca9d67fbf4421c3234ea6826f5035。独立解包验收worker81265仍在最后Gatekeeper步骤，final629.json未出前不安装/不称final all gates PASS。旧628状态组件负控exit1明确Expected true/Actual false，新增保留状态测试能检出原缺口；仅隔离fixture源码切换后finally还原，未改已签629/运行App。证据fold-old628-negative.json/log。
+
+
+629最终Archive所有门禁全部0且worker81265已终态；final629.json mainSHAd1986d5c306785ff5311a0d449da672ff93143585e6c0f1258d608cc516f0764，ZIP423819366B/2bac6c4b751ec3bbbaf5ea7c7bd1184caf5ca9d67fbf4421c3234ea6826f5035。445guard/prep/handoff由finalhash生成，bash-n/plutil过，绑定当前628PID19219/birth14:36:53/4a6fa原hash，保rollback628和normalLaunchServices。445目标629ZIP路径实测不存在后唯一upload exec92855启动，intent/upload-tool在629/evidence；结果未知先核原handle/PID/remote partial不能重传。未停止App、未安装629。Shared155618保持，buildMac最终App完整UI/模型仍未通过，不能称fleet最终交付PASS；真实nativeDSH/flock已通过的范围单列。
+
+
+629两Mac只传输未安装：445唯一upload exec92855，Ruby17813/scp17921实际存活，partial124293120B，原19219/birth不变；真实system.resources三帧/CPU5.83%当前、可用RAM2455519232B、App203800576B仅当前非strict-idle/长期PASS。132目标629ZIP路径实测不存在、原83320/birth不变后唯一upload exec98837启动，intent/tool独立；先核这两原handle/remote partial，不能因观察超时重复上传或安装。两个原App保持运行。
+
+
+629原上传92855/98837均EOF终态，原Ruby/scp不存在；控制端实际已2640/PID36266 born17:53:43（非本任务操作），不回装旧618/629。原445/132 ID/FP重连均通过，目标仍628原PID。部分文件445180956160B/SHA43acc190e216012194d9641bc33794416439f1ded29546de210e8644eb90f496、1321305600B/SHA66cac1e9274f740e3a0d7c215069156d43bceb0bdaeed93381c5a8b10bc6df59均与本地629对应prefix一致；原known_hosts/既有key引用StrictHostChecking原FP沿SFTP reput继续同一文件，未读key内容/新增授权。唯一resume445 exec42421、132exec16395，intent/terminal独立，不重复wholeupload/安装。629为局部两修复候选，不代表全部平台最新一致；后续统一候选须保留新640功能及这两修复，不降级已640设备。
+
+
+640与629文件对照：timeout controller及其测试hash完全相同；640仅缺room maintainState及折叠/分页测试。新独立cluster-room-unified-641-20261012-v1从640保留全部源码/runtime，overlay精确2文件，冻结2205输入。原生339e30fd11aed0047e67dba2cdaa4aa561ecba183f6ec3d4b0509bcfaf64acd2为640同一输入，无Rust改动。171联合回归、完整冻结输入、arm64/x86_64 protocol_v3均过。完整Release exec63952已启动，状态{"phase": "building", "pid": 76487, "supervisorPid": 76412, "started": 1791799182.0371861}。保持原9GiB/6GiB门禁；629只暂存不安装，最终升级统一保640功能及新房间修复，Windows628原生历史通过不代表641。629两原resume42421/16395待终态，先核同handle，不重复传输。
+
+
+G01 Mac529实时新事实：原ID5298938227、FP Ccvlq/fFq7TtnCOFhZpJ4UMwUqOJeupvuuGEVl600/c、hostkemideMac-mini.local连接SSH/MCP true，251工具。cluster.rooms实际roomsAreLive/connected/simulationReady true、原general f450与functional25bae批准。实际/Applications/Vibekits.app build2455/PID827 bornMonOct12 15:39:24/SHa02b83d17ac42d4ac1c9eb41578697f47de430bf45c4c21794f44e8806cdb80c6；此前617状态不可沿用，原因未知不推断降级归属。未停止/升级该共享机器，不算G02已通过。证据641/evidence/mac529-current-rooms.json与mac529-current-running-version.json。system.info工具返回原有MCP格式，控制器首层ok字段摘要未解析不代表调用失败，原文件保留。641构建63952仍原handle待终态；629resume42421/16395未重启。
+
+641完整Release已exit0/180.112427s，63952终态；签名唯一exec57505，unsigned-compat PID1075。后续先核该handle/各result/真实子PID，不重构建/重签。未公证、未安装，原设备继续运行。
+
+
+641四签名门禁全部exit0，57505终态；submit36739已exit0，唯一AppleID5b6db2b4-ac73-43ce-b826-c053a7282386。唯一wait_complete641.py exec74663有界查询同ID/Accepted再完成，不重提。Windows619原ID6192992780/hostxzl/原FP rwYyN4kBR2RGcZ3uDjIudStAMV4F/ss7UYVPmU7IC+0，253tools/SSH/MCP真实可用。实际604/2604 PID6448 birth2026-10-12T08:46:58.5817598Z、既有C:\Users\zjc\AppData\Local\KEMI-Test\vibekits-dev319\installed-test\vibekits.exe（本轮只读，无新增C写入）。roomsAreLive/connected false，原general成员approved，simulationReady true，status JOIN_CHALLENGE_EXPIRED/缓存非实时。能力accepted43/profile43，任务执行false。当前UTC10:06:57.825位于本地7.36秒观测附近，不证明根因但未见大幅时钟偏差；不重置身份/token/系统时钟或重复申请。须沿原同步路径查challenge时序/日志，原型client新challenge60000ms门禁保留。证据641/evidence/windows619-current-version/rooms/clock-readonly/catalog.json。629原resume42421/16395仍同process在途，未知不重启。
+
+
+641公证Accepted，74663已exit0/完成全部final archive门禁。ZIP423045279B/SHA10579b8ecd74d3c58812e5e494516834a8ed5db825effce1fc4a9f5dd436bfbc，mainc3258f48c8106e157ff22aaba4a18c3e75245044c1fbb38355a53a4a50af85fb，evidence/final641.json。未安装/未发布。
+Windows619源serverOrigin https://kemi-chat.newlinksz.com:21122、serverSimulationId空，配置启用。新一次rooms同步仍JOIN_CHALLENGE_EXPIRED。production clock1791799775与controller1秒窗口一致；只读join_challenges审计4条全fresh status/60000ms/response null，证明fresh挑战有创建但未证明，不是仅旧challenge复用。619clock第一probe往返7.36s，精算remote offset范围[-7.658,-0.296]s，不能据此排除客户端落后超过5秒（此前"无明显偏差"只为弱观察，不是排除证据）。低开销cmd时间探针仍27.26s往返，不能精确判时差。证据server-challenge-audit/clock-offset-calculated/low-overhead-clock.json。下一步w32time状态/原授权管理通道核实校时或请求实际阶段日志；不放宽60s/5s/签名门禁，不改身份/token。
+
+
+629两个resume42421/16395均exit0，目标full423819366B/2bac6c4b...完整独立shasum匹配；未安装，按历史暂存对账闭环。统一641新路径两目标均实测不存在后唯一uploads启动：445 exec15463/132exec25399，intent/tool独立绑定final641 SHA10579b8ecd74d3c58812e5e494516834a8ed5db825effce1fc4a9f5dd436bfbc。结果未知先核原handle/PID/partial，禁止重传、旧候选629安装或停用户App。
+619w32time实际未同步、来源Local CMOS Clock/no prior successful sync，已配置peer time.windows.com,0x9。现有服务resync/rediscover工具exit0但正文no time data，业务失败，不算恢复；未改peer/安全策略/身份。stripchart同peer3样本：第一0x800705B4，后两NTP偏移-0.3252433/-0.4114652秒，可说明诊断时小偏差，非持续服务同步PASS。App resources当前CPU3%/RAM可用8882233344B，非长期/strict-idlePASS。challenge时序或旧客户端校验支路仍待原始证据，不根据泛化Expired标签断言root cause。

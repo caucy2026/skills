@@ -117,3 +117,7 @@ Mac候选不能仅因路径名为`macos/Flutter/ephemeral/.symlinks`就排除整
 ## Mac bare launch before AppKit check-in and scoped recovery
 
 采样显示新进程仍在AppKit/LS初始化、无Flutter/新crash且guard已回退时，核原事务与旧进程后，可以同一签名候选在独立stage仅改normalLaunchServicesopen启动。原ID/key/版本/实际MCP/rooms及guard卸载后同PID均复验，不重签、清用户数据或重置权限。628132已证该路线恢复；不能泛化为所有启动异常根因。
+
+
+### Mac SSH/SFTP 受保护文件访问
+按[远程仿真技能的 macOS 文件访问前置设置](../../vibekits-remote-simulator/SKILL.md#macos-远程文件访问前置设置)核对远程登录完整磁盘访问，保留允许用户名单，以原用户真实文件读回验收；它不代替App屏幕/辅助功能权限。

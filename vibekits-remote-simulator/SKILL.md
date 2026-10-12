@@ -25,6 +25,8 @@ A device ID and an authorized remote-simulation endpoint are enough to start. Th
 设置后沿原仿真 ID 和已验证身份的 SSH/SFTP 通道，对原先失败的、已授权路径做最小只读列目录或文件读取验证，并核对命令退出码和实际结果。只记录系统版本、设置状态、验证路径及结果，不保存文件敏感内容或认证截图；开关开启或连接成功本身不等于文件访问已通过。
 
 官方依据：[Apple《允许远程电脑访问你的 Mac》](https://support.apple.com/guide/mac-help/allow-a-remote-computer-to-access-your-mac-mchlp1066/mac)（2026-10-12 核对，说明 Remote Login 使用 SSH/SFTP，并提供远程用户完全磁盘访问选项）。
+新增安全敏感访问时遵守平台当次确认要求；已有有效、同范围授权不重复索取。
+
 
 ## Windows script execution
 
