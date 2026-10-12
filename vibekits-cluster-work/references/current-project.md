@@ -28,7 +28,7 @@ hbbv21122/TCP，保存SSH profile `remote_1791254767548854`；UUID `da3553a32048
 | Mac155 | 1554650784 | 618，本机共享桥；另有Mac529/PAD任务使用，不能重启/升级 |
 | Mac445 | 4456560334 | 623/2623; PID28250 born Mon Oct12 08:44:05. Guard0 + bootout + real MCP survived; original key/rooms retained, rollback622, actual AX authorized. |
 | Mac529 | 5298938227 | 617，在线、共享工作先对账 |
-| Intel/macOS12 Mac132 | 1321656264 | 623/2623; PID74422 born Sun Oct11 17:41:19. First guard26 rollback reconciled; relay-first v2 guard0/bootout/real MCP survived; original key/rooms and rollback622 retained. AX false, old baseline unknown. |
+| Intel/macOS12 Mac132 | 1321656264 | 624/2624; PID46325 born Sun Oct11 18:26:11. Guard0/bootout/real MCP survived; original key/rooms and rollback623 retained. Full permission continuity remains unproven. |
 | Windows58 | 4240650696 | 604；历史旧ID4567540178不可当当前连接目标 |
 | Windows619 | 6192992780 | 604在线 |
 | 补充Windows617 | 6175875975 | 564且已确认离线；不连接 |
@@ -86,3 +86,9 @@ G01-G10 remain active. Full room simulation still only5 diagnostic tools; full s
 Web12 list sections now deployed from exact production base to room-device-roster-v1 using only index.html/style.css, original app.js unchanged. MainPID2187336 unchanged; no backend restart. Public HTTPS200/no-store and exact byte hashes passed. Evidence hbbv/docs/acceptance/COLLAPSIBLE_LISTS_WEB_PRODUCTION_20261012.json. Actual browser interaction remains unverified after prior tool rejection. Source main priv c05fe347411dc25046ab0713306421ea5d688143 (3 files) read back; current-main colleague changes preserved during merge. Working-tree app.js not uploaded.
 Windows original final-installer signing still samepwsh26600/signtool33536, file273767077B exclusively held, no terminal files; timestamp/signature unknown, no restart/new signing. Original619 remains in flight while Mac work proceeds.
 Next: finish624 notary/strict final artifact, target-only diagnostic overlay preserving623 rollback; actual room rejection code must identify403 before repair. Full simulation scope and G01-G10 remain incomplete; 5 diagnostic tools are not the requested complete scope.
+
+## 2026-10-12 01:49 UTC authoritative continuation
+
+Mac132 and Mac445 both run624/2624, PID46325 and6522 respectively. Original identity and live room receipts plus post-guard actual MCP are in cluster-fold-diagnostics-624-20261012-v1/evidence. Normal445-to132 room connect rejects ROOM_SIMULATION_INTROSPECTION_INVALID; exact failing field is not proven. Detailed diagnostics source main3a811fe, 25 targeted/132 frozen joint tests passed.625 full build, signing, main/helper identity checks passed; Apple job fb54eb2a-b47c-47da-8e9e-98f7f480dedd is In Progress, never resubmit.
+
+Windows original pwsh26600/SignTool33536 have ended. Run dev619-signed-runtime-20261011-v1 is FAIL because its Verify extension filter rejected sharp-win32-x64-0.35.5.node after outer signing. Preserve failure.json/exit.txt. Independent actual verification of all244 PE passed, original212 vendor bytes unchanged, own signer/timestamps checked; no resigning. Final installer273777816 bytes SHA2561bfaa8d95368be6971a9d13fbbc42c8bbd782bdff768fff8a4fb0919388a2c5b, Valid and timestamp present. Original604 PID26044 born2026-10-10T16:35:08.9482709Z still runs.619 overlay remains pending. Project record main5d5ed59. Global Windows helper Verify-only.node PE admission positive/invalidPE/sign-mode-negative all passed through uploadedD script; skills main3c1b290. Earlier in-flight statements are historical, superseded here.
