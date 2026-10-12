@@ -180,3 +180,10 @@ Windows Flutter app628 delta118文件/639219B已冻结，独立work/cluster-app6
 First445actual628HTTProomtimeout provedownedtrickle socketclosed19611ms/open0, source20sbudget; caller23.246sROOM_DELEGATION_TIMEOUT. Latercalc63andbothactualticketclaim/completionpassed. OnlyoneARMround, notthree/Intel/fullresourcePASS. OwnedNodefixture24971/port54403 finite180seconds; verifygone/portclosed beforeclosingincident. DetailedrecordROOM_HTTP_CANCELLATION_RESOURCE_FIX_20261012.md; outerroom_scope_refusedlabelmisleadingfornormaltimeout, precisecausekept.
 
 WindowsV1job11100/CMD33252ended0xC000013A, nocompilers/childleft, nocompletionreceipt; causeunknown/TaskSchedulerOperationalnotavailable. Originalprepared1086inputs/cache/firstlogsretained. NewfixedlimitedtaskVibeKits-Native628-Build-20261012-v2 usesPythonw/no-consolechild,samebudgets/fences,no sourcecopy/install/sign repeat. Newmetadata worker-intent628-resume2.json/build-start628-resume2.json/terminal628-resume2 underDworkroom-native-628-20261012-v1. Firstsource/customer/task/historicalfailedstates remain,G01-G10active.
+
+
+### HTTP取消双架构各3实轮已通过，UI仍未验
+
+Installed628:445PID19219/132PID83320不变。general room-members route每target3实HTTPtrickle/3后续calc63。实际socket关闭ARM19706/19822/19576ms、Intel19605/19592/19672ms，全部open0；caller约22.7–23.85s返回精确ROOM_DELEGATION_TIMEOUT。12HTTP/calc票全claim+complete。两target各38帧5s采样/无error（App/fixtureCPU,RSS/AppFD/systemRAM/load），不是systemCPU/strict-idle/24h全部门禁。两个自有finitefixturePID/port均已明确退出/关闭，evidence/http-rounds628-*，不重启动或杀其他Node。
+
+628445原生UIinspect真实authorized/currentPID/210nodes完整，但未出现房间或仿真labels，不能当房间信息/列表折叠的真实UI通过，下一动作需授权nativeApp可视/当前窗口核验。浏览器Chrome拒绝仍保留独立边界。Windowsnativev2保持原记录与新terminal入口，先核真实PID/出生和终态。G01-G10active。
