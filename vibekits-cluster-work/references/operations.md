@@ -121,3 +121,7 @@ Mac候选不能仅因路径名为`macos/Flutter/ephemeral/.symlinks`就排除整
 
 ### Mac SSH/SFTP 受保护文件访问
 按[远程仿真技能的 macOS 文件访问前置设置](../../vibekits-remote-simulator/SKILL.md#macos-远程文件访问前置设置)核对远程登录完整磁盘访问，保留允许用户名单，以原用户真实文件读回验收；它不代替App屏幕/辅助功能权限。
+
+
+### 应用版本不能证明原生输入延续
+冻结新客户端时，将实际原生输入绑定已审核的功能证据及保留输入的SHA/字节。640/641曾复用618原生，完整房间证据却绑定627/628；protocol_v3、签名、公证和组件通过不足以证明功能连续。项目verify_native_input_provenance.py提供哈希与证据字节门禁，旧输入/证据改动负控已过；真实最终包仍须另验。

@@ -267,3 +267,21 @@ Windows619源serverOrigin https://kemi-chat.newlinksz.com:21122、serverSimulati
 
 629两个resume42421/16395均exit0，目标full423819366B/2bac6c4b...完整独立shasum匹配；未安装，按历史暂存对账闭环。统一641新路径两目标均实测不存在后唯一uploads启动：445 exec15463/132exec25399，intent/tool独立绑定final641 SHA10579b8ecd74d3c58812e5e494516834a8ed5db825effce1fc4a9f5dd436bfbc。结果未知先核原handle/PID/partial，禁止重传、旧候选629安装或停用户App。
 619w32time实际未同步、来源Local CMOS Clock/no prior successful sync，已配置peer time.windows.com,0x9。现有服务resync/rediscover工具exit0但正文no time data，业务失败，不算恢复；未改peer/安全策略/身份。stripchart同peer3样本：第一0x800705B4，后两NTP偏移-0.3252433/-0.4114652秒，可说明诊断时小偏差，非持续服务同步PASS。App resources当前CPU3%/RAM可用8882233344B，非长期/strict-idlePASS。challenge时序或旧客户端校验支路仍待原始证据，不根据泛化Expired标签断言root cause。
+
+
+641两设备守护脚本已生成（Mac445/132），绑定628旧hash/独立rollback628/现PIDbirth/新641finalSHA；bash-n和plutil过，尚未上传/启动安装。641原upload15463/25399仍在途，scp37514/37516实际存活，不重传。远程技能本机缺失MacFDA章节，已保留skills/main既有完整说明并合并平台当次确认句，集群operations加入引用；两skill quick_validate通过，三文件main备份ce3d7a3f33add3905ff56d6d79f2a2815cc9282f读回过。来源规定和当前空间等不照搬给其他机器。619在有效NTP两样本后仅重试一次现服务resync，正文仍no time data/业务失败，28315终态；不再无证据重复该动作，尚未修复入房。
+
+
+641两upload15463/25399均已exit0，445/132独立stat+shasum均423045279B/10579b8e全匹配。Mac445新stage-v1独立创建后，哈希校验自有prep脚本执行82257已exit0；prep.exit=0、PREPARED_NO_INSTALL、原628PID19219/birth不变。Mac132独立新stage-v1创建、83320/birth不变，prep自有脚本sha校验后唯一exec50211在途；结果未知先查同handle/prep.started/exit/log，不重复解包或安装。双方未覆盖安装；first buildMac完整最终App UI/模型与全部fleet门禁仍缺，不借staging/sign/171unit通过冒称G02。最新测试/更新记录main1c49ba3056505c8a2a5aaafa48cf70ba13174ef1已读回、sharedindex未改。
+
+
+Mac132 prep50211已exit0，prep.exit0/PREPARED_NO_INSTALL，原83320不变，两641stage均完整未安装。本机维护metadata scopeownedDebugOnly/legacyInventoryCompletefalse，不能当全局可停；真实Gateway三可见session读状态当前session3e141... idle/busyfalse，其余HARNESS_SESSION_NOT_ACTIVE，仍未核其他共享使用。按fleet skill构建Mac先实启最终候选规则，已向用户请求约1分钟共享中断时机（升级本身仍已授权），不擅停其他工作。
+原生来源审计阻断641覆盖：640/641 native339e30...精确复用618 native；真实265/512房间证据绑定627/628 native82b1...，并非同一输入。native-provenance-block641.json保存精确hash，仅BLOCK缺适用证据，不虚称旧binary功能已经实测失败。新cluster-room-native-qualified-642-20261012-v1从641保留所有640/641 Dart/Swift/SDK功能，仅恢复qualified627原生82b1及642/2642 metadata，冻结2205files。642preflight+171联合回归唯一exec13326在途，先核同一handle。641不安装；待修正候选完整签名、公证、真实启动后再共享窗口，原窗口请求只决定中断时机不授权安装不合格包。
+
+642preflight/native两架构protocol/171联合回归均过，13326终态。完整Release唯一exec12762启动，{"phase": "building", "pid": 67851, "supervisorPid": 67743, "started": 1791802674.30561}。未签/公证/安装，不重启动构建或执行641guard。
+
+
+642完整Release已exit0/165.098621s，12762终态。新永久verify_native_input_provenance.py gate：实际641 raw负控拒绝、642 raw正控通过、资格证据SHA改动负控拒绝；仅绑定unsigned input/evidence bytes，不自证功能。642pre-sign再次pass后唯一sign exec13019启动（unsigned-compat PID7725），原资格来源627 raw82b1及固定证据保持，不重签/重构建。source/build事故与operations更新；SDK/签名身份/用户data不动，尚未安装642。
+
+
+642签名13019已全部exit0：unsigned/signed兼容、49MachO签名、两架构nativeFlock与DSH launch、当前640 main/helper DR/Team/entitlements均匹配。原生来源门禁代码及事故记录main d5f83e56ffcf0fa5d410d5b18ce7ab1b85380339读回过、sharedindex未变，三文件精确scope。642唯一notary submit exec92080已启动；先核intent/handle/stdout/id，未知结果不重提。641仍BLOCK，仅暂存；642未安装/未发布，共享窗口选择仍待回复。
