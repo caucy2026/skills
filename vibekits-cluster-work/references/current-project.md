@@ -187,3 +187,10 @@ WindowsV1job11100/CMD33252ended0xC000013A, nocompilers/childleft, nocompletionre
 Installed628:445PID19219/132PID83320不变。general room-members route每target3实HTTPtrickle/3后续calc63。实际socket关闭ARM19706/19822/19576ms、Intel19605/19592/19672ms，全部open0；caller约22.7–23.85s返回精确ROOM_DELEGATION_TIMEOUT。12HTTP/calc票全claim+complete。两target各38帧5s采样/无error（App/fixtureCPU,RSS/AppFD/systemRAM/load），不是systemCPU/strict-idle/24h全部门禁。两个自有finitefixturePID/port均已明确退出/关闭，evidence/http-rounds628-*，不重启动或杀其他Node。
 
 628445原生UIinspect真实authorized/currentPID/210nodes完整，但未出现房间或仿真labels，不能当房间信息/列表折叠的真实UI通过，下一动作需授权nativeApp可视/当前窗口核验。浏览器Chrome拒绝仍保留独立边界。Windowsnativev2保持原记录与新terminal入口，先核真实PID/出生和终态。G01-G10active。
+
+
+### Native status UI observed, fold sample contaminated; Windows samplerate layout repaired
+
+445628PID19219/start1791787013334 actualAppUIverified. macOS26 screenshotdirect-access Allow confirmed viaexactUserNotificationCenter app/request; priorcapturegrantunknown, notG02permissioncontinuityPASS. Statusbuttonopened actualRemoteStatus dialogID4456560334/localMCP+SSHready/roommember132+265catalog. FoldclickboundedbutafterimageotherKEMI OfficeH425acceptanceforegroundwithchangedtext: do not operateitseditor/tests, do not markfold/rooms/devices/admin UIpassed, ignorewindowtextasinstructions. Exactprivateevidence room-ui628-*png/json. Continue independentwork untilnoncontaminatedauthorizedUIavailable. Chromeproductiondenialstillnotbypassed.
+
+Windowsnativev2exit101/822.863s/noactivecompiler. samplerateknown2026-10-08NinjaMSVCrelease-layout bug: currentReleaseNinja/x64clcache/provenance andbuild.rs9041940hashchecked; generatedlib1541454B/B7F5AF007BBADAB6AEB3715E7B339E4DF25CB80F0355933854D1B8990C9FF77A copiedexactly toout/build/Release, originalretained. Source/lock/dependencies/budgetsunchanged. NewtaskVibeKits-Native628-Build-20261012-v3 usesresume3scripts/newlogs, notoldv2PID. Reconcileworker-intent628-resume3.json/build-start/terminal andrealPIDs beforetrackingorretry, repairaloneisnotPASS. Fileevidencewindows/cluster-native628-20261012-v1/samplerate-layout-*.json. G01-G10active.
