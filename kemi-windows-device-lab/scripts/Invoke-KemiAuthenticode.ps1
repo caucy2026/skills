@@ -60,8 +60,29 @@ function Resolve-InputFiles([string[]]$RequestedPaths) {
         $resolved = (Resolve-Path -LiteralPath $_).Path
         $item = Get-Item -LiteralPath $resolved
         if ($item.PSIsContainer) { throw "INPUT_NOT_FILE: $resolved" }
-        if ($item.Extension -notin '.exe', '.dll', '.msi', '.msix') {
+        # Native Node addons are PE images too. Verification must inspect the
+        # original signed path; signing admission stays unchanged.
+        $verifyNode = $Mode -eq 'Verify' -and $item.Extension -eq '.node'
+        if ($item.Extension -notin '.exe', '.dll', '.msi', '.msix' -and -not $verifyNode) {
             throw "UNSUPPORTED_SIGNING_INPUT: $resolved"
+        }
+        if ($verifyNode) {
+            $stream = [System.IO.File]::OpenRead($resolved)
+            try {
+                $reader = [System.IO.BinaryReader]::new($stream)
+                if ($stream.Length -lt 64 -or $reader.ReadUInt16() -ne 0x5A4D) {
+                    throw "INVALID_PE_INPUT: $resolved"
+                }
+                $stream.Position = 0x3C
+                $peOffset = $reader.ReadUInt32()
+                if ($peOffset -lt 64 -or $peOffset -gt $stream.Length - 4) {
+                    throw "INVALID_PE_INPUT: $resolved"
+                }
+                $stream.Position = $peOffset
+                if ($reader.ReadUInt32() -ne 0x00004550) {
+                    throw "INVALID_PE_INPUT: $resolved"
+                }
+            } finally { $stream.Dispose() }
         }
         if ($resolved -notmatch '^[Dd]:\\KEMI-Test\\') {
             throw "D_DRIVE_BOUNDARY_VIOLATION: $resolved"
