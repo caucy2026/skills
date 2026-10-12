@@ -92,3 +92,14 @@ Mac候选不能仅因路径名为`macos/Flutter/ephemeral/.symlinks`就排除整
 ## 无CLT目标Mac的只读核验（445现场）
 
 已确认无Xcode/CLT的Mac不应因`/usr/bin/python3`存在就执行它；该路径可能是安装按需stub。627准备时误调用触发安装询问，未安装：通过实际bundleId `com.apple.dt.CommandLineTools.installondemand`的原授权UI检查、精确“取消”按钮恢复。AXPress返回-25204但新UI查询显示App退出，原VibeKits PID/版本/哈希不变；关闭窗口的动作须读回结果，不能因旧AX对象失效盲点第二次。后续沿内置PlistBuddy/ps/shasum/df做有界只读核验，不安装工具链。其他机器先沿各自已证环境判断，不将该Mac缺Python推成所有Mac都缺。
+
+
+## 部署路径中的设备ID不是版本号
+
+1321656264含626子串：对整个守护文本replace626→627会把设备ID和路径改错。627首次132守护实际exit127、未运行安装，旧626不变；按原label读取not-running/lastExit127，再保留首错、修正RID、核解码Plist ProgramArguments/输出路径与真实stage一致后重试成功。只替换明确版本字段，RID/主机指纹/路径中的设备身份独立固定；Bash语法和Plist lint不证明部署目标正确。
+
+## 房间完整目录的真实证明边界
+
+627两台真机在明确general room下各265工具连接；每方向1个bulk descriptor票、3个计算器/3个system.info，14票已领取并完成。工具目录存在不等于所有工具成功，计算器证明超出五诊断但不能替代文件/命令取消、角色撤销或全机队。保留room-members模式、所选roomId、目标实际PID、实际结果和服务审计，不改旧白名单。
+
+客户端taskSessions的reconciling项不必然有在途工作；先核服务器实例终态/lease、SDK实际session/busy和pending结果。旧rejected+过期lease+无session/结果不能当运行任务，开关enabled也不是执行中；不删除历史或自动重放旧failed业务。

@@ -140,3 +140,12 @@ Windows424重新forced-relay握手，原ikZ指纹/host匹配；原604PID26044和
 新fresh核验原626/PID54480/bornMonOct12 10:59:32、主a917哈希/UID501、stage不存在/316GBfree；原分析会话idle/busyfalse。但logPresentNotValidated不能当全部旧会话完整验收。无CLT机器的Pythonstub安装询问已用授权AX“取消”并确认退出，原App不变，未安装工具。627守护脚本/Plist沿626成熟路线已准备，更新旧/新hash、PID出生、2626→2627及rollback626，Bash/Plist语法检查通过；尚未部署或启动守护。
 
 唯一upload627到445在途：本机Ruby42991 bornMonOct12 12:48:13，intent/handle及原始回执路径evidence/upload627-445*，当前读到目标/tmp/vibekits-simulator-4456560334/Vibekits-627-final.zip为33423360B且更新。等待原upload的终态和返回路径，禁止重复上传或因观察超时断连接；目标仍626、未停止/安装。上传完成后核完整423809038B/SHAaa0b，再独立目标解包/身份比较与原事务检查后按成熟guard执行。
+
+
+### 当前权威：两Mac627，原general房间265工具双向实通
+
+445PID69256 bornMonOct12 13:07:47；132PID19792 bornSunOct11 22:20:15，原ID/FP/安装key及live rooms不变。同一finalZIPaa0b6397e911aeee99279e93064f4334d984e52fabe5293f366d8d50abc0036b/main41235f9b904fcad88021cba638fbf96ac69835c1220310a054bfed1dde66e443。两guard exit0、ownbootout和同PID真实MCP后验通过，rollback626保留；445实际AX授权延续，132完整权限基线未证。无在途上传/签名/公证/安装需要重启；627132首guard路径错导致exit127未安装，r2已修RID并实通，原始失败保留。
+
+Explicit f450c684b868292f67c534b793e26314两方向room-members连接toolCount265。每方向1次完整目录/3次实际计算器结果85/3次实际info对方新PID；服务器14票全部claim+complete。不是所有265工具/文件/命令取消/新scope撤销/角色降级/真UI全队PASS，仍须继续。证据candidate/evidence/full-room627-claim-complete-decoded-audit.json及ROOM_FULL_SIMULATION_627_PROGRESS_20261012.md。
+
+Mac445旧reconciling实例9c5d5c175f42144590cf09b7a3f666c6已只读核为rejected/过期lease/无SDKsession/无pending结果；原general任务仍failed/rev3，不删历史不当G03通过。Windows原604及619合格旧候选/完整回退保持，需最新跨平台构建。G01–G10继续。
