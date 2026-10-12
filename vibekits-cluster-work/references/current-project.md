@@ -305,3 +305,16 @@ Both targetMac642 overlays actually completed:132PID74260/normalLS/originalG73 i
 实际642三Mac保留：155 PID31445 born20:08:16、132 PID74260、445 PID87793；132/445新增真实原Key模型PASS、两方向room-members指定通用房间及各3次calc85；445真实房间/组员/成员列表/连接列表与总房间列表折叠通过，管理员为0故徽标及实时变化待测。132实际选择macos12兼容页面并hash匹配；首次Documents确认后读停住，取消重入后QA目录选择及真实pwd成功，不能算首次无异常/旧TCC延续。
 
 Mac529仍455，642暂存签名/hash/主辅助身份检查已过，尚未停止进程；它的共享桥另项目工作窗口问题已提出未答，不自动批准。Windows完整新包与Restricted脚本准入仍待解决；617确认离线不可连接。源码及详细记录8文件已备份V main605148ee09b0f4abbf642a23aae0cdb090d0b150并远端验证，不代表全树/商城/G01–G10完成。
+
+
+### 当前646事务与645实机差额（2026-10-13）
+
+当前本机645/2645，PID34128，原155 ID/指纹/反向MCP/实时入房/原凭据模型均实测；Mac132 PID62992与445 PID86678仍643，两机原ID/入房/模型、Intel目录选择及room-members双向三次calc85通过。Mac529仍455、642暂存，独立共享桥窗口问题未答；Windows424仍604、native628构建已完成但整包/签名未成，Restricted脚本准入未答；619仍604、实时挑战失败未闭环；617确认离线不可连接。G01–G10不缩减。
+
+643/644/645本机五分钟CPU中位5.6/8.6/8.3%，均FAIL，RSS各自PASS；无新增用户工具账本活动，原失败保留。644日志ECDSA热点修复仅改变清理筛选顺序，真正删除前验签仍强制；旧负控4次/修后2次，伪造保留，14安全回归通过，生产类400记录隔离计时旧1625.923ms/新32.103ms不代表整机CPU通过。
+
+646候选cluster-heartbeat-qualified-646-20261013-v1，2265冻结/191联合回归/资格原生82b1门禁/完整Universal构建/49MachO签名与升级身份均通过。只新增同一健康快照复用刚读legacy值，official stat/后续心跳/真实执行前核验保持新鲜；非空Key负控4次/修后2次及删除恢复断言通过。源码与记录V main738032260dbb3c5df1ff274c2093e4f6bf15c3bc已读回，共享索引未动。
+
+646唯一公证8b0ff2fb-1572-4346-8c6d-3952050215bf，当前In Progress。原wait_complete646.py exec17424有界15次同ID查询，Accepted后只执行一次complete_notary646.py和verify_final646.py；先核handle/terminal/current/final文件，不重提、不重放未知完成。当前尚无final646或安装、CPU/商城通过。local-before646.json绑定真正645 PID34128/出生/mainSHA，实施前仍复核新鲜基线。
+
+后续复用本机quiescent guard：SIGSTOP真正已核主进程后再停止自有子进程，SIGTERM+SIGCONT主进程，确实退出才原子移动。644首错fork停滞7183证据及恢复原643/再覆盖成功均保留。保护所有用户配置/Key/身份/正式包和当前回退，不能因目录名Caches删除当前App。本轮清740+1480个自有已不用编译.o/.pcm/.dia，精确清单无残留，SDK和正式包不删。商城app53/54未更新，不以主线备份或公证作交付。
