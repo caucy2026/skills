@@ -117,3 +117,10 @@ Worker2543715 completed full303+5SSE/close tests exit0 in233.757s. Switch2552265
 用户本轮要求清本任务全部历史编译缓存/二进制：Mac619–625旧应用/ZIP/对象2881项已删，观测净增16.35GB，清单macos/historical-cleanup-20261012-v1。所有源/工具链/签名/依赖输入/证据、当前626正式字节及必要Windows回退保留。历史build已失效须全重建；其他同事及远程Windows未声称清零。
 
 Mac受保护文件经SSH/SFTP访问的系统前提见远程仿真SKILL.md“macOS 远程文件访问前置设置”；按用户指定的远程登录ⓘ完整磁盘访问入口处理，密码仍由用户输入，不重置权限。
+
+
+### 627原生/签名完成及服务器512上线
+
+ARM483.662s、Intel362.543s完整native均exit0，Universal unsigned82b1b93dac5536152176c6c1f9a4c1788910548e30b574798a8fe2b91b9d3f67，两架构真实protocol_v3/check-only通过。首App链接失败保留，恢复626物化插件输入后r2完整构建45.026sexit0。内外签名49Mach-O、真实SDK两架构flock及DSH启动、签前后兼容与main/helper Bundle/Team/DR/entitlements相同均通过。单次notary提交正在由submit_notary627.py执行，读evidence/notary-intent、handle/stdout/receipt；未知不重提。当前本机共享618与两远端626未改；627尚未完整最终封包/安装/实机验收。
+
+服务器304 Linux及SSE复测通过、1183985664字节一致备份/quick_check过；实际生产PID2614587/cwd20261012-room-catalog512-v1已verified。原UUID/key/data/devices/members/customers和保护服务不变、99hash及3公网资源相同；六台新鲜心跳，两626实时rooms9/范围错误null。full expanded client仍未实装。生产记录priv main04b8d0bd；客户端五项附加实际目录/16KiB宿主策略/1MiB输出预算测试通过，main8402a228。补充技能经验在operations，G01–G10继续。
