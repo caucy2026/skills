@@ -318,3 +318,9 @@ Mac529仍455，642暂存签名/hash/主辅助身份检查已过，尚未停止�
 646唯一公证8b0ff2fb-1572-4346-8c6d-3952050215bf，当前In Progress。原wait_complete646.py exec17424有界15次同ID查询，Accepted后只执行一次complete_notary646.py和verify_final646.py；先核handle/terminal/current/final文件，不重提、不重放未知完成。当前尚无final646或安装、CPU/商城通过。local-before646.json绑定真正645 PID34128/出生/mainSHA，实施前仍复核新鲜基线。
 
 后续复用本机quiescent guard：SIGSTOP真正已核主进程后再停止自有子进程，SIGTERM+SIGCONT主进程，确实退出才原子移动。644首错fork停滞7183证据及恢复原643/再覆盖成功均保留。保护所有用户配置/Key/身份/正式包和当前回退，不能因目录名Caches删除当前App。本轮清740+1480个自有已不用编译.o/.pcm/.dia，精确清单无残留，SDK和正式包不删。商城app53/54未更新，不以主线备份或公证作交付。
+
+### 后续快照：648 构建中（2026-10-13，取代上述646在途状态）
+
+本机实际647/2647，PID21124，原155 ID/指纹、反向MCP、实时入房、原凭据模型调用通过。647最终 ZIP SHA61a34a9b48434aef3733f66bda9adeb6a425d4cb5e13374e785c593b29f006d6，423822626字节，Apple26065640-5975-4e40-808a-b1e3098c7eb2 Accepted；五分钟CPU10.7% FAIL、RSS12.78125MiB/1.99624% PASS。其他设备仍按上述快照，未升级648。商城app53/54仍旧版。
+
+无授权房间重复读取修复及详细记录已备份V main496fb86f55631a11a5380d73a622e095d0f8781f，远端确认、共享索引不变。旧2次负控失败、修后27项及三轮独立流程通过。新648根cluster-grant-qualified-648-20261013-v1：2266冻结、196联合回归、版本/来源/内置技能/macOS12 RPC通过；build_app648.py原exec51349、xcodebuild25645/监督25598仍构建，先读取原handle与app-build-state648-r2.json对账。没有签名、公证、安装或性能通过证据，不重启未知事务。完整G01–G10保留。
