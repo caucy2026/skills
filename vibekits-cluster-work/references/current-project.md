@@ -124,3 +124,12 @@ Mac受保护文件经SSH/SFTP访问的系统前提见远程仿真SKILL.md“macO
 ARM483.662s、Intel362.543s完整native均exit0，Universal unsigned82b1b93dac5536152176c6c1f9a4c1788910548e30b574798a8fe2b91b9d3f67，两架构真实protocol_v3/check-only通过。首App链接失败保留，恢复626物化插件输入后r2完整构建45.026sexit0。内外签名49Mach-O、真实SDK两架构flock及DSH启动、签前后兼容与main/helper Bundle/Team/DR/entitlements相同均通过。单次notary提交正在由submit_notary627.py执行，读evidence/notary-intent、handle/stdout/receipt；未知不重提。当前本机共享618与两远端626未改；627尚未完整最终封包/安装/实机验收。
 
 服务器304 Linux及SSE复测通过、1183985664字节一致备份/quick_check过；实际生产PID2614587/cwd20261012-room-catalog512-v1已verified。原UUID/key/data/devices/members/customers和保护服务不变、99hash及3公网资源相同；六台新鲜心跳，两626实时rooms9/范围错误null。full expanded client仍未实装。生产记录priv main04b8d0bd；客户端五项附加实际目录/16KiB宿主策略/1MiB输出预算测试通过，main8402a228。补充技能经验在operations，G01–G10继续。
+
+
+### 627最终包已独立验证，覆盖尚未执行
+
+Apple原job b7498067-3045-4f3c-b617-89156c50b31d Accepted；App-only finalZIP423809038B/SHAaa0b6397e911aeee99279e93064f4334d984e52fabe5293f366d8d50abc0036b，mainSHA41235f9b904fcad88021cba638fbf96ac69835c1220310a054bfed1dde66e443。Strict7zz updater允许路径、独立解包all-architectures签名/staple/Gatekeeper与实际cluster runtime来源一致全部通过，evidence/final627.json。完成/等待/签名均终态，不重提交或重跑完整装订事务。当前Mac现场仍626，本机共享618不能重启，完整房间操作及实机权限/UI/Windows/全队发布仍待验，不以包合格当全部目标完成。
+
+Windows424重新forced-relay握手，原ikZ指纹/host匹配；原604PID26044和Office6160/7316/32340/28984未变。D可用42.67GB，native guard536MiB有界只读退出0；CIM时间9482700Z不能代替native9482709Z。旧签名/完整备份终态保持，未安装新包/重复事务，桌面连接未称恢复。
+
+627 native/sign完成后3077个生成Cargo编译缓存清理，观测另释放2.72GB；Universal/两架构二进制/App/依赖输入及全部源码/证据保留，native-target失效必须全重建。清单historical-cleanup-20261012-v1 batch4。
