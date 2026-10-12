@@ -169,3 +169,14 @@ Mac628 r2完整Xcode105.158s成功、签名/身份/compat过；Apple2486836d-780
 Windows424 native628真实开始：Dwork/room-native-628-20261012-v1，fixed taskVibeKits-Native628-Build-20261012-v1。worker11100/FileTime134362591716767853，CMD33252/FileTime134362592084222241；实际cargo/rustc与5秒资源帧已核。1086输入/3native delta从qualified V3锁/toolchain复制，prepare35.646s成功。原604PID26044/FileTime134361237089482709/619 signed包与完整回退不变，无新签/安装。最新资源约6.56GB available、11.97/19.15GBcommit、BOUND45，不能当strict-idle验收。接手先读build-terminal628-r2.json/worker状态和真实PID，不重启未知作业。
 
 Windows Flutter app628 delta118文件/639219B已冻结，独立work/cluster-app628-20261012-v1 staged，最新共用源+Win runner，qualified619 vendor依赖保留。Prepare-App628.py未执行，必须新native成功后再native集成/Flutter完整构建与签名。当前readonly源目录中的未知.json不是都可解析元数据：一次误扫遇二进制，一次整manifest输出65536截断均保留为控制器读取失败，不是源码或机器故障；后续只读已知artifact元数据/限输出或SFTP下载完整公开manifest。不要输出未知凭据文件。
+
+
+### Current bothMac628 and realHTTP round1; Windows resumedbuild
+
+445628PID19219 bornMonOct12 14:36:53, originald32e/445SSH=SYx, ID/key/live rooms/AX/MCP preserved; guard0+bootout+samePID passed.132628PID83320 bornMonOct12 00:03:59, originalG73/0c655/ID/rooms/MCP, v2guard0+bootout passed. First132bare launchguard26 restored627, sampleAppKit/LS beforeFlutter/no newcrash; same signed628 normalLSopen route succeeded. BothfinalZIP2c504bb68b23777dbd2580906bb393f3d208075a195bf17088b566bd639892a3/main4a6fa8c629b572ed236241fc57ded6e0ed752d7a8f62c4fe82d90f5f970ce7f7.132allpermissionbaseline stillunproven. No pendingMacupload/guard/installer torestart.
+
+132losttransferterminal preserved, exact207590400 prefix independently matched thenresumed sameoriginaltrustedVibeKitsloopbackSFTP; firstquotespathfailure beforeauth correctedmaturequotedknownhostsoption. Fullbytes/SHApassed. Allsource/keys/whitelistsunchanged.
+
+First445actual628HTTProomtimeout provedownedtrickle socketclosed19611ms/open0, source20sbudget; caller23.246sROOM_DELEGATION_TIMEOUT. Latercalc63andbothactualticketclaim/completionpassed. OnlyoneARMround, notthree/Intel/fullresourcePASS. OwnedNodefixture24971/port54403 finite180seconds; verifygone/portclosed beforeclosingincident. DetailedrecordROOM_HTTP_CANCELLATION_RESOURCE_FIX_20261012.md; outerroom_scope_refusedlabelmisleadingfornormaltimeout, precisecausekept.
+
+WindowsV1job11100/CMD33252ended0xC000013A, nocompilers/childleft, nocompletionreceipt; causeunknown/TaskSchedulerOperationalnotavailable. Originalprepared1086inputs/cache/firstlogsretained. NewfixedlimitedtaskVibeKits-Native628-Build-20261012-v2 usesPythonw/no-consolechild,samebudgets/fences,no sourcecopy/install/sign repeat. Newmetadata worker-intent628-resume2.json/build-start628-resume2.json/terminal628-resume2 underDworkroom-native-628-20261012-v1. Firstsource/customer/task/historicalfailedstates remain,G01-G10active.

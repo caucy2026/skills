@@ -108,3 +108,12 @@ Mac候选不能仅因路径名为`macos/Flutter/ephemeral/.symlinks`就排除整
 ## HTTP等非进程资源也须登记取消
 
 实际HTTP持续响应旧红控证明：CommandResourceScope只杀Process不能结束HttpClient的Future。把自有client登记为有限scope operation、cancel强制close、每chunk先consume、finally完成；gate仍需等原工具Future真正结束才complete票据。API无scope默认行为保持。32回归/166冻结候选通过只证明源修复，未装628前不要宣称627现场已修复。scope operation callback快照遍历防取消时集合变更，保4操作及原字节/时限。
+
+
+## Same original simulator SFTP resume after a known failed transfer
+
+确认原upload终态失败、源与残留前缀SHA一致后，可沿已登记VibeKitsloopback的原known_hosts/key引用执行sftpreput-a续传，不读privatekey内容、不新增授权。先核原hostFP及唯一当前port；路径含空格时复用已证quotedUserKnownHostsFile选项，保持StrictHostKeyChecking=yes。首quotes失误“Nohostkeyknown”未认证/写入，不绕过检查；修正真实文件路径后重核完整bytes/SHA才安装。未知在途不重传，不用resume掩盖不同前缀。628132实证207.6MBprefix→完整423.8MB。
+
+## Mac bare launch before AppKit check-in and scoped recovery
+
+采样显示新进程仍在AppKit/LS初始化、无Flutter/新crash且guard已回退时，核原事务与旧进程后，可以同一签名候选在独立stage仅改normalLaunchServicesopen启动。原ID/key/版本/实际MCP/rooms及guard卸载后同PID均复验，不重签、清用户数据或重置权限。628132已证该路线恢复；不能泛化为所有启动异常根因。
