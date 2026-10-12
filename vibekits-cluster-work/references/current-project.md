@@ -106,3 +106,14 @@ Windows619244PE independent verify passed, installer273777816B SHA1bfaa8d95368be
 ### Revoked-peer production switch completed
 
 Worker2543715 completed full303+5SSE/close tests exit0 in233.757s. Switch2552265 completed verified; current hbbv PID2552371/cwd20261012-revoked-peer-scope-v1, same UUID/key/data and protected services. Postflight99 source hashes and all3 public assets matched; original devices/members/customers unchanged. Six current heartbeats0.54-3.47s;617 remains offline and must not connect. Both626 Mac live room queries/null scope errors passed after switch. Source unavailable-peer marker deployed, but client selected-room/unavailable marker fixes are not in626, so complete client-side refusal behavior remains pending. Current production evidence: hbbv/docs/acceptance/REVOKED_PEER_SCOPE_PRODUCTION_20261012.json.
+
+
+## 627完整目录候选与清理：最新接续入口
+
+候选macos/cluster-full-simulation-627-20261012-v1，627/2627：2216 Flutter源及875原生输入冻结；版本/输入/官方0.2.0-rc.2运行时一致，145联合测试和完整App入口静态分析通过。原生sup83919/ARMcargo84305、后续pipeline44594已启动；只按当前native-state627.json、pipeline627.json及实际PID出生对账，不重新启动。pipeline成功时执行真实双架构协议、完整Xcode、内外签名/身份比较，未通过不得安装或发布。源码测试/记录main8dded909已读回；完整目标G01–G10、Windows及全机队仍未完成。
+
+服务器512工具候选room-catalog512-20261012-v1已从当前生产revoked-peer-scope-v1隔离，只改目录数量上限及对应测试；Linux worker2606857/startTicks286044756执行全量+SSE复测，生产未切换。读取maintenance/20261012-room-catalog512-v1/tests-exit.json及真实句柄后继续，不重启未知作业。
+
+用户本轮要求清本任务全部历史编译缓存/二进制：Mac619–625旧应用/ZIP/对象2881项已删，观测净增16.35GB，清单macos/historical-cleanup-20261012-v1。所有源/工具链/签名/依赖输入/证据、当前626正式字节及必要Windows回退保留。历史build已失效须全重建；其他同事及远程Windows未声称清零。
+
+Mac受保护文件经SSH/SFTP访问的系统前提见远程仿真SKILL.md“macOS 远程文件访问前置设置”；按用户指定的远程登录ⓘ完整磁盘访问入口处理，密码仍由用户输入，不重置权限。
