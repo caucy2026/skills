@@ -149,3 +149,14 @@ Windows424重新forced-relay握手，原ikZ指纹/host匹配；原604PID26044和
 Explicit f450c684b868292f67c534b793e26314两方向room-members连接toolCount265。每方向1次完整目录/3次实际计算器结果85/3次实际info对方新PID；服务器14票全部claim+complete。不是所有265工具/文件/命令取消/新scope撤销/角色降级/真UI全队PASS，仍须继续。证据candidate/evidence/full-room627-claim-complete-decoded-audit.json及ROOM_FULL_SIMULATION_627_PROGRESS_20261012.md。
 
 Mac445旧reconciling实例9c5d5c175f42144590cf09b7a3f666c6已只读核为rejected/过期lease/无SDKsession/无pending结果；原general任务仍failed/rev3，不删历史不当G03通过。Windows原604及619合格旧候选/完整回退保持，需最新跨平台构建。G01–G10继续。
+
+
+### 当前627实测补项、HTTP修复及628容量门禁
+
+两627的原general房间各3次file_hash读取自有中文fixture通过，路径与期望SHA在candidate627/evidence/room-file-fixture-manifest.json，不当文件写入。完整265范围target445撤销rev46：cached调用ROOM_MEMBER_SCOPE_REVOKED、explicit general reconnect ROOM_MEMBER_SELECTED_SCOPE_UNAVAILABLE，无其他房间/旧白名单回退；rev47恢复同265工具/原限额/authority，expiry比原短4400ms，重连实际calc2通过。原scope snapshot、意图、所有回执、full627-revocation-receipt.json保留；日常自动renew另算。
+
+发现实际ApiRequestService未登记CommandResourceScope：真实持续HTTP旧红控取消后Future仍不结束。修复登记自有HttpClient取消回调、按块调用原scope字节上限、finally完成资源操作；不增加超时/上限、不改无scope原行为。32联合回归通过，源码/新增永久事故及测试main6eb50db1已读回。Installed627尚未含修复，仍待新包真实超时/资源采样。
+
+628候选macos/cluster-http-cancellation-628-20261012-v1冻结2234Flutter文件、166联合测试及版本/完整输入/官方0.2.0-rc.2/插件输入通过；复用精确qualified627 native82b1，无Rust变化。原Xcode80822由容量guard在155s左右SIGTERM结束，app-build-state resource-guard-stopped，build-sign-pipeline building-failed；未签名/公证/安装628。delivery-pipeline628已读该终态并退出，不在等待；不得当活跃构建或重提公证。新r2未启动：启动前9GiB门禁未满足，容量动态下降，不能降门槛。
+
+本任务cleanup batch5–8已回读：completed verification/compiler3392项观测4.439GB；旧symbols/626App25项3.262GB（626formalZIP及两remote rollback保持）；不完整628 App1.013GB；中断628 compiler1694项0.565GB。latest627formalZIP/App/symbols、全部source/Git/toolchain/SDK inputs/evidence和Windows当前交付资产保持；历史缓存失效需重建。其他旧App.framework检查见broken symlink后未执行删除，不计成果。继续核精确自有闲置生成物或推进Windows等独立工作，不把局部容量问题当整个目标blocked。

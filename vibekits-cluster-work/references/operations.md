@@ -103,3 +103,8 @@ Mac候选不能仅因路径名为`macos/Flutter/ephemeral/.symlinks`就排除整
 627两台真机在明确general room下各265工具连接；每方向1个bulk descriptor票、3个计算器/3个system.info，14票已领取并完成。工具目录存在不等于所有工具成功，计算器证明超出五诊断但不能替代文件/命令取消、角色撤销或全机队。保留room-members模式、所选roomId、目标实际PID、实际结果和服务审计，不改旧白名单。
 
 客户端taskSessions的reconciling项不必然有在途工作；先核服务器实例终态/lease、SDK实际session/busy和pending结果。旧rejected+过期lease+无session/结果不能当运行任务，开关enabled也不是执行中；不删除历史或自动重放旧failed业务。
+
+
+## HTTP等非进程资源也须登记取消
+
+实际HTTP持续响应旧红控证明：CommandResourceScope只杀Process不能结束HttpClient的Future。把自有client登记为有限scope operation、cancel强制close、每chunk先consume、finally完成；gate仍需等原工具Future真正结束才complete票据。API无scope默认行为保持。32回归/166冻结候选通过只证明源修复，未装628前不要宣称627现场已修复。scope operation callback快照遍历防取消时集合变更，保4操作及原字节/时限。
