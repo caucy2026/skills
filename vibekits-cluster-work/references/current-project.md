@@ -26,9 +26,9 @@ hbbv21122/TCP，保存SSH profile `remote_1791254767548854`；UUID `da3553a32048
 | 设备 | 原仿真ID | 最后验证版本与边界 |
 |---|---|---|
 | Mac155 | 1554650784 | 618，本机共享桥；另有Mac529/PAD任务使用，不能重启/升级 |
-| Mac445 | 4456560334 | 622/2622，主71729出生Mon Oct12 07:07:04；guard0、bootout后同PID存活、原ID真实system.info过；原Key/房间和621回退保留 |
+| Mac445 | 4456560334 | 623/2623; PID28250 born Mon Oct12 08:44:05. Guard0 + bootout + real MCP survived; original key/rooms retained, rollback622, actual AX authorized. |
 | Mac529 | 5298938227 | 617，在线、共享工作先对账 |
-| Intel/macOS12 Mac132 | 1321656264 | 622/2622，主19049出生Sun Oct11 15:48:44；原ID/FP/Key/房间、guard0与bootout后持续存活及实际MCP过 |
+| Intel/macOS12 Mac132 | 1321656264 | 623/2623; PID74422 born Sun Oct11 17:41:19. First guard26 rollback reconciled; relay-first v2 guard0/bootout/real MCP survived; original key/rooms and rollback622 retained. AX false, old baseline unknown. |
 | Windows58 | 4240650696 | 604；历史旧ID4567540178不可当当前连接目标 |
 | Windows619 | 6192992780 | 604在线 |
 | 补充Windows617 | 6175875975 | 564且已确认离线；不连接 |
@@ -69,3 +69,13 @@ Mac445621真实高推理描述曾成功；Mac132旧model.verify EOF结果仍未�
 
 按阶段读取Harness `docs/HARNESS_UPGRADE_STANDARD.md`、`RELEASE_GATES_ALL_CLIENTS.md`、`VIBEKITS_FLEET_COMPATIBILITY.md`、`acceptance/MAC_HARNESS_RECURRING_REGRESSIONS.md`、`BUILD_RELEASE_INCIDENTS_2026-10-03.md`。当前具体入口`acceptance/ROOM_DEVICE_ROSTER_SYNC_20261012.md`；旧619–622证据仍在对应验收文档。
 服务器参考`docs/ROOM_DELEGATION_NATIVE_INTEGRATION_HANDOFF_20261011.md`、`MULTI_CUSTOMER_REALTIME_AND_RECONNECT_20261011.md`及当前production JSON。只读当前阶段相关记录，不全量重读历史。
+
+## 623 verified overlay checkpoint (2026-10-12)
+
+Final ZIP: 423758183 bytes; SHA256 fbd55a9a1872d5b3f724616d148d5855a7d1fc04e35927491544671f1dd2fda6. Main SHA eb5019e547cd4c59085d8805012fd9a00cb7fd6b87d944b8f7a1fb4c07419e57. Notary Accepted, staple, strict ZIP and independent extraction/signature/Gatekeeper all passed.
+Mac132: first guard exit26 restored622 after health deadline. Original transaction reconciled before v2. Forced-relay route restored original ID; v2 actual623/PID74422 born Sun Oct11 17:41:19, original fingerprint/key/server/general membership, SSH/MCP/live rooms and null scope error verified before ACK. Guard exit0, own job bootout, same PID and real system.info survived; rollback622 retained. Actual AX unauthorized; old AX baseline unproven, no reauthorization/reset.
+Mac445: actual623/PID28250 born Mon Oct12 08:44:05. Main/helper ID, Team, DR and entitlements matched; original ID/key/rooms and actual MCP passed before ACK. Guard exit0 and own bootout; same PID/real call survived, rollback622 retained. Actual AX authorized, preserving previously verified grant.
+445->132 room entry now reaches target HTTP403 rather than invalid_room_limits. Ticket d511f78833cb2a9b894ba2b04f91596d, adminPolicyRevision0, claim0/complete0. Not a communication PASS. Gate constant-error-code allowlist and controller error parsing added in source; 15 related tests passed, new candidate required for real diagnosis.
+All-list folding: source and22 related tests passed; source main23a77218782937438cbbcc92c653219e69a2c7f6 read back (6 files). 623 does not contain this later request. Web folding not deployed; current app.js includes colleague changes and must not be overwritten. Two inherited VM fixtures also fail on unchanged production JS; failures retained.
+Office recovery: precise Window-menu selection and Fill corrected stale-window/coordinate context; keyboard Tab exposed connection menu. Original372799163 fresh desktop showed current17:35 and622 rollback. No private-key read or auth injection; pinned LAN host matched but original-key authentication refused. Force-relay actual SSH/MCP recovered autonomously.
+G01-G10 remain active. Full room simulation still only5 diagnostic tools; full scope, real bidirectional/revocation, fleet/UI/business/100+ evidence remain incomplete.
