@@ -160,3 +160,12 @@ Mac445旧reconciling实例9c5d5c175f42144590cf09b7a3f666c6已只读核为rejecte
 628候选macos/cluster-http-cancellation-628-20261012-v1冻结2234Flutter文件、166联合测试及版本/完整输入/官方0.2.0-rc.2/插件输入通过；复用精确qualified627 native82b1，无Rust变化。原Xcode80822由容量guard在155s左右SIGTERM结束，app-build-state resource-guard-stopped，build-sign-pipeline building-failed；未签名/公证/安装628。delivery-pipeline628已读该终态并退出，不在等待；不得当活跃构建或重提公证。新r2未启动：启动前9GiB门禁未满足，容量动态下降，不能降门槛。
 
 本任务cleanup batch5–8已回读：completed verification/compiler3392项观测4.439GB；旧symbols/626App25项3.262GB（626formalZIP及两remote rollback保持）；不完整628 App1.013GB；中断628 compiler1694项0.565GB。latest627formalZIP/App/symbols、全部source/Git/toolchain/SDK inputs/evidence和Windows当前交付资产保持；历史缓存失效需重建。其他旧App.framework检查见broken symlink后未执行删除，不计成果。继续核精确自有闲置生成物或推进Windows等独立工作，不把局部容量问题当整个目标blocked。
+
+
+### 当前628最终包与Windows最新原生作业
+
+Mac628 r2完整Xcode105.158s成功、签名/身份/compat过；Apple2486836d-7809-434c-b8d5-4d2cc692803d Accepted。strict updater/独立解包/全架构签名/staple/Gatekeeper过。finalZIP423819428B/SHA2c504bb68b23777dbd2580906bb393f3d208075a195bf17088b566bd639892a3，main4a6fa8c629b572ed236241fc57ded6e0ed752d7a8f62c4fe82d90f5f970ce7f7，evidence/final628.json。签名/公证/构建已终态，不重跑。两Mac现场仍627；628唯一实际upload进程Ruby70967(445)/70968(132)，bornMonOct12 14:18:59，evidence/upload628-*-after-connect-tool.json待原终态。初尝试明确not_connected未执行后恢复原ID/原FP；禁止重复在途传输。
+
+Windows424 native628真实开始：Dwork/room-native-628-20261012-v1，fixed taskVibeKits-Native628-Build-20261012-v1。worker11100/FileTime134362591716767853，CMD33252/FileTime134362592084222241；实际cargo/rustc与5秒资源帧已核。1086输入/3native delta从qualified V3锁/toolchain复制，prepare35.646s成功。原604PID26044/FileTime134361237089482709/619 signed包与完整回退不变，无新签/安装。最新资源约6.56GB available、11.97/19.15GBcommit、BOUND45，不能当strict-idle验收。接手先读build-terminal628-r2.json/worker状态和真实PID，不重启未知作业。
+
+Windows Flutter app628 delta118文件/639219B已冻结，独立work/cluster-app628-20261012-v1 staged，最新共用源+Win runner，qualified619 vendor依赖保留。Prepare-App628.py未执行，必须新native成功后再native集成/Flutter完整构建与签名。当前readonly源目录中的未知.json不是都可解析元数据：一次误扫遇二进制，一次整manifest输出65536截断均保留为控制器读取失败，不是源码或机器故障；后续只读已知artifact元数据/限输出或SFTP下载完整公开manifest。不要输出未知凭据文件。
