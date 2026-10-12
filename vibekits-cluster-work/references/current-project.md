@@ -207,3 +207,12 @@ Dworkcluster-app628-20261012-v1 sourcepayload118delta/639219B remainsverifiedsta
 
 ### Windows Flutter628源码准备v2被执行策略阻止
 2026-10-12：v2 worker增加完整preflight/异常落盘，保持6GiB初始RAM/2GiB运行/4GiB磁盘/92%commit/120秒原预算。两个自有脚本经原424可信loopbackSFTP传输成功；执行前旧v1 Ready/result1、旧worker32576不在、无compiler且目标源目录不存在均核。调用Launch-AppPrepare628-v2.ps1被Windows执行策略拒绝（UnauthorizedAccess），ssh exit1，未启动新task/复制/编译。拒绝证据source-prepare-v2-launch-tool.json。不得将相同脚本改为内联或换shell/包装器绕过；需使用已允许的项目启动入口并确认其并非绕过当次拒绝，或必要平台策略决定。原生628已通过的27测试与产物保持，不能宣称整包完成。
+
+
+### 房间超时分类修复已通过源码回归
+room-timeout-classification-20261012-v1：精确ROOM_DELEGATION_TIMEOUT现分类room_call_timeout，原撤销和忙碌不变，cause保留且提示先核目标结果再重试。公开connect入口7项回归通过，无manual fallback。已安装628仍旧分类，修复需下一完整候选包含；不要据此把实际timeout诊断成成员撤销或全工具验收。源码/测试/证据记录精确备份，保留共享main其他改动。WindowsFlutter执行策略拒绝仍待合规入口/平台决定，不绕过。
+
+
+### Windows原生628资源补验与Mac132 UI现场
+Windows V3实际build-resources628-resume3.jsonl共661帧，首末1791790832.1332989→1791794228.0562677，覆盖3395.923秒；最低可用RAM3291348992B、最大真实commit占比0.8659285064、最大BOUND91、摘要unknown0。未触发原2GiB/92%/4096保护界限；仅为原生构建资源证据，不是空闲/长跑/整包验收。native628-resource-summary.json完整摘要保存。
+Mac132以原ID/G73指纹重连，ui_inspect原83320返回authorized=true/nodeCount165，截图成功并独立大小哈希校验。这证明当前AX/截图可用，不能反推升级前授权完整基线。当前KEMI传书文件选择窗口占用前台，未切焦点或操作；房间名单/角色/折叠UI仍未实测通过。私有mac132-current-screen.png不进入Git。
