@@ -199,3 +199,11 @@ Windowsnativev2exit101/822.863s/noactivecompiler. samplerateknown2026-10-08Ninja
 ### App628 source-only admission did not clone or build
 
 Dworkcluster-app628-20261012-v1 sourcepayload118delta/639219B remainsverifiedstaged. FixedtaskVibeKits-App628-Prepare-20261012-v1 worker32576 wroteworker-intent628-app-prep thenendedReady/result1 beforeprepare-start/phase-start; Dsourcecluster628absent, old619 untouched. Exactexceptionnotlogged; laterRAM4.035GB belowinherited6GiB preflight. Do notclaimpreparedorRAMcauseproven, do not lowerthreshold/repeatwhilecapacityinsufficient. NativeV3worker37276/CMD32548 originaljobcontinues, newterminalentry build-terminal628-resume3.json. Nextsourcecloneonlyafterfreshresourcesmeetbudget andpriorfailedtaskreconciled, newattemptcapturepreflightexception/firstsample. No secondcompiler/sign/install.
+
+
+### Windows628原生终态与真实产物（2026-10-12 09:13 UTC）
+重新以原4240650696连接，主机LAPTOP-LUOPP1CH及原ikZ6指纹匹配。原V3worker37276/child32548已终态，build-terminal628-resume3.json exit0、3396.047806s、resourceObservationEnded=true，实际无cargo/rustc/cl/cmake/ninja残留。原生Release产物23176192B，SHA256 20DE87A00276EC0944FEABAFCE56445A7FCCAD8F4BA05BA9AF73DED9FDD4E31E。日志真实room11、relay12、timer1、IPC3测试均0失败；全native build Release完成。证据windows/cluster-native628-20261012-v1/resume3-current-authoritative-check.json与native628-artifact-tests-receipt.json。未签名、未安装、不代表Flutter整包验收。当前可用RAM6889291776B满足先前6GiB来源准备门槛；下一动作以新独立作业和异常落盘准备Flutter628来源，不重跑原生构建、不降低资源门槛。全部G01–G10继续。
+
+
+### Windows Flutter628源码准备v2被执行策略阻止
+2026-10-12：v2 worker增加完整preflight/异常落盘，保持6GiB初始RAM/2GiB运行/4GiB磁盘/92%commit/120秒原预算。两个自有脚本经原424可信loopbackSFTP传输成功；执行前旧v1 Ready/result1、旧worker32576不在、无compiler且目标源目录不存在均核。调用Launch-AppPrepare628-v2.ps1被Windows执行策略拒绝（UnauthorizedAccess），ssh exit1，未启动新task/复制/编译。拒绝证据source-prepare-v2-launch-tool.json。不得将相同脚本改为内联或换shell/包装器绕过；需使用已允许的项目启动入口并确认其并非绕过当次拒绝，或必要平台策略决定。原生628已通过的27测试与产物保持，不能宣称整包完成。
