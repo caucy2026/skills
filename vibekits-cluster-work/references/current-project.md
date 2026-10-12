@@ -340,3 +340,11 @@ Mac132/445仍643，529仍455且窗口未答；Windows424整包准入未答、619
 649五分钟61帧CPU7.2%FAIL、RSS15.375MiB/2.35649%PASS；主PID连续，窗口无记录外部调用。短时集群开关对照恢复原enabled/ID/live rooms，开启14.3509/关闭5.4587/恢复15.2173%不算发布门禁。自动缺失授权观察修复旧18/9负控、31相关回归PASS，V mainc647879193278419722f946a32b4f55159191c24远端确认。650根cluster-absent-grant-qualified-650-20261013-v1：2269冻结、222联合/来源/版本/技能/macOS12 RPC通过；原exec26126、xcodebuild53334/监督53318构建中，核app-build-state650-r2.json和原handle。无650签名/公证/安装/CPU/商城PASS。
 
 Windows58复查原LAPTOP-LUOPP1CH/424指纹一致、有效策略仍Restricted，未改策略/重放被拒脚本。其他设备/未答窗口/七台和100+规模缺项保持上述记录。新增仅清646自有740编译文件，无残留，观测净增156864512B有并发说明；正式/源码/输入/回退保留。G01–G10继续完整执行。
+
+### 最新快照：本机650，Windows650完整构建中（2026-10-13，取代上述阶段与策略阻塞）
+
+Mac650最终423816144B/SHA bf472c90b396ccdc7b6a38e6f691d19d30f1b40eaa674510a5b2ef865ebdaac7，Apple4fefc357-ef0d-453b-9891-be7b06ea57b1 Accepted，严格archive/独立解压通过。本机649→650守护accepted，实际PID30011/main70562e24f03ce2a119eb7e469cdad51e12c0726eb7012931cb63b09ef78db442，原155 ID/fingerprint/fresh反向真工具/live rooms通过，原SID/Key真实MAC650_NATIVE_MODEL_OK。649回退保留。五分钟61帧CPU7.5%FAIL、RSS11.109375MiB/1.59292%PASS、主PID全在、无窗口内记录外部调用。源修复次数不是实测性能PASS，商城53/54未更新。
+
+Windows控制端根windows/cluster-app650-20261013-v1；目标D:\KEMI-Test\source\cluster650-20261013-v1及work\cluster-app650-20261013-v1。原PowerShell7.6.6现行RemoteSigned已只读证实，与系统5.1 Restricted不同；复用原7入口，旧改策略选择不再阻塞。源码准备v2旧测试hash失败、v3/v4截止及v5截止保留；v6 robocopy后2816冻结输入通过、46.68秒/exit0。native628输入整合已exit0，23,176,192B/20de…，来源manifestSHA d7a3c0521486dbc7ba3d0086a1a341650dddf7094cebfab969c7c646c2957513，最终输入文件work/final-build-inputs650.json。此为整合，不是安装/客户端验收。
+
+完整构建唯一任务VibeKits-Cluster650-Build-20261013-r2，监督36052，cmd31016/创建FILETIME134363183598462912，原work/build-start650-r2.json；先读同一PID/出生、build-terminal650-r2.json及results\cluster650-20261013-v1日志，不重启未知结果。离线Pub/输入闭包/版本650/UX门禁已过，当前实际5编译进程，lock字节SHA与冻结一致。尚无新Windows完整产物/签名/覆盖/商城PASS，现装424仍604。132/445仍643、529仍455且窗口未答，619挑战未闭环、617离线不连接；G01–G10/100+实测等缺项不缩减。新增3696个旧Xcode pcm已清、无残留，观测+1623191552B有并发说明，源码/工具链/正式/回退保留。
