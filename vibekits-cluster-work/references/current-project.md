@@ -216,3 +216,23 @@ room-timeout-classification-20261012-v1：精确ROOM_DELEGATION_TIMEOUT现分类
 ### Windows原生628资源补验与Mac132 UI现场
 Windows V3实际build-resources628-resume3.jsonl共661帧，首末1791790832.1332989→1791794228.0562677，覆盖3395.923秒；最低可用RAM3291348992B、最大真实commit占比0.8659285064、最大BOUND91、摘要unknown0。未触发原2GiB/92%/4096保护界限；仅为原生构建资源证据，不是空闲/长跑/整包验收。native628-resource-summary.json完整摘要保存。
 Mac132以原ID/G73指纹重连，ui_inspect原83320返回authorized=true/nodeCount165，截图成功并独立大小哈希校验。这证明当前AX/截图可用，不能反推升级前授权完整基线。当前KEMI传书文件选择窗口占用前台，未切焦点或操作；房间名单/角色/折叠UI仍未实测通过。私有mac132-current-screen.png不进入Git。
+
+
+### G07房间折叠保持设备同步修复
+单房间ExpansionTile默认卸载子名单，原2秒名单刷新因此可能随折叠停止；现设置maintainState:true，关闭整个信息窗口仍dispose取消timer。3项组件回归通过，真实对话框room tile保留状态断言以及折叠期间管理员变化、掉线、新成员更新和重新展开显示最新数据均通过。仅源码回归，当前628未含本修复；不将其称真实设备UI通过。
+
+
+### 新Mac629候选在途：两项房间修复
+外盘实测可用约70GB，原9GiB/6GiB保护保持。独立macos/cluster-room-followup-629-20261012-v1从qualified628冻结2196文件，仅overlay controller timeout分类、status room maintainState和两测试，版本629/2629；没有纳入共享树其他变更。171联合回归通过，原生82b1哈希不变。app-build-state629.json实际Xcode13166/supervisor13131/start1791797793.877333，exec session61105；先核同一handle/真实PID/终态，禁止重复启动。未签/公证/安装，当前两Mac仍628。Windows58Restricted新准备task未创建，用户策略当次决定待回复；同机Office238638760已实际桌面可用，勿再把黑屏旧记录当当前。
+
+
+629完整Release已exit0/175.130353s，exec61105已终态；完整Flutter冻结验证passed，arm64/x86_64实际protocol_v3均0。签名exec82008在途，unsigned-compat exit0，sign PID36478；先核同一签名handle/result再公证，不重复签名。未安装，shared618未动。
+
+
+629签名四门禁全部exit0：unsigned-compat/sign/signed-compat/upgrade-identity。49MachO、双架构真实flock竞争与释放、DSH launch、原main/helper Bundle/Team/DR/entitlements相同均通过。exec82008签名已终态，不重签。submit_notary629.py exec49623在途：先核notary-intent/submit-handle/submit.json，禁止未知结果重复提交。未安装/未发布。
+
+
+629公证submit49623已exit0，唯一AppleID6afc8c36-e865-4a2e-a816-8e526562ba59，实际info状态In Progress。wait_complete629.py唯一exec81265有界15×20秒查询同一ID，Accepted后仅执行一次complete_notary629.py和verify_final629.py；过期不重提。查notary-wait629-handle/current/expired/completion-intent/final629.json及真实handle，未知结果不再启动完成事务。未安装，两Mac旧628及共享618未变。
+
+
+629安装前实时基线已核：445原SYx/ID、实际628PID19219 bornMonOct12 14:36:53，132原G73/ID、实际628PID83320 bornMonOct12 00:03:59；两mainSHA4a6fa8c6相同。445可用312370624KiB、132可用15292132KiB，证据629/evidence/preupgrade629-ID.json。未安装、未停App。Apple仍In Progress，唯一completionworker81265等待同一ID，不能按旧627PID生成628→629脚本或重复提交。
