@@ -87,3 +87,8 @@ LaunchAgent包装脚本直接启动后台主进程时，脚本退出可能连带
 ## 冻结Mac插件输入：627已证故障与修复
 
 Mac候选不能仅因路径名为`macos/Flutter/ephemeral/.symlinks`就排除整个目录。626该目录实际为276个物化插件输入文件，冻结旧recipe的排除使627首轮链接缺`sherpa-onnx-c-api`，Xcode exit65。版本/Flutter声明资产检查不能证明这些原生插件输入齐全。复用最新合格基线实际输入，复制后逐文件哈希、检查实际xcframework库，再运行同一完整Xcode命令；保留首错log/XCResult和独立重试回执。不下载新依赖、不改签名身份，不复用失败产品。627恢复后完整命令45.026秒exit0，随后签前/后兼容与主/助手身份要求匹配通过。此经验不要求其他机器固定物化目录，只要求按实际插件布局保留输入。
+
+
+## 无CLT目标Mac的只读核验（445现场）
+
+已确认无Xcode/CLT的Mac不应因`/usr/bin/python3`存在就执行它；该路径可能是安装按需stub。627准备时误调用触发安装询问，未安装：通过实际bundleId `com.apple.dt.CommandLineTools.installondemand`的原授权UI检查、精确“取消”按钮恢复。AXPress返回-25204但新UI查询显示App退出，原VibeKits PID/版本/哈希不变；关闭窗口的动作须读回结果，不能因旧AX对象失效盲点第二次。后续沿内置PlistBuddy/ps/shasum/df做有界只读核验，不安装工具链。其他机器先沿各自已证环境判断，不将该Mac缺Python推成所有Mac都缺。

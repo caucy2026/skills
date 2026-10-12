@@ -133,3 +133,10 @@ Apple原job b7498067-3045-4f3c-b617-89156c50b31d Accepted；App-only finalZIP423
 Windows424重新forced-relay握手，原ikZ指纹/host匹配；原604PID26044和Office6160/7316/32340/28984未变。D可用42.67GB，native guard536MiB有界只读退出0；CIM时间9482700Z不能代替native9482709Z。旧签名/完整备份终态保持，未安装新包/重复事务，桌面连接未称恢复。
 
 627 native/sign完成后3077个生成Cargo编译缓存清理，观测另释放2.72GB；Universal/两架构二进制/App/依赖输入及全部源码/证据保留，native-target失效必须全重建。清单historical-cleanup-20261012-v1 batch4。
+
+
+### Mac445 627传输在途，尚未停App
+
+新fresh核验原626/PID54480/bornMonOct12 10:59:32、主a917哈希/UID501、stage不存在/316GBfree；原分析会话idle/busyfalse。但logPresentNotValidated不能当全部旧会话完整验收。无CLT机器的Pythonstub安装询问已用授权AX“取消”并确认退出，原App不变，未安装工具。627守护脚本/Plist沿626成熟路线已准备，更新旧/新hash、PID出生、2626→2627及rollback626，Bash/Plist语法检查通过；尚未部署或启动守护。
+
+唯一upload627到445在途：本机Ruby42991 bornMonOct12 12:48:13，intent/handle及原始回执路径evidence/upload627-445*，当前读到目标/tmp/vibekits-simulator-4456560334/Vibekits-627-final.zip为33423360B且更新。等待原upload的终态和返回路径，禁止重复上传或因观察超时断连接；目标仍626、未停止/安装。上传完成后核完整423809038B/SHAaa0b，再独立目标解包/身份比较与原事务检查后按成熟guard执行。
