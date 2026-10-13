@@ -386,3 +386,10 @@ Mac650信息窗口实测两已入房名称/组员/连接列表折叠/房间设�
 
 
 最新：132/445同一651完整ZIP及解压App已暂存，各stage_remote651.py原36317/45181终态exit0，bytes/SHA/2651/all-arch严格签名/Gatekeeper通过，均NO_INSTALL，现运行仍643原62992/86678，身份指纹/UID/实际路径已新核对。目标根/Users/mac/Library/Caches/vibekits-651-<rid>-stage-20261013-v1。stage-intent651及stage-verify651.json已有，不再重传/重解压未知结果。132旧QA9fcb SID非当前；UIinspect66秒实际成功不是整机失联，当前私有截图完成的目录QA显示VibeKits642-QA，不能按“643”标题推断目录切换。须在651实际复验路径/模型，不改用户目录名掩盖测试误差。两机升级守护尚未启动，其他原目标/529窗口/617离线/商城未发保持。
+
+
+### 2026-10-13 Mac132 已覆盖651；445守护在途
+
+132 guard v2实际完成：旧94393退出，签名验后同原路径完整替换，主4663/Oct12 22:15:33 build2651。已disconnect→新relay connect→原1321656264及G73...指纹→真实system.info4663→roomsAreLive/connected true；随后写唯一health ACK，guard exit0/not running/runs1，保留rollback643.app。Intel最终App node原生flock加锁/竞争拒绝/释放后再锁全部PASS。原QA SID87e683fe/workspace d29d3fa0保留，原Key实际deepseek-official/deepseek-flash assistant/message seq36响应，request vibekits651-mac132-model-20261013-v1 completed；模型附回显声明，只将实际模型source与完成状态计Key/模型链路通过，不将文本回显当原生或全fleet判定。
+
+132五分钟61帧固定主4663采样已启动，未终态，不调用该机UI/MCP/文件操作干扰采样；结束后核工具/模型在途与helper生命周期。445原86678/Oct13 00:18:30、643及原QA completed/busy=false已复核；同一651暂存件签名检查保留，guard com.caucy.vibekits651.445.guard.20261013.v1 bootstrap0，在途未健康ACK，禁止重跑。最新Mac/Windows正式包SHA不变，Windows650仍待覆盖/验收；商城未发布、完整G01–G10仍未完成。
