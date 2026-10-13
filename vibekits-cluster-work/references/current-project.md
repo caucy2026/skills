@@ -358,3 +358,10 @@ Windows完整Release已exit0，394.56秒；真实EXE字符串/数字版本650+26
 唯一签名run dev650-signed-runtime-20261013-v1 / attempt1，根D:\KEMI-Test\results\v650-sign\installer-signed-runtime-20261013-attempt1。GUI固定入口已app_control启动；父pwsh29140/Session1，SignTool28892/Session1/出生UTC2026-10-12T23:39:38.3650157Z，第一轮等待PIN。固定Session1截图已核空框并展示，PIN只由签名人设备窗口输入，不能读取/粘贴/自动输入；异步用户动作仍待完成。controller ObserveSign650Live.py每2秒只读跟踪，同一sign-live-poll650-persistent.jsonl；首15分钟有界观察正常结束并继续同run，新exec42339。先读真实PID/出生和state/summary/failure，不能因观察窗口到期重签或重打包。未有签名PASS或新Windows安装；现装424仍604。私有截图/用户会话不Git。
 
 Mac650信息窗口实测两已入房名称/组员/连接列表折叠/房间设备展开；点通用房132仿真后真正system.info返回原62992，现有session room-members / room-delegated-on-demand、265目录，未回退旧名单。管理员徽标和动态增员/管理员/离线/降级未完，不算G07/G08全通过。私有证据local650-room-ui-validation.json，窗口关闭已独立看图。Mac五分钟CPU7.5%FAIL仍保留；后续10秒profile489ms、ProcessStarter166ms，仅热点诊断。security交互模式合成不存在键实验无写入/真凭据，未提供可靠完成边界，生产路径未替换。详细记录已V main63f647eab48d60a72a644c8a7476a308f40f220c远端确认。原七台/100+真实规模及G01–G10缺项全部保留，商城53/54未发布。
+
+
+### 最新在途：650 内部签名完成，resume2 打包中（2026-10-13）
+
+签名人已输入第一轮 PIN；attempt1 runtime-sign.json 实际32/32有效、逐文件验签0。后续旧验签器的 sourceFingerprintSha256 与当前 sourceInputManifestSha256 schema 不兼容，SOURCE_PROVENANCE_INVALID 终态，代理回读 RESTORED，未进入外壳阶段。保留失败事务，不重签已完成集合。
+
+固定 Resume-Sign-Vibekits650-v2.ps1 使用真实 native628 源码manifestSHA d7a3c0521486dbc7ba3d0086a1a341650dddf7094cebfab969c7c646c2957513、构建exit0和原来源字段，独立版本化验签器验证；不制造旧字段。与 attempt1 的32份签后报告/短路径/正式候选哈希逐项匹配、212供应商字节保持原值，重新验签已完成集合后进入 PACKAGING_SIGNED_RUNTIME。resume2 父37788/Session1、脚本SHA484AF8504AA86BE68324F4F944EF4BAB9FD277DC6F9995B3102942C4F2D82D0F，原签前清单SHA550C6B5EC2D790000AADF31F817F0AF019D403817035103EFAF7C9D85FB93A6E。根 D:\KEMI-Test\results\v650-sign\installer-signed-runtime-20261013-resume2。控制端 ObserveSign650Resume2.py / sign-live-poll650-resume2.jsonl 有界观察；当前exec81838，观察退出不代表签名退出。若外壳新PIN需要本人输入，先绑定新Signer PID/出生并展示空框新截图；不得读取或重复截取已输入PIN。仍无最终签名/安装/商城PASS。详细恢复记录已V main ac4fef01f3f6c0dfda2a19d1b2835e38691e7bd1。
