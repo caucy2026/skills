@@ -432,3 +432,16 @@ Probe build-v2 terminal0, stage terminal0, fixed GUI launcher SHA2A28B71EA9B9B81
 ### Windows656 active signing transaction — do not restart
 
 Stage-qualified656 SHA4C3220A5DF67E7FAE167A1E90D3BB6DD4339009EFDF7780834B589415C64FC59;244PE,30new unsigned plus2valid product DLLs (B82824C01226426C2D2BD423F883DCBC999C7E82/timestamps) and212vendor. FixedGUI signer compiledSHA1BF4B728F6B6E9C997832A958F7A970C06FF49CDD3FC4A714BD265A2DE2FC9F9. Original app_control launched36880→PS37784 Session1/caucy; run dev656-signed-runtime-20261013-v1/attempt1;phaseSIGNING_ROUND_1_ALL_INNER_AND_RUNTIME;SigTool28288/birth134363664156239785. Fresh Session1 bound captureHWND2687548/783x434 at12:03:40Z shows empty SafeNet PIN field, user requested to input only onWindows58/Office238638760. No PIN value read/logged. Preserve same transaction; re-read state/reports and originalPID/birth after reply, never start another signer. RootD:\KEMI-Test\results\v656-sign\installer-signed-runtime-20261013-attempt1. SignResource observer is finite and must be reconciled at exit.
+
+### SharedMac655 concurrent branch audit — important before install
+
+Installed2655/PID90173/main309f9cf7d3633899d683ad1db0dee376ad006b23f8ef22eeddeac5364089f0de is unread-metadata-655-20261013-v1, not this chat room-join655. Our656 omits existing optionalBoolean unread snapshot fix; sharedsource already combines both.32combined tests PASS but combined final artifact missing. Do not install staged656 over current655 or mutate signed bytes; freeze a new combined version first. OriginalWindows656 signing transaction remains live/PIN pending, unchanged.1169unused655compiler objects removed, exact readback0; all source/docs/current bytes/rollback retained.
+
+### 2026-10-13 20:48 接续现场增量（未交付）
+
+- Windows58 656原事务dev656-signed-runtime-20261013-v1/attempt1父37784、创建FILETIME134363663874270003保留。用户完成第一轮PIN后，新签30/30验证通过，483.875秒打包完成。外壳独立签名PID5548、创建134363690645075460、Session1；空输入框截图cluster-app656-20261013-v1/pin656-outer-before-input.png已检查并展示，等待当次第二轮认证；不得重启或再次截取输入状态。最终summary尚未生成，不能称签名完成。
+- room-unread-combined-657-20261013-v1合并房间交互和unread元数据，32项关联测试与六项prebuild通过；双架构构建、签名、兼容性、升级身份检查退出0。公证正在原submit事务内，尚无回执，不重提。
+- 共享Mac实际已是2656/PID10206，来源另一个named-keys-656-20261013-v1，且key-admission-657-20261013-v1另有在途候选。版本号相同不代表同一产物；本房间657未安装，必须对账键盘能力及原生来源再合并，不能覆盖已有修复。
+- 上述候选、回执均位于本机外盘app-release-gate；现场易变，接续先读原事务状态。商城未更新，完整目标未完成。
+
+20:52增量：用户完成第二轮认证，原656事务summary=PASS、exit=0；244/244 PE、32产品/212第三方字节保持、主程序和外壳独立验签通过。外壳273845240字节，SHA256 5606818f2da9b70fcfa79aa3069a32c8ac49e094e0cffae91e4bf84da67a646e；控制端正式包下载核验在途，尚未安装或发布。报告见Windows cluster-app656目录final656-*；Mac657原公证81bf8203-f410-482f-9392-2eb5f3157bcc仍处理中，不重提。
