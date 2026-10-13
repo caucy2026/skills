@@ -46,3 +46,10 @@ Success still requires the exact frozen manifest count, expected certificate thu
 只有外壳 Authenticode Valid 的包在 xzl 被 CodeIntegrity 拦截：实际未签临时 setup.tmp，错误 4551、事件 3033/3077。Inno 包装需明确纳入 SignedUninstaller/内部临时程序签名门禁，随后仍单独签最终外壳。详见 [现场、修复和验收](../../vibekits-remote-simulator/references/windows-update-incidents-20261001.md)，内部签名通过不等于设备升级验收通过。
 
 本次最终签名PASS及执行者遗漏、等待PIN识别延迟、缓存长度误判、批次减少重复签名与防复发检查，已补入上述事故文档的“本次效率事故”段；设备安装仍须独立验收。
+
+
+## 2026-10-13 签后长度刷新和已完成字节复用
+
+Resolve-InputFiles获得的FileInfo可能缓存签前Length。签后Hash正确不代表报告Bytes已更新；Test-SignedFile先Refresh，再读取Bytes/Hash并核存在。650实际273822157→273832896，签后SHA未变；以独立签后长度为准发布，不能使用旧报告大小。
+
+旧固定Verify入口若拒绝已签.node，先确认签后报告/原路径hash，再用字节相同.dll副本做完整验证，原文件必须不变，不再次签名。保留原失败，以新独立全量报告绑定签名批次、manifest/脚本hash、全部原文件当前hash、实际签后大小；旧成功项字节未变时复用，外壳仍独立验签。

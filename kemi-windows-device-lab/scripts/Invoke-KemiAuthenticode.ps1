@@ -124,6 +124,9 @@ function Invoke-Native([string]$Executable, [string[]]$Arguments) {
 }
 
 function Test-SignedFile($File, [string]$Thumbprint, [string]$ToolPath) {
+    # Resolve-InputFiles may have cached metadata before SignTool appended its signature.
+    $File.Refresh()
+    if (-not $File.Exists) { throw "SIGNED_INPUT_DISAPPEARED: $($File.FullName)" }
     $signature = Get-AuthenticodeSignature -LiteralPath $File.FullName
     $actualThumbprint = if ($signature.SignerCertificate) {
         Normalize-Thumbprint $signature.SignerCertificate.Thumbprint

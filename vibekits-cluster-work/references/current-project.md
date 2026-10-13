@@ -377,3 +377,6 @@ Mac650信息窗口实测两已入房名称/组员/连接列表折叠/房间设�
 
 
 最新覆盖上述building阶段：651完整构建145.24秒/exit0，230联合PASS，Developer ID及双架构兼容、与当前650的主App/helper身份/权限完整比对PASS；Apple246c8ff5-d419-422e-bb4f-42b7ddd4aafc已上传、In Progress。notary-submit.json为原事务入口，不重复submit；尚无final ZIP/安装/CPU PASS。源码10文件main d7a7cd2b6a7097d9c0afa942879a83217230690c已回读，技能ea2afb9b72c13ba8e4ead107a0e1f20b69c24ae8已回读。WindowsSession0 title/hwnd空非窗口消失，受限Session1 probe-v6实际原7336/15599544/visible true，UTC2026-10-13T01:43:07.0558552Z；不截输入、不读PIN，第二次确认仍待本人。当前observer exec15880，期限只属观察，不是签名终止。
+
+
+最新：651 Apple246c8ff5-d419-422e-bb4f-42b7ddd4aafc Accepted，final ZIP423843807/SHA0068f4ad9e6e6fe9decae3317eef1b0abda3db228604dde4dca8cb7dd4c13a3e，独立解压/签名/票据/Gatekeeper通过，未安装、无CPU PASS。Windows第二次输入完成，最终只读v2 PASS/exit0，244PE/32owned/212vendor未变，244timestamp全部存在，outer/main独立通过；Dresults/v650-sign/final-independent-verification-v2/summary.json为最终读点。正式273832896B/SHA067247de7568431ff1eb32cb0b87a30fdc2dbd3384006def18d500722fab9da7，原报告Bytes是签前缓存273822157，不能用旧值上架。原attempt1/resume2的后续脚本FAIL保留；未重签，PIN窗口事务已结束。Mac控制端路径windows/cluster-app650-20261013-v1同名setup回传exec63983仍待原handle结果，未知不重传。仍无覆盖/商城/整目标PASS。
