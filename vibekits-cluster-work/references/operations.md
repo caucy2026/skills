@@ -204,3 +204,13 @@ refreshLocalGrants 对不存在的本地授权记录原来每房间读取两次�
 ### 2026-10-13 qualified overlay lessons
 Reuse the signed bytes and verified full rollback. Windows watchdog requires install/backup/result paths to be distinct with neither nested in another;do not weaken that check. A stopped verification worker does not require recopy:33515 copied files were independently journaled and hash verified in v2. Persist per-file progress and monitor actual RAM/commit/CPU/handles/BOUND/dynamic range;unknown installer outcomes are reconciled, not replayed. Live log reads need explicit FileShare.ReadWrite, even in PowerShell7;use bounded streams rather than ReadAllText on writer-held logs. Success is guard committed plus original-ID real calls, signed core tuple, transfer hash and live rooms;then recheck the main after observer exits.
 Deep macOS AX walks can exceed MCP budget:132 actual66.367s late success, not proof of a deadlock. Keep shallow/bounded queries and examine original tool trace before another action. Native typeText virtual key0 may become a in WebView;do not count requested character length as actual text. Cancel incorrect path and use verified directory rows;new651 picker was confirmed by actual pwd in the new workspace. Complete text/IME regression separately.
+
+## 2026-10-13 Windows619 原位650覆盖升级终态
+
+同一6192992780/xzl/zjc、既有无D盘C用户例外路径覆盖604→650/2650，安装退出0；新main4092/birth134363566853123894持续运行。guard7208 verified_committed/terminal0/observerEnded=true，Task Ready/result0且guardAlive=false。原ID重新连接、真实system.info4092、cluster.rooms实时connected恢复；09:28:20Z再次真实system.info仍4092。没有改执行策略、没有绕过被拒PS文件、没有清配置/Key/授权。
+
+用既有签名Node及同版本Koffi的独立外置入口，Session1与原PID/birth/窗口所有者先核验，再正常WM_COMMAND41002退出；初两次探针因漏复制原Koffi可选win32-x64包失败，补齐匹配原字节五文件后v3通过。保留失败回执，不将其称平台拒绝。完整31105文件/1003774142字节604回退保留，manifest E67DC094BABACABACAEAE60322C12B474E561E096E08332FA432D9295ADB2DAD。
+
+安装后独立核三件套：main A823C0999B90BD4236BBDB2051B71FC2491DB5EAFE7FA48AD8BB9740BD2F4886；flutter_windows.dll 1FDFC8FA063F29EC1CEE4343EF490110F582F313BDA046F8604569C0E54C4424；data/app.so 51232286107F649A0E6D7721AF1EBA488012A64CD237AD7F173C62B374E0FF89。与最终签名650对应字节一致；12逻辑核已读回。
+
+控制器证据：cluster-app650-20261013-v1/windows619-install650-terminal.json、windows619-installed650-core.json、windows619-post650-health-commit.json。guard仅RAM/近似提交观察，不冒称完整CPU/网络五分钟资源通过。原Key模型、UI/历史与完整资源仍待验；商城未发布，G01–G10未完成。
