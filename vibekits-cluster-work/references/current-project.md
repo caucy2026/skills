@@ -380,3 +380,6 @@ Mac650信息窗口实测两已入房名称/组员/连接列表折叠/房间设�
 
 
 最新：651 Apple246c8ff5-d419-422e-bb4f-42b7ddd4aafc Accepted，final ZIP423843807/SHA0068f4ad9e6e6fe9decae3317eef1b0abda3db228604dde4dca8cb7dd4c13a3e，独立解压/签名/票据/Gatekeeper通过，未安装、无CPU PASS。Windows第二次输入完成，最终只读v2 PASS/exit0，244PE/32owned/212vendor未变，244timestamp全部存在，outer/main独立通过；Dresults/v650-sign/final-independent-verification-v2/summary.json为最终读点。正式273832896B/SHA067247de7568431ff1eb32cb0b87a30fdc2dbd3384006def18d500722fab9da7，原报告Bytes是签前缓存273822157，不能用旧值上架。原attempt1/resume2的后续脚本FAIL保留；未重签，PIN窗口事务已结束。Mac控制端路径windows/cluster-app650-20261013-v1同名setup回传exec63983仍待原handle结果，未知不重传。仍无覆盖/商城/整目标PASS。
+
+
+最新覆盖651本机：已650→651原位守护accepted，新PID13773/2651，原155 ID/SSHfingerprint保持，445新relay连接+真实system.info13773通过；原QA SID/workspace/Key实际MAC651_NATIVE_MODEL_OK，live rooms保持，实际看图651原会话及其他H422/H578保留。五分钟61帧CPU median2.2%/peak29.3%、RSS+1.609375MiB/0.846900% PASS，后验无窗口内工具调用/自动模型在途；不可借此宣称全fleet/100+通过。唯一readonlyNode13793/parent13773，8helper PID61帧稳定，旧30011退出。final651.json已记录realOverlayPassed与fullFleetAcceptancePassed=false。保留650回退App，下一步132/445同一651包的架构/权限/UI/模型/真实工具复验及Windows650覆盖；529窗口仍未答、617离线不连接。所有G01–G10缺项和商城未发布状态保持。
