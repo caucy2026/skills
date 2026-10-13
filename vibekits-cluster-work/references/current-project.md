@@ -374,3 +374,6 @@ Mac650信息窗口实测两已入房名称/组员/连接列表折叠/房间设�
 首次预检发现旧raw SDK runtime的approval/cluster-task两个App自有脚本落后；逐项比较实际已签名650，实际App与冻结native源码一致。保留旧字节/日志/三方hash后，只将本候选runtime两文件对齐源和实际650，官方SDKnode_modules未改。9helper/4skills完整匹配，Native627/628资格绑定有效。构建状态 {"phase": "building", "pid": 5287, "supervisorPid": 5286, "started": 1791855084.582245}；先对账同一PID/出生、app-build-state651-r2.json和log，未知结果不重启。
 
 未有651签名/公证/安装/五分钟CPU PASS；已装Mac仍650，CPU7.5%FAIL保留。Windows650 resume2父37788/出生UTC2026-10-13T00:23:59.1025927Z，外壳Signer7336/出生UTC2026-10-13T00:33:06.3809636Z，当前第二次令牌确认仍待签名人；不读PIN、不再截图、不重签。原七台/G01–G10/100+真实规模全部缺项保持，商城未发布。
+
+
+最新覆盖上述building阶段：651完整构建145.24秒/exit0，230联合PASS，Developer ID及双架构兼容、与当前650的主App/helper身份/权限完整比对PASS；Apple246c8ff5-d419-422e-bb4f-42b7ddd4aafc已上传、In Progress。notary-submit.json为原事务入口，不重复submit；尚无final ZIP/安装/CPU PASS。源码10文件main d7a7cd2b6a7097d9c0afa942879a83217230690c已回读，技能ea2afb9b72c13ba8e4ead107a0e1f20b69c24ae8已回读。WindowsSession0 title/hwnd空非窗口消失，受限Session1 probe-v6实际原7336/15599544/visible true，UTC2026-10-13T01:43:07.0558552Z；不截输入、不读PIN，第二次确认仍待本人。当前observer exec15880，期限只属观察，不是签名终止。
