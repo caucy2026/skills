@@ -1,4 +1,4 @@
-# 本项目接续快照：2026-10-12
+# 本项目接续快照：2026-10-13（优先读最新状态）
 
 这是当前导航与已验证状态；执行前读实际台账、PID/创建时间和回执。历史完整记录在项目验收文档，不把旧参数直接当执行指令。同事在自己的机器映射路径、继承完整G01–G10与用户最新要求。
 
@@ -25,18 +25,18 @@ hbbv21122/TCP，保存SSH profile `remote_1791254767548854`；UUID `da3553a32048
 
 | 设备 | 原仿真ID | 最后验证版本与边界 |
 |---|---|---|
-| Mac155 | 1554650784 | 618，本机共享桥；另有Mac529/PAD任务使用，不能重启/升级 |
-| Mac445 | 4456560334 | 623/2623; PID28250 born Mon Oct12 08:44:05. Guard0 + bootout + real MCP survived; original key/rooms retained, rollback622, actual AX authorized. |
-| Mac529 | 5298938227 | 617，在线、共享工作先对账 |
-| Intel/macOS12 Mac132 | 1321656264 | 624/2624; PID46325 born Sun Oct11 18:26:11. Guard0/bootout/real MCP survived; original key/rooms and rollback623 retained. Full permission continuity remains unproven. |
-| Windows58 | 4240650696 | 604；历史旧ID4567540178不可当当前连接目标 |
-| Windows619 | 6192992780 | 604在线 |
-| 补充Windows617 | 6175875975 | 564且已确认离线；不连接 |
+| Mac155 | 1554650784 | 651/2651，本机共享桥；原Key、反向真实调用及严格idle通过，保护其它在途工作。 |
+| Mac445 | 4456560334 | 651/2651，94505，原ID/Key/房间、ARM flock及300秒idle通过；保留643回退。 |
+| Mac529 | 5298938227 | 455/2455，最新读取827；共享桥维护窗口未答，不停止或覆盖。 |
+| Intel/macOS12 Mac132 | 1321656264 | 651/2651，4663，原ID/Key/房间、Intel flock、实际新目录pwd及300秒idle通过；保留643回退。 |
+| Windows58 | 4240650696 | 650/2650，33116；守护committed，原ID/Key历史/真实调用/房间通过。CPU按既有8逻辑核口径复核，完整历史门禁未完成。 |
+| Windows619 | 6192992780 | 604/2604，6448；xzl/zjc/仅C盘，无D例外已登记；本轮未改，PS5.1 Restricted不绕过。 |
+| 补充Windows617 | 6175875975 | 已确认离线；不连接，不计在线通过。 |
 
 生产postflight六机心跳0.17–3.97秒，617长期离线；每次仍回读，不据历史表宣称当前在线。
 Mac132本机路径`/Users/mac/Library/Caches/Vibekits 2.app`，登记Office ID372799163；先前控制端旧画面冻结/输入无效，但用户远程能操作，不把旧图或仿真失败当整机离线。已有launchd实机对照证明AbandonProcessGroup:true使包装器退出后主进程存活；诊断守护退出和卸载后必须再验证实际MCP/房间，不只看ACK。
 
-## 正在构建的623：不要重复事务
+## 历史623记录：已被651取代，不按此段启动旧事务
 
 完整冻结输入`macos/cluster-room-roster-623-20261012-v1`，623/2623，G0/Node4/客户端118通过。原生从Frozen619只叠加策略0修复及公开签名向量，无依赖升级；源hash在`evidence/source-freeze623.json`。
 原生Universal已built：ARM498.55s、Intel321.873s，unsigned SHA80f8ec733a55695f8c30c732928922aec87d74f1b49ccd91689631100702a556；两架构真实protocol_v3及check-only过。Xcode150.156s/实际2623、主及助手身份/权限匹配、签前后兼容及Developer ID签名均通过。原生监督和Xcode已终态，不重启；3077已完成native生成库/对象已核无占用回收，保留Universal及两架构二进制SHA，target需全重建。
@@ -48,7 +48,7 @@ Mac132本机路径`/Users/mac/Library/Caches/Vibekits 2.app`，登记Office ID37
 
 空间清理仅本任务终态621/622中间编译文件2489个/3.894GB逻辑；原正式包SHA不变，源码/工具链/证据/独立解包回退保留，两个旧build明确不完整须重建。Accepted622原公证ZIP重复容器已核无占用并回收，final保留。623原生已终态后仅生成库/对象精确清理，Universal和两架构二进制保留；下一原生编译须重建。
 
-## Windows在途签名
+## 历史619签名记录：当前650已终态，不按此段重签
 
 D盘work`D:\KEMI-Test\work\cluster619-20261011-v1`，results`D:\KEMI-Test\results\v619-sign`。
 固定run `dev619-signed-runtime-20261011-v1`；pwsh26600出生2026-10-11T14:53:19.0164420Z，已推进SIGNING_ROUND_2_FINAL_INSTALLER，当前SignTool33536出生23:02:56.2371188Z。内层32/32 Valid；最终终态未知，接手先对账，不重签/并发重建。
@@ -399,3 +399,9 @@ Mac650信息窗口实测两已入房名称/组员/连接列表折叠/房间设�
 Mac132 and445 now651/2651, both guarded overlays accepted, original IDs/fingerprints/rooms/Key model responses preserved. Five-minute61-frame strict idle passed:132 CPUmedian0.8%,RSS+0.53125MiB;445 CPUmedian1.8%,RSS-0.34375MiB;five App helpers stable and no in-window tool calls. Intel and ARM native flock passed.132 actual GUI picker opened Documents/VibeKits651-QA-20261013-v1;workspace275fde58/session002c93c0 actual pwd tool/result21 returned exact chosen path, assistant25 completed, old workspaces preserved. Full UI/IME/removal/fleet gates still incomplete.
 Windows58 original424 now650/2650,actual33116/Session1/birth134363466048856959,mainSHA A823C099...;Inno0/coretuple verified,original fingerprint/MCP/system.info/transfer/live rooms verified,guard32624 committed,worker32104/installer17028 exit0/511s,TaskReady/result0,main survives. Backup33515files/1451160862B independently hash verified;manifestDBB699...;keep rollback. First install overlap failed safely before old exit;v2 result is independent sibling folder overlay650-58-install-20261013-v2. Preserve all prior failure evidence, no re-sign/reinstall. Screenshot is real Session1/D-only, shows650 and preserved old conversation/completed request plus unstarted old goal;do not execute that unrelated goal. Windows idle collector staged/launching;do not touch that machine during its five-minute window.
 Market still NOT published;529 unanswered window remains protected,617 confirmedoffline do not connect,619 not yet upgraded;all G01-G10 retained. Authoritative detailed record remains VibeKits/docs/acceptance/CLUSTER_CHANGES_AND_MARKET_RELEASE_20261012.md.
+
+
+### User scope update 2026-10-13
+User explicitly says to design for the existing seven devices first. Do not wait for100-device inventory or ask again;100+ real-device evidence is deferred expansion scope, not a prerequisite for this seven-device phase. Offline617 remains protected;529 maintenance window remains unanswered.
+Windows650 CPU classification corrected against the existing Windows619 acceptance record: Windows uses all-logical-core App-family percentages, Mac uses single-core ps percentages. Actual58 has8 logical cores. Original raw main median22.07899% single core retained;main all-core2.75987%, sampled family median2.84882%/peak3.47056% meets unchanged5% Windows convention. Three first-sighting short helpers are accounted from actual lifetime CPU only when birth follows previous observation;raw nulls retained. RSS+10.3828MiB/11.2185%,handles+1,AppBOUND6→6 (range6–7),dynamic use max0.9094%,RAMmin6.36GB/commit availablemin5.88GB. Finite observer ended;full release still not asserted. Do not extend Mac-only transport to Windows or rebuild based solely on the incorrectly classified per-core result.
+619 fresh baseline: xzl/zjc/Session1/old604 PID6448,birth2026-10-12T08:46:58.5817598Z,onlyC drive325GB free,no pwsh7,effective PS5.1 Restricted. Existing no-D exception is documented in WINDOWS619_604_DELIVERY_20261011.json under original C user app path;do not invent D or use another account. Do not execute rejected scripts as inline. Prefer allowed signed/native updater tooling and independently guard original transaction. No619 mutation has been made this turn.
