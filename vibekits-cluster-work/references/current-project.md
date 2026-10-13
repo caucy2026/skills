@@ -25,7 +25,7 @@ hbbv21122/TCP，保存SSH profile `remote_1791254767548854`；UUID `da3553a32048
 
 | 设备 | 原仿真ID | 最后验证版本与边界 |
 |---|---|---|
-| Mac155 | 1554650784 | 651/2651，本机共享桥；原Key、反向真实调用及严格idle通过，保护其它在途工作。 |
+| Mac155 | 1554650784 | 当前653/2653、PID79247，实际mainSHA3528b25bbb62cafe14d59228001d0113b17646fd64de71c0eba5ec4720883511。既有653公证/guard accepted已定位；651资源证据仅为历史，不套用653。共享桥及其它在途操作保持。 |
 | Mac445 | 4456560334 | 651/2651，94505，原ID/Key/房间、ARM flock及300秒idle通过；保留643回退。 |
 | Mac529 | 5298938227 | 455/2455，最新读取827；共享桥维护窗口未答，不停止或覆盖。 |
 | Intel/macOS12 Mac132 | 1321656264 | 651/2651，4663，原ID/Key/房间、Intel flock、实际新目录pwd及300秒idle通过；保留643回退。 |
@@ -414,3 +414,7 @@ Win58 idle-v2 complete:62 frames/305.0062s,maxgap5.0327s,family CPU all-core med
 
 ### 2026-10-13 original619 rollback and final650 staging qualified
 Original619 backup worker14308 is terminal exit0,resource observation ended,old6448 still alive. Full31105 files/1003774142B source/backup hashes match;manifest E67DC094BABACABACAEAE60322C12B474E561E096E08332FA432D9295ADB2DAD;oldmain EE492534... unchanged. Backup path C:/Users/zjc/AppData/Local/KEMI-Test/results/original619-604-before650-20261013-v1/original604-bundle-backup. Existing no-D C user exception retained;PSRestricted unchanged. No App stop or installation. Same final650 setup273832896B/SHA067247DE... staged at upgrade650-preparation-20261013-v1,AuthenticodeValid/intendedB828.../timestamp verified. Unique stage intent/result and terminal receipts in Windows cluster-app650 controller evidence;do not copy or verify whole backup again. Next must arm an allowed external recovery route before any old-App exit;do not execute rejected PS scripts inline or run blocked diagnostics via wrapper. Store NOT published.
+
+## 2026-10-13 655 room join candidate in progress
+
+Mac candidate path: macos/room-join-approval-655-20261013-v1. Source baseline654 plus room-title Apply/progress/pending state and acknowledged legacy membership retention; four join tests and six prebuild gates pass. Universal Release exit0, unsigned/sign/signed-compat/upgrade identity all0. Notary submit in progress: controller exec session52089; reconcile evidence/notary-submit-handle.json and stdout before any retry. No installation or market mutation. Shared installed653 is protected. Latest source main509dd827b59a5d25830cc2303add4fd1d421763b verified.
