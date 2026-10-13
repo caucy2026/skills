@@ -365,3 +365,12 @@ Mac650信息窗口实测两已入房名称/组员/连接列表折叠/房间设�
 签名人已输入第一轮 PIN；attempt1 runtime-sign.json 实际32/32有效、逐文件验签0。后续旧验签器的 sourceFingerprintSha256 与当前 sourceInputManifestSha256 schema 不兼容，SOURCE_PROVENANCE_INVALID 终态，代理回读 RESTORED，未进入外壳阶段。保留失败事务，不重签已完成集合。
 
 固定 Resume-Sign-Vibekits650-v2.ps1 使用真实 native628 源码manifestSHA d7a3c0521486dbc7ba3d0086a1a341650dddf7094cebfab969c7c646c2957513、构建exit0和原来源字段，独立版本化验签器验证；不制造旧字段。与 attempt1 的32份签后报告/短路径/正式候选哈希逐项匹配、212供应商字节保持原值，重新验签已完成集合后进入 PACKAGING_SIGNED_RUNTIME。resume2 父37788/Session1、脚本SHA484AF8504AA86BE68324F4F944EF4BAB9FD277DC6F9995B3102942C4F2D82D0F，原签前清单SHA550C6B5EC2D790000AADF31F817F0AF019D403817035103EFAF7C9D85FB93A6E。根 D:\KEMI-Test\results\v650-sign\installer-signed-runtime-20261013-resume2。控制端 ObserveSign650Resume2.py / sign-live-poll650-resume2.jsonl 有界观察；当前exec81838，观察退出不代表签名退出。若外壳新PIN需要本人输入，先绑定新Signer PID/出生并展示空框新截图；不得读取或重复截取已输入PIN。仍无最终签名/安装/商城PASS。详细恢复记录已V main ac4fef01f3f6c0dfda2a19d1b2835e38691e7bd1。
+
+
+### 最新在途：Mac651生产只读通道完整构建（2026-10-13）
+
+根 cluster-readonly-control-qualified-651-20261013-v1，2273共享输入冻结，230联合回归通过。仅Mac本App固定status/connections使用持久Node启动，每次native实时结果、不缓存Key/权限，写命令和其他平台保原路径；队列32/输入1KiB/native输出1MiB，原5–8秒预算及超时/EOF回收。Dart并发flush首失败保留，串行写入修正；8项Dart、Node3轮实际生命周期及Mach-O目标包漏脚本负控通过。配对512MiB触页堆CPU direct median46.601ms/client7.001ms，仅启动开销对照，不是App CPU PASS。
+
+首次预检发现旧raw SDK runtime的approval/cluster-task两个App自有脚本落后；逐项比较实际已签名650，实际App与冻结native源码一致。保留旧字节/日志/三方hash后，只将本候选runtime两文件对齐源和实际650，官方SDKnode_modules未改。9helper/4skills完整匹配，Native627/628资格绑定有效。构建状态 {"phase": "building", "pid": 5287, "supervisorPid": 5286, "started": 1791855084.582245}；先对账同一PID/出生、app-build-state651-r2.json和log，未知结果不重启。
+
+未有651签名/公证/安装/五分钟CPU PASS；已装Mac仍650，CPU7.5%FAIL保留。Windows650 resume2父37788/出生UTC2026-10-13T00:23:59.1025927Z，外壳Signer7336/出生UTC2026-10-13T00:33:06.3809636Z，当前第二次令牌确认仍待签名人；不读PIN、不再截图、不重签。原七台/G01–G10/100+真实规模全部缺项保持，商城未发布。
