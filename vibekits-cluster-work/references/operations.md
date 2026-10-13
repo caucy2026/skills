@@ -214,3 +214,9 @@ Deep macOS AX walks can exceed MCP budget:132 actual66.367s late success, not pr
 安装后独立核三件套：main A823C0999B90BD4236BBDB2051B71FC2491DB5EAFE7FA48AD8BB9740BD2F4886；flutter_windows.dll 1FDFC8FA063F29EC1CEE4343EF490110F582F313BDA046F8604569C0E54C4424；data/app.so 51232286107F649A0E6D7721AF1EBA488012A64CD237AD7F173C62B374E0FF89。与最终签名650对应字节一致；12逻辑核已读回。
 
 控制器证据：cluster-app650-20261013-v1/windows619-install650-terminal.json、windows619-installed650-core.json、windows619-post650-health-commit.json。guard仅RAM/近似提交观察，不冒称完整CPU/网络五分钟资源通过。原Key模型、UI/历史与完整资源仍待验；商城未发布，G01–G10未完成。
+
+## 2026-10-13 Release-template version adaptation
+
+Do not replace a version substring globally:650 also appears inside native evidence hashes and routing IDs. Preserve immutable hash/UUID/device identity/PID-birth/certificate inputs; parameterize only version fields and paths, and verify exact old/new constants. Collect656 first rejected an accidentally modified native628 manifest hash; unchanged build and native bytes were retained, exact digest restored, and collection-v2 terminal0. Never rebuild or re-sign to recover this controller error.
+
+Windows UI ownerBound with zero publications: first verify the installed product component, not only Shell/WebView liveness.650 installed component package was actually absent.656 private runtime gained the same portable product-owned JS component, client VM contracts and real Cordis question waterfall passed; frozen skill byte mismatch required an exact canonical skill refresh outside vendor SDK. Final real installed UI/model/permissions remain mandatory.
