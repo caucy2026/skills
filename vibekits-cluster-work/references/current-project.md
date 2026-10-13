@@ -383,3 +383,6 @@ Mac650信息窗口实测两已入房名称/组员/连接列表折叠/房间设�
 
 
 最新覆盖651本机：已650→651原位守护accepted，新PID13773/2651，原155 ID/SSHfingerprint保持，445新relay连接+真实system.info13773通过；原QA SID/workspace/Key实际MAC651_NATIVE_MODEL_OK，live rooms保持，实际看图651原会话及其他H422/H578保留。五分钟61帧CPU median2.2%/peak29.3%、RSS+1.609375MiB/0.846900% PASS，后验无窗口内工具调用/自动模型在途；不可借此宣称全fleet/100+通过。唯一readonlyNode13793/parent13773，8helper PID61帧稳定，旧30011退出。final651.json已记录realOverlayPassed与fullFleetAcceptancePassed=false。保留650回退App，下一步132/445同一651包的架构/权限/UI/模型/真实工具复验及Windows650覆盖；529窗口仍未答、617离线不连接。所有G01–G10缺项和商城未发布状态保持。
+
+
+最新：132/445同一651完整ZIP及解压App已暂存，各stage_remote651.py原36317/45181终态exit0，bytes/SHA/2651/all-arch严格签名/Gatekeeper通过，均NO_INSTALL，现运行仍643原62992/86678，身份指纹/UID/实际路径已新核对。目标根/Users/mac/Library/Caches/vibekits-651-<rid>-stage-20261013-v1。stage-intent651及stage-verify651.json已有，不再重传/重解压未知结果。132旧QA9fcb SID非当前；UIinspect66秒实际成功不是整机失联，当前私有截图完成的目录QA显示VibeKits642-QA，不能按“643”标题推断目录切换。须在651实际复验路径/模型，不改用户目录名掩盖测试误差。两机升级守护尚未启动，其他原目标/529窗口/617离线/商城未发保持。
