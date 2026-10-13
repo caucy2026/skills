@@ -348,3 +348,13 @@ Mac650最终423816144B/SHA bf472c90b396ccdc7b6a38e6f691d19d30f1b40eaa674510a5b2e
 Windows控制端根windows/cluster-app650-20261013-v1；目标D:\KEMI-Test\source\cluster650-20261013-v1及work\cluster-app650-20261013-v1。原PowerShell7.6.6现行RemoteSigned已只读证实，与系统5.1 Restricted不同；复用原7入口，旧改策略选择不再阻塞。源码准备v2旧测试hash失败、v3/v4截止及v5截止保留；v6 robocopy后2816冻结输入通过、46.68秒/exit0。native628输入整合已exit0，23,176,192B/20de…，来源manifestSHA d7a3c0521486dbc7ba3d0086a1a341650dddf7094cebfab969c7c646c2957513，最终输入文件work/final-build-inputs650.json。此为整合，不是安装/客户端验收。
 
 完整构建唯一任务VibeKits-Cluster650-Build-20261013-r2，监督36052，cmd31016/创建FILETIME134363183598462912，原work/build-start650-r2.json；先读同一PID/出生、build-terminal650-r2.json及results\cluster650-20261013-v1日志，不重启未知结果。离线Pub/输入闭包/版本650/UX门禁已过，当前实际5编译进程，lock字节SHA与冻结一致。尚无新Windows完整产物/签名/覆盖/商城PASS，现装424仍604。132/445仍643、529仍455且窗口未答，619挑战未闭环、617离线不连接；G01–G10/100+实测等缺项不缩减。新增3696个旧Xcode pcm已清、无残留，观测+1623191552B有并发说明，源码/工具链/正式/回退保留。
+
+### 最新在途：Windows650等待令牌认证（2026-10-13，取代上述构建状态）
+
+Windows完整Release已exit0，394.56秒；真实EXE字符串/数字版本650+2650，编译后2816输入hash仍一致。主程序B9E6AC76962F447079D8CB0094D82C6E19A40AEDD2F872EE1F59EE3C828F56E8、flutter_windows.dll92E7AA320AFE026E90780E4049DC6F6A480696400A269C179B1CCA0EF751D175、app.so51232286107F649A0E6D7721AF1EBA488012A64CD237AD7F173C62B374E0FF89。unsigned构建回执SHA B159C109B2D40CCA0D19D5091447CEA203E89E735C25CB09E4CD8ED792A8B42B。
+
+暂存exit0/81.09秒，244PE/32待产品签，212原厂有效字节保留；清单SHA550C6B5EC2D790000AADF31F817F0AF019D403817035103EFAF7C9D85FB93A6E。当前650隔离凭据宿主构建exit0/101.60秒；真实Session1/caucy子6788退出0，8合成键全部清理/native缺失读回，原设置和26044 App未变、非mock。仅签名就绪回执SHA8CFFA835E0DD45E3EF1EA0EA1AA98BBD14AD7D663E9160BB5E24BFF9E36D3B3A，全应用验收仍false。
+
+唯一签名run dev650-signed-runtime-20261013-v1 / attempt1，根D:\KEMI-Test\results\v650-sign\installer-signed-runtime-20261013-attempt1。GUI固定入口已app_control启动；父pwsh29140/Session1，SignTool28892/Session1/出生UTC2026-10-12T23:39:38.3650157Z，第一轮等待PIN。固定Session1截图已核空框并展示，PIN只由签名人设备窗口输入，不能读取/粘贴/自动输入；异步用户动作仍待完成。controller ObserveSign650Live.py每2秒只读跟踪，同一sign-live-poll650-persistent.jsonl；首15分钟有界观察正常结束并继续同run，新exec42339。先读真实PID/出生和state/summary/failure，不能因观察窗口到期重签或重打包。未有签名PASS或新Windows安装；现装424仍604。私有截图/用户会话不Git。
+
+Mac650信息窗口实测两已入房名称/组员/连接列表折叠/房间设备展开；点通用房132仿真后真正system.info返回原62992，现有session room-members / room-delegated-on-demand、265目录，未回退旧名单。管理员徽标和动态增员/管理员/离线/降级未完，不算G07/G08全通过。私有证据local650-room-ui-validation.json，窗口关闭已独立看图。Mac五分钟CPU7.5%FAIL仍保留；后续10秒profile489ms、ProcessStarter166ms，仅热点诊断。security交互模式合成不存在键实验无写入/真凭据，未提供可靠完成边界，生产路径未替换。详细记录已V main63f647eab48d60a72a644c8a7476a308f40f220c远端确认。原七台/100+真实规模及G01–G10缺项全部保留，商城53/54未发布。
