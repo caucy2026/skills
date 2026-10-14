@@ -445,3 +445,16 @@ Installed2655/PID90173/main309f9cf7d3633899d683ad1db0dee376ad006b23f8ef22eeddeac
 - 上述候选、回执均位于本机外盘app-release-gate；现场易变，接续先读原事务状态。商城未更新，完整目标未完成。
 
 20:52增量：用户完成第二轮认证，原656事务summary=PASS、exit=0；244/244 PE、32产品/212第三方字节保持、主程序和外壳独立验签通过。外壳273845240字节，SHA256 5606818f2da9b70fcfa79aa3069a32c8ac49e094e0cffae91e4bf84da67a646e；控制端正式包下载核验在途，尚未安装或发布。报告见Windows cluster-app656目录final656-*；Mac657原公证81bf8203-f410-482f-9392-2eb5f3157bcc仍处理中，不重提。
+
+### 2026-10-14 实机增量：固定模型、房间完整目录和 Windows 资源门禁
+
+- 本机659已实际同身份覆盖，原1554650784、真实只读调用、原通用房间批准及Mac445反向访问通过。后续共享流程升级664/665并回退664，接续必须重新核当前PID/字节，不强占同一窗口。
+- 659固定分析会话原请求明确HTTP400 INVALID_REQUEST：全部工具defer_loading。复用既有660兼容补丁；实际664原固定会话cluster-analyze-eb8f9c10-d381-a00d-3544-a81b0a02a350，请求cluster664-model-fixed-analysis-20261014-v1正常结束，真实deepseek-official/deepseek-flash返回VIBE664_FIXED_MODEL_OK；未执行工具。实际provider序列化负控/正控、混合/空/缺省、schema不变及未知锚点拒绝通过。不是全设备模型通过。
+- 原通用房间5deb64cad5f92da2a80aaaab03b1eaf4在445读取返回TASK_EXPIRED，不重跑领取或安装。
+- 665→445/651明确room_connect+room_call原生房间委托路径实际成功：system.info、265项完整describe_tool目录(catalogComplete=true)、基础五项外的device.app_signature。原com.caucy.vibekits、26T5WV4GLP及signatureValid=true。没有建立SSH或写永久白名单。单工具一用票据必须建链后立即调用，分开人工等待会过期；一次建链收到429，不立即重发。管理员降权、撤销、另一方向及完整业务仍未通过。
+- 665真实信息窗口确认已连接设备/已加入房间默认折叠；展开显示组员与房间ID，窄窗口底部内容需要滚动。后续编辑权限与名单同步完整实机未验。
+- Windows659完整Release已退出0；发现其原SDK仍有全部延迟工具问题，未签/未发布。新664独立源D:/KEMI-Test/source/cluster664-20261014-v1，准备2895文件/75.96秒退出0；provider从226e2047…→a167f2ddd5e3c73ae51edd9023bafaf140ac675028ccd1424d2671ccdbe3c507，与Mac补丁一致，实际serializer永久回归通过。
+- Windows664构建v1任务Ready/result1，无compiler-start；v2/v3日志已证明RESOURCE_PREFLIGHT且compilerStarted=false。v2可用6417567744字节低于6442450944(6GiB)，其他网络/commit条件正常。v3等待自有调度PID/创建时间退出后仍未达原门槛；不可宣称664已编译，不降低阈值，不继续无证重试。原650/PID33116保持。
+- 已试受信LAN192.168.3.58，主机指纹仍匹配；原Vibe key及既有控制机key均被caucy SSH认证拒绝，未改authorized_keys。已有仿真SSH继续可用。
+- 已用同Session1/同PID33116与创建FILETIME134363466048856959固定捕获，实际650显示任务已完成、目标未运行。已从Office主页已登记238638760在线卡片双击进入，窗口标题238638760@laptop-luopp1ch，实时桌面匹配。当前有断开所有远程连接确认框，来源需对账，未批准断开/未停止App；若需停止旧客户端释放RAM，先准备独立恢复守护并辨认该请求，不重做未知事务。
+- 完整证据在macos/room-all-current-659-20261013-v1/evidence及windows/cluster-app664-20261014-v1。截图/历史/私有票据不入Git。源码、正式包、凭据、回退和全部G01–G10保留；商城仍未发布。
