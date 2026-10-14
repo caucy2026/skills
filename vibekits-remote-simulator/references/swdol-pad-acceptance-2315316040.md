@@ -36,3 +36,14 @@ connected/adbReady不等于当前ADB实际可用。已观察同ID status仍conne
 ## 2026-10-15 本人分享列表：必须覆盖真实平台通道
 该PAD的SWDOL79 FakeHttp分页测试通过，但实际FrameworkHttpsTransport拒绝包含问号的endpoint，GET cursor放URI导致真机无法读取。成熟纠正是在同认证业务入口传JSON POST cursor/limit，服务端严格类型/范围，不放宽通道路径安全规则；80同源候选在真实账号信息页观察到本人码、默认折叠、展开“暂无分享账号”，与后台只读索引0条一致。普通刷新、HOME/Launcher同PID返回及再折叠实际审图已观察。空列表不证明非空账号、两个角色槽、姓名等级或长列表滚动；不制造生产注册/绑定迎合验收。
 后台Linux构建完整源码/Object/ASM闭包，测试超过工具调用预算时先核原进程是否终态，再用已有脱离执行方式保存log/exit，不能超时重启重复测试。仅切SWDOL HTTPS、备份SQLite和原unit，按实际映射核native库；game及HBBC/HBBS/HBBR比较PID/起时必须一致。部署与真实业务/客户端/全部地图/发布分开。详情仍引用SWDOL现有运营管理主文档与迁移账，不把该实例过程推广到其他App。
+
+
+## 2026-10-15 IME必须核真实按键与未遮挡字段
+
+`mInputShown=true`、`mIsInputViewShown=true`只证明系统状态，不能替代实际键盘、字段可见和真实屏幕按键提交。81曾仅有底部工具条；同输入法的普通Settings EditText实际点击可显示完整键盘，回游戏旧81也能显示，不能据此认定隐式请求是唯一根因。对照只能取消，不保存系统名称/设置，不切换默认输入法迎合验收。
+
+82完整键盘遮住游戏字段；WMS应用window仍1920×1280且IME占据下半屏，adjustResize标记不证明NativeActivity taken surface尺寸已改变。83在Android30+按真实IME Insets/可见区域约束所属window，复用既有native重绑/4:3画布与指针映射；关闭输入及pause/resume恢复原height/y/gravity。显示请求仍严格限定用户点击、foreground和focusToken，不用SHOW_FORCED或启动逻辑焦点弹键盘。
+
+用同一完整签名候选检查：启动不弹→点击完整键盘/完整字段→真实屏幕非私密字符→屏幕退格恢复原值→Back全屏→HOME/Launcher隐藏与再点击；再核正常登录、角色、入图、世界聊天IME画布、取消后的摇杆和键盘开启时HOME。窗口刚开始动画的第一张图可能仍旧布局，先核当轮实际窗口/稳定画面，不能靠重发输入。83有限实测证明账号字符提交/恢复、画布及返回；世界草稿字符可见、中文组合、全部业务字段、锁屏、跨图、各OS及长期性能仍未完成。
+
+私有完整证据保留在项目唯一迁移账关联目录，不上传账号/密码/数据库/原始系统窗口日志到技能库。83完整APK SHA与输入身份见该账，主线修复提交67ed5fe0仅Android窗口接缝及说明；发布资格仍BLOCKED。
