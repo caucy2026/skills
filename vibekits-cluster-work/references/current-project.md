@@ -458,3 +458,9 @@ Installed2655/PID90173/main309f9cf7d3633899d683ad1db0dee376ad006b23f8ef22eeddeac
 - 已试受信LAN192.168.3.58，主机指纹仍匹配；原Vibe key及既有控制机key均被caucy SSH认证拒绝，未改authorized_keys。已有仿真SSH继续可用。
 - 已用同Session1/同PID33116与创建FILETIME134363466048856959固定捕获，实际650显示任务已完成、目标未运行。已从Office主页已登记238638760在线卡片双击进入，窗口标题238638760@laptop-luopp1ch，实时桌面匹配。当前有断开所有远程连接确认框，来源需对账，未批准断开/未停止App；若需停止旧客户端释放RAM，先准备独立恢复守护并辨认该请求，不重做未知事务。
 - 完整证据在macos/room-all-current-659-20261013-v1/evidence及windows/cluster-app664-20261014-v1。截图/历史/私有票据不入Git。源码、正式包、凭据、回退和全部G01–G10保留；商城仍未发布。
+
+### 2026-10-14 08:26 双向房间通信补证
+
+实际Mac445/651通过room_connect+room_call反向读取本机系统信息，返回newlinkdeMac-mini.local/PID37609；控制端当时本机为664。外层与两层目标结果均ok=true。随后同一通道再次调用被ROOM_DELEGATION_SESSION_EXPIRED拒绝，未重复执行。这是双向房间原生只读通信及单次通道关闭后的拒绝证据，不是管理员降权/主动撤销/完整任务通过。证据macos/room-all-current-659-20261013-v1/evidence/reverse445-room-*。
+
+Windows58新核可用6025703424字节低于6442450944(6GiB)，664构建v1/v2/v3均Ready/result1且未进入编译。继续不降低门槛、不重复调度同条件作业；原650与数据保留。原仿真和登记Office238638760仍可访问，未知断开确认尚未批准。完整G01–G10、七台升级、主任务闭环和商城交付仍未完成。
