@@ -32,3 +32,7 @@ connected/adbReady不等于当前ADB实际可用。已观察同ID status仍conne
 
 ## 后续实测边界（2026-10-14）
 77正常持有摇杆HOME返回已核到idle、位置稳定与移动提交0→0，水平双指返回也有无intent录像后才采快照；均只作为各自子例。极低帧率组件检查另发现LegacyWorldTickScheduler原积压>30退回1策略：1Hz十秒213 world steps，其余2–144Hz所测节奏303，presentation始终600；该边界仍未修，不能称全部FPS速度通过。exec-out PNG观察超时后，经同ID/串口恢复，普通shell screencap写唯一设备临时文件再adb pull已获得完整PNG；仅证明此恢复路径，不能唯一归因为网络或将原失败补成通过。
+
+## 2026-10-15 本人分享列表：必须覆盖真实平台通道
+该PAD的SWDOL79 FakeHttp分页测试通过，但实际FrameworkHttpsTransport拒绝包含问号的endpoint，GET cursor放URI导致真机无法读取。成熟纠正是在同认证业务入口传JSON POST cursor/limit，服务端严格类型/范围，不放宽通道路径安全规则；80同源候选在真实账号信息页观察到本人码、默认折叠、展开“暂无分享账号”，与后台只读索引0条一致。普通刷新、HOME/Launcher同PID返回及再折叠实际审图已观察。空列表不证明非空账号、两个角色槽、姓名等级或长列表滚动；不制造生产注册/绑定迎合验收。
+后台Linux构建完整源码/Object/ASM闭包，测试超过工具调用预算时先核原进程是否终态，再用已有脱离执行方式保存log/exit，不能超时重启重复测试。仅切SWDOL HTTPS、备份SQLite和原unit，按实际映射核native库；game及HBBC/HBBS/HBBR比较PID/起时必须一致。部署与真实业务/客户端/全部地图/发布分开。详情仍引用SWDOL现有运营管理主文档与迁移账，不把该实例过程推广到其他App。
