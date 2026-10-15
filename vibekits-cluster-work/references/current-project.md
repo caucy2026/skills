@@ -560,3 +560,17 @@ Windows v1 worker8168/child9508 terminal101/324.305s/observerEnded，原因现�
 六在线：155680/PID90853，132679/1579、445679/93292、529679/90344、58 679/30944、619679/16140；617用户确认离线，不盲连。新协议4组件尚未进入正式客户端。953 description已清、六个旧Windows根344输出/1.281673702GB逻辑清理并0复查已结束，不重复。其他普通/未知调试记录或历史根只凭新归属证据处理，源码/SDK/正式/必要回退保护。Mac13214:18两个缺心跳样本同1579/approved保留、电源窗口无Sleep/Wake，现已恢复，因果未证；不能宣称连续6在线PASS。24小时有界只读observer已启动exec95399/PID28679，先核实际进程/最后JSONL；仅心跳和版本，不是24h稳定验收完成。
 
 下一步继续：对账两个在途native测试/Windows构建，补Windows不足，保留current main和已验证功能；新完整App统一最新主线+协议4组件，保留既定身份签名，真实测试原132→445在途续期失败、撤销/角色/过期，以及降级心跳。Linux hbbv同源测试/原DB身份备份后才按既有supervisor部署。商城仍455/2455，未发布679/680/协议4候选，完整G01–G10保持未完成。
+
+
+2026-10-16 final update: canonical client build source commit340e0826cddb914fccc665738ceb36a342092346 restores shipped member-without-admin proof/vector and pinned Rust1.75 map_or compatibility. Mac build-state-v4=built; Universal47096672B SHA c9f30182fb5eca1f487346890d0843a7841a07a310ad4722f1d6699a05401a80. Final native-tests-final-state-v4=passed; group counts [14, 12, 1, 15]. Client86/server313 remain PASS. Windowsv2 worker37764/child32960 source corrected, last verified live; read bounded-native4-state-v2-latest.json and remote build-terminalnative4-v2.json before any retry. No new signed App/install/server deployment/market release yet. Full G01-G10 remains active.
+
+
+### 2026-10-16 02:16 最新实证检查点
+
+主线追加c29613dd（准备入口/详细合并记录）和f83bb39c（最终校验/混架构控制）。Mac681完整候选位于macos/room-renewal-681-20261016-v1：完整编译、71 Mach-O签名、身份延续、公证14816a48-cf3c-4fe1-99e2-7c5014228b3e Accepted、装订及最终ZIP全部门禁通过。final681.json：441984699B，SHA25210deccdf4d2a8ce4c27d5409c507bdc170ce1970e528f41ea6a38fbcdc52f，main6f000c10a3edf428536b76d0a6005b6a107a6c1ac8796e875c047f44c3903e25。仍未覆盖安装或发布，不重签/重提交公证。source basec29613dd+已入f83bb39c的两个明确tool校验覆盖，pubspec681/2681，2051冻结输入，Dart8文件与86项通过字节一致。
+
+Windows原生v2终态0，2090.155s/30测试通过（14+12+1+3），1119冻结输入无变化；raw23469568B SHA089ee0a9351128998abc3f85da6f4a90888689d0e27abb57255cbe4e3b424b35。native4-final-qualification-v1.json保存回执。无需再启动v2，接下来制作681完整Windows包并按原身份签名。58仍679/PID30944；资源3样本曾超时，后真实info和单样本resources恢复，不视作离线。
+
+hbbv生产已部署，不再写未部署：release20261016-room-consent-renewal-v1，PID546895，switch worker546799 terminalverified。Linux同源313通过；发现生产网页两处已在main但共享区落后，按精确差异补回共享区并保留线上网页，Linuxv2再313通过。原serverId/Key/设备成员客户不变，其他3unit原PID保持，数据和配置原路径保留。私有backup约1.59GB/quick_check通过，原529426备份观察超时但进程仍存活，查创建时间/IO后续对账；不要重跑备份或切换。只补两项旧发布目录缺失源码，所有102运行/客户端源码与候选一致。生产回执与恢复位置在hbbv/room-consent-renewal-20261015-v1/production-switch-observation-v1.json；服务器staging/room-consent-renewal-20261016-v2含switch-intent/state/worker.log。
+
+24h有界监控PID28679仍live；六在线默认房间approved，617用户确认离线。新一轮六机系统采样已实际调用，五台3样本成功，58单样本恢复；529开发活动CPU较高不能算严格idle通过。完整G01–G10仍active，下一步buildMac真实681覆盖门禁→其他Mac、Windows681完整包→统一升级、真实在途续期/撤销/权限边界→业务闭环/稳定验收/商城；不把服务器部署或包公证当全目标完成。
