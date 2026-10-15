@@ -541,3 +541,38 @@ VibeKits main e21cbbf6789dde825e8875e8d36e1f8573cafd93新增20文件，父7597e5
 
 
 22:40 缓存检查点：VibeKits main `3ca8603ea26054b50a80a8b08ead3b2d638dbf1d`同步12文件，详见WINDOWS679_OWN_CACHE_CLEANUP_20261015.md。六个已证旧Windows构建650/656/659/664/671/677四批删除344项/1281673702逻辑字节，0跳过；独立v5/v6复查编译/自身链接输出均0且unproven0，原58实际MCP仍30944，679最终包SHA保持。旧中间输出必须重编；源码、SDK、最新679、原生628必要输入及必要671回退保留，不能把六根结论扩展为任意历史目录全删。后续若发现其他有归属证据的旧根再按同法处理，不重复已结束删除。每批intent/manifest/terminal证据在windows/main-cluster-679-20261015-v1。房间监控PID63524仍运行；满一小时会终止，此为有界心跳证据，不是永久后台监控或全目标通过。
+
+
+### 2026-10-16 原生协议4与已提交源码（以本段为最新）
+
+本轮修复已入主线：VibeKits e60b5e89cb1524950285dfb01c5a8756edb820f1（8文件，4个冲突显式审查，最终提交字节等于86项测试的共享字节）；hbbv私有priv的hbbv/前缀b2117f94624dcfd6e73c1e52ae36a9bc189cca1c（3文件，完整冻结313测试通过，未部署）；rust-desk正式构建client/src的182049b69a7f59b4776b7d258d054bbcbdeec40a和340e0826cddb914fccc665738ceb36a342092346。8cd91f6a只在根src归档，不能再当正式构建路径修复；根归档保留。最新正确构建路径是monorepo client/，local checkout git根恰是client不能据此猜远端路径。不要推origin上游，只用已核backup。
+
+Dart自动续期已完成：fresh self GET/当前成员/完整语义及server+native能力双确认；同revision POST /simulation-consent/renew，durable键绑定旧expiry。未知ACK先GET对账，已提交镜像原body/expiry不发新操作，不缓存now+600000。明确撤销当前成员不自动恢复。原生最低协议4复用既有scoped graceful takeover替换旧3 daemon，ID/签名/Key namespace不变；未知能力探测只等待不回退改rev。已注册仿真reachability失败发degraded心跳、models空/slots0且先关本地执行门禁，服务器不可达仍退避。客户端/载体最终86项通过，测试准备缺包图/图标及退出0但实际崩溃的首败保留，不算通过。
+
+Mac新组件：macos/room-consent-native-20261016-v1/native-root为latest canonical44e610934+已验证修复。恢复512工具及无管理员member票据、保留连接方式与身份预检；完全相同的3组重复测试只留一次全部断言。canonical新增shared/kemi-cluster已恢复15源文件，Cargo锁不升级。沿主线已有hbb-common-local-rendezvous.patch check后应用，否则首次12个proto字段编译错误；原生7e1c392子模块及其他字段保留。version.rs与scrap生成yuv/vpx绑定按实际producer列为输出，不把未知源排除。
+
+最新Mac rawUniversal47096672字节、SHAc9f30182fb5eca1f487346890d0843a7841a07a310ad4722f1d6699a05401a80，build-state-v4终态built，ARM186.332s/Intel176.083s。两处is_none_or改等价map_or使WinRust1.75可编译，Mac生成字节与v3相同。不是签名/公证/覆盖/真实房间续期通过。v3 room+relay+timer+IPC全部通过，v4最终同组测试仍在exec81391（运行状态文件native-tests-final-state-v4.json，先读实际PID/日志，勿重跑）。Unix IPC首败SUN_LEN是长TMPDIR，改外盘短vr16-*路径同断言真实IPC1项通过；没有改系统路径规则或松门禁。
+
+Windows新组件：windows/room-consent-native-20261016-v1；真实58原679/30944保持。基线Dwork/room-native-628-20261012-v1的manifest d7a3c0521486dbc7ba3d0086a1a341650dddf7094cebfab969c7c646c2957513、terminal0及旧raw23176192B/20de87a00276ec0944feabafce56445a7fccad8f4ba05ba9af73ded9fdd4e31e均核。新source native-root/client+shared，保留Windows .cargo/config、144文件源delta与成员修复，frozen-native4-inputs-v3.json为当前。原target628完整保留，4.790578623GB robocopy到新target protocol4；raw exit1为成功、qualified0且旧binary不变，不重复拷贝。
+
+Windows v1 worker8168/child9508 terminal101/324.305s/observerEnded，原因现有Rust1.75无is_none_or两处，未签/装。等价兼容补丁后新v2计划任务VibeKits-NativeProtocol4-Build-20261016-v2已实际运行worker37764、child32960/birth134365592786872486，最新已核live，资源RAM约4.5GB、commit约81%/BOUND94未触2GiB/92%/4096保护。读取Dwork同目录build-start/terminal/resourcesnative4-v2，读状态用固定ReadNative4State-v2.py，不要用ConvertTo-Json深度反射大对象（曾output_limit83）。v2注册首次因Python反斜杠b/r成控制符在登记前失败，前斜杠修复后同一v2登记启动；不要重复注册/启动。仍待Windows编译/验签/新最终包，不重签旧679事务。
+
+六在线：155680/PID90853，132679/1579、445679/93292、529679/90344、58 679/30944、619679/16140；617用户确认离线，不盲连。新协议4组件尚未进入正式客户端。953 description已清、六个旧Windows根344输出/1.281673702GB逻辑清理并0复查已结束，不重复。其他普通/未知调试记录或历史根只凭新归属证据处理，源码/SDK/正式/必要回退保护。Mac13214:18两个缺心跳样本同1579/approved保留、电源窗口无Sleep/Wake，现已恢复，因果未证；不能宣称连续6在线PASS。24小时有界只读observer已启动exec95399/PID28679，先核实际进程/最后JSONL；仅心跳和版本，不是24h稳定验收完成。
+
+下一步继续：对账两个在途native测试/Windows构建，补Windows不足，保留current main和已验证功能；新完整App统一最新主线+协议4组件，保留既定身份签名，真实测试原132→445在途续期失败、撤销/角色/过期，以及降级心跳。Linux hbbv同源测试/原DB身份备份后才按既有supervisor部署。商城仍455/2455，未发布679/680/协议4候选，完整G01–G10保持未完成。
+
+
+2026-10-16 final update: canonical client build source commit340e0826cddb914fccc665738ceb36a342092346 restores shipped member-without-admin proof/vector and pinned Rust1.75 map_or compatibility. Mac build-state-v4=built; Universal47096672B SHA c9f30182fb5eca1f487346890d0843a7841a07a310ad4722f1d6699a05401a80. Final native-tests-final-state-v4=passed; group counts [14, 12, 1, 15]. Client86/server313 remain PASS. Windowsv2 worker37764/child32960 source corrected, last verified live; read bounded-native4-state-v2-latest.json and remote build-terminalnative4-v2.json before any retry. No new signed App/install/server deployment/market release yet. Full G01-G10 remains active.
+
+
+### 2026-10-16 02:16 最新实证检查点
+
+主线追加c29613dd（准备入口/详细合并记录）和f83bb39c（最终校验/混架构控制）。Mac681完整候选位于macos/room-renewal-681-20261016-v1：完整编译、71 Mach-O签名、身份延续、公证14816a48-cf3c-4fe1-99e2-7c5014228b3e Accepted、装订及最终ZIP全部门禁通过。final681.json：441984699B，SHA25210deccdf4d2a8ce4c27d5409c507bdc170ce1970e528f41ea6a38fbcdc52f，main6f000c10a3edf428536b76d0a6005b6a107a6c1ac8796e875c047f44c3903e25。仍未覆盖安装或发布，不重签/重提交公证。source basec29613dd+已入f83bb39c的两个明确tool校验覆盖，pubspec681/2681，2051冻结输入，Dart8文件与86项通过字节一致。
+
+Windows原生v2终态0，2090.155s/30测试通过（14+12+1+3），1119冻结输入无变化；raw23469568B SHA089ee0a9351128998abc3f85da6f4a90888689d0e27abb57255cbe4e3b424b35。native4-final-qualification-v1.json保存回执。无需再启动v2，接下来制作681完整Windows包并按原身份签名。58仍679/PID30944；资源3样本曾超时，后真实info和单样本resources恢复，不视作离线。
+
+hbbv生产已部署，不再写未部署：release20261016-room-consent-renewal-v1，PID546895，switch worker546799 terminalverified。Linux同源313通过；发现生产网页两处已在main但共享区落后，按精确差异补回共享区并保留线上网页，Linuxv2再313通过。原serverId/Key/设备成员客户不变，其他3unit原PID保持，数据和配置原路径保留。私有backup约1.59GB/quick_check通过，原529426备份观察超时但进程仍存活，查创建时间/IO后续对账；不要重跑备份或切换。只补两项旧发布目录缺失源码，所有102运行/客户端源码与候选一致。生产回执与恢复位置在hbbv/room-consent-renewal-20261015-v1/production-switch-observation-v1.json；服务器staging/room-consent-renewal-20261016-v2含switch-intent/state/worker.log。
+
+24h有界监控PID28679仍live；六在线默认房间approved，617用户确认离线。新一轮六机系统采样已实际调用，五台3样本成功，58单样本恢复；529开发活动CPU较高不能算严格idle通过。完整G01–G10仍active，下一步buildMac真实681覆盖门禁→其他Mac、Windows681完整包→统一升级、真实在途续期/撤销/权限边界→业务闭环/稳定验收/商城；不把服务器部署或包公证当全目标完成。
+
+02:20补充：共享控制Mac仍680/2680但实际主进程已变为31066（原因未归属，非本轮覆盖操作），Win58连接失效后按原ID重连，原指纹保持；不要复用90853的PID断言。Windows两个打包脚本在共享区已更新protocol4+正向能力检查，但尚未提交：真机执行新Test-Protocol4Gates681-v1.ps1被本机ExecutionPolicy拒绝UnauthorizedAccess，证据windows/room-consent-native-20261016-v1/windows-protocol4-gate-test681-v1.json。未改策略、未内联绕过、未重启构建；pending-windows-protocol4-gates681.json明确记录待测文件哈希。不能将这两份脚本或Windows新完整包标为通过；继续原已批准构建路线和其他设备工作，拒绝的脚本需本机策略批准入口。

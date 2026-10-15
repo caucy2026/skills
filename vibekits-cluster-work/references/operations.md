@@ -279,3 +279,16 @@ After signing terminal PASS, independently read original run/manifest/cert/count
 Build*.cmd的真实cd /d和Flutter build windows及脚本SHA先证明旧根；后核CMake home同源。MSVC COFF大对象可能超过4096节，应验证真实节表/符号表在文件范围内，不用随意阈值放行或只认后缀。CMakeCompilerId要核生成角色和同源CMake home；Windows Flutter的Dart app.so可以是ELF64，必须与现有Flutter app-aot-elf producer及结构对应，不能因不是PE当无用文件。仅hash命名flutter_build目录中的真实生成kernel/AOT可清，package_config、SDK输入和最新构建保护。
 
 链接输出从带ClCompile的生成vcxproj解析实际Release/x64 Link/Lib字段及OutDir宏，输出仍在旧build且PE/归档/MSF匹配才列入；复制的预编译SDK输入无自身link producer则保护。独占句柄下复核FileID/mtime/长度/SHA，再删除并回读；最后独立inventory返回0及真实App工具调用作为本次范围闭合。源码与四批实证见项目tool/windows/main679-cleanup-20261015和WINDOWS679_OWN_CACHE_CLEANUP_20261015.md。初次传输失败先对账，不重复已结束的删除；原指纹刷新载体不等于重启事务。
+
+
+## 正式构建路径与已验证源不能被主线旧副本覆盖（2026-10-16）
+
+原生本地git根可能就是client，但caucy2026/rust-desk远端是client/server/shared布局。写前核远端树和client/Cargo.toml，目标必须client/src；根src旧归档不是实际构建输入，不能把blob读回相同误称正式构建已更新。独立索引、正常推送、远端读回和共享索引检查继续使用。
+
+新候选合main时另对照上一正式包的已验证源：本次canonical仍有32工具限制、adminPolicyRevision必须非0，实际已验证组件早已允许512和同房间member票据无管理员。必须保留已验证逻辑及签名向量、旧回归，而非因路径新或commit新照抄。主线已有region/共享crate和其他真实改动也不回退，冲突按符号/语义合并后测试精确最终字节；不要以部分差异或原构建通过替代整工作区同步。
+
+协议4把同revision续期能力纳入本机最小运行契约，复用既有scoped graceful stop/relaunch接管旧3 daemon；只换磁盘文件不代表运行中组件已更新。能力探测失败/未知不能降回改rev而打断在途票据。应用/辅助程序ID、marker、Key与签名身份维持原值。
+
+源码monorepo新增shared/kemi-cluster时，复制已提交锁和15个源文件，不升级依赖。保留hbb_common子模块base及已有覆盖，按main已记录的rendezvous patch先check再apply；否则kemi relay proto字段缺失导致12编译错误。原生根外的本地共享crate另纳入冻结SHA及literal include闭合。按实际build.rs证明version.rs和scrap生成yuv/vpx绑定是输出，记录生成前后，不把其他源任意列入exemption。
+
+旧Windows已登记Rust1.75无Option::is_none_or时，两处用等价map_or(true,predicate)适配None/Some语义，保持工具链、依赖及物理资源门禁；新任务引用新source manifest，旧terminal101/日志保留。原有缓存只复制到新target并核原raw字节不变，robocopy原始exit1为复制成功，不当失败重复复制。Unix IPC测试的SUN_LEN是路径字节上限：TMPDIR在规定外盘使用独立短目录，不回落系统/tmp，不删断言。Shell中的Windows路径经原样/前斜杠处理，避免Python解释b/r控制符；登记前失败先确认没有任务/worker，再恢复原事务。
