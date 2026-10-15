@@ -231,3 +231,10 @@ Windows UI ownerBound with zero publications: first verify the installed product
 交互进程里PowerShell5的Get-AuthenticodeSignature可能因模块环境不兼容无法autoload。保留原错误和未停机事实；可复用已安装且获准的PS7执行同一签名/元数据查询，并保留原证书、时间戳与哈希检查。不能据此修改执行策略、绕过明确拒绝的脚本或跳过签名验证。Windows备份/升级的外置Node哈希应与已完整校验的回退包对应Node一致；不能从正在被替换的安装目录运行升级守护。
 
 Mac文件访问权限统一引用[远程仿真技能的macOS文件权限记录](../../vibekits-remote-simulator/references/mac-file-access.md)，不把远程登录完全磁盘开关外推为所有App授权。
+
+
+### 主线合并后的房间回执和平台输入（2026-10-15源码实证）
+
+新发布从最新main的隔离检出继承完整产品代码；旧候选只复用已哈希资格化的运行时/工具链，不用若干旧文件覆盖最新main。记录相对main的全部产品差异，平台生成锁和版本有明确来源。生成平台依赖前先比较pubspec：最新main新增依赖时必须由目标平台按主线精确锁生成自己的package_config/插件登记，不能假称旧图仍完整，也不能移植Mac图到Windows。主线脚本缺execute位先保留失败、比较已合格脚本内容与模式，只修原调用所需模式并备份主线，不改执行策略。
+
+房间公开目录与已鉴权房间混合时，公开可申请性是展示提示，不能覆盖真实pending/approved决定。确定ROOM_NOT_DISCOVERABLE可持久显示未开放，未知/丢失回执仍申请核对中、禁止自动重放；新鲜公开目录重开只清明确unavailable提示。已通过旧负控、三轮HTTP/UI及70项联合源码测试；最终包真机另验。room_connect/room_call外层预算须涵盖原生建链与票据操作，普通RPC保持原预算；迟到外层超时先对账原工具/audit是否完成，不重发未知事务，也不延长票据TTL掩盖外层超时。
