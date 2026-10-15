@@ -272,3 +272,10 @@ After signing terminal PASS, independently read original run/manifest/cert/count
 房间心跳、实际App进程和OS资源是不同证据。system.resources三次采样取得后保留原始私有结果，只向主线写必要聚合；Mac top截短进程路径不能用于指认具体App或合并同名前缀。Win58原MCP超时和WMI过滤0x80041017均保留；沿固定上传MJS、既有Node/koffi只读路线，以原生libuv各核累计CPU计数差、os内存和GetDiskFreeSpaceExW做三次OS抽样，并核原主PID/出生存活。脚本在项目tool/windows/main679-cleanup-20261015/SampleOwn58NativeOsHealth679-v1.mjs，不能把此替代结果冒称原MCP/GPU/完整目录或长期稳定PASS，也不为拿绿灯降低采样次数、放宽普通RPC或改执行策略。
 
 备份镜像Git fetch出现early EOF时先确认该fetch终态与未推送范围；同一已授权目标的现成共享克隆若已有远端main对象，可核origin URL和commit后复用对象库，以独立GIT_INDEX_FILE选取本任务文件、正常推送并读回。共享索引及用户脏树保持不变；不要删除Git包、强推、改upstream或因传输失败重启设备事务。
+
+
+## Windows自有生成输出的格式与producer实证
+
+Build*.cmd的真实cd /d和Flutter build windows及脚本SHA先证明旧根；后核CMake home同源。MSVC COFF大对象可能超过4096节，应验证真实节表/符号表在文件范围内，不用随意阈值放行或只认后缀。CMakeCompilerId要核生成角色和同源CMake home；Windows Flutter的Dart app.so可以是ELF64，必须与现有Flutter app-aot-elf producer及结构对应，不能因不是PE当无用文件。仅hash命名flutter_build目录中的真实生成kernel/AOT可清，package_config、SDK输入和最新构建保护。
+
+链接输出从带ClCompile的生成vcxproj解析实际Release/x64 Link/Lib字段及OutDir宏，输出仍在旧build且PE/归档/MSF匹配才列入；复制的预编译SDK输入无自身link producer则保护。独占句柄下复核FileID/mtime/长度/SHA，再删除并回读；最后独立inventory返回0及真实App工具调用作为本次范围闭合。源码与四批实证见项目tool/windows/main679-cleanup-20261015和WINDOWS679_OWN_CACHE_CLEANUP_20261015.md。初次传输失败先对账，不重复已结束的删除；原指纹刷新载体不等于重启事务。
