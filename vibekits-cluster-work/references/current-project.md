@@ -2,6 +2,12 @@
 
 这是当前导航与已验证状态；执行前读实际台账、PID/创建时间和回执。历史完整记录在项目验收文档，不把旧参数直接当执行指令。同事在自己的机器映射路径、继承完整G01–G10与用户最新要求。
 
+## 2026-10-15 15:50 authoritative runtime update
+
+Mac155 now runs signed/notarized679/2679, PID73852 born15:38:20. Original ID/FP/Key/live default room retained; guard73807 accepted and exited0, main remains alive. Actual room-delegation system.info passed both directions with445/671; explicit real fixed-analysis model request completed ready/reported. Actual UI shows default-folded lists and disabled private-room application. ZIP441568637B/SHA9462c5f534888a34cb396ccf73bdd1b538ddfb8a18df7085074e296f77759813; complete678 rollback retained. Prior15:33 notary/installed snapshot below is historical. Full acceptance is NOT complete.
+
+Windows679 main lock resolved on Windows; latest2978 input hashes and canonical owned runtime qualified. Unique SyncOwnedRuntime-v5 terminal0. Build679-v3 drivers prepared; reconcile/start once and inspect exact PID/birth/state. Existing Windows671 remains running. See project docs/acceptance/MAIN679_MERGE_20261015.md for all original failures, paths, receipts and next steps. Other3 Macs671, Win619671,617 user-confirmed offline. G01-G10 remains active.
+
 ## 2026-10-15 15:33 当前接续覆盖（优先）
 
 用户指定以最新main合并、开发验证新版本。集群修复与媒体678已合入main252f43a21；测试说明与构建执行位修复后main8b3657684读回。外盘macos/main-cluster-679-20261015-v1/source为隔离main候选，70集群+77集成测试、完整Release v2、签名/兼容/主与助手身份连续性通过，尚未安装/发布。公证唯一ID99ec62c4-960a-4481-becd-2f853887a154 In Progress，读取evidence，不重提。共享155仍678/2678（4337，14:46:21），禁止用低677覆盖；另外三Mac671，Win58/619原671，617用户确认关机或断网。最新版本以实时为准。
