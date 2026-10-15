@@ -574,3 +574,5 @@ Windows原生v2终态0，2090.155s/30测试通过（14+12+1+3），1119冻结输
 hbbv生产已部署，不再写未部署：release20261016-room-consent-renewal-v1，PID546895，switch worker546799 terminalverified。Linux同源313通过；发现生产网页两处已在main但共享区落后，按精确差异补回共享区并保留线上网页，Linuxv2再313通过。原serverId/Key/设备成员客户不变，其他3unit原PID保持，数据和配置原路径保留。私有backup约1.59GB/quick_check通过，原529426备份观察超时但进程仍存活，查创建时间/IO后续对账；不要重跑备份或切换。只补两项旧发布目录缺失源码，所有102运行/客户端源码与候选一致。生产回执与恢复位置在hbbv/room-consent-renewal-20261015-v1/production-switch-observation-v1.json；服务器staging/room-consent-renewal-20261016-v2含switch-intent/state/worker.log。
 
 24h有界监控PID28679仍live；六在线默认房间approved，617用户确认离线。新一轮六机系统采样已实际调用，五台3样本成功，58单样本恢复；529开发活动CPU较高不能算严格idle通过。完整G01–G10仍active，下一步buildMac真实681覆盖门禁→其他Mac、Windows681完整包→统一升级、真实在途续期/撤销/权限边界→业务闭环/稳定验收/商城；不把服务器部署或包公证当全目标完成。
+
+02:20补充：共享控制Mac仍680/2680但实际主进程已变为31066（原因未归属，非本轮覆盖操作），Win58连接失效后按原ID重连，原指纹保持；不要复用90853的PID断言。Windows两个打包脚本在共享区已更新protocol4+正向能力检查，但尚未提交：真机执行新Test-Protocol4Gates681-v1.ps1被本机ExecutionPolicy拒绝UnauthorizedAccess，证据windows/room-consent-native-20261016-v1/windows-protocol4-gate-test681-v1.json。未改策略、未内联绕过、未重启构建；pending-windows-protocol4-gates681.json明确记录待测文件哈希。不能将这两份脚本或Windows新完整包标为通过；继续原已批准构建路线和其他设备工作，拒绝的脚本需本机策略批准入口。
