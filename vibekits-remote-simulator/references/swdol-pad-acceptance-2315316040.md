@@ -75,3 +75,23 @@ connected/adbReady不等于当前ADB实际可用。已观察同ID status仍conne
 ## 2026-10-16 旧世界画面不等于运行时仍存活
 102在摇杆HOME后发起转场，出现SWDOL-MOBILE shared frame: singular camera bridge；宿主删除runtime但PID和旧GPU画面仍在，后续快照超时。先读同PID的共享frame异常、当前runtime/准备状态与新快照，不将此类失败归为ADB不稳，也不以旧画面或输入脚本结束计传送通过。已失效界面无法正常退出时，归档后只关闭所属故障实例，明确记录force-stop而非正常Quit。
 103的有限修正是首个正常世界步前继续动态准备画面，等待ACT资源、class10锚点及相机同时就绪，不补造ACT/RNG步。实际摇杆HOME后0→1→0、两段圆点连续相位与新权威地图快照已核；仍不代表全部地图、低物理FPS速度或最新同源服务端通过。运行时与后台资格分别记录，未通过后台不切生产。
+
+
+## 2026-10-16 104同包低呈现FPS验收入口
+
+先核实际包/源码身份。104的MobileActivity仅在初始swdolTraceMovement=true的会话接受swdolAcceptanceFrameDelayMs（0—1000）；用现有singleTop intent显式设置1000可测到约0.97—0.99个新增present每秒，0恢复正常。普通启动实测忽略该参数、约60FPS。它是有界trace验收控制，不是系统屏幕Hz或产品FPS设置；其他版本不假定已有此能力，结束恢复0并正常Quit。
+
+SurfaceFlinger旧128帧窗口会混入前一模式，按上次最大present时间筛新增记录，再核新帧间隔，保留原始三列和sentinel。CPU仍按进程/全CPU ticks，PSS低频取样。断链前后分段，offline和device not found均不算游戏黑屏；原ID重连核新serial/同型号/包/PID/实际页面后续做，不把get-state当端到端稳定。
+
+104正常约40FPS与约0.99FPS的一个同起点、暖定方向、nominal4秒恒定摇杆案例得到相同终点；只作为该案例，不能覆盖全部输入相位或稳态速度。快照intent会触发生命周期及取消输入，所以先显式UP并保留独立停止录像，不能中途发快照后声称按压未被打断。当前控制角色在统一运动所有权前/键盘的旧时钟仍有213对303的组件反例；不能只暖定摇杆后测试便报所有动画一致，后续需覆盖该分叉及无取消的观测。
+
+
+## 2026-10-16 Linux资格与本地所有者锁的实测入口
+
+原数据根、Object/ASM和测试模块分别显式绑定：CMake的SWDOL_TEST_LEGACY_SERVER_ROOT指向实际只读mlzo/表根，SWDOL_TEST_OBJECT_DBF指向冻结Object及同目录完整ASM，SWDOL_PURE_WAITING_MODULE/OBJECTS绑定同源模块/表。不能把未投影的相邻xyOnlie目录或Mac绝对路径缺失当业务失败；也不能跳过测试写通过。packager同时收server/deploy/*.py，启动器须在归档内，和Object/ASM精确大小写、逐字SHA一起验证。
+
+LocalServiceOwnerFence在Mac继续gethostuuid，原生Linux读取有效持久machine-id并缓存进程身份；不打印实际标识，不用随机值/hostname兜底，Android不走此分支。保留0700目录、0600锁、设备inode、SQLite HAS_MOVED、O_NOFOLLOW/CLOEXEC及持有fcntl描述符，不unlink锁。用exec后的独立进程验证真实互斥，再验证重复申请失败不释放旧锁、释放后重取、路径/目录/数据库替换及权限/符号链接拒绝；实际服务UID另测。root单例通过不等于服务资格。
+
+实际104的共享权威、世界关闭、计费及菜单18项与HTTP7项通过；它们是该版本范围，不是以后固定绿灯。锁还被邮件恢复线程使用，补邮件数据库、两库领取冷恢复和迁移检查；只读核配对及当前route，备份world/auth/sms/mail，不因代码更新自动激活迁移。只切游戏时四运营BIN即使编好也未上线，必须分别记录。
+
+切换前核零所属连接/活跃角色、当前exe/SHA与unit，正常停旧节点、验证退休，再用新nonce启动和核续租；不清lease、不回写健康。回退只撤自己的精确dropin并回旧BIN，数据库不覆盖后续业务进度。构建等待核原PID及终态，不重复开编译；云端文件传输完成后再开始连续PAD验收，通道断开按status/实际shell恢复并保留监控间隙，不能猜原因。
