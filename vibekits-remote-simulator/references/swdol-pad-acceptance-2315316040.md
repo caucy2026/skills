@@ -71,3 +71,7 @@ connected/adbReady不等于当前ADB实际可用。已观察同ID status仍conne
 
 ## 2026-10-16 同PID重开后的诊断序号重置
 101实测正常Quit使Activity销毁后，Android可保留同PID；再次启动的新native宿主diagnosticSequence从1重置。旧采集器只接受id大于前次最大值，因而对真实新记录误报超时。成熟纠正：请求前保存同PID epoch格式日志的完整记录集合，请求后仅消费未见过的带时间戳记录，再按本次id重组并核part/count/bytes、请求期间所属PID和实际页面；pidof也加有界超时。旧超时保留，不清logcat制造通过，也不要求重启健康游戏。101同PID重开实际新id1（角色页）、随后id2（世界ready/idle）已核；序号不再作为跨Activity生命代次的单调身份。返回后的独立录像/画面仍须先于诊断intent，不能让该工具触发的生命周期成为恢复证据。
+
+## 2026-10-16 旧世界画面不等于运行时仍存活
+102在摇杆HOME后发起转场，出现SWDOL-MOBILE shared frame: singular camera bridge；宿主删除runtime但PID和旧GPU画面仍在，后续快照超时。先读同PID的共享frame异常、当前runtime/准备状态与新快照，不将此类失败归为ADB不稳，也不以旧画面或输入脚本结束计传送通过。已失效界面无法正常退出时，归档后只关闭所属故障实例，明确记录force-stop而非正常Quit。
+103的有限修正是首个正常世界步前继续动态准备画面，等待ACT资源、class10锚点及相机同时就绪，不补造ACT/RNG步。实际摇杆HOME后0→1→0、两段圆点连续相位与新权威地图快照已核；仍不代表全部地图、低物理FPS速度或最新同源服务端通过。运行时与后台资格分别记录，未通过后台不切生产。
