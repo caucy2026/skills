@@ -238,3 +238,12 @@ Mac文件访问权限统一引用[远程仿真技能的macOS文件权限记录](
 新发布从最新main的隔离检出继承完整产品代码；旧候选只复用已哈希资格化的运行时/工具链，不用若干旧文件覆盖最新main。记录相对main的全部产品差异，平台生成锁和版本有明确来源。生成平台依赖前先比较pubspec：最新main新增依赖时必须由目标平台按主线精确锁生成自己的package_config/插件登记，不能假称旧图仍完整，也不能移植Mac图到Windows。主线脚本缺execute位先保留失败、比较已合格脚本内容与模式，只修原调用所需模式并备份主线，不改执行策略。
 
 房间公开目录与已鉴权房间混合时，公开可申请性是展示提示，不能覆盖真实pending/approved决定。确定ROOM_NOT_DISCOVERABLE可持久显示未开放，未知/丢失回执仍申请核对中、禁止自动重放；新鲜公开目录重开只清明确unavailable提示。已通过旧负控、三轮HTTP/UI及70项联合源码测试；最终包真机另验。room_connect/room_call外层预算须涵盖原生建链与票据操作，普通RPC保持原预算；迟到外层超时先对账原工具/audit是否完成，不重发未知事务，也不延长票据TTL掩盖外层超时。
+
+
+### Latest-main desktop qualification and credential-proof invalidation
+
+When the latest main adds native plugins, old generated plugin registration is a changed native input. Do not assert old credential-proof parity or waive that file. Rebuild the mature isolated native test host against the current linked plugin libraries; only its test mutex/title differ, real native credential calls use unique synthetic keys and verify deletion. Bind the exact compilation/resource source set from the actual project, not an invented count, plus current frozen Dart/host/AOT/DLL hashes and active user/Session/PID lifetimes.679 real Session1 eight-key probe passed; this is credential-scope evidence, not all app acceptance.
+
+Freeze actual PE inventory after new dependencies: do not retain old counts. Preserve prior valid-signature bytes, identify each new vendor/product file, and pin expected totals for the new run. Check compiled version, Inno numeric/full version and Registry VersionCode before packaging and read back registry after overlay. An old template's ordinal can be stale even when its visible version is correct.
+
+A known terminated partial SCP is resumed only after original ID/fingerprint and a source-prefix hash match, then complete final hash and signatures are checked. A matching LAN host key does not imply key authentication; failed LAN authentication does not authorize trust changes. Continue the already-authorized native carrier without changing credentials.

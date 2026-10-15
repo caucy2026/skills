@@ -2,6 +2,13 @@
 
 这是当前导航与已验证状态；执行前读实际台账、PID/创建时间和回执。历史完整记录在项目验收文档，不把旧参数直接当执行指令。同事在自己的机器映射路径、继承完整G01–G10与用户最新要求。
 
+## 2026-10-15 17:08 current run override
+
+Mac155 remains679/PID73852; three remote Macs now have complete679 stages and signatures verified, not installed. Windows679 built0, actual version2679,2978 inputs verified. Fresh native credential host1468 passed8 synthetic keys in original Session1 and cleaned all. Stage253/34 ready; qualification SHA9BEC74C4F7AE230562E49E6DB2EC160B42A56DDC05763F65AA8AA1A69752D0EF.
+
+Original Windows signing dev679-signed-runtime-20261015-v1/attempt1 is live: parent30300/birth134365275066652342. Inner34/34 signed/verified; user confirmed the first PIN. Currently packaging; do not restart or re-sign. Need final outer authentication only if a fresh actual window appears, then full253 verification. Source-only scripts archived in project tool/windows/main679-latest-main-20261015. Current phase/receipt paths and failure history in MAIN679_MERGE_20261015.md take precedence over older snapshots below. Full G01-G10 and fleet/store acceptance remain incomplete.
+
+
 ## 2026-10-15 15:50 authoritative runtime update
 
 Mac155 now runs signed/notarized679/2679, PID73852 born15:38:20. Original ID/FP/Key/live default room retained; guard73807 accepted and exited0, main remains alive. Actual room-delegation system.info passed both directions with445/671; explicit real fixed-analysis model request completed ready/reported. Actual UI shows default-folded lists and disabled private-room application. ZIP441568637B/SHA9462c5f534888a34cb396ccf73bdd1b538ddfb8a18df7085074e296f77759813; complete678 rollback retained. Prior15:33 notary/installed snapshot below is historical. Full acceptance is NOT complete.
