@@ -61,3 +61,9 @@ connected/adbReady不等于当前ADB实际可用。已观察同ID status仍conne
 性能采样须对齐场景事件和计划总时长；本轮主监控600点1311秒、退出补采60点，均有真实终态，但中间约55.3秒缺口必须保留。不能把两段拼成全程无间断。PSS原值为KiB，271151KiB约264.8MiB；低频内存快照不证明native/GPU全部所有者或无泄漏。SF --latency返回的是末尾present窗口，连续查询最新时间戳不变时为陈旧窗口，不能把其FPS当后台仍在绘制；保留原始三列时间、无效sentinel和新present判据。
 
 退出动作前态必须取实际执行录像的首帧，不能只依赖较早菜单截图。95首次退出录像起始时系统菜单已经关闭，随后native日志虽证明点击坐标送达，却不能证明命中了退出按钮；归为前态不成立/退出未验，不擅自修命中框。另有晚于该点击约140秒的非本任务摇杆轨迹，不能倒推它导致先前15秒退出失败。对照本任务动作账、同PID SWDOL-INPUT的时间/seq/Down-Move-Up及完整视频，分别记录真实控制冲突与产品缺陷；发现未分配操作先协调设备归属，避免继续触控或强关正在被使用的实例。
+
+
+## 2026-10-16 Android正常退出接口与认证拒绝
+共享前台Cancel/Quit必须沿LegacyFrontView.intent→providers.quit→Android平台finish真正关闭所属Activity。99补齐AndroidWorldServices此前漏接的provider，正常登录页Cancel以及认证拒绝Return后Cancel均已实机回读Activity消失，未force-stop。Android仍可保留cch-rec缓存进程/空Task；PID仍在不单独证明界面没退出，也不为制造“退出”不断杀缓存进程。游戏内登出回登录和应用Quit分别验，不混成一个结果。
+现网master -10映射的“当前区域正在保存资料”是通用失败提示，不据中文推定真正保存或角色被占用。先核本轮现网PID/exe/SHA、认证worker结果、lease及节点；lease inactive和节点active也不等于认证完整健康。不为过验收删lease/写DB/循环登录；服务拒绝时世界/HOME脚本不能计入世界通过。具体99包与证据只引用项目迁移账，不固化为下轮版本。
+本机adb.session_open的get-state心跳曾正常而端到端shell仍超时；仍须实际shell读回，不能将心跳当通道稳定修复。仅回收本任务session和serial，真实失效时按同ID重新取地址；本轮工具返回transport=relay是实际记录，须结合身份/授权/实际调用核查，不假写p2p。
