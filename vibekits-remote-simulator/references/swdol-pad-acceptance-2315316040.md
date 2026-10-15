@@ -67,3 +67,7 @@ connected/adbReady不等于当前ADB实际可用。已观察同ID status仍conne
 共享前台Cancel/Quit必须沿LegacyFrontView.intent→providers.quit→Android平台finish真正关闭所属Activity。99补齐AndroidWorldServices此前漏接的provider，正常登录页Cancel以及认证拒绝Return后Cancel均已实机回读Activity消失，未force-stop。Android仍可保留cch-rec缓存进程/空Task；PID仍在不单独证明界面没退出，也不为制造“退出”不断杀缓存进程。游戏内登出回登录和应用Quit分别验，不混成一个结果。
 现网master -10映射的“当前区域正在保存资料”是通用失败提示，不据中文推定真正保存或角色被占用。先核本轮现网PID/exe/SHA、认证worker结果、lease及节点；lease inactive和节点active也不等于认证完整健康。不为过验收删lease/写DB/循环登录；服务拒绝时世界/HOME脚本不能计入世界通过。具体99包与证据只引用项目迁移账，不固化为下轮版本。
 本机adb.session_open的get-state心跳曾正常而端到端shell仍超时；仍须实际shell读回，不能将心跳当通道稳定修复。仅回收本任务session和serial，真实失效时按同ID重新取地址；本轮工具返回transport=relay是实际记录，须结合身份/授权/实际调用核查，不假写p2p。
+
+
+## 2026-10-16 同PID重开后的诊断序号重置
+101实测正常Quit使Activity销毁后，Android可保留同PID；再次启动的新native宿主diagnosticSequence从1重置。旧采集器只接受id大于前次最大值，因而对真实新记录误报超时。成熟纠正：请求前保存同PID epoch格式日志的完整记录集合，请求后仅消费未见过的带时间戳记录，再按本次id重组并核part/count/bytes、请求期间所属PID和实际页面；pidof也加有界超时。旧超时保留，不清logcat制造通过，也不要求重启健康游戏。101同PID重开实际新id1（角色页）、随后id2（世界ready/idle）已核；序号不再作为跨Activity生命代次的单调身份。返回后的独立录像/画面仍须先于诊断intent，不能让该工具触发的生命周期成为恢复证据。
