@@ -595,3 +595,12 @@ FullBuildv2 worker33080/child36264/birth134365699868233719已exit0/601.542秒、
 真实在途续期trial v1原request real-renew681-33ef591424724b929d1c378c5248adb4在682覆盖打断时已签发30167a3fa72ec9ea6be0ad451dfc6d37；后台后读明确expired/consumed0/completed0，未重放，不计产品失败或通过。SQL已观察681目标155同revision547的正常expiry扩展；在途原票据跨续期的真实完成仍待新稳定场景证明。完整G01–G10不缩减，当前2台Mac682、2台Mac679、2台Win679、617离线，不是全机统一。
 
 04:49收尾核验：Office58键盘已恢复原源2/1:1，浏览/交换ControlCommand均原关闭；自建cmd无任务已关闭，原暂停会话未误发新消息。不要将GUI错误路径当Task执行；真实Task仅通过带SHA原程序登记一次。WinFullBuildv2已经terminal0（33080/36264），后续只采集产物，不重启构建。529LaunchAgent已terminal0及not running，后续补Harness模型/工具与资源验收，不重装。
+
+### 2026-10-16 05:20 CST — 真实跨续期通过；Windows683继续
+
+- 共享Mac最新已683/2683，PID51215；最终包SHA5072eb51a46379d73d50538841cc197abbb7c4edbedbc0cd13203b98589e9254，notary Accepted。主线eb6e6b6修复已完成派生归档补行，不能把已知有缺陷的682继续当最新发布；保持共享App，不降级、不打断其他会话。
+- 原房间真实445/679→529/682跨自然自动续期PASS：request real-renew529-260a9e9ab74d4d45b2c7cded66a94a28；delegation5eb7d3b925458a2f67d38b261287858a；revision225、scope不变、原票据expiry不变、消费和完成各1，新目标PID45767。driver5263自然exit0；证据V/docs/acceptance/ROOM_REAL_RENEWAL_20261016.md及同名evidence JSON。仍不是撤权/全网格/Windows/长期稳定PASS。
+- 682构建与恢复文本源码完整备份main34289d30，28文件读回，共享index不变。首次凭据扫描把rustdesk-harness路径的sk-子串误判；只在逐项核实后补词边界扫描。XML归档转UTF8且更新声明，哈希清单为归档字节，真实任务原UTF16保留。
+- Windows683 Dwork=archived-rows-683-20261016-v1；新source=archived-rows683-20261016-v1。仅引入主线683的JS/两测试和版本输入，对照Mac冻结全部lib/assets/lock。首轮exit1/21.260s因本人脚本默认CRLF；次轮恢复精确两文件LF，3058生产输入parityPASS，随后exit1/68.445s，因原source manifest未收录Node PE，按清单复制漏运行时可执行文件。两轮均未进入完整编译或签名，失败保留。正补原合格682完整Windows runtime并逐文件对齐独立runtime-build-inputs683，不改旧manifest冒充已包含。下一次必须读原start/terminal，不能机械再次Register。
+- 现有成功签名CMD是PS7.6.6，无Bypass；当前该host LocalMachine RemoteSigned，其余层Undefined。PS5 Restricted拒绝的旧Test-Protocol4Gates681不重跑、不内联、策略未改。不要把错误host拒绝泛化为原批准PS7入口不可用。
+- 房间HB观察PID28679仍运行，六在线/all7approved，617仍用户确认离线。新一小时真实健康观察位于app-release-gate/vibekits/room-monitor-20261016-v2，observe_real_health_v1.py，读health-start实际PID与terminal；每120s六台原身份真实info/resources，首轮六台均成功。它不是严格空闲、连续socket或24h/七机最新验收。
