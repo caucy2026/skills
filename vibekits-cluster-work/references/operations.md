@@ -292,3 +292,11 @@ Build*.cmd的真实cd /d和Flutter build windows及脚本SHA先证明旧根；�
 源码monorepo新增shared/kemi-cluster时，复制已提交锁和15个源文件，不升级依赖。保留hbb_common子模块base及已有覆盖，按main已记录的rendezvous patch先check再apply；否则kemi relay proto字段缺失导致12编译错误。原生根外的本地共享crate另纳入冻结SHA及literal include闭合。按实际build.rs证明version.rs和scrap生成yuv/vpx绑定是输出，记录生成前后，不把其他源任意列入exemption。
 
 旧Windows已登记Rust1.75无Option::is_none_or时，两处用等价map_or(true,predicate)适配None/Some语义，保持工具链、依赖及物理资源门禁；新任务引用新source manifest，旧terminal101/日志保留。原有缓存只复制到新target并核原raw字节不变，robocopy原始exit1为复制成功，不当失败重复复制。Unix IPC测试的SUN_LEN是路径字节上限：TMPDIR在规定外盘使用独立短目录，不回落系统/tmp，不删断言。Shell中的Windows路径经原样/前斜杠处理，避免Python解释b/r控制符；登记前失败先确认没有任务/worker，再恢复原事务。
+# Real renewal/revocation evidence (2026-10-16)
+
+For an original-ticket renewal test, issue once, observe the target's natural renewal with identical revision/scope, then call before the original ticket expiry and check exactly one consumption/completion. Never extend the ticket or alter the clock. The production 445/679 -> 529/682 case passed; see the project ROOM_REAL_RENEWAL_20261016 record.
+
+Native revocation cancels room bindings and can surface as a generic HTTP connection-close error rather than a `revoked` string. Correlate the target's signed inactive scope, `nativePolicyMirrored=true`, server state, a call before original expiry, zero consumption/completion, and a successful new delegation after restoring the original semantic scope. Preserve a failed explicit-error assertion separately. This is scoped revocation evidence, not the entire role/leave matrix.
+
+A source-only Windows input manifest is not a complete runtime copy manifest: the 683 preparation omitted Node PE files. Copy the qualified complete runtime, verify existing bytes, add only missing files, and maintain a separate full runtime hash manifest. Validate both manifests. Generate version text with explicit LF bytes for parity with the Mac freeze. Preserve the original failed preparations.
+

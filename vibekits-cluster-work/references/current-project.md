@@ -576,3 +576,38 @@ hbbv生产已部署，不再写未部署：release20261016-room-consent-renewal-
 24h有界监控PID28679仍live；六在线默认房间approved，617用户确认离线。新一轮六机系统采样已实际调用，五台3样本成功，58单样本恢复；529开发活动CPU较高不能算严格idle通过。完整G01–G10仍active，下一步buildMac真实681覆盖门禁→其他Mac、Windows681完整包→统一升级、真实在途续期/撤销/权限边界→业务闭环/稳定验收/商城；不把服务器部署或包公证当全目标完成。
 
 02:20补充：共享控制Mac仍680/2680但实际主进程已变为31066（原因未归属，非本轮覆盖操作），Win58连接失效后按原ID重连，原指纹保持；不要复用90853的PID断言。Windows两个打包脚本在共享区已更新protocol4+正向能力检查，但尚未提交：真机执行新Test-Protocol4Gates681-v1.ps1被本机ExecutionPolicy拒绝UnauthorizedAccess，证据windows/room-consent-native-20261016-v1/windows-protocol4-gate-test681-v1.json。未改策略、未内联绕过、未重启构建；pending-windows-protocol4-gates681.json明确记录待测文件哈希。不能将这两份脚本或Windows新完整包标为通过；继续原已批准构建路线和其他设备工作，拒绝的脚本需本机策略批准入口。
+
+
+### 2026-10-16 04:46：沿682统一候选继续
+
+本机681/97866已真实覆盖健康提交：原155 ID、原会话、一次非活动单击ASCII、模型VIBE681MODEL_OK、内嵌既有目录选择后实际单次pwd、六项菜单/置顶双向/重命名恢复、445独立反向实际MCP与room-delegation读取均通过对应有限范围。旧31066及90971退出。随后同事派生精确事实修复111d577d构建并覆盖682，第一次PID12300，后续冷启70216、60533；不要覆盖回681。682在生产lib/assets/native/macos范围相对681只有coordinator及版本变化，沿用本轮合格c9原生4。最终包macos/derived-context-682-20261016-v1/source/Vibekits-682-final.zip，441977065B/SHA8ad6655a98b1e0ce0627b80e59003da200c4540dade2968119ac2ebbc9cce0c3，mainb4374b1adc52018fcc39a5ae085f4082c35d80aa6a6a133550d14d685147b5b5。其derived682-real-turn-result及after-cold-real-turn-result已落地，优先复用，其他聊天界面与未知审批不代操作。
+
+529已从679/PID90344真实覆盖到682/PID45767，原ID/指纹/既有访问保持，真实MCP、native4+renewal、正式主程序SHA与default-room新心跳通过；独立guard44614 exit0/ACK。base为/Users/kemi/Library/Caches/vibekits-682-5298938227-stage-20261016-v1，必要rollback679.app保留。原guard已结束，不重启安装。682包在该机已验全签名。132的681旧包传输完但verify观察因控制端替换失联，不能称验签通过；它尚未升682。445仍679。617仍用户确认离线。
+
+Windows682实际目录：Dwork/room-renewal-682-20261016-v1；Dsource/room-renewal682-20261016-v1；本机windows/room-renewal-682-20261016-v1。共同生产源main111d577d，1171覆层文件，旧679基线2978逐一SHA通过，新冻结3057。Pub hosted缓存现场为空（原679 package_config指向pub.flutter-io.cn，删除归属未知），Preparev1离线失败后仅恢复原锁版本；v2 Got dependencies且锁8557e6...不变，但本人read_text未显式UTF8在GBK下失败。Finalizev3显式UTF8、只完成清单，exit0，不重复制、不改SDK/依赖锁。preparev1/v2失败留存。
+
+FullBuildv1 worker37328/child37156 exit1/115.258秒，未进入完整编译：6个测试夹具失败（5处无.exe的Mac helper名、首次runner依赖Duration.zero及心跳顺序矛盾）；只修两个共享test文件，未改产品或Mac签名包。Mac相关63通过；Windows8组111通过/1个明确Mac专用用例跳过，不替代Windows人员确认实机。main e6e5280a已读回，详见WINDOWS682_CLUSTER_BUILD_20261016.md。
+
+FullBuildv2 worker33080/child36264/birth134365699868233719已exit0/601.542秒、资源观察结束，完整Release输出存在；不重跑或继续轮询作业。结果目录Dresults/room-renewal682-20261016-v2，接下来读五核心、真实EXE版本、source/native proof形成unsigned receipt，再沿原完整Stage→内外签名→最终字节/覆盖验收。尚未签名/安装/商城发布。Windows两个PS protocol4打包校验仍为草稿待执行策略批准，不执行被拒Test脚本的内联版本、不改变执行策略。
+
+控制端冷启造成SCP255时先查实际App PID与原作业；本轮681→682和后续冷启确实导致原连接失效。已通过独立KEMI远程办公238638760实际核对Win58在线；精准最近卡片进入，AX setValue不能证明控制器更新，菜单AX点击曾无实际效果，改可见坐标才打开正确File Transfer窗口。独立File Transfer传五个启动文件至同一Dwork，完成状态明确；路径框键盘无效时改鼠标目录导航，不写未知Xshell。RDP输入源2的typeText丢标点/大写，输入源1不接收该自动化输入；探针不执行。一次cmd报d不是命令、未运行Python；后来合法原ID SSH执行原带SHA注册程序才实际启动Task。源1/翻译测试须恢复原源2/1:1，独立任务不跟随Mac客户端退出。
+
+真实在途续期trial v1原request real-renew681-33ef591424724b929d1c378c5248adb4在682覆盖打断时已签发30167a3fa72ec9ea6be0ad451dfc6d37；后台后读明确expired/consumed0/completed0，未重放，不计产品失败或通过。SQL已观察681目标155同revision547的正常expiry扩展；在途原票据跨续期的真实完成仍待新稳定场景证明。完整G01–G10不缩减，当前2台Mac682、2台Mac679、2台Win679、617离线，不是全机统一。
+
+04:49收尾核验：Office58键盘已恢复原源2/1:1，浏览/交换ControlCommand均原关闭；自建cmd无任务已关闭，原暂停会话未误发新消息。不要将GUI错误路径当Task执行；真实Task仅通过带SHA原程序登记一次。WinFullBuildv2已经terminal0（33080/36264），后续只采集产物，不重启构建。529LaunchAgent已terminal0及not running，后续补Harness模型/工具与资源验收，不重装。
+
+### 2026-10-16 05:20 CST — 真实跨续期通过；Windows683继续
+
+- 共享Mac最新已683/2683，PID51215；最终包SHA5072eb51a46379d73d50538841cc197abbb7c4edbedbc0cd13203b98589e9254，notary Accepted。主线eb6e6b6修复已完成派生归档补行，不能把已知有缺陷的682继续当最新发布；保持共享App，不降级、不打断其他会话。
+- 原房间真实445/679→529/682跨自然自动续期PASS：request real-renew529-260a9e9ab74d4d45b2c7cded66a94a28；delegation5eb7d3b925458a2f67d38b261287858a；revision225、scope不变、原票据expiry不变、消费和完成各1，新目标PID45767。driver5263自然exit0；证据V/docs/acceptance/ROOM_REAL_RENEWAL_20261016.md及同名evidence JSON。仍不是撤权/全网格/Windows/长期稳定PASS。
+- 682构建与恢复文本源码完整备份main34289d30，28文件读回，共享index不变。首次凭据扫描把rustdesk-harness路径的sk-子串误判；只在逐项核实后补词边界扫描。XML归档转UTF8且更新声明，哈希清单为归档字节，真实任务原UTF16保留。
+- Windows683 Dwork=archived-rows-683-20261016-v1；新source=archived-rows683-20261016-v1。仅引入主线683的JS/两测试和版本输入，对照Mac冻结全部lib/assets/lock。首轮exit1/21.260s因本人脚本默认CRLF；次轮恢复精确两文件LF，3058生产输入parityPASS，随后exit1/68.445s，因原source manifest未收录Node PE，按清单复制漏运行时可执行文件。两轮均未进入完整编译或签名，失败保留。正补原合格682完整Windows runtime并逐文件对齐独立runtime-build-inputs683，不改旧manifest冒充已包含。下一次必须读原start/terminal，不能机械再次Register。
+- 现有成功签名CMD是PS7.6.6，无Bypass；当前该host LocalMachine RemoteSigned，其余层Undefined。PS5 Restricted拒绝的旧Test-Protocol4Gates681不重跑、不内联、策略未改。不要把错误host拒绝泛化为原批准PS7入口不可用。
+- 房间HB观察PID28679仍运行，六在线/all7approved，617仍用户确认离线。新一小时真实健康观察位于app-release-gate/vibekits/room-monitor-20261016-v2，observe_real_health_v1.py，读health-start实际PID与terminal；每120s六台原身份真实info/resources，首轮六台均成功。它不是严格空闲、连续socket或24h/七机最新验收。
+# Latest checkpoint: 2026-10-16 05:35 CST
+
+- Real revocation on 529: native-mirrored inactive revision226 closed the original carrier. Old delegation05f8dac5abe80a8684070b2a5ca4db8a failed 54.166 seconds before original expiry, with consumption/completion zero. Finally restored original semantic scope revision227, native mirror confirmed. New delegation92f527747976d506ec741839af7a6c61 called the same PID45767 successfully. The explicit error-message assertion failed and is preserved; the corroborated scope is cancellation/zero execution/restored reachability. See V/docs/acceptance/ROOM_REAL_RENEWAL_20261016.md and evidence/ROOM_REAL_REVOCATION_529_20261016.json.
+- Signed Mac683 ZIP (441977330 bytes, SHA5072eb51a46379d73d50538841cc197abbb7c4edbedbc0cd13203b98589e9254) is staged and extracted on 132 and445. Both passed all-architecture codesign, Gatekeeper, build2683 and main hash12ed050d71d6a5faedf8021c3b5e1bb312a2303e7dbbacb32d6b73cce244b13d. No installation; both original679 apps remain. Per-device cache root: /Users/mac/Library/Caches/vibekits-683-<originalID>-stage-20261016-v1. Receipts: B681/evidence/<ID>-stage-*683.json. Do not re-extract or install without checking original transaction and applicable local683 gates.
+- Windows Task VibeKits-FullBuild683-20261016-v3: worker35240/child33672, birth134365728281481585. Actual process status259 and matching birth were verified; live 5-second resource sampling continues. Read Dwork/build-terminal683-v4.json before any recovery. Runtime enumeration: qualified source28815 files; destination19454 files and growing; no terminal yet. Main391e45dc backs up21 source/record files.
+- Health observer34305 remains finite/active. Latest42 samples:41 successes, one Windows58 STRUCTURED_TOOL_FAILURE with cause not retained by the observer. Do not claim all success or physical offline; follow later samples. Original room monitor28679 still observes six fresh heartbeats and approved membership for all7;617 remains user-confirmed offline and is not connected.
+
