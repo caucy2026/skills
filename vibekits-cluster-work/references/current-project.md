@@ -522,3 +522,16 @@ Real four-Mac mesh:10/12 directed one-tool paths passed. ROOM679-RENEWAL-RACE is
 当前155主PID90853，529清理后90344，445清理后93292（原ID/指纹/真实system.info已核）；58已679/2679主30944，健康ACK提交且安装守护exit0，原ID/Key/签名/注册版本/MCP/双向94字节传输/房间通过。生成description已删除529的109条、58的215条、445的126条；普通未知/业务会话与排队消息保留。132的246条仅分类合格尚未删除。Windows本任务旧664/671/677生成对象108个已删除，不代表全部历史缓存完成。
 
 619仍671：679最终包已在目标核290827192字节、SHA54BCD8627F90EE3DCC023FB3A157B1291FBDE273EF00D3FCCCB01BC43A3759D5、签名Valid；原671完整回退备份在准备/启动交界，先对账619-backup679-launch-intent.json及launch.json，禁止重复启动。617用户确认关机/断网。房间7名approved、6在线；全队新版/正式稳定性与商城仍未通过。ROOM679-RENEWAL-RACE native/client配套未完成，server草稿21测试通过但未部署；不得把新票据重试当修复。
+
+
+### 2026-10-15 22:10 619终态与续期修复
+
+VibeKits main e21cbbf6789dde825e8875e8d36e1f8573cafd93新增20文件，父7597e506b808553db18220cb07c81c871c3e5b3a，原台账仅追加15行、删除0行，远端blob与共享索引验证通过。619已完成679/2679覆盖，主16140/birth134365460858042102，原ID/FP/Key/签名/注册版本/真实MCP/94B双向传输/default approved均核，13:56:36.238Z verified_committed，terminal0。旧671完整回退31131文件保留。v1正常消息退出失败/terminal1/no-install，v2由原登记办公159974026托盘正常退出后独立守护10492继续，不能重跑。
+
+132清理guard1461 exit0、新主1579；445新主93292。实际启动后五台远端description均0，永久删除账本132246/445126/529109/58215/619257，共953；155亦0。普通/未知/cluster-analyze保留，其他调试归属和历史Windows缓存仍待继续核验，不能称全部清理完。155由同事正式升级680/PID90853，ACTUAL_TRANSPORT_20261015.md有签名、公证、原ID、445反向实调证据；不覆盖回679。当前六在线155680/其余五台679，617用户确认关机或断网，七名approved。
+
+原生Policy续期修复推送caucy2026/rust-desk main 8cd91f6a915a876830fbcd6ed0a4aacf9d4bafb8，父403120dbb8f599303da5dd38d012738799020b3f；只用backup remote、实时三方合并、独立索引与远端读回，未推origin upstream。相同revision且所有语义字段完全一致、旧scope有效时才延长expiry保留绑定；query仍受旧快照和原不可变票据期限限制，改变身份/权限/工具/限额/角色revision仍撤销。精确生产方法和同源测试独立rustc三项/15字段负矩阵通过；完整native构建/真实复验未做，不部署到旧679包。
+
+下一步Dart配套未开始改：已认证GET self consent/renewalSupported证明当前提交，完整语义匹配才保revision续期。未知POST先GET对账；已提交且剩余超过60秒只镜像原body和真实expiry，不重新发nonce；未提交重试沿用旧expiry命名的durable envelope。缓存expires取真实ACK signedConsent.expiresAt，不得now+600000。显式权限变更仍新rev。服务端显式POST consent/renew草稿21测试通过但未部署；必须合入680媒体/transport最新主线及新native后统一候选、真实复现旧失败和撤销负例，再谈商城。
+
+六机资源抽样：155/132/445/529/619各三次真实采样已取；58同工具MCP超时，SSH WMI过滤查询另报0x80041017，两次首败保留。不能将资源查询错误当设备离线或系统健康PASS；需用已授权实际OS接口恢复取证。房间1小时有界只读监控已重新启动，证据持续写room679-mixed-version-observation.jsonl；不是全天候或七台统一最新稳定PASS。
