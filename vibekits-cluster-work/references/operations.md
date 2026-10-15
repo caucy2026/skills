@@ -247,3 +247,21 @@ When the latest main adds native plugins, old generated plugin registration is a
 Freeze actual PE inventory after new dependencies: do not retain old counts. Preserve prior valid-signature bytes, identify each new vendor/product file, and pin expected totals for the new run. Check compiled version, Inno numeric/full version and Registry VersionCode before packaging and read back registry after overlay. An old template's ordinal can be stale even when its visible version is correct.
 
 A known terminated partial SCP is resumed only after original ID/fingerprint and a source-prefix hash match, then complete final hash and signatures are checked. A matching LAN host key does not imply key authentication; failed LAN authentication does not authorize trust changes. Continue the already-authorized native carrier without changing credentials.
+
+
+### Automatic room-consent renewal can race a valid ticket
+
+Treat timestamp-only scope renewal separately from revocation when designing the protocol.679 real mesh proved a ticket can be minted, then invalidated1.845seconds later by automatic revision rotation before its sole call. Reconcile the original delegation's issuance/expiry/revision, target consent issuance/revision, native handshake timestamps, and durable consumption/completion. Empty consumption is not by itself a safe replay claim while the ticket remains live; never silently replace an unknown execution with a new request. A refused subsequent429 may be the outstanding ticket occupying maxConcurrent1, not offline hardware. Preserve both first failures, enforce server backoff, and prove renewal continuity plus explicit revocation/downgrade/leave fail-closed regressions before declaring a fix. Longer TTL, wider limits, permanent whitelist fallback or new-ticket success alone do not fix this race.
+
+After signing terminal PASS, independently read original run/manifest/cert/counts, all-file SignTool reports, main/outer verification, actual final bytes/hash, script and wrapper exit0 and temporary settings restoration. Match the report producer's PowerShell array semantics or parse the raw report independently; a PS5 pipeline-wrapped array must not become a lowered count.679 PS7 collection verified253 exact entries after preserving a PS5 collector assertion failure. Finished signing is never replayed because a later collector failed.
+
+
+## 2026-10-15 生成调试会话清理与载体恢复实证
+
+- known_hosts仍有原指纹和旧端口不等于转发监听活跃。共享控制端进程更换后先对账在途事务，再按原ID重连并核原指纹；不得因SCP255重复启动签名、安装或删除。
+- Mac /usr/bin/python3存在也可能只是CLT安装shim。用实际--version核可用性；已有App bundled Node可复制成独立守护避免App Job退出，无须为清理安装新工具链。
+- queued/draft与running/dispatching不同：不删除排队业务消息；目标待删会话有非终态队列必须保护，其他未运行队列逐字节核清理前后不变。未知状态保持保护。
+- SDK canonical第一条source.kind=user可为生成设备描述提示；source.kind=runtime-context不是第二个真实人类输入。只凭cluster-description名称或年龄不能删除，必须结合生成提示、无工具副作用、无continuation/目标pending queue、owner停机和完整manifest。cache-only orphan另核canonical仅零字节lock、未索引、全部typed projection统计0、identity为home及空inbox。
+- 用产品原SessionStore删除，核永久删除账本、canonical目录、workspace/pin/archive索引和全局/分会话投影；保留真实/未知业务。Helper先报告无写入，整批预校验，内容变化跳过；测试businessID拒绝、owner忙拒绝、变化跳过、正确删除与无关字节保留。
+- 大清单响应受stdout尾部截断影响，优先固定上传脚本只回传压缩元数据和聚合计数。ssh_command_requires_uploaded_script必须遵守，不改内联编码绕过。
+- Windows旧编译缓存按实际Build脚本归属、文件格式、独占句柄、文件ID/mtime/长度/SHA识别；不能因为旧版本目录就删除源/SDK/原生输入。最新正式包及仍需回退保留，空间观测增量不得冒认共享工作贡献。
