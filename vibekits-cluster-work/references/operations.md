@@ -265,3 +265,10 @@ After signing terminal PASS, independently read original run/manifest/cert/count
 - 用产品原SessionStore删除，核永久删除账本、canonical目录、workspace/pin/archive索引和全局/分会话投影；保留真实/未知业务。Helper先报告无写入，整批预校验，内容变化跳过；测试businessID拒绝、owner忙拒绝、变化跳过、正确删除与无关字节保留。
 - 大清单响应受stdout尾部截断影响，优先固定上传脚本只回传压缩元数据和聚合计数。ssh_command_requires_uploaded_script必须遵守，不改内联编码绕过。
 - Windows旧编译缓存按实际Build脚本归属、文件格式、独占句柄、文件ID/mtime/长度/SHA识别；不能因为旧版本目录就删除源/SDK/原生输入。最新正式包及仍需回退保留，空间观测增量不得冒认共享工作贡献。
+
+
+## 六机系统抽样与Git记录恢复（2026-10-15）
+
+房间心跳、实际App进程和OS资源是不同证据。system.resources三次采样取得后保留原始私有结果，只向主线写必要聚合；Mac top截短进程路径不能用于指认具体App或合并同名前缀。Win58原MCP超时和WMI过滤0x80041017均保留；沿固定上传MJS、既有Node/koffi只读路线，以原生libuv各核累计CPU计数差、os内存和GetDiskFreeSpaceExW做三次OS抽样，并核原主PID/出生存活。脚本在项目tool/windows/main679-cleanup-20261015/SampleOwn58NativeOsHealth679-v1.mjs，不能把此替代结果冒称原MCP/GPU/完整目录或长期稳定PASS，也不为拿绿灯降低采样次数、放宽普通RPC或改执行策略。
+
+备份镜像Git fetch出现early EOF时先确认该fetch终态与未推送范围；同一已授权目标的现成共享克隆若已有远端main对象，可核origin URL和commit后复用对象库，以独立GIT_INDEX_FILE选取本任务文件、正常推送并读回。共享索引及用户脏树保持不变；不要删除Git包、强推、改upstream或因传输失败重启设备事务。

@@ -535,3 +535,6 @@ VibeKits main e21cbbf6789dde825e8875e8d36e1f8573cafd93新增20文件，父7597e5
 下一步Dart配套未开始改：已认证GET self consent/renewalSupported证明当前提交，完整语义匹配才保revision续期。未知POST先GET对账；已提交且剩余超过60秒只镜像原body和真实expiry，不重新发nonce；未提交重试沿用旧expiry命名的durable envelope。缓存expires取真实ACK signedConsent.expiresAt，不得now+600000。显式权限变更仍新rev。服务端显式POST consent/renew草稿21测试通过但未部署；必须合入680媒体/transport最新主线及新native后统一候选、真实复现旧失败和撤销负例，再谈商城。
 
 六机资源抽样：155/132/445/529/619各三次真实采样已取；58同工具MCP超时，SSH WMI过滤查询另报0x80041017，两次首败保留。不能将资源查询错误当设备离线或系统健康PASS；需用已授权实际OS接口恢复取证。房间1小时有界只读监控已重新启动，证据持续写room679-mixed-version-observation.jsonl；不是全天候或七台统一最新稳定PASS。
+
+
+22:17 补记：VibeKits main `5955c3a0549da22fdb59ac7b4be8dfb804543f3a`已补入ROOM_CONSENT_RENEWAL_20261015.md及58只读原生OS采样源码/哈希，远端blob与共享索引核验通过。58三次CPU约19.70/25.97/19.27%，可用内存7.50GB以上、D盘可用26280501248字节，原30944/birth134365422043568273仍活；原MCP超时与WMI首败保留，未改判全工具通过。Git mirror fetch早退EOF后，核同目标现成共享V克隆已含远端main对象，沿独立索引正常推送恢复成功；没有更改远端或重跑安装。六机资源短时抽样均已取得，完整稳定性/空闲/全部历史缓存及续期Dart+server配套仍未完成。
