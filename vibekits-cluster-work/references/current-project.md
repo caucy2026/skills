@@ -2,6 +2,26 @@
 
 这是当前导航与已验证状态；执行前读实际台账、PID/创建时间和回执。历史完整记录在项目验收文档，不把旧参数直接当执行指令。同事在自己的机器映射路径、继承完整G01–G10与用户最新要求。
 
+## 2026-10-15 17:08 current run override
+
+Mac155 remains679/PID73852; three remote Macs now have complete679 stages and signatures verified, not installed. Windows679 built0, actual version2679,2978 inputs verified. Fresh native credential host1468 passed8 synthetic keys in original Session1 and cleaned all. Stage253/34 ready; qualification SHA9BEC74C4F7AE230562E49E6DB2EC160B42A56DDC05763F65AA8AA1A69752D0EF.
+
+Original Windows signing dev679-signed-runtime-20261015-v1/attempt1 is live: parent30300/birth134365275066652342. Inner34/34 signed/verified; user confirmed the first PIN. Currently packaging; do not restart or re-sign. Need final outer authentication only if a fresh actual window appears, then full253 verification. Source-only scripts archived in project tool/windows/main679-latest-main-20261015. Current phase/receipt paths and failure history in MAIN679_MERGE_20261015.md take precedence over older snapshots below. Full G01-G10 and fleet/store acceptance remain incomplete.
+
+
+## 2026-10-15 15:50 authoritative runtime update
+
+Mac155 now runs signed/notarized679/2679, PID73852 born15:38:20. Original ID/FP/Key/live default room retained; guard73807 accepted and exited0, main remains alive. Actual room-delegation system.info passed both directions with445/671; explicit real fixed-analysis model request completed ready/reported. Actual UI shows default-folded lists and disabled private-room application. ZIP441568637B/SHA9462c5f534888a34cb396ccf73bdd1b538ddfb8a18df7085074e296f77759813; complete678 rollback retained. Prior15:33 notary/installed snapshot below is historical. Full acceptance is NOT complete.
+
+Windows679 main lock resolved on Windows; latest2978 input hashes and canonical owned runtime qualified. Unique SyncOwnedRuntime-v5 terminal0. Build679-v3 drivers prepared; reconcile/start once and inspect exact PID/birth/state. Existing Windows671 remains running. See project docs/acceptance/MAIN679_MERGE_20261015.md for all original failures, paths, receipts and next steps. Other3 Macs671, Win619671,617 user-confirmed offline. G01-G10 remains active.
+
+## 2026-10-15 15:33 当前接续覆盖（优先）
+
+用户指定以最新main合并、开发验证新版本。集群修复与媒体678已合入main252f43a21；测试说明与构建执行位修复后main8b3657684读回。外盘macos/main-cluster-679-20261015-v1/source为隔离main候选，70集群+77集成测试、完整Release v2、签名/兼容/主与助手身份连续性通过，尚未安装/发布。公证唯一ID99ec62c4-960a-4481-becd-2f853887a154 In Progress，读取evidence，不重提。共享155仍678/2678（4337，14:46:21），禁止用低677覆盖；另外三Mac671，Win58/619原671，617用户确认关机或断网。最新版本以实时为准。
+
+Windows旧677构建Task0xC000013A中断，无PASS；已精确核并清自有孤儿MSBuild9100，原671未停。新windows/main-cluster-679-20261015-v1主线187差异已上传；源码复制完成，主线新增媒体依赖须本机按精确锁生成Windows图。唯一任务VibeKits679-58-FinishSource-v2-20261015正在运行，Dwork同名，读finish-source679-v2.json/pub-resolve-main679-v2.log再决定，禁止重复原事务。完整G01–G10仍active。详细台账ROOM_UI_SIGNING_CONTINUATION_20261013.md优先。
+
+
 ## 2026-10-15 最新覆盖（优先于下方历史）
 
 Windows58、619均已覆盖664，正式安装包SHA49304C507A707257E3EF65B67CDFC8091F0EA16434900997C280612817DCF0A7，主6ED35.../原B828签名。58 PID6952/FILETIME134364950390965430、619 PID8500/134364934942564341；原ID、真实MCP、小文件SFTP、默认房间approved/live、健康ACK及守护terminal0后存活通过。仅基本覆盖与连接通过，模型/全部历史/长期稳定仍待补。617原564最近约10.8小时无心跳，备份事务结果仍待恢复后对账；登记Office388630819画面异常，不能据缓存标题或反射画面确认真实在线。
@@ -475,3 +495,49 @@ Installed2655/PID90173/main309f9cf7d3633899d683ad1db0dee376ad006b23f8ef22eeddeac
 实际Mac445/651通过room_connect+room_call反向读取本机系统信息，返回newlinkdeMac-mini.local/PID37609；控制端当时本机为664。外层与两层目标结果均ok=true。随后同一通道再次调用被ROOM_DELEGATION_SESSION_EXPIRED拒绝，未重复执行。这是双向房间原生只读通信及单次通道关闭后的拒绝证据，不是管理员降权/主动撤销/完整任务通过。证据macos/room-all-current-659-20261013-v1/evidence/reverse445-room-*。
 
 Windows58新核可用6025703424字节低于6442450944(6GiB)，664构建v1/v2/v3均Ready/result1且未进入编译。继续不降低门槛、不重复调度同条件作业；原650与数据保留。原仿真和登记Office238638760仍可访问，未知断开确认尚未批准。完整G01–G10、七台升级、主任务闭环和商城交付仍未完成。
+
+
+### 2026-10-15 11:23 当前导航增量
+
+以项目docs/acceptance/ROOM_UI_SIGNING_CONTINUATION_20261013.md最新段落为准。Windows671原签名事务完整PASS，244/244，外壳273841104B/SHA36D0C2A4FCB57A6D26B68F911C01588F55B3DE8406D79CAE6FF3FB9546098A33；58已原路径覆盖671，PID26488/出生134365075930446761，619已覆盖671 PID10148/出生134365079580222585，两者原ID/FP/Key、真实system.info、文件往返、默认房间approved/live及守护terminal0后主进程存活均通过。619任务VibeKits671-619-Overlay-20261015-v1 Ready/result0，不能重启。58 v1模块失败与v2 Job随旧App退出的事故保留，成熟修复见operations末段。
+
+Mac132/445/529最新本任务基本覆盖671；共享155已由独立媒体工作升级674/2674，并有675隔离构建，不能回退共享桥、覆盖其他工作或将旧PID4328作为当前事实。617原仿真6175875975/办公388630819已由用户明确确认“目前关机或断网”，不盲连，待实际上线后继续原partial备份对账和升级。两台Windows基础覆盖通过不等于七台统一、完整G01–G10、全部UI/模型/权限/严格空闲或商城发布完成；主线最新回执与原证据在本任务外盘room-status-actions-671-20261015-v1及room-monitor-20261014-v1。
+
+
+### 2026-10-15 18:30 latest-main679 continuation (newer than671 snapshot)
+
+Use project docs/acceptance/MAIN679_MERGE_20261015.md and its source-only tool/{macos,windows}/main679-latest-main-20261015 archives. Full G01–G10 remains active. Main source+records were remote-readback verified through d1ea657; newer device/signing evidence still needs its next scoped backup.
+
+All four Macs now run the same final signed/notarized679/2679:15567528,13256782,44559483,5291399 at the registered original paths/IDs. The three remote independent guards ended0 after original fingerprint/key, actual system.info, actual2679/main hash and live approved default-room heartbeat. Each retains a complete rollback671.app. This is core overlay evidence; Intel directory-picker/Safari15, complete UI/permissions/removal and fleet release gates are separate.132/445 actual679 model descriptions completed;529 started one verification, reconcile its result rather than re-request.
+
+Windows679 original dev679-signed-runtime-20261015-v1/attempt1 is finished: full253PE,36product/217vendor,34newinner signatures, main/outer independent verification, both exits0, proxy RESTORED. Completed10:25:33.3503161Z. Final290827192bytes/SHA54BCD8627F90EE3DCC023FB3A157B1291FBDE273EF00D3FCCCB01BC43A3759D5 downloaded and rehashed. Do not restart signing or request PIN again.58/619 still671;58 complete671 rollback preparation is next.617 remains user-confirmed offline, no blind desktop connection.
+
+Real four-Mac mesh:10/12 directed one-tool paths passed. ROOM679-RENEWAL-RACE is a verified blocker:132→445 ticket cacc0b0949bac2b5ab4d570b3a934391 issued1792059663022 with consent562; automatic same-scope renewal563 issued1792059664867 invalidated it before execution, server consumption/completion empty.529→445 then429 with no ticket. Preserve originals; an eventual retry is not root-cause closure or stability PASS. No marketplace release until applicable gates. Mixed-version heartbeat observer is bounded and read-only, not seven-latest stability or process health.
+
+
+### 2026-10-15 21:35 续接检查点
+
+本任务源码及详细记录18文件已推送vibekits main 2bc6cc3b94d35b96edb1058642b828f59cb2f511，父05c42acd3c74935c223fc39f354c59a1f1ed8395，远端blob逐项读回且共享索引不变。新源码归档tool/{macos,windows}/main679-cleanup-20261015；精确事实见MAIN679_MERGE_20261015.md。固定PID/路径/任务名属于历史绑定，不可直接重跑。
+
+当前155主PID90853，529清理后90344，445清理后93292（原ID/指纹/真实system.info已核）；58已679/2679主30944，健康ACK提交且安装守护exit0，原ID/Key/签名/注册版本/MCP/双向94字节传输/房间通过。生成description已删除529的109条、58的215条、445的126条；普通未知/业务会话与排队消息保留。132的246条仅分类合格尚未删除。Windows本任务旧664/671/677生成对象108个已删除，不代表全部历史缓存完成。
+
+619仍671：679最终包已在目标核290827192字节、SHA54BCD8627F90EE3DCC023FB3A157B1291FBDE273EF00D3FCCCB01BC43A3759D5、签名Valid；原671完整回退备份在准备/启动交界，先对账619-backup679-launch-intent.json及launch.json，禁止重复启动。617用户确认关机/断网。房间7名approved、6在线；全队新版/正式稳定性与商城仍未通过。ROOM679-RENEWAL-RACE native/client配套未完成，server草稿21测试通过但未部署；不得把新票据重试当修复。
+
+
+### 2026-10-15 22:10 619终态与续期修复
+
+VibeKits main e21cbbf6789dde825e8875e8d36e1f8573cafd93新增20文件，父7597e506b808553db18220cb07c81c871c3e5b3a，原台账仅追加15行、删除0行，远端blob与共享索引验证通过。619已完成679/2679覆盖，主16140/birth134365460858042102，原ID/FP/Key/签名/注册版本/真实MCP/94B双向传输/default approved均核，13:56:36.238Z verified_committed，terminal0。旧671完整回退31131文件保留。v1正常消息退出失败/terminal1/no-install，v2由原登记办公159974026托盘正常退出后独立守护10492继续，不能重跑。
+
+132清理guard1461 exit0、新主1579；445新主93292。实际启动后五台远端description均0，永久删除账本132246/445126/529109/58215/619257，共953；155亦0。普通/未知/cluster-analyze保留，其他调试归属和历史Windows缓存仍待继续核验，不能称全部清理完。155由同事正式升级680/PID90853，ACTUAL_TRANSPORT_20261015.md有签名、公证、原ID、445反向实调证据；不覆盖回679。当前六在线155680/其余五台679，617用户确认关机或断网，七名approved。
+
+原生Policy续期修复推送caucy2026/rust-desk main 8cd91f6a915a876830fbcd6ed0a4aacf9d4bafb8，父403120dbb8f599303da5dd38d012738799020b3f；只用backup remote、实时三方合并、独立索引与远端读回，未推origin upstream。相同revision且所有语义字段完全一致、旧scope有效时才延长expiry保留绑定；query仍受旧快照和原不可变票据期限限制，改变身份/权限/工具/限额/角色revision仍撤销。精确生产方法和同源测试独立rustc三项/15字段负矩阵通过；完整native构建/真实复验未做，不部署到旧679包。
+
+下一步Dart配套未开始改：已认证GET self consent/renewalSupported证明当前提交，完整语义匹配才保revision续期。未知POST先GET对账；已提交且剩余超过60秒只镜像原body和真实expiry，不重新发nonce；未提交重试沿用旧expiry命名的durable envelope。缓存expires取真实ACK signedConsent.expiresAt，不得now+600000。显式权限变更仍新rev。服务端显式POST consent/renew草稿21测试通过但未部署；必须合入680媒体/transport最新主线及新native后统一候选、真实复现旧失败和撤销负例，再谈商城。
+
+六机资源抽样：155/132/445/529/619各三次真实采样已取；58同工具MCP超时，SSH WMI过滤查询另报0x80041017，两次首败保留。不能将资源查询错误当设备离线或系统健康PASS；需用已授权实际OS接口恢复取证。房间1小时有界只读监控已重新启动，证据持续写room679-mixed-version-observation.jsonl；不是全天候或七台统一最新稳定PASS。
+
+
+22:17 补记：VibeKits main `5955c3a0549da22fdb59ac7b4be8dfb804543f3a`已补入ROOM_CONSENT_RENEWAL_20261015.md及58只读原生OS采样源码/哈希，远端blob与共享索引核验通过。58三次CPU约19.70/25.97/19.27%，可用内存7.50GB以上、D盘可用26280501248字节，原30944/birth134365422043568273仍活；原MCP超时与WMI首败保留，未改判全工具通过。Git mirror fetch早退EOF后，核同目标现成共享V克隆已含远端main对象，沿独立索引正常推送恢复成功；没有更改远端或重跑安装。六机资源短时抽样均已取得，完整稳定性/空闲/全部历史缓存及续期Dart+server配套仍未完成。
+
+
+22:40 缓存检查点：VibeKits main `3ca8603ea26054b50a80a8b08ead3b2d638dbf1d`同步12文件，详见WINDOWS679_OWN_CACHE_CLEANUP_20261015.md。六个已证旧Windows构建650/656/659/664/671/677四批删除344项/1281673702逻辑字节，0跳过；独立v5/v6复查编译/自身链接输出均0且unproven0，原58实际MCP仍30944，679最终包SHA保持。旧中间输出必须重编；源码、SDK、最新679、原生628必要输入及必要671回退保留，不能把六根结论扩展为任意历史目录全删。后续若发现其他有归属证据的旧根再按同法处理，不重复已结束删除。每批intent/manifest/terminal证据在windows/main-cluster-679-20261015-v1。房间监控PID63524仍运行；满一小时会终止，此为有界心跳证据，不是永久后台监控或全目标通过。

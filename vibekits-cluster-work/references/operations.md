@@ -220,3 +220,62 @@ Deep macOS AX walks can exceed MCP budget:132 actual66.367s late success, not pr
 Do not replace a version substring globally:650 also appears inside native evidence hashes and routing IDs. Preserve immutable hash/UUID/device identity/PID-birth/certificate inputs; parameterize only version fields and paths, and verify exact old/new constants. Collect656 first rejected an accidentally modified native628 manifest hash; unchanged build and native bytes were retained, exact digest restored, and collection-v2 terminal0. Never rebuild or re-sign to recover this controller error.
 
 Windows UI ownerBound with zero publications: first verify the installed product component, not only Shell/WebView liveness.650 installed component package was actually absent.656 private runtime gained the same portable product-owned JS component, client VM contracts and real Cordis question waterfall passed; frozen skill byte mismatch required an exact canonical skill refresh outside vendor SDK. Final real installed UI/model/permissions remain mandatory.
+
+
+### Windows自升级守护必须独立于被升级App的Job（671实证）
+
+先查原事务的PID/出生时间、state、installer回执和磁盘字节。普通app_control启动的GUI→Node仍可能继承App Job；源码FlutterWindow::OnCreate配置KILL_ON_JOB_CLOSE，旧App正常退出会让尚未安装的守护一并消失。不能据guard_ready状态声称守护存活，也不能移除Job回收保护来让升级继续。671/58的负控为32172与旧30240同时消失、没有installer；已通过登记桌面精确核PID缺失及旧main字节，再恢复旧App。
+
+复用成熟独立入口：已登记桌面的系统终端启动绑定固定脚本哈希的外置GUI/Node，或既有普通升级的Interactive用户任务直接执行固定外置Node。硬件签名仍只按专项技能的Session1固定GUI链，不改成计划任务。目标必须是同一活动用户/Session、原PID/出生时间、已签安装包和完整合格回退；独立入口也需验证旧App退出后守护仍存活、同一Inno退出0、新主程序原ID真实调用/文件传输/房间心跳、健康ACK和守护退出0后的主进程存活。671/58独立桌面v3、619 Interactive任务v1均取得这些证据。ACK先传pending文件再原子改名，避免读到半个JSON触发回退。
+
+交互进程里PowerShell5的Get-AuthenticodeSignature可能因模块环境不兼容无法autoload。保留原错误和未停机事实；可复用已安装且获准的PS7执行同一签名/元数据查询，并保留原证书、时间戳与哈希检查。不能据此修改执行策略、绕过明确拒绝的脚本或跳过签名验证。Windows备份/升级的外置Node哈希应与已完整校验的回退包对应Node一致；不能从正在被替换的安装目录运行升级守护。
+
+Mac文件访问权限统一引用[远程仿真技能的macOS文件权限记录](../../vibekits-remote-simulator/references/mac-file-access.md)，不把远程登录完全磁盘开关外推为所有App授权。
+
+
+### 主线合并后的房间回执和平台输入（2026-10-15源码实证）
+
+新发布从最新main的隔离检出继承完整产品代码；旧候选只复用已哈希资格化的运行时/工具链，不用若干旧文件覆盖最新main。记录相对main的全部产品差异，平台生成锁和版本有明确来源。生成平台依赖前先比较pubspec：最新main新增依赖时必须由目标平台按主线精确锁生成自己的package_config/插件登记，不能假称旧图仍完整，也不能移植Mac图到Windows。主线脚本缺execute位先保留失败、比较已合格脚本内容与模式，只修原调用所需模式并备份主线，不改执行策略。
+
+房间公开目录与已鉴权房间混合时，公开可申请性是展示提示，不能覆盖真实pending/approved决定。确定ROOM_NOT_DISCOVERABLE可持久显示未开放，未知/丢失回执仍申请核对中、禁止自动重放；新鲜公开目录重开只清明确unavailable提示。已通过旧负控、三轮HTTP/UI及70项联合源码测试；最终包真机另验。room_connect/room_call外层预算须涵盖原生建链与票据操作，普通RPC保持原预算；迟到外层超时先对账原工具/audit是否完成，不重发未知事务，也不延长票据TTL掩盖外层超时。
+
+
+### Latest-main desktop qualification and credential-proof invalidation
+
+When the latest main adds native plugins, old generated plugin registration is a changed native input. Do not assert old credential-proof parity or waive that file. Rebuild the mature isolated native test host against the current linked plugin libraries; only its test mutex/title differ, real native credential calls use unique synthetic keys and verify deletion. Bind the exact compilation/resource source set from the actual project, not an invented count, plus current frozen Dart/host/AOT/DLL hashes and active user/Session/PID lifetimes.679 real Session1 eight-key probe passed; this is credential-scope evidence, not all app acceptance.
+
+Freeze actual PE inventory after new dependencies: do not retain old counts. Preserve prior valid-signature bytes, identify each new vendor/product file, and pin expected totals for the new run. Check compiled version, Inno numeric/full version and Registry VersionCode before packaging and read back registry after overlay. An old template's ordinal can be stale even when its visible version is correct.
+
+A known terminated partial SCP is resumed only after original ID/fingerprint and a source-prefix hash match, then complete final hash and signatures are checked. A matching LAN host key does not imply key authentication; failed LAN authentication does not authorize trust changes. Continue the already-authorized native carrier without changing credentials.
+
+
+### Automatic room-consent renewal can race a valid ticket
+
+Treat timestamp-only scope renewal separately from revocation when designing the protocol.679 real mesh proved a ticket can be minted, then invalidated1.845seconds later by automatic revision rotation before its sole call. Reconcile the original delegation's issuance/expiry/revision, target consent issuance/revision, native handshake timestamps, and durable consumption/completion. Empty consumption is not by itself a safe replay claim while the ticket remains live; never silently replace an unknown execution with a new request. A refused subsequent429 may be the outstanding ticket occupying maxConcurrent1, not offline hardware. Preserve both first failures, enforce server backoff, and prove renewal continuity plus explicit revocation/downgrade/leave fail-closed regressions before declaring a fix. Longer TTL, wider limits, permanent whitelist fallback or new-ticket success alone do not fix this race.
+
+After signing terminal PASS, independently read original run/manifest/cert/counts, all-file SignTool reports, main/outer verification, actual final bytes/hash, script and wrapper exit0 and temporary settings restoration. Match the report producer's PowerShell array semantics or parse the raw report independently; a PS5 pipeline-wrapped array must not become a lowered count.679 PS7 collection verified253 exact entries after preserving a PS5 collector assertion failure. Finished signing is never replayed because a later collector failed.
+
+
+## 2026-10-15 生成调试会话清理与载体恢复实证
+
+- known_hosts仍有原指纹和旧端口不等于转发监听活跃。共享控制端进程更换后先对账在途事务，再按原ID重连并核原指纹；不得因SCP255重复启动签名、安装或删除。
+- Mac /usr/bin/python3存在也可能只是CLT安装shim。用实际--version核可用性；已有App bundled Node可复制成独立守护避免App Job退出，无须为清理安装新工具链。
+- queued/draft与running/dispatching不同：不删除排队业务消息；目标待删会话有非终态队列必须保护，其他未运行队列逐字节核清理前后不变。未知状态保持保护。
+- SDK canonical第一条source.kind=user可为生成设备描述提示；source.kind=runtime-context不是第二个真实人类输入。只凭cluster-description名称或年龄不能删除，必须结合生成提示、无工具副作用、无continuation/目标pending queue、owner停机和完整manifest。cache-only orphan另核canonical仅零字节lock、未索引、全部typed projection统计0、identity为home及空inbox。
+- 用产品原SessionStore删除，核永久删除账本、canonical目录、workspace/pin/archive索引和全局/分会话投影；保留真实/未知业务。Helper先报告无写入，整批预校验，内容变化跳过；测试businessID拒绝、owner忙拒绝、变化跳过、正确删除与无关字节保留。
+- 大清单响应受stdout尾部截断影响，优先固定上传脚本只回传压缩元数据和聚合计数。ssh_command_requires_uploaded_script必须遵守，不改内联编码绕过。
+- Windows旧编译缓存按实际Build脚本归属、文件格式、独占句柄、文件ID/mtime/长度/SHA识别；不能因为旧版本目录就删除源/SDK/原生输入。最新正式包及仍需回退保留，空间观测增量不得冒认共享工作贡献。
+
+
+## 六机系统抽样与Git记录恢复（2026-10-15）
+
+房间心跳、实际App进程和OS资源是不同证据。system.resources三次采样取得后保留原始私有结果，只向主线写必要聚合；Mac top截短进程路径不能用于指认具体App或合并同名前缀。Win58原MCP超时和WMI过滤0x80041017均保留；沿固定上传MJS、既有Node/koffi只读路线，以原生libuv各核累计CPU计数差、os内存和GetDiskFreeSpaceExW做三次OS抽样，并核原主PID/出生存活。脚本在项目tool/windows/main679-cleanup-20261015/SampleOwn58NativeOsHealth679-v1.mjs，不能把此替代结果冒称原MCP/GPU/完整目录或长期稳定PASS，也不为拿绿灯降低采样次数、放宽普通RPC或改执行策略。
+
+备份镜像Git fetch出现early EOF时先确认该fetch终态与未推送范围；同一已授权目标的现成共享克隆若已有远端main对象，可核origin URL和commit后复用对象库，以独立GIT_INDEX_FILE选取本任务文件、正常推送并读回。共享索引及用户脏树保持不变；不要删除Git包、强推、改upstream或因传输失败重启设备事务。
+
+
+## Windows自有生成输出的格式与producer实证
+
+Build*.cmd的真实cd /d和Flutter build windows及脚本SHA先证明旧根；后核CMake home同源。MSVC COFF大对象可能超过4096节，应验证真实节表/符号表在文件范围内，不用随意阈值放行或只认后缀。CMakeCompilerId要核生成角色和同源CMake home；Windows Flutter的Dart app.so可以是ELF64，必须与现有Flutter app-aot-elf producer及结构对应，不能因不是PE当无用文件。仅hash命名flutter_build目录中的真实生成kernel/AOT可清，package_config、SDK输入和最新构建保护。
+
+链接输出从带ClCompile的生成vcxproj解析实际Release/x64 Link/Lib字段及OutDir宏，输出仍在旧build且PE/归档/MSF匹配才列入；复制的预编译SDK输入无自身link producer则保护。独占句柄下复核FileID/mtime/长度/SHA，再删除并回读；最后独立inventory返回0及真实App工具调用作为本次范围闭合。源码与四批实证见项目tool/windows/main679-cleanup-20261015和WINDOWS679_OWN_CACHE_CLEANUP_20261015.md。初次传输失败先对账，不重复已结束的删除；原指纹刷新载体不等于重启事务。
