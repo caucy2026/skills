@@ -220,3 +220,14 @@ Deep macOS AX walks can exceed MCP budget:132 actual66.367s late success, not pr
 Do not replace a version substring globally:650 also appears inside native evidence hashes and routing IDs. Preserve immutable hash/UUID/device identity/PID-birth/certificate inputs; parameterize only version fields and paths, and verify exact old/new constants. Collect656 first rejected an accidentally modified native628 manifest hash; unchanged build and native bytes were retained, exact digest restored, and collection-v2 terminal0. Never rebuild or re-sign to recover this controller error.
 
 Windows UI ownerBound with zero publications: first verify the installed product component, not only Shell/WebView liveness.650 installed component package was actually absent.656 private runtime gained the same portable product-owned JS component, client VM contracts and real Cordis question waterfall passed; frozen skill byte mismatch required an exact canonical skill refresh outside vendor SDK. Final real installed UI/model/permissions remain mandatory.
+
+
+### Windows自升级守护必须独立于被升级App的Job（671实证）
+
+先查原事务的PID/出生时间、state、installer回执和磁盘字节。普通app_control启动的GUI→Node仍可能继承App Job；源码FlutterWindow::OnCreate配置KILL_ON_JOB_CLOSE，旧App正常退出会让尚未安装的守护一并消失。不能据guard_ready状态声称守护存活，也不能移除Job回收保护来让升级继续。671/58的负控为32172与旧30240同时消失、没有installer；已通过登记桌面精确核PID缺失及旧main字节，再恢复旧App。
+
+复用成熟独立入口：已登记桌面的系统终端启动绑定固定脚本哈希的外置GUI/Node，或既有普通升级的Interactive用户任务直接执行固定外置Node。硬件签名仍只按专项技能的Session1固定GUI链，不改成计划任务。目标必须是同一活动用户/Session、原PID/出生时间、已签安装包和完整合格回退；独立入口也需验证旧App退出后守护仍存活、同一Inno退出0、新主程序原ID真实调用/文件传输/房间心跳、健康ACK和守护退出0后的主进程存活。671/58独立桌面v3、619 Interactive任务v1均取得这些证据。ACK先传pending文件再原子改名，避免读到半个JSON触发回退。
+
+交互进程里PowerShell5的Get-AuthenticodeSignature可能因模块环境不兼容无法autoload。保留原错误和未停机事实；可复用已安装且获准的PS7执行同一签名/元数据查询，并保留原证书、时间戳与哈希检查。不能据此修改执行策略、绕过明确拒绝的脚本或跳过签名验证。Windows备份/升级的外置Node哈希应与已完整校验的回退包对应Node一致；不能从正在被替换的安装目录运行升级守护。
+
+Mac文件访问权限统一引用[远程仿真技能的macOS文件权限记录](../../vibekits-remote-simulator/references/mac-file-access.md)，不把远程登录完全磁盘开关外推为所有App授权。

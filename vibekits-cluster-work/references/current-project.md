@@ -475,3 +475,10 @@ Installed2655/PID90173/main309f9cf7d3633899d683ad1db0dee376ad006b23f8ef22eeddeac
 实际Mac445/651通过room_connect+room_call反向读取本机系统信息，返回newlinkdeMac-mini.local/PID37609；控制端当时本机为664。外层与两层目标结果均ok=true。随后同一通道再次调用被ROOM_DELEGATION_SESSION_EXPIRED拒绝，未重复执行。这是双向房间原生只读通信及单次通道关闭后的拒绝证据，不是管理员降权/主动撤销/完整任务通过。证据macos/room-all-current-659-20261013-v1/evidence/reverse445-room-*。
 
 Windows58新核可用6025703424字节低于6442450944(6GiB)，664构建v1/v2/v3均Ready/result1且未进入编译。继续不降低门槛、不重复调度同条件作业；原650与数据保留。原仿真和登记Office238638760仍可访问，未知断开确认尚未批准。完整G01–G10、七台升级、主任务闭环和商城交付仍未完成。
+
+
+### 2026-10-15 11:23 当前导航增量
+
+以项目docs/acceptance/ROOM_UI_SIGNING_CONTINUATION_20261013.md最新段落为准。Windows671原签名事务完整PASS，244/244，外壳273841104B/SHA36D0C2A4FCB57A6D26B68F911C01588F55B3DE8406D79CAE6FF3FB9546098A33；58已原路径覆盖671，PID26488/出生134365075930446761，619已覆盖671 PID10148/出生134365079580222585，两者原ID/FP/Key、真实system.info、文件往返、默认房间approved/live及守护terminal0后主进程存活均通过。619任务VibeKits671-619-Overlay-20261015-v1 Ready/result0，不能重启。58 v1模块失败与v2 Job随旧App退出的事故保留，成熟修复见operations末段。
+
+Mac132/445/529最新本任务基本覆盖671；共享155已由独立媒体工作升级674/2674，并有675隔离构建，不能回退共享桥、覆盖其他工作或将旧PID4328作为当前事实。617原仿真6175875975/办公388630819已由用户明确确认“目前关机或断网”，不盲连，待实际上线后继续原partial备份对账和升级。两台Windows基础覆盖通过不等于七台统一、完整G01–G10、全部UI/模型/权限/严格空闲或商城发布完成；主线最新回执与原证据在本任务外盘room-status-actions-671-20261015-v1及room-monitor-20261014-v1。
