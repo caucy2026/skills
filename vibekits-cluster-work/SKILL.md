@@ -47,3 +47,5 @@ description: 接续 VibeKits Harness 与 hbbv 集群的源码开发、真实设�
 每次阶段成果更新项目台账：目标编号、设备/服务身份、版本与哈希、实测时间、证据路径、失败与下一步；技能中的日期快照只用于导航。新增已验证经验更新 operations，易变状态更新 current-project，完整原始记录仍在项目内。交付说明已验证结果与剩余缺项；原目标未达成不标完整通过。
 
 构建RAM不足、命令预算导致PS7启动失败、断流续传或覆盖恢复时，读[资源与恢复实证](references/resource-recovery.md)，复用独立事务和原身份恢复方法。
+
+清理 Harness 调试会话、归档或工作区缓存时，读[调试会话清理](references/harness-debug-reset.md)，覆盖新旧 profile 和普通会话，不能只验证自动描述员为零。
