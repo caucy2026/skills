@@ -112,3 +112,9 @@ HOME返回先拍独立录像再发诊断。即使ready/idle、pending0、位置�
 外部ADB即使用参数数组，`adb shell input text ~`仍会经远端shell解析，单个`~`会展开为该shell的HOME（本轮为`/`），因此草稿实际是`/Zone...`，不能提交后当GM权限/地图错误。逐字符输入公开GM命令时，把远端命令构成`input text `加该字符的POSIX shell quoting（Python shlex.quote）；空格用真实Space键。不要用JSON.stringify代shell quoting，不把密码放argv。先核完整公开草稿，再Enter；本轮~Zone2/原Plot5884落点量化的实际转移已核Zone/ACT2、ready/idle及地表图。逐字符路线是有界操作恢复方法，不证明原批量输入或真实软键盘已修。
 
 清草稿不能假定Delete成功。本轮114把token-bound物理Delete送进无编辑分支的世界快捷键，vp未删除会污染后续命令。116从同冻结完整构建，实际两公开字符→两Delete→空草稿已看前后图，复用既有eraseNativeText消费者；旧token/no-token/Up边界有实际方法组件反例。软键盘显示仍OPEN；系统inputShown=true不当键盘可见。大PNG传输超时后，先核远端完整文件，只重拉该文件，不重发游戏动作；本轮4MiB PNG约53秒，15秒回传预算不够，必要用有界75秒传输进程并轮询同一handle、继续独立工作，不能把不完整本地图当证据。
+
+## 2026-10-17：ADB增量传输EOF的有界恢复
+
+117实际默认`adb push`在报告全部4918652字节后报`failed to read copy response: EOF`，远端目标文件不存在；连接状态仍true，真实shell成功、UID2000、目标目录可写且空间充足。保留原失败，核副作用后用同一可信serial、同一文件执行`adb push -Z`关闭同步压缩，本次1.341秒约3.5MB/s完成；设备SHA与本地002008fe…一致后才复用既有parent116→target117精确重建/验签/覆盖流程，最终安装base与签名APK相等。该次恢复有效，不足以证明所有EOF的根因必为压缩。
+
+先核远端目标存在性/SHA、当前包和安装结果，已完成环节不重复；远端不存在或SHA不等才重传。`-Z`只改变传输编码，不改APK/delta字节或签名，不对陌生主机绕路；不要把工具报告推送字节数当远端完整文件。大文件回传仍串行并核SHA；桥的当前connected/adbReady与实际ADB shell分别核，旧serial仅作线索。
