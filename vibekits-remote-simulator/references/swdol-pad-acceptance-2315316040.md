@@ -118,3 +118,11 @@ HOME返回先拍独立录像再发诊断。即使ready/idle、pending0、位置�
 117实际默认`adb push`在报告全部4918652字节后报`failed to read copy response: EOF`，远端目标文件不存在；连接状态仍true，真实shell成功、UID2000、目标目录可写且空间充足。保留原失败，核副作用后用同一可信serial、同一文件执行`adb push -Z`关闭同步压缩，本次1.341秒约3.5MB/s完成；设备SHA与本地002008fe…一致后才复用既有parent116→target117精确重建/验签/覆盖流程，最终安装base与签名APK相等。该次恢复有效，不足以证明所有EOF的根因必为压缩。
 
 先核远端目标存在性/SHA、当前包和安装结果，已完成环节不重复；远端不存在或SHA不等才重传。`-Z`只改变传输编码，不改APK/delta字节或签名，不对陌生主机绕路；不要把工具报告推送字节数当远端完整文件。大文件回传仍串行并核SHA；桥的当前connected/adbReady与实际ADB shell分别核，旧serial仅作线索。
+
+## 2026-10-17：过场快照投影与同包退出回归
+
+先核实际JSON层级：119前PAD白名单在顶层找转场字段，真实运行时却在controlState内，故缺transferAudit不等于核心没有审计。118修选择性投影后已在实际设备读到phase/锁/审计和safeLogoutActive；不复制整个对象或用户正文。一次arming后的被动采样配正常UI动作，字段按实际状态所有者解释，resourcePreparationReady不代地图/所有资源完成。
+
+119真实修复链是本地准备误用网络倒计时、真实world退出后旧UI要等异步Account才清；沿Mac对应UI事务与实际组件反例定位，保持网络/世界算法，立即退休本地呈现且重复Account不抢新焦点。该退休只用于真实退出/Account，不可搬到HOME/onPause/onTrim。完整新APK成组实测入图→跨图→退出→重认证，旧错误背景阳性对照与新独立图/实际视频PTS分开核；环指示器在动不等背景/全部动画已完成。
+
+对本人测试包可用标准am send-trim-memory的RUNNING_LOW做受控回调验收，先记旧PID/前态，HOME后只发该包，回前台先独立图及普通输入再诊断。必须读新Native level10回调、资源账淘汰和当前场景存活，命令exit0不能代交付；119已有限实测124秒返回、普通移动及资源回收。它不是自然系统OOM或长期无泄漏门，不改变其他App资源和系统阈值。
