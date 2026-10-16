@@ -106,3 +106,9 @@ LocalServiceOwnerFence在Mac继续gethostuuid，原生Linux读取有效持久mac
 隐藏编辑器无编辑任务时也可能占焦点。dumpsys activity top应先按所属TASK/Activity块定位，再看该块的mHasWindowFocus和Sink焦点标志；不能选到包含包名引用的别家窗口。106明确编辑时才启用Sink焦点，结束/暂停撤销并归还游戏内容视图；正常编辑、退格、Back、GM提交和键盘/摇杆所有权切换分别验。只有IME工具条不能报完整软键盘通过；ASCII不能报中文组字通过。
 
 HOME返回先拍独立录像再发诊断。即使ready/idle、pending0、位置稳定且场景继续绘制，角色被前景物体遮住也只证明状态/输入释放，不能记角色可见或原版相机匹配。城市106实测28.8—29FPS仍低于30；两个混合场景PSS监控段不得拼成无泄漏证明。跨图准备圆环须从同一原视频连续解码并人工核亮点相位；106两次各7/14份相位不同仅证对应跨图，不能推及所有过场。私有快照、账号材料、完整日志和原录像保留项目证据目录，公开技能只存方法及适用边界。
+
+## 2026-10-16：GM输入的远端shell转义与真实退格
+
+外部ADB即使用参数数组，`adb shell input text ~`仍会经远端shell解析，单个`~`会展开为该shell的HOME（本轮为`/`），因此草稿实际是`/Zone...`，不能提交后当GM权限/地图错误。逐字符输入公开GM命令时，把远端命令构成`input text `加该字符的POSIX shell quoting（Python shlex.quote）；空格用真实Space键。不要用JSON.stringify代shell quoting，不把密码放argv。先核完整公开草稿，再Enter；本轮~Zone2/原Plot5884落点量化的实际转移已核Zone/ACT2、ready/idle及地表图。逐字符路线是有界操作恢复方法，不证明原批量输入或真实软键盘已修。
+
+清草稿不能假定Delete成功。本轮114把token-bound物理Delete送进无编辑分支的世界快捷键，vp未删除会污染后续命令。116从同冻结完整构建，实际两公开字符→两Delete→空草稿已看前后图，复用既有eraseNativeText消费者；旧token/no-token/Up边界有实际方法组件反例。软键盘显示仍OPEN；系统inputShown=true不当键盘可见。大PNG传输超时后，先核远端完整文件，只重拉该文件，不重发游戏动作；本轮4MiB PNG约53秒，15秒回传预算不够，必要用有界75秒传输进程并轮询同一handle、继续独立工作，不能把不完整本地图当证据。
