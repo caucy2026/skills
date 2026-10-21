@@ -1,6 +1,6 @@
 # KEMI 通用技能库
 
-本仓库保留 **39 个** KEMI 应用开发、发布、远程办公、视频制作和浏览器 3D 相关技能。
+本仓库保留 **40 个** KEMI 应用开发、发布、远程办公、视频制作和浏览器 3D 相关技能。
 
 2026-10-08 已将本机 20 个游戏研发、SWDOL、VibeKits 仿真、项目交接和安全清理类全局技能完整迁移到 [skills-game](https://github.com/caucy2026/skills-game)，本仓库不再重复保存这些同名目录。
 
@@ -35,6 +35,7 @@
 - [project-about-page](project-about-page/SKILL.md)
 - [public-app-distribution](public-app-distribution/SKILL.md)
 - [remotion-promo-video-factory](remotion-promo-video-factory/SKILL.md)
+- [rust-linux-cross-build](rust-linux-cross-build/SKILL.md)
 - [three-webgl-game](three-webgl-game/SKILL.md)
 - [threejs-animation](threejs-animation/SKILL.md)
 - [threejs-geometry](threejs-geometry/SKILL.md)

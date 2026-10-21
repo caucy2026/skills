@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rust Linux 跨平台编译"
+  short_description: "在本地可靠生成可部署到Linux服务器的Rust二进制"
+  default_prompt: "使用 $rust-linux-cross-build 从当前Rust源码构建可在目标Linux服务器运行的正式二进制，并完成ELF、架构、GLIBC、版本和哈希验证。"
