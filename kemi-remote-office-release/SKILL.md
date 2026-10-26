@@ -22,3 +22,5 @@ description: Build, sign, notarize, validate, and release all four KEMI Remote O
 配套执行技能：`vibekits-remote-simulator`、`kemi-windows-two-node-release`、`kemi-windows-remote-signing`、`newlink-common-release`、`kemi-market-publish`；产品验收按 `app-release-stability-gate` 及当前已约定的项目用例。复用已有证据，优先白盒检查，只做必要测试；没有证据的平台标记未完成，不把构建或上传成功写成发布完成。
 
 更新本技能后运行 `python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py ~/.codex/skills/kemi-remote-office-release`，并核对全部相对引用存在。文档校验不会重新编译、签名或发布四端。
+
+Linux桌面通用字体、架构/GLIBC、透明窗口、阶段环境与真实验收经验见 [linux-desktop-build-acceptance](../linux-desktop-build-acceptance/SKILL.md)。遇对应问题时读相关引用，沿本项目成熟入口执行，不用通用示例覆盖项目目标。

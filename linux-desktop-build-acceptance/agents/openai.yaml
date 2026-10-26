@@ -1,0 +1,4 @@
+interface:
+  display_name: "Linux桌面编译与验收"
+  short_description: "排查Linux桌面字体、架构、ABI和界面问题，保留真实编译验收证据"
+  default_prompt: "使用 $linux-desktop-build-acceptance 完成当前 Linux 桌面编译与真实验收，先检查字体和 ABI 并保留证据。"

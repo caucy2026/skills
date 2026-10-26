@@ -1,6 +1,6 @@
 # KEMI 通用技能库
 
-本仓库保留 **40 个** KEMI 应用开发、发布、远程办公、视频制作和浏览器 3D 相关技能。
+本仓库保留 **45 个** KEMI 应用开发、发布、远程办公、视频制作和浏览器 3D 相关技能。
 
 2026-10-08 已将本机 20 个游戏研发、SWDOL、VibeKits 仿真、项目交接和安全清理类全局技能完整迁移到 [skills-game](https://github.com/caucy2026/skills-game)，本仓库不再重复保存这些同名目录。
 
@@ -30,6 +30,7 @@
 - [kemi-windows-device-lab](kemi-windows-device-lab/SKILL.md)
 - [kemi-windows-remote-signing](kemi-windows-remote-signing/SKILL.md)
 - [kemi-windows-two-node-release](kemi-windows-two-node-release/SKILL.md)
+- [linux-desktop-build-acceptance](linux-desktop-build-acceptance/SKILL.md)
 - [newlink-common-release](newlink-common-release/SKILL.md)
 - [product-launch-motion](product-launch-motion/SKILL.md)
 - [project-about-page](project-about-page/SKILL.md)
