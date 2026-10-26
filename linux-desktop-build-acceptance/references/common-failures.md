@@ -14,6 +14,7 @@
 | 桥接/协议摘要不符 | 在原正式入口的相同临时版本/协议准备状态核验；入口退出还原的canonical源不能直接与生成前摘要混比 | 不能跳过协议生产器、补假stamp或复制不明桥接 |
 | SDK更新导致DialogTheme等类型变化 | 核真实版本API；只在对应隔离构建源做最小适配并锁依赖，保其他平台原API/锁 | 不因ARM SDK较新就全局改坏Mac/Windows旧SDK |
 | 原生target错位或库名字不对 | 核实际Cargo产物、CMake引用、target symlink及所有权一致 | 同一版本名不能证明core/AOT同源 |
+| .plugin_symlinks名字像链接却占数GB | 核lstat和源快照拷贝规则；实体SDK复制件须逐成员SHA匹配仍保留的原Pub/项目依赖，核当前输入/引用与原共享清理锁后处理；源码归档排除平台flutter/ephemeral等主机生成物，由pub get重建链接 | 不按目录名删源码或原SDK；案例99份复制物全量匹配后清理4.755GB逻辑量，17,123原件及37源文件保护通过；物理净变化另记 |
 | 中文首次方框/升级回退 | 按fonts-and-windows定位系统/包/主题/加载/SDK，各层分开 | 不把fc-match成功、TTF存在或locale中文当实际显示成功 |
 | 黑色圆角/透明API在旧SDK不存在 | 核Gtk visual、GL alpha和FlView底面；按实际接口可用性兼容，正常/最大化/恢复分开看 | 不把整窗opacity调低；RGB丢alpha不代表窗口真的黑角 |
 | 硬编开关开但实际软编/加载失败 | 区分软件x264/x265和硬件后端；核GLIBC/GLIBCXX及依赖、设备驱动、实际关键帧/会话 | H264/H265、/dev节点、注册名、低CPU均不能单独证明硬编 |
