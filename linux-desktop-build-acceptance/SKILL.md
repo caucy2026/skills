@@ -30,6 +30,6 @@ description: 编译、移植、调试或验收Flutter/Rust Linux桌面应用，�
 
 ## 接回专项流程
 
-VibeKits用`vibekits-linux-release`；远程办公用`kemi-remote-office-release`；纯Rust服务用`rust-linux-cross-build`。仿真用`vibekits-remote-simulator`，断联先对账原事务再用已登记备用恢复，回到原通道验证。内部商场/Common分别沿原发布技能，不改App身份、不用ARM包覆盖x64同一下载地址。
+已有专项技能时，VibeKits用`vibekits-linux-release`、远程办公用`kemi-remote-office-release`、纯Rust服务用`rust-linux-cross-build`；未提供专项技能时先查该项目已登记构建文档，不猜发布API或把普通编译扩成发布任务。仿真用`vibekits-remote-simulator`，断联先对账原事务再用已登记备用恢复，回到原通道验证。内部商场/Common分别沿原发布技能，不改App身份、不用ARM包覆盖x64同一下载地址。
 
 仅创建或更新本技能不等于编译、系统升级、设备操作、同事通知或商城发布；对应动作仍以当前用户任务与实际工具权限为准。

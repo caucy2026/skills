@@ -18,6 +18,7 @@
 | 黑色圆角/透明API在旧SDK不存在 | 核Gtk visual、GL alpha和FlView底面；按实际接口可用性兼容，正常/最大化/恢复分开看 | 不把整窗opacity调低；RGB丢alpha不代表窗口真的黑角 |
 | 硬编开关开但实际软编/加载失败 | 区分软件x264/x265和硬件后端；核GLIBC/GLIBCXX及依赖、设备驱动、实际关键帧/会话 | H264/H265、/dev节点、注册名、低CPU均不能单独证明硬编 |
 | GLIBC过新，目标旧系统加载不了 | 检查完整依赖链的version-needs；用匹配基线重建或经用户允许验证独立运行时/codec进程，记录支持范围 | 不盲换系统libc、不伪改ELF版本；基线允许调整时也不能固守旧门槛停工 |
+| 同名库被直接套用另一份SDK头文件/ABI | 核实际导出、版本、调用约定与匹配头文件，再试编译；文件名libavcodec.so不能替代这些验证 | 加载成功不证明全部FFmpeg API/结构布局或编码器可用 |
 | 按CPU核数开j16后OOM/磁盘边界 | 先核同机RAM/swap/IO/空间与原预算；区分memory-boundary/disk-boundary。保首败、准备足够环境后完整重试，真实标j4/j8等 | 失败轮不是编译提速数据；不除以8掩盖CPU占用 |
 | 秒表100Hz整页刷新或后台仍跑 | 真实单调计时＋vsync/局部通知；静态表盘缓存；隐藏停绘、返回更新、失焦仍可见则继续 | GUI不宜为“多线程”创建8个刷新Timer；重计算用有界worker |
 | Widget测试误走Android、平台变量清理失败 | Flutter测试默认可为Android；用官方TargetPlatformVariant定位目标分支。保原失败，按实际控件模型/语义断言 | fixture错误不是产品故障；测试断言过了但框架结束报错仍不能报整套PASS |
@@ -39,4 +40,4 @@
 
 - VibeKits：`docs/development/COMPILATION_DEPLOYMENT_RULES_20261023.md`、`docs/acceptance/LINUX101_RECENT_ISSUES_ACCEPTANCE_20261026.md`及`vibekits-linux-release/references/linux-incidents.md`。
 - 远程办公：`kemi-remote-office-release/references/linux-native-market-20261016.md`，及RustDesk main `9d2a0ced...`的`client/kemi-docs/LINUX454_FONT_CORNERS_ACCEPTANCE_20261026.md`。
-- 这些是案例入口；版本、设备、PID、账号和路径必须现场核验，不复制为全局默认值。硬编新运行时试验尚未完成，不能将“可以用新GLIBC试编译”的授权写成已通过兼容性。
+- 这些是案例入口；版本、设备、PID、账号和路径必须现场核验，不复制为全局默认值。用户允许调整基线后，已用官方签名Ubuntu包构建独立2.35运行时：同一个实际ARM编译helper在系统2.31加载厂商库失败，在独立2.35可加载VENC及媒体库，系统仍2.31。这个真实负/正对照证明加载方案可行，仍不代表H264/H265硬编关键帧或整包兼容通过，不能泛化为所有机器都应升级或都能使用该方案。
