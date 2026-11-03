@@ -362,3 +362,63 @@ export KOFFICE_LO_DISTRO=CPLinux-LOKit
 3. 控制机 §5.1 **或** 云机 §6.12 推目标 → 冷启取证 → disconnect。
 4. 不停目标 vibekits；不旁路 consent；`identity_mismatch`/`transport_timeout` 按 §6.9；冒烟 ≠ 正式 deb；合主线「gork.bot协助开发」。
 
+---
+
+## 10. 仿针在 101 上架 KEMI 商场（最短口令）
+
+合主线注明「gork.bot协助开发」。**验证 ≠ 编译**。禁止杀目标 vibekits。正式上架包 ≠ Docker 冒烟。
+
+### 10.1 合同速记
+
+| 项 | 值 |
+|---|---|
+| 商场 | `https://kemi.newlinksz.com/kd/` |
+| API | `KD=https://kemi.newlinksz.com/kd-api` · `UC=https://kemi.newlinksz.com/usercenter` |
+| Linux 包 | `.deb`/`.AppImage`/`.rpm` → `os_type=linux` · upload category **`linuxpkg`** |
+| 身份键 | `(package_name, os_type)`；已有则 **update**，禁止复制 Mac53/Win54 |
+| 体积 | `file_size`=精确十进制字节字符串 · `file_size_bytes`=同值整数 · 另交 SHA-256 |
+| VibeKits Linux x86_64 现网 | app_id **90** · `com.caucy.vibekits` · 分类常为 `工作` |
+| 详细合同 | GitHub [`kemi-market-publish`](https://github.com/caucy2026/skills/tree/main/kemi-market-publish) + `references/release-contract.md`；先读线上 docs：`/kd/docs/ai-publish` · `app-upload` · `store-api` |
+
+架构：当前货架标题「VibeKits Linux（x86_64）」时 **禁止**用 arm64 deb 覆盖 app 90；arm64 需独立货架策略（先查重再决定 create/update）。
+
+### 10.2 路径优先序（101）
+
+1. **B（首选）**：仿针 `connect` 101 → 在 101 上 `curl` KD：`package-token` → multipart 上传 → `package-complete` → `apps/update` → 四层验收。
+2. **A**：101 Firefox/已登录开发者控制台 UI（少见；无会话则不硬开）。
+3. **C**：会话只在控制机 Chrome（profile Default/`niu`）时：可在控制机取 JWT（Local Storage），**mode 600** 经 `upload_file` 投到 101 `/root/.kemi-publish/token`；大包（>256MiB）CopyFromBox 须 **≤40MiB 分片** 再拼接。`flutter_secure_storage_service` Keychain 常有 ACL，CLI 直读易挂起——优先 Chrome 会话或用户批准的登录。
+
+Bearer / 上传 token **禁止**写入聊天、技能正文、git。用后删除临时文件。
+
+### 10.3 101 最短命令序
+
+```bash
+INV_URL=https://raw.githubusercontent.com/caucy2026/skills/main/vibekits-remote-simulator/scripts/invoke.rb
+curl -fsSL "$INV_URL" -o /tmp/vibekits-invoke.rb
+INV=/tmp/vibekits-invoke.rb
+RID=7634801763
+ruby "$INV" vibekits.simulator.connect "{\"routingId\":\"$RID\"}"
+# 将 deb 与 mode-600 token 放到 101 后：
+ruby "$INV" vibekits.simulator.ssh_exec "{\"routingId\":\"$RID\",\"command\":\"KEMI_TOKEN_FILE=/root/.kemi-publish/token /root/t61-market-publish/kemi_linux_publish_on_device.sh /path/app.deb 90 com.caucy.vibekits 1.9.0-dev.773 2773\"}"
+ruby "$INV" vibekits.simulator.disconnect "{\"routingId\":\"$RID\"}"
+```
+
+脚本模板（无密钥）可放目标机 `/root/t61-market-publish/kemi_linux_publish_on_device.sh`：查重 → `linuxpkg` token → multipart → complete（校验 url/size/sha）→ `apps/update`（带齐 `file_size`+`file_size_bytes`）→ 公共详情/列表/正负 `update/check`/CDN `Content-Length`。
+
+### 10.4 `package-complete` 超时恢复（2026-11-03 实证）
+
+multipart 已成功且 CDN `Content-Length` 已等于本地字节，但 `package-complete` 报七牛 stat **Connect timeout** → **不要重传**。对**同一 key** 带 Bearer 重试 `POST /api/upload/package-complete`（可间隔数秒，有界重试），直到 status=200 且 size/sha 与本地一致，再 `apps/update`。
+
+### 10.5 验收清单
+
+- [ ] 开发者 list 唯一 `(com.caucy.vibekits, linux)` 且 version_code 为目标
+- [ ] `GET /api/store/apps/{id}?os=linux`：HTTPS URL、精确 `file_size`、SHA、version_code
+- [ ] 无 category 的 Linux 公共列表含该 app
+- [ ] CDN HEAD `Content-Length` = 本地字节（高风险变更再整包下拉核 SHA）
+- [ ] 旧 version_code：`has_update=true`；当前 code：`has_update=false`
+- [ ] 删除 101/控制机临时 token；不断开同事隧道；不杀目标 vibekits
+
+### 10.6 2026-11-03 T61 实测摘要
+
+- 101 仿针 B 路径：auth list=200、`linuxpkg` token=200、arm64 772 **upload+complete PASS**（刻意未 update app90）。
+- amd64 **1.9.0-dev.773** / code **2773** / bytes **288285284** / SHA256 `a60da697…bd6f2d`：complete 超时恢复后 update → 文案「已直接更新线上版本（免审）」；四层验收 PASS。证据：`DEBUG-T61-101-SIM-MARKET-PUBLISH-20261103.md`。

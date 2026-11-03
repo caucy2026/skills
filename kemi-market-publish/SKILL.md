@@ -113,6 +113,12 @@ For Windows, also follow that reference’s “缺少完整信息” recovery: c
 - Publication cleanup is part of completion. Do not leave an upload form, file picker, temporary release tab, or browser-control session open after verification has finished. Cleanup must never discard an unsubmitted form or interrupt an upload; perform it only after the authoritative server state has been re-read and the release is either verified complete or recorded as blocked.
 - After the package-upload completion response is received and the server URL, byte count, and SHA-256 have been recorded, immediately dismiss any file chooser/transient dialog, close the temporary upload form or release tab when it is no longer needed, and release browser control so the user's foreground is available again. Preserve the recorded upload evidence and resume later from server state for app-record mutation and post-release verification; never leave the upload page in front while waiting on later checks.
 
+## 上传后的现场清理（用户明确要求，2026-10-08）
+
+上传确认后立即关闭已完成的文件选择框、下载浮层和不再需要的临时上传/下载标签；仍有未保存发布表单或在途上传时先完成或记录恢复状态，不得直接丢弃。发布与完整性核验结束后，只关闭本次任务创建的发布、详情、文档及调试标签，保留用户原窗口和标签，不退出共享浏览器。重新读取窗口/标签清单，确认没有遗留对话框或本次标签后才报告清理完成。
+
+点击“查看安装包”可能自动下载额外APK。只在本轮确知的文件名、创建来源、完整大小与SHA256一致、无在途使用时清理这份重复下载；保留正式签名交付包、回滚包、源码和验收证据，不按下载目录名称批量删除。认证临时文件/内存引用和自动化控制一并释放，在发布报告记录现场清理结果。此要求是通用发布技能的一部分，不能只写入单次会话记忆。
+
 ## Completion report
 
 Report each platform separately with:
@@ -127,3 +133,29 @@ Report each platform separately with:
 - any remaining limitation stated plainly.
 
 Say “正式发布完成” only when all mandatory checks pass. Otherwise state the precise blocker and keep completed facts separate from pending work.
+
+
+## VibeKits historical-error publication gate (2026-10-09)
+
+For every VibeKits PAD/macOS/Windows build, upgrade or publication, first read and execute [vibekits-release-error-preflight](../vibekits-release-error-preflight/SKILL.md), including its applicable historical regression families. Before storefront mutation run the evidence checker with phase=prepublish against the exact candidate; after delivery run phase=delivery. This supplements existing functional/device/signature gates; missing evidence blocks publication, and integrity-only PASS is not functional PASS. Preserve original failures and authorization.
+
+
+## VibeKits 编译部署追责与资格（2026-10-23）
+
+执行VibeKits新构建、签名、部署或发布前，必读[编译部署成熟方法、回退事故与资格规则](../vibekits-release-error-preflight/references/compilation-deployment-accountability-20261023.md)，并用真实Git仓库最新main运行项目 `tool/check_build_executor_qualification.py`，绑定实际Session-Name/ID及当前阶段。未登记/未读规则/资格暂停必须BLOCK；资格通过不替代产品门禁。再次确认执行过错按规则暂停后续资格，独立复验后才能恢复，不停止在途任务或撤销共享证书。完整原SDK客户端、包内运行时与真实UI必须对应；源码/组件、公证和上传成功不得代替功能/交付。普通其他产品沿各自项目台账执行通用原则，不冒用VibeKits身份。
+
+## 远程办公PAD双渠道快速发布
+
+远程办公PAD同一签名APK发布到Common与KEMI商城时，读[已验证的双渠道操作细节](../kemi-remote-office-release/references/pad-two-channel-efficient-publish.md)：Common后台脚本分段保证manifest引用新URL，商城复用既有管理员Chrome表单，解析后修正精确字节，公开下载与更新检查，最后回读清场。仅适用于原任务授权，不扩大平台/账号范围；其他应用沿本技能自己的流程。
+
+## Linux + VibeKits simulation on device 101
+
+For Ubuntu/Linux `.deb` publication via the **device under test** (default KEMI Linux 101, routingId `7634801763`):
+
+1. Read this skill and `references/release-contract.md` (`.deb` → `os_type=linux`, upload category `linuxpkg`).
+2. Prefer the on-device API loop documented in GitHub skill **bot-kemi-box** §10「仿针在 101 上架 KEMI 商场」: simulator `connect` → Bearer on device (mode 600 file) → `package-token` → multipart → `package-complete` → `apps/update` → four-layer verification.
+3. VibeKits Linux x86_64 storefront record is app_id **90** (`com.caucy.vibekits`). Do not overwrite it with an arm64 artifact.
+4. If `package-complete` times out on object stat while CDN `Content-Length` already matches, retry complete on the **same key** without re-uploading (see release-contract Android CDN timeout lesson; same pattern observed for linuxpkg 2026-11-03).
+5. Never print bearer or upload tokens. Delete temporary credentials after the run.
+
+Helper script name used in T61 evidence: `kemi_linux_publish_on_device.sh` (no secrets).
