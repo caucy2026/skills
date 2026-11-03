@@ -1,13 +1,14 @@
 # KEMI 通用技能库
 
-本仓库保留 **45 个** KEMI 应用开发、发布、远程办公、视频制作和浏览器 3D 相关技能。
+本仓库保留 **46 个** KEMI 应用开发、发布、远程办公、视频制作和浏览器 3D 相关技能。
 
-2026-10-08 已将本机 20 个游戏研发、SWDOL、VibeKits 仿真、项目交接和安全清理类全局技能完整迁移到 [skills-game](https://github.com/caucy2026/skills-game)，本仓库不再重复保存这些同名目录。
+2026-10-08 已将本机 20 个游戏研发、SWDOL、VibeKits 仿真、项目交接和安全清理类全局技能完整迁移到 [skills-game](https://github.com/caucy2026/skills-game)，本仓库不再重复保存这些同名目录。 Grok Bot box→101 sim playbook lives in [bot-kemi-box](bot-kemi-box/SKILL.md), with fuller experience backup in https://github.com/caucy2026/grok.skills.vibekits.
 
 ## 技能目录
 
 - [apk-touch-feedback](apk-touch-feedback/SKILL.md)
 - [app-release-stability-gate](app-release-stability-gate/SKILL.md)
+- [bot-kemi-box](bot-kemi-box/SKILL.md)
 - [capcut](capcut/SKILL.md)
 - [dual-screen-video-wallpaper](dual-screen-video-wallpaper/SKILL.md)
 - [game-playtest](game-playtest/SKILL.md)
