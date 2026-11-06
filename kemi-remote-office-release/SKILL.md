@@ -24,3 +24,15 @@ description: Build, sign, notarize, validate, and release all four KEMI Remote O
 更新本技能后运行 `python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py ~/.codex/skills/kemi-remote-office-release`，并核对全部相对引用存在。文档校验不会重新编译、签名或发布四端。
 
 Linux桌面通用字体、架构/GLIBC、透明窗口、阶段环境与真实验收经验见 [linux-desktop-build-acceptance](../linux-desktop-build-acceptance/SKILL.md)。遇对应问题时读相关引用，沿本项目成熟入口执行，不用通用示例覆盖项目目标。
+
+## Linux 101 硬编解码发布必检
+
+对适用于 101 的最终 Linux 包，覆盖安装后分别建立 H.264 和 H.265 真实会话，回读实际进程版本与包 SHA-256。核对同一会话的协商协议、发送端硬编、接收端硬解及持续出帧。101 作为接收端必须实证 101 硬解。 对 101 的 OMX 路线，核发送端实际 HWRAM 编码器与接收端实际 `CodecInfo.name`，分别确认 `h264_omx` 和 `hevc_omx`，并在重连和分辨率变更后复核持续出帧。冻结 506 的 `FFmpeg hardware` 标签也可能来自软件解码包装器。产品探针和界面标签都不能代替真实会话证据。VP9 回退、软件解码或证据缺失均阻断 Common 与 KEMI 商场发布。详见主线 docs/linux-101-hardware-codec-release-gate.md。
+
+发布前必须覆盖安装并完成真实桌面重登，回读用户及系统自启动入口、实际进程路径和加载的 librustdesk.so SHA-256，与同一最终包逐项比对。用重登后同一实例完成 H.264/H.265 真实会话。自启仍指旧候选、原生库哈希不同或重登证据缺失时阻断发布。
+
+## Ubuntu 双架构发布必检
+
+每次 KEMI 远程办公 Linux 正式发布，冻结同一主线提交、版本和依赖清单，构建 Ubuntu 20.04 的 amd64（x86_64）与 arm64（aarch64）完整产物。101 是 arm64 原生构建和验收机。若要在 101 上同时产出 amd64，须先验证隔离的 amd64 构建环境、完整工具链和依赖，以及磁盘与内存余量。未取得该路线的有效构建回执时，amd64 沿已验证的 x86_64 原生路线构建。
+
+两个架构分别核对 ELF、glibc 2.31 兼容性、原生依赖及覆盖安装后真实会话。101 必须通过上述硬编解码验收，amd64 在 88 或等效的 Ubuntu 20.04 x86_64 实机验收。任一架构缺包或未通过时，阻断正式 Linux 发布。如交付为单一下载文件，须内含两套载荷并自动选架构，两端以同一 SHA-256 的交付文件实测启动和会话。
